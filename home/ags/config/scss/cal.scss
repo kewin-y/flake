@@ -1,0 +1,50 @@
+// Styling GTK calendars is a pain
+// I have no clue if I'm doing this right
+window#cal-window {
+  font-family: "Iosevka NF";
+  background: transparent;
+
+  * {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .cal-box {
+    box-shadow: 0 0 2px 2px #000000;
+    border-radius: 12px;
+    border: 2px solid $color0;
+    margin: 4px;
+    background: $bg-dark;
+    color: $fg;
+    font-size: 0.9em;
+    padding: 1rem 1rem 0.2rem;
+
+    .cal {
+      &.highlight {
+        padding: 10rem;
+      }
+
+      border-radius: 12px;
+      border: none;
+      padding: 0.2rem 0.25rem 0rem;
+      margin-left: 10px;
+    }
+  }
+
+  calendar:selected {
+    color: $color2;
+    background: transparent;
+  }
+
+  calendar.header {
+    color: $color14;
+  }
+
+  calendar {
+    background: $bg-dark;
+  }
+
+  calendar:indeterminate {
+    color: $bg-light;
+  }
+}

@@ -1,0 +1,136 @@
+window#control-panel {
+  all: unset;
+
+  * {
+    font-family: "Iosevka NF";
+    border: none;
+  }
+
+  .control-box {
+    background: $bg-dark;
+    margin: 0.4em;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 2px #000000;
+    border: 2px solid $color0;
+    padding: 0.8em;
+  }
+
+  .uptime {
+    border-radius: 8px;
+    background: $bg-light;
+    font-size: 0.9em;
+    color: $fg;
+  }
+
+  .power-box {
+    button {
+      background: $bg-light;
+      border-radius: 8px;
+      min-width: 2.2em;
+      min-height: 2.2em;
+      font-size: 0.9em;
+
+      &:focus {
+        background: $hover;
+      }
+
+      &:hover {
+        background: $hover;
+      }
+
+      &:nth-child(1) {
+        color: $color1;
+      }
+
+      &:nth-child(2) {
+        color: $color2;
+      }
+
+      &:nth-child(3) {
+        color: $color3;
+      }
+
+      &:nth-child(4) {
+        color: $color4;
+      }
+    }
+  }
+
+  .audio-slider {
+    all: unset;
+    background: $bg-light;
+    padding: 0 0.8em;
+    min-width: 25em;
+    min-height: 3em;
+    border-radius: 8px;
+    font-size: 0.9em;
+
+    .icon {
+      margin-right: 0.4em;
+    }
+
+    scale {
+      trough {
+        background: $color8;
+        min-height: 0.8em;
+        border-radius: 8px;
+
+        slider {
+          background: none;
+          box-shadow: none;
+          border: none;
+        }
+
+        highlight {
+          border-radius: 16px;
+          border: none;
+        }
+      }
+    }
+
+    &.speaker {
+      .icon {
+        color: $color2;
+      }
+
+      scale {
+        trough {
+          highlight {
+            background: $color2;
+          }
+        }
+      }
+    }
+
+    &.microphone {
+      .icon {
+        color: $color4;
+      }
+
+      scale {
+        trough {
+          highlight {
+            background: $color4;
+          }
+        }
+      }
+    }
+  }
+
+  .wifi {
+    all: unset;
+    padding: 0 0.8em;
+    background: $bg-light;
+    border-radius: 8px;
+    min-height: 3em;
+    font-size: 0.9em;
+
+    .icon {
+      color: $color5;
+    }
+
+    &:hover {
+      background: $hover;
+    }
+  }
+}

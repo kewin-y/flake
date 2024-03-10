@@ -1,0 +1,144 @@
+.bar {
+  * {
+    font-family: "Iosevka NF";
+    font-size: 0.98em;
+  }
+
+  .cbox {
+    border-radius: 12px;
+    background: $bg-dark;
+    margin: 0.4em;
+    box-shadow: 0 0 2px 2px #000000;
+    border: 2px solid $color0;
+    padding: 0.2em;
+  }
+
+  button {
+    padding: 0.8em 0;
+    background: $bg-light;
+    border-radius: 6px;
+    min-width: 2em;
+    min-height: 2em;
+
+    &:hover {
+      background: $hover;
+    }
+  }
+
+  .clock {
+    .icon {
+      color: $color14;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: $fg;
+    }
+  }
+
+  .workspaces {
+    background: $bg-light;
+    border-radius: 8px;
+
+    button {
+      padding: 0;
+      color: $color8;
+      margin: 0px 2px;
+
+
+      box {
+        margin: 0.7em;
+        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+        background: $color8;
+        border-radius: 1em;
+      }
+
+      &.occupied {
+        box {
+          background: $fg;
+        }
+      }
+
+      &.active {
+        box {
+          background: $color2;
+          min-height: 3em;
+        }
+      }
+
+      &:first-child {
+        margin-top: 4px;
+      }
+
+      &:last-child {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .tray {
+    button {
+      &:first-child {
+        margin-top: 4px;
+      }
+
+      &:last-child {
+        margin-bottom: 4px;
+      }
+
+      padding: 0px;
+      min-height: 24px;
+      min-width: 8px;
+
+      margin: 0px 2px;
+
+      image {
+        font-size: 10px;
+      }
+
+      &:hover {
+        color: $hover;
+      }
+    }
+
+    border-radius: 6px;
+    min-height: 32px;
+    background: $bg-light;
+  }
+
+  .tray-button {
+    padding: 2px 0;
+
+    .icon {
+      // font-size: 1.2em;
+      color: $fg;
+      transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+
+      -gtk-icon-transform: rotate(90deg);
+
+      &.showing {
+        -gtk-icon-transform: rotate(270deg);
+      }
+    }
+  }
+
+  .control-button {
+    .icon {
+      &.network {
+        color: $color5;
+        // margin-top: 1px;
+      }
+
+      &.volume {
+        color: $color2;
+      }
+
+      &.power {
+        // margin-top: 1px;
+        font-size: 0.9em;
+        color: $color1;
+      }
+    }
+  }
+}

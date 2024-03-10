@@ -1,0 +1,72 @@
+window#notifications {
+  all: unset;
+  font-family: "Iosevka NF";
+
+  .notifications {
+    padding: 0.5em 1px 0.5em 1px;
+  }
+
+  .icon {
+    min-width: 68px;
+    min-height: 68px;
+    margin-right: 1em;
+
+    box {
+      min-width: 68px;
+      min-height: 68px;
+      border-radius: 7px;
+    }
+
+    image {
+      font-size: 68px;
+      color: $fg;
+    }
+  }
+
+  .notification {
+    min-width: 32em;
+    border-radius: 12px;
+    padding: 0.8em;
+    margin: 0.4em;
+    border: 2px solid $color0;
+    box-shadow: 0 0 2px 2px #000000;
+    background-color: $bg-dark;
+
+    .critical {
+      border: 2px solid $color1;
+    }
+  }
+
+  .title {
+    color: $fg;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .body {
+    color: $fg;
+    font-size: 0.9em;
+  }
+
+  .actions {
+    .action-button {
+      color: $fg;
+      background: $bg-light;
+      border-radius: 0.8em;
+      margin-top: 0.8em;
+      padding: 0.8em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: $hover;
+      }
+    }
+  }
+}
