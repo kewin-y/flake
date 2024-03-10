@@ -5,7 +5,6 @@
 		./foot
 		./tofi
 		./hyprland
-		./lazygit
 		./ags
 		./theme
 		./stylix

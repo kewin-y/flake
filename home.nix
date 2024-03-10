@@ -9,11 +9,18 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   home.packages = with pkgs; [
   	firefox-bin
-	xfce.thunar
-	neofetch
-	gh
+    xfce.thunar
+    imv
+    mpv
+    neofetch
+    pfetch
+    htop
   ];
 
   home.sessionVariables = {

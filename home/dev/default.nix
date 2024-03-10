@@ -2,9 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    nodejs_21
-    llvmPackages_9.clang-unwrapped
-    typescript
+    unityhub
   ];
 
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs; [
+      vscode-extensions.ms-dotnettools.csharp
+    ];
+  }
 }
