@@ -2,7 +2,7 @@ import { Workspaces } from "./Workspaces.js";
 import { Clock } from "./Clock.js";
 import { SysTray } from "./SysTray.js";
 import { ControlButton } from "./ControlButton.js";
-import { BatteryButton } from "./BatteryButton.js";
+import { BatteryLabel } from "./BatteryLabel.js";
 
 const Top = () =>
   Widget.Box({
@@ -27,7 +27,7 @@ const Bottom = () =>
     spacing: 8,
     children: [
       SysTray(),
-      BatteryButton(),
+      BatteryLabel(),
       ControlButton(),
     ],
   });

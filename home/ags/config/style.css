@@ -54,8 +54,8 @@
 
 .bar .tray {
   border-radius: 6px;
-  min-height: 32px;
-  background: #161b1d; }
+  background: #161b1d;
+  min-height: 32px; }
   .bar .tray button {
     padding: 0px;
     min-height: 24px;
@@ -79,18 +79,32 @@
     .bar .tray-button .icon.showing {
       -gtk-icon-transform: rotate(270deg); }
 
-.bar .battery-button box .battery-bulb {
-  background: #576d9f;
-  min-height: 3px;
-  border-radius: 0.2em 0.2em 0px 0px;
-  margin: 0 0.8em; }
-
-.bar .battery-button box levelbar trough {
-  border: 2px solid #576d9f;
-  border-radius: 0.2em;
-  margin: 0 0.6em; }
-  .bar .battery-button box levelbar trough block.filled {
-    background: #576d9f; }
+.bar .battery-label {
+  border-radius: 6px;
+  padding: 0.4em 0;
+  background: #161b1d; }
+  .bar .battery-label .battery-bulb {
+    background: #576d9f;
+    min-height: 3px;
+    border-radius: 0.2em 0.2em 0px 0px;
+    margin: 0 0.8em; }
+  .bar .battery-label levelbar trough {
+    border: 2px solid #576d9f;
+    border-radius: 0.2em;
+    margin: 0 0.6em; }
+    .bar .battery-label levelbar trough block.filled {
+      background: #576d9f; }
+  .bar .battery-label.charging .battery-bulb {
+    background: #6a9440; }
+  .bar .battery-label.charging levelbar trough {
+    border: 2px solid #6a9440; }
+  .bar .battery-label.charging levelbar block.filled {
+    background: #6a9440; }
+  .bar .battery-label label {
+    color: #c2c4c2;
+    margin-top: 0.4em;
+    font-size: 0.8em;
+    padding: 0; }
 
 .bar .control-button .icon.network {
   color: #766991; }

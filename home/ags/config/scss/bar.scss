@@ -13,6 +13,7 @@
     padding: 0.2em;
   }
 
+
   button {
     padding: 0.8em 0;
     background: $bg-light;
@@ -103,8 +104,8 @@
     }
 
     border-radius: 6px;
-    min-height: 32px;
     background: $bg-light;
+    min-height: 32px;
   }
 
   .tray-button {
@@ -123,28 +124,52 @@
     }
   }
 
-  .battery-button {
-	  box {
-		  .battery-bulb {
-			  background: $color4;
-			  min-height: 3px;
-			  border-radius: 0.2em 0.2em 0px 0px;
-			  margin: 0 0.8em;
-		  }
+  .battery-label{
+    .battery-bulb {
+      background: $color4;
+      min-height: 3px;
+      border-radius: 0.2em 0.2em 0px 0px;
+      margin: 0 0.8em;
+    }
 
-		  levelbar {
-			  trough {
-				  border: 2px solid $color4;
-				  border-radius: 0.2em;
-				  margin: 0 0.6em;
+    levelbar {
+      trough {
+        border: 2px solid $color4;
+        border-radius: 0.2em;
+        margin: 0 0.6em;
 
-				  block.filled {
-					  background: $color4;
-				  }
-			  }
-		  }
+        block.filled {
+          background: $color4;
+        }
+      }
+    }
 
-	  }
+    &.charging {
+      .battery-bulb {
+        background: $color2;
+      }
+
+      levelbar {
+        trough {
+          border: 2px solid $color2;
+        }
+
+        block.filled {
+          background: $color2;
+        }
+      }
+    }
+
+    label {
+      color: $fg;
+      margin-top: 0.4em;
+      font-size: 0.8em;
+      padding: 0;
+    }
+
+    border-radius: 6px;
+    padding: 0.4em 0;
+    background: $bg-light;
   }
 
   .control-button {
