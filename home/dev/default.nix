@@ -10,5 +10,5 @@
     extensions = with pkgs; [
       vscode-extensions.ms-dotnettools.csharp
     ];
-  }
+  };
 }

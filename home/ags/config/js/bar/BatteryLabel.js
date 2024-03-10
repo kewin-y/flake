@@ -15,6 +15,7 @@ export function BatteryLabel() {
     className: battery.bind('charging').as(ch => ch ? 'battery-label charging' : 'battery-label'),
     visible: battery.bind("available"),
     vertical: true,
+    tooltip_text: "Love yourself",
     children: [
       Widget.Box({
         className: "battery-bulb",

@@ -1,6 +1,7 @@
 // Styling GTK calendars is a pain
 // I have no clue if I'm doing this right
 window#cal-window {
+  all: unset;
   font-family: "Iosevka NF";
   background: transparent;
 

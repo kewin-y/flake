@@ -30,15 +30,15 @@
   services.xserver = {
     xkb = {
     	layout = "us";
-	variant = "";
+      variant = "";
     };
   };
 
   services.upower.enable = true;
   security.pam.services.waylock = {
   	text = ''
-		auth include login
-	'';
+      auth include login
+    '';
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -56,6 +56,12 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   hardware.brillo.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
