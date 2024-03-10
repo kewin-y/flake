@@ -1,8 +1,19 @@
 const battery = await Service.import("battery");
 
+function notifyBattery() {
+  print(battery.icon_name)
+  Utils.notify({
+    summary: "Battery",
+    body: `${battery.percent}%`,
+  })
+
+};
+
 export function BatteryButton() {
-	const value = battery.bind("percent").as(p => p > 0 ? p / 100 : 0);
+  const batteryPercent = battery.bind("percent").as(p => p > 0 ? p / 100 : 0);
 	return Widget.Button({
+    visible: battery.bind("available"),
+    onClicked: notifyBattery,
 		className: "battery-button",
 		child: Widget.Box({
 			vertical: true,
@@ -14,7 +25,7 @@ export function BatteryButton() {
 				Widget.LevelBar({
 					vertical: true,
 					heightRequest: 30,
-					value: value,
+					value: batteryPercent,
 					inverted: true,
 				}),
 			]

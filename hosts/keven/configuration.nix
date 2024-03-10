@@ -35,6 +35,11 @@
   };
 
   services.upower.enable = true;
+  security.pam.services.waylock = {
+  	text = ''
+		auth include login
+	'';
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kevin = {
@@ -79,9 +84,9 @@
 
   fonts = {
   	fontDir.enable = true;
-	packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "Iosevka" ]; })
-	];
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "Iosevka" ]; })
+    ];
   };
 
   programs.neovim.enable = true;

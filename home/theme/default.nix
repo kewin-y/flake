@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-	# This doesn't work
+	# This doesn't work half the time
 	home.packages = with pkgs; [
 		libsForQt5.qtstyleplugin-kvantum
 		libsForQt5.qt5ct

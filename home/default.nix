@@ -10,5 +10,6 @@
 		./theme
 		./stylix
 		./git
+    ./dev
 	];
 }

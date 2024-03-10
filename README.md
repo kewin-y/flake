@@ -4,6 +4,6 @@ My scalp won't stop flaking!
 
 ## TODO
 
-- Battery in ags
 - Fix codebase (impossible)
 - Learn more about nix!
+- YOU ARE JOKING MY NEOVIM CONFIG THAT I WORKDE SO HARD ON DOSNT WORK
