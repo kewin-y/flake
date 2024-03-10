@@ -2,8 +2,9 @@ import { Workspaces } from "./Workspaces.js";
 import { Clock } from "./Clock.js";
 import { SysTray } from "./SysTray.js";
 import { ControlButton } from "./ControlButton.js";
+import { BatteryButton } from "./BatteryButton.js";
 
-const Left = () =>
+const Top = () =>
   Widget.Box({
     vertical: true,
     vpack: "start",
@@ -11,14 +12,14 @@ const Left = () =>
     spacing: 8,
     children: [Workspaces()],
   });
-const Center = () =>
+const Middle = () =>
   Widget.Box({
     vertical: true,
     css: "margin: 0.7em 0.2em",
     spacing: 8,
     children: [Clock()],
   });
-const Right = () =>
+const Bottom = () =>
   Widget.Box({
     css: "margin: 0.7em 0.2em",
     vertical: true,
@@ -26,6 +27,7 @@ const Right = () =>
     spacing: 8,
     children: [
       SysTray(),
+      BatteryButton(),
       ControlButton(),
     ],
   });
@@ -40,8 +42,8 @@ export const Bar = (monitor = 0) =>
     child: Widget.CenterBox({
       class_name: "cbox",
       vertical: true,
-      start_widget: Left(),
-      center_widget: Center(),
-      end_widget: Right(),
+      start_widget: Top(),
+      center_widget: Middle(),
+      end_widget: Bottom(),
     }),
   });

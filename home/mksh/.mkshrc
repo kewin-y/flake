@@ -23,6 +23,7 @@ function _cd {
 alias cd=_cd
 
 # The greatest function of all time 
+# "Use zoxide" nah
 function cdd {
   local dir=$(fd -H -t d -a | fzf)
 

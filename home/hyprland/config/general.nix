@@ -10,7 +10,8 @@
 			exec-once = [
 				"${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 				"ags"
-				"${pkgs.swww}/bin/swww init && ${pkgs.swww}/bin/swww img ~/nixdots/wallpapers/accordion.jpg"
+				"${pkgs.swww}/bin/swww init"
+				"${pkgs.swww}/bin/swww img ~/flaky-scalp/wallpapers/accordion.jpg"
 			];
 			input = {
 			    kb_layout = "us";

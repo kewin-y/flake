@@ -79,6 +79,19 @@
     .bar .tray-button .icon.showing {
       -gtk-icon-transform: rotate(270deg); }
 
+.bar .battery-button box .battery-bulb {
+  background: #576d9f;
+  min-height: 3px;
+  border-radius: 0.2em 0.2em 0px 0px;
+  margin: 0 0.8em; }
+
+.bar .battery-button box levelbar trough {
+  border: 2px solid #576d9f;
+  border-radius: 0.2em;
+  margin: 0 0.6em; }
+  .bar .battery-button box levelbar trough block.filled {
+    background: #576d9f; }
+
 .bar .control-button .icon.network {
   color: #766991; }
 

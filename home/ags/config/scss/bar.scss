@@ -123,6 +123,30 @@
     }
   }
 
+  .battery-button {
+	  box {
+		  .battery-bulb {
+			  background: $color4;
+			  min-height: 3px;
+			  border-radius: 0.2em 0.2em 0px 0px;
+			  margin: 0 0.8em;
+		  }
+
+		  levelbar {
+			  trough {
+				  border: 2px solid $color4;
+				  border-radius: 0.2em;
+				  margin: 0 0.6em;
+
+				  block.filled {
+					  background: $color4;
+				  }
+			  }
+		  }
+
+	  }
+  }
+
   .control-button {
     .icon {
       &.network {
@@ -142,3 +166,4 @@
     }
   }
 }
+
