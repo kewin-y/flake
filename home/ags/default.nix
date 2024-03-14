@@ -12,7 +12,7 @@
 
 	programs.ags = {
 		enable = true;
-		configDir = ./config;
+		configDir = ../../ags;
 	};
 		
 }
