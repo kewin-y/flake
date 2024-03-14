@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [ 
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     ./home
   ];
   home.username = "kevin";

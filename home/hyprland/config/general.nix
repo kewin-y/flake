@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, wallpaper, ... }:
 
 {
 	home.packages = with pkgs; [
@@ -11,7 +11,7 @@
 				"${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 				"ags"
 				"${pkgs.swww}/bin/swww init"
-				"${pkgs.swww}/bin/swww img ~/flaky-scalp/wallpapers/accordion.jpg"
+				"${pkgs.swww}/bin/swww img ${wallpaper}"
 			];
 			input = {
 			    kb_layout = "us";

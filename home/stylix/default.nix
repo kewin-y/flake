@@ -1,8 +1,8 @@
-{ config, lib, pkgs, ... }: 
+{ config, lib, pkgs, wallpaper, ... }: 
 
 {
 	stylix = {
-		image = ../../wallpapers/accordion.jpg;
+		image = wallpaper;
 		base16Scheme = ./meut.yaml;
 		polarity = "dark";
 		cursor = {

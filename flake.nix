@@ -12,7 +12,7 @@
 
 		ags.url = "github:Aylur/ags";
 
-		stylix.url = "github:bluskript/stylix";
+		stylix.url = "github:danth/stylix";
 
 		nixvim = {
 			url = "github:nix-community/nixvim";
@@ -25,6 +25,7 @@
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
 			pkgs = nixpkgs.legacyPackages.${system};
+			wallpaper = ./wallpapers/accordion.jpg;
 		in {
 			nixosConfigurations = {
 				keven = lib.nixosSystem {
@@ -41,7 +42,7 @@
 			homeConfigurations = {
 				kevin = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
-					extraSpecialArgs = { inherit inputs; };
+					extraSpecialArgs = { inherit inputs; inherit wallpaper; };
 					modules = [ stylix.homeManagerModules.stylix nixvim.homeManagerModules.nixvim ./home.nix ];
 				};
 			};
