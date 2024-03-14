@@ -5,7 +5,7 @@ import { ImageWindow } from "./js/image-window/ImageWindow.js";
 import { ControlPanel } from "./js/control-panel/ControlPanel.js";
 
 const scss = `${App.configDir}/scss/style.scss`;
-const css = `${App.configDir}/style.css`;
+const css = "/tmp/ags.css";
 
 print(`${App.configDir}`);
 
