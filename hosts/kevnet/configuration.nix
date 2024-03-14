@@ -34,8 +34,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   services.upower.enable = true;
@@ -84,7 +86,7 @@
   ];
 
   fonts = {
-  	fontDir.enable = true;
+    fontDir.enable = true;
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "Iosevka" ]; })
     ];
