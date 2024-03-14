@@ -4,7 +4,7 @@ window.notification-popups box.notifications {
   }
 
   font-family: "Iosevka NF";
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.4rem;
 
   .icon {
     min-width: 78px;
@@ -24,16 +24,15 @@ window.notification-popups box.notifications {
   }
 
   .notification {
-    min-width: 30em;
-    border-radius: 12px;
-    margin: 0.4em;
-    border: 2px solid $color0;
+    min-width: 20em;
+    border-radius: 6px;
+    margin: 0.4rem;
     box-shadow: 0 0 2px 2px #000000;
     background-color: $bg-dark;
 
     .content {
       background: $bg-light;
-      border-radius: 12px;
+      border-radius: 6px;
       padding: 0.8em;
     }
 

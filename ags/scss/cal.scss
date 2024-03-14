@@ -12,9 +12,9 @@ window#cal-window {
 
   .cal-box {
     box-shadow: 0 0 2px 2px #000000;
-    border-radius: 12px;
+    border-radius: 6px;
     border: 2px solid $color0;
-    margin: 4px;
+    margin: 0.8rem;
     background: $bg-dark;
     color: $fg;
     font-size: 0.9em;
@@ -25,7 +25,7 @@ window#cal-window {
         padding: 10rem;
       }
 
-      border-radius: 12px;
+      border-radius: 6px;
       border: none;
       padding: 0.2rem 0.25rem 0rem;
       margin-left: 10px;

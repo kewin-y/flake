@@ -6,7 +6,7 @@ export const ImageWindow = () =>
     anchor: ["bottom"],
     // TODO: make this change dynamically or something 
     child: Widget.Box({
-      css: 'background-image: url("/home/kevin/dotfiles/wallpapers/michael.png");',
+      css: 'background-image: url("/home/kevin/flaky/wallpapers/michael.png");',
       className: "image-box",
     }),
   });

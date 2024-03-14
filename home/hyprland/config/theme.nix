@@ -5,8 +5,8 @@
 		settings = {
 			exec = [ "hyprctl setcursor Bibata-Modern-Ice 20" ];
 			general = {
-			    gaps_in = "4";
-			    gaps_out =  "16";
+			    gaps_in = "8";
+			    gaps_out =  "12";
 			    border_size = "2";
 			    "col.inactive_border" = "rgba(111115ff)";
 			    "col.active_border" = "rgba(111115ff)";
@@ -14,7 +14,7 @@
 			    resize_on_border = "true";
 			};
 			decoration = {
-			    rounding = "12";
+			    rounding = "6";
 			    drop_shadow = "true";
 			    shadow_range = "12";
 			    "col.shadow" = "rgba(020202ee)";

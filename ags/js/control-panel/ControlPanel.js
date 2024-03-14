@@ -35,7 +35,6 @@ export const ControlPanel = () =>
     name: "control-panel",
     anchor: ["bottom", "left"],
     visible: false,
-    margins: [0, 4, 4],
     setup: (self) => self.keybind("Escape", () => App.closeWindow("control-panel")),
     child: Widget.Box({
       className: "control-box",

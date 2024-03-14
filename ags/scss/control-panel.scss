@@ -8,15 +8,15 @@ window#control-panel {
 
   .control-box {
     background: $bg-dark;
-    margin: 0.4em;
-    border-radius: 12px;
+    margin: 0.8rem;
+    border-radius: 6px;
     box-shadow: 0 0 2px 2px #000000;
     border: 2px solid $color0;
     padding: 0.8em;
   }
 
   .uptime {
-    border-radius: 8px;
+    border-radius: 4px;
     background: $bg-light;
     font-size: 0.9em;
     color: $fg;
@@ -25,7 +25,7 @@ window#control-panel {
   .power-box {
     button {
       background: $bg-light;
-      border-radius: 8px;
+      border-radius: 4px;
       min-width: 2.2em;
       min-height: 2.2em;
       font-size: 0.9em;
@@ -62,7 +62,7 @@ window#control-panel {
     padding: 0 0.8em;
     min-width: 25em;
     min-height: 3em;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 0.9em;
 
     .icon {
@@ -121,7 +121,7 @@ window#control-panel {
     all: unset;
     padding: 0 0.8em;
     background: $bg-light;
-    border-radius: 8px;
+    border-radius: 4px;
     min-height: 3em;
     font-size: 0.9em;
 

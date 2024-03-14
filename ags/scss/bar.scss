@@ -6,11 +6,10 @@
   }
 
   .cbox {
-    border-radius: 12px;
+    margin: 0.8rem 0.4rem 0.8rem 0.8em;
+    border-radius: 6px;
     background: $bg-dark;
-    margin: 0.4em;
     box-shadow: 0 0 2px 2px #000000;
-    border: 2px solid $color0;
     padding: 0.2em;
   }
 
@@ -18,7 +17,7 @@
   button {
     padding: 0.8em 0;
     background: $bg-light;
-    border-radius: 6px;
+    border-radius: 4px;
     min-width: 2em;
     min-height: 2em;
 
@@ -41,7 +40,7 @@
 
   .workspaces {
     background: $bg-light;
-    border-radius: 8px;
+    border-radius: 4px;
 
     button {
       padding: 0;
@@ -50,10 +49,10 @@
 
 
       box {
-        margin: 0.7em;
+        margin: 0.75em;
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
         background: $color8;
-        border-radius: 1em;
+        border-radius: 0.5rem;
       }
 
       &.occupied {
@@ -104,7 +103,7 @@
       }
     }
 
-    border-radius: 6px;
+    border-radius: 4px;
     background: $bg-light;
     min-height: 32px;
   }
@@ -168,7 +167,7 @@
       padding: 0;
     }
 
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 0.4em 0;
     background: $bg-light;
   }
@@ -177,7 +176,6 @@
     .icon {
       &.network {
         color: $color5;
-        // margin-top: 1px;
       }
 
       &.volume {
@@ -185,7 +183,6 @@
       }
 
       &.power {
-        // margin-top: 1px;
         font-size: 0.9em;
         color: $color1;
       }

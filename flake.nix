@@ -9,11 +9,18 @@
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
 		hyprland.url = "github:hyprwm/Hyprland";
+
 		ags.url = "github:Aylur/ags";
+
 		stylix.url = "github:bluskript/stylix";
+
+		nixvim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, stylix, nixvim, ... }@inputs: 
 		let
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
@@ -35,7 +42,7 @@
 				kevin = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
 					extraSpecialArgs = { inherit inputs; };
-					modules = [ stylix.homeManagerModules.stylix ./home.nix ];
+					modules = [ stylix.homeManagerModules.stylix nixvim.homeManagerModules.nixvim ./home.nix ];
 				};
 			};
 		};

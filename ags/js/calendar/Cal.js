@@ -12,7 +12,6 @@ export const Cal = (monitor = 0) =>
     setup: (self) => self.keybind("Escape", () => App.closeWindow("cal-window")),
     monitor,
     visible: false,
-    margins: [4, 4],
     anchor: ["left"],
     child: CalBox(),
   });

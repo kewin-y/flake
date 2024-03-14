@@ -9,6 +9,7 @@
 		./theme
 		./stylix
 		./git
-    ./dev
+		./dev
+		./nixvim
 	];
 }

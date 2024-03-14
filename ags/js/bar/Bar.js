@@ -38,7 +38,6 @@ export const Bar = (monitor = 0) =>
     monitor,
     anchor: ["top", "bottom", "left"],
     exclusivity: "exclusive",
-    margins: [4, 0, 4, 4],
     child: Widget.CenterBox({
       class_name: "cbox",
       vertical: true,
