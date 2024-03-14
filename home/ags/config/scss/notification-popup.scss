@@ -1,15 +1,15 @@
-window#notifications {
-  all: unset;
-  font-family: "Iosevka NF";
-
-  .notifications {
-    padding: 0.5em 1px 0.5em 1px;
+window.notification-popups box.notifications {
+  * {
+    all: unset;
   }
 
+  font-family: "Iosevka NF";
+  padding: 0.5rem 1rem 0.5rem 1rem;
+
   .icon {
-    min-width: 68px;
-    min-height: 68px;
-    margin-right: 1em;
+    min-width: 78px;
+    min-height: 78px;
+    margin: 1rem;
 
     box {
       min-width: 68px;
@@ -18,21 +18,26 @@ window#notifications {
     }
 
     image {
-      font-size: 68px;
+      font-size: 58px;
       color: $fg;
     }
   }
 
   .notification {
-    min-width: 32em;
+    min-width: 30em;
     border-radius: 12px;
-    padding: 0.8em;
     margin: 0.4em;
     border: 2px solid $color0;
     box-shadow: 0 0 2px 2px #000000;
     background-color: $bg-dark;
 
-    .critical {
+    .content {
+      background: $bg-light;
+      border-radius: 12px;
+      padding: 0.8em;
+    }
+
+    &.critical {
       border: 2px solid $color1;
     }
   }
@@ -46,14 +51,15 @@ window#notifications {
   .body {
     color: $fg;
     font-size: 0.9em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
   }
 
   .actions {
     .action-button {
       color: $fg;
-      background: $bg-light;
+      background: adjust-color($bg-light, $lightness: 2%);
       border-radius: 0.8em;
-      margin-top: 0.8em;
       padding: 0.8em;
 
       &:first-child {
@@ -65,7 +71,7 @@ window#notifications {
       }
 
       &:hover {
-        background: $hover;
+        background: adjust-color($hover, $lightness: 2%);
       }
     }
   }

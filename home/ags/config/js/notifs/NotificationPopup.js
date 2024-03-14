@@ -1,16 +1,16 @@
+// I LOVE TAKING FROM THE EXAMPLES!
 const notifications = await Service.import("notifications");
-const popups = notifications.bind("popups");
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
-const NotificationIcon = ({ app_entry, app_icon, image }) => {
+function NotificationIcon({ app_entry, app_icon, image }) {
   if (image) {
     return Widget.Box({
-      css: `
-                background-image: url("${image}");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            `,
+      vpack: "center",
+      className: "icon img",
+      css: `background-image: url("${image}"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;`,
     });
   }
 
@@ -19,21 +19,24 @@ const NotificationIcon = ({ app_entry, app_icon, image }) => {
 
   if (app_entry && Utils.lookUpIcon(app_entry)) icon = app_entry;
 
-  return Widget.Icon(icon);
-};
+  return Widget.CenterBox({
+    className: "icon",
+    centerWidget: Widget.Icon({
+      icon,
+      size: 58,
+      vpack: "center",
+      hpack: "center",
+    }),
+  });
+}
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
-export const Notification = (n) => {
-  const icon = Widget.Box({
-    vpack: "start",
-    class_name: "icon",
-    child: NotificationIcon(n),
-  });
+function Notification(n) {
+  const icon = NotificationIcon(n)
 
   const title = Widget.Label({
     class_name: "title",
-    xalign: 0,
-    justification: "left",
+    justification: "center",
     hexpand: true,
     max_width_chars: 24,
     truncate: "end",
@@ -45,52 +48,74 @@ export const Notification = (n) => {
   const body = Widget.Label({
     class_name: "body",
     hexpand: true,
-    use_markup: true,
-    xalign: 0,
-    justification: "left",
-    label: n.body,
+    justification: "center",
+    label: n.body.trim(),
+    max_width_chars: 24,
     wrap: true,
   });
 
-  const actions = Widget.Box({
-    class_name: "actions",
-    children: n.actions.map(({ id, label }) =>
-      Widget.Button({
-        class_name: "action-button",
-        on_clicked: () => n.invoke(id),
-        hexpand: true,
-        child: Widget.Label(label),
-      }),
-    ),
-  });
+  const actions =
+    n.actions.length > 0
+      ? Widget.Box({
+        class_name: "actions",
+        children: n.actions.map(({ id, label }) =>
+          Widget.Button({
+            class_name: "action-button",
+            on_clicked: () => {
+              n.invoke(id);
+              n.dismiss();
+            },
+            hexpand: true,
+            child: Widget.Label(label),
+          }),
+        ),
+      })
+      : null;
 
-  return Widget.EventBox({
-    on_primary_click: () => n.dismiss(),
-    child: Widget.Box({
+  return Widget.EventBox(
+    {
+      attribute: { id: n.id },
+      on_primary_click: n.dismiss,
+    },
+    Widget.Box({
       class_name: `notification ${n.urgency}`,
-      vertical: true,
       children: [
+        icon,
         Widget.Box({
-          children: [
-            icon,
-            Widget.Box({
-              vertical: true,
-              children: [title, body],
-            }),
-          ],
+          vertical: true,
+          className: "content",
+          children: [title, body, actions],
         }),
-        actions,
       ],
     }),
-  });
-};
+  );
+}
 
-export const NotificationPopup = Widget.Window({
-  name: "notifications",
-  anchor: ["top"],
-  child: Widget.Box({
-    class_name: "notifications",
+export function NotificationPopup(monitor = 0) {
+  const list = Widget.Box({
     vertical: true,
-    children: popups.as((popups) => popups.map(Notification)),
-  }),
-});
+    className: "notifications",
+    children: notifications.popups.map(Notification),
+  });
+
+  function onNotified(_, /** @type {number} */ id) {
+    const n = notifications.getNotification(id);
+    if (n) list.children = [...list.children, Notification(n)];
+  }
+
+  function onDismissed(_, /** @type {number} */ id) {
+    list.children.find((n) => n.attribute.id === id)?.destroy();
+  }
+
+  list
+    .hook(notifications, onNotified, "notified")
+    .hook(notifications, onDismissed, "dismissed");
+
+  return Widget.Window({
+    monitor,
+    name: `notifications${monitor}`,
+    class_name: "notification-popups",
+    anchor: ["top"],
+    child: list,
+  });
+}

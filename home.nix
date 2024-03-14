@@ -14,7 +14,7 @@
   };
 
   home.packages = with pkgs; [
-  	firefox-bin
+    firefox-bin
     xfce.thunar
     imv
     mpv

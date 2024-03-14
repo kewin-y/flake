@@ -25,6 +25,11 @@
 					modules = [ ./hosts/keven/configuration.nix ];
 					specialArgs = { inherit inputs; };
 				};
+				kevnet = lib.nixosSystem {
+					system = system;
+					modules = [ ./hosts/kevnet/configuration.nix ];
+					specialArgs = { inherit inputs; };
+				};
 			};
 			homeConfigurations = {
 				kevin = home-manager.lib.homeManagerConfiguration {

@@ -10,7 +10,6 @@ const css = `${App.configDir}/style.css`;
 
 Utils.exec(`sassc ${scss} ${css}`);
 
-// exporting the config so ags can manage the windows
 App.config({
   style: css,
   windows: [
@@ -18,7 +17,7 @@ App.config({
     Cal(),
     ImageWindow(),
     ControlPanel(),
-    NotificationPopup,
+    NotificationPopup(),
     // you can call it, for each monitor
     // Bar(0),
     // Bar(1)
