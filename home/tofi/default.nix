@@ -9,14 +9,13 @@
 		font = "/run/current-system/sw/share/X11/fonts/IosevkaNerdFont-Regular.ttf"	
 		font-size = 10
 		hint-font = true
-		corner-radius = 60
 		width = 20%
 		height = 20%
 		result-spacing = 15
 		horizontal = false
 		outline-width = 0
 		border-width = 4
-		corner-radius = 12
+		corner-radius = 6
 		clip-to-padding = true
 		scale = true
 		anchor = center
