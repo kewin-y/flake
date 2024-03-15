@@ -1,14 +1,13 @@
 { pkgs, config, ... }:
 
 {
-	programs.nixvim.plugins.treesitter = {
-		enable = true;
-		indent = true;
-		ensureInstalled = [
-			"js"
-			"c"
-			"cpp"
-			"nix"
-		];
+	programs.nixvim.plugins = {
+		treesitter-context.enable = true;
+		treesitter = {
+			enable = true;
+			indent = true;
+			nixGrammars = true;
+			nixvimInjections = true;
+		};
 	};
 }
