@@ -14,6 +14,9 @@
 
 		stylix.url = "github:danth/stylix";
 
+		# hlchunk.url  = "github:shellRaining/hlchunk.nvim";
+		# hlchunk.flake = false;
+
 		# Might migrate nixvim conf to separate flake when i feel like it 
 		nixvim = {
 			url = "github:nix-community/nixvim";

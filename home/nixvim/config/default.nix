@@ -8,5 +8,6 @@
 		./nvim-tree.nix
 		./telescope.nix
 		./treesitter.nix
+		./hlchunk.nix
 	];
 }
