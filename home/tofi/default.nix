@@ -14,7 +14,7 @@
 		result-spacing = 15
 		horizontal = false
 		outline-width = 0
-		border-width = 4
+		border-width = 2
 		corner-radius = 6
 		clip-to-padding = true
 		scale = true
@@ -32,10 +32,10 @@
 		late-keyboard-init = false
 		multi-instance = true 
 		ascii-input = true
-		text-color = #c2c4c2
-		selection-color = #5a7d82
-		background-color = #111517
-		border-color = #111115
+		text-color = #${config.lib.stylix.colors.base07}
+		selection-color = #${config.lib.stylix.colors.base0B}
+		background-color = #${config.lib.stylix.colors.base00}
+		border-color = #${config.lib.stylix.colors.base0B}
 	'';
 
 	home.activation = {

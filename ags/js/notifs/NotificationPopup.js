@@ -115,7 +115,7 @@ export function NotificationPopup(monitor = 0) {
     monitor,
     name: `notifications${monitor}`,
     class_name: "notification-popups",
-    anchor: ["top"],
+    anchor: ["top", "right"],
     child: list,
   });
 }

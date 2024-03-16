@@ -10,6 +10,8 @@
 					};
 					"<leader>fw" = "live_grep";
 					"<leader>ff" = "find_files";
+					"<leader>fo" = "oldfiles";
+					"<leader>fb" = "buffers";
 				};
 		};
 }

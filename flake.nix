@@ -14,9 +14,6 @@
 
 		stylix.url = "github:danth/stylix";
 
-		# hlchunk.url  = "github:shellRaining/hlchunk.nvim";
-		# hlchunk.flake = false;
-
 		# Might migrate nixvim conf to separate flake when i feel like it 
 		nixvim = {
 			url = "github:nix-community/nixvim";
@@ -29,7 +26,7 @@
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
 			pkgs = nixpkgs.legacyPackages.${system};
-			wallpaper = ./wallpapers/mtfuji.png;
+			wallpaper = ./wallpapers/kita.png;
 		in {
 			nixosConfigurations = {
 				keven = lib.nixosSystem {

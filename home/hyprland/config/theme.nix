@@ -7,7 +7,7 @@
 			general = {
 			    gaps_in = "8";
 			    gaps_out =  "12";
-			    border_size = "2";
+			    border_size = "0";
 			    "col.inactive_border" = "rgba(111115ff)";
 			    "col.active_border" = "rgba(111115ff)";
 			    layout = "dwindle";
