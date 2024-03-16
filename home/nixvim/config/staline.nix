@@ -14,7 +14,7 @@
 		extraConfigLua = ''
 			require "staline".setup {
 				sections = {
-					left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
+					left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp', ' ', 'lsp_name'},
 					mid = {},
 					right = {'file_name', 'line_column' }
 				},
@@ -32,5 +32,4 @@
 			}
 		'';
 	};
-
 }

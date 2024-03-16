@@ -3,10 +3,11 @@
 
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-unstable";
-		home-manager.url = "github:nix-community/home-manager/master";
 
-		# Makes sure that home manager & nixkpgs versions are the same
-		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager =  {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
 		hyprland.url = "github:hyprwm/Hyprland";
 
@@ -14,7 +15,6 @@
 
 		stylix.url = "github:danth/stylix";
 
-		# Might migrate nixvim conf to separate flake when i feel like it 
 		nixvim = {
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";

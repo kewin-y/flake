@@ -17,7 +17,7 @@
 
   home.packages = with pkgs; [
     firefox-bin
-    xfce.thunar
+    cinnamon.nemo-with-extensions
     imv
     mpv
     neofetch

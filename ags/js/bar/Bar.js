@@ -33,7 +33,7 @@ const Bottom = () =>
   });
 export const Bar = (monitor = 0) =>
   Widget.Window({
-    name: `bar-${monitor}`, // name has to be unique
+    name: `bar-${monitor}`, 
     class_name: "bar",
     monitor,
     anchor: ["top", "bottom", "left"],

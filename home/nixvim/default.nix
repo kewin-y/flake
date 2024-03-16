@@ -8,13 +8,13 @@
 	imports = [
 		./config/binds.nix
 		./config/opts.nix
-		./config/lualine.nix
 		./config/nvim-tree.nix
 		./config/telescope.nix
 		./config/treesitter.nix
-		./config/hlchunk.nix
 		./config/colorizer.nix
+		./config/lualine.nix
 		./config/staline.nix
+    ./config/indent-blankline.nix
 	];
 
 	programs.nixvim.enable = true;
