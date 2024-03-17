@@ -1,23 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   boot.loader = {
-  	efi.canTouchEfiVariables = true;
-	grub = {
-		enable = true;
-		devices = [ "nodev" ];
-		efiSupport = true;
-		useOSProber = true;
-	};
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = ["nodev"];
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -25,7 +27,7 @@
   networking.hostName = "kevnet"; # Define your hostname.
   networking.networkmanager = {
     enable = true;
-    appendNameservers = [ "1.1.1.1" ];
+    appendNameservers = ["1.1.1.1"];
   };
 
   time.timeZone = "America/Toronto";
@@ -43,9 +45,9 @@
   services.upower.enable = true;
 
   security.pam.services.waylock = {
-  	text = ''
-		auth include login
-	'';
+    text = ''
+      auth include login
+    '';
   };
 
   hardware.opengl.enable = true;
@@ -54,27 +56,27 @@
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
-  	enable = true;
-	alsa.enable = true;
-	alsa.support32Bit = true;
-	pulse.enable = true;
-	jack.enable = true;
-	wireplumber.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
     wget
@@ -88,7 +90,7 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "Iosevka" ]; })
+      (nerdfonts.override {fonts = ["Iosevka"];})
     ];
   };
 
@@ -97,7 +99,7 @@
     defaultEditor = true;
   };
 
-  environment.shells = [ pkgs.mksh ];
+  environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
 
   hardware.brillo.enable = true;
@@ -106,5 +108,4 @@
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

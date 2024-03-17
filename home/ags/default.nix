@@ -1,18 +1,19 @@
-{ pkgs, inputs, ...}:
-
 {
-	imports = [ inputs.ags.homeManagerModules.default ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.ags.homeManagerModules.default];
 
-	home.packages = with pkgs; [
-		sassc
-		pavucontrol
-		networkmanagerapplet
-		waylock
-	];
+  home.packages = with pkgs; [
+    sassc
+    pavucontrol
+    networkmanagerapplet
+    waylock
+  ];
 
-	programs.ags = {
-		enable = true;
-		configDir = ../../ags;
-	};
-		
+  programs.ags = {
+    enable = true;
+    configDir = ../../ags;
+  };
 }

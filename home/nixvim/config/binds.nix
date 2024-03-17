@@ -1,14 +1,12 @@
-{ ... }:
-
-{
-	programs.nixvim = {
-		globals.mapleader = " ";
-		keymaps = [
-			{
-				mode = "n";
-				key = "<leader>w";
-				action = "<cmd>NvimTreeToggle<CR>";
-			}
+{...}: {
+  programs.nixvim = {
+    globals.mapleader = " ";
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = "<cmd>NvimTreeToggle<CR>";
+      }
 
       {
         mode = "n";
@@ -17,7 +15,7 @@
       }
 
       # Window left
-      { 
+      {
         mode = "n";
         key = "<C-h>";
         action = "<C-w>h";
@@ -49,10 +47,10 @@
         key = "J";
         action = "mzJ`z";
       }
-        
+
       # Move up
       {
-        mode = [ "n" "v" ];
+        mode = ["n" "v"];
         key = "k";
         action = ''v:count || mode(1)[0:1] == "no" ? "k" : "gk"'';
         options = {
@@ -62,7 +60,7 @@
 
       # Move down
       {
-        mode = [ "n" "v" ];
+        mode = ["n" "v"];
         key = "j";
         action = ''v:count || mode(1)[0:1] == "no" ? "j" : "gj"'';
         options = {
@@ -71,7 +69,7 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = ["n" "v"];
         key = "<leader>y";
         action = ''[["+y"]]'';
       }
@@ -105,6 +103,6 @@
         key = ">";
         action = ">gv";
       }
-		];
-	};
+    ];
+  };
 }

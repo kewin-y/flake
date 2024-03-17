@@ -1,10 +1,8 @@
-{ ... }:
-
-{
+{...}: {
   programs.nixvim.plugins.lsp = {
     enable = true;
     servers = {
-      nil_ls = { enable = true; };
+      nil_ls = {enable = true;};
     };
     keymaps = {
       silent = true;
@@ -44,6 +42,10 @@
         "<leader>ca" = {
           action = "code_action";
           desc = "Code Action";
+        };
+        "<leader>fm" = {
+          action = "format";
+          desc = "Format";
         };
       };
       diagnostic = {

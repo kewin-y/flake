@@ -1,12 +1,9 @@
-{ ... }: 
-
-{
-	xdg = {
-		enable = true;
-		userDirs = {
-			enable = true;
-			createDirectories = true;
-		};
-	};
-
+{...}: {
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 }

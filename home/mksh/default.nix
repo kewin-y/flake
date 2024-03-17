@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    mksh
+    eza
+    fd
+    fzf
+  ];
 
-{
-	home.packages = with pkgs; [ 
-		mksh
-		eza
-		fd
-		fzf
-	];
-
-	home.file.".mkshrc".source = ./.mkshrc;
+  home.file.".mkshrc".source = ./.mkshrc;
 }

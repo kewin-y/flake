@@ -25,15 +25,11 @@ const Bottom = () =>
     vertical: true,
     vpack: "end",
     spacing: 8,
-    children: [
-      SysTray(),
-      BatteryLabel(),
-      ControlButton(),
-    ],
+    children: [SysTray(), BatteryLabel(), ControlButton()],
   });
 export const Bar = (monitor = 0) =>
   Widget.Window({
-    name: `bar-${monitor}`, 
+    name: `bar-${monitor}`,
     class_name: "bar",
     monitor,
     anchor: ["top", "bottom", "left"],

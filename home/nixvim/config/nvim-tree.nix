@@ -1,37 +1,35 @@
-{ ... }:
+{...}: {
+  programs.nixvim.plugins.nvim-tree = {
+    enable = true;
+    disableNetrw = true;
+    hijackNetrw = true;
+    hijackCursor = true;
+    hijackUnnamedBufferWhenOpening = true;
+    syncRootWithCwd = true;
 
-{
-	programs.nixvim.plugins.nvim-tree = {
-		enable = true;
-		disableNetrw = true;
-		hijackNetrw = true;
-		hijackCursor = true;
-		hijackUnnamedBufferWhenOpening = true;
-		syncRootWithCwd = true;
+    view = {
+      side = "right";
+      preserveWindowProportions = true;
+    };
 
-		view = {
-			side = "right";
-			preserveWindowProportions = true;
-		};
+    filters = {
+      dotfiles = false;
+    };
 
-		filters = {
-			dotfiles = false;
-		};
+    git = {
+      enable = false;
+      ignore = true;
+    };
 
-		git = {
-			enable = false;
-			ignore = true;
-		};
+    actions = {
+      openFile = {
+        resizeWindow = true;
+        quitOnOpen = true;
+      };
+    };
 
-		actions = {
-			openFile = {
-					resizeWindow = true;
-					quitOnOpen = true;
-			};
-		};
-
-		renderer = {
-			rootFolderLabel = false;
-		};
-	};
+    renderer = {
+      rootFolderLabel = false;
+    };
+  };
 }

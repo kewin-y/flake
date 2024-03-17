@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -19,7 +21,7 @@
 
   networking.networkmanager = {
     enable = true;
-    appendNameservers = [ "1.1.1.1" ];
+    appendNameservers = ["1.1.1.1"];
   };
 
   time.timeZone = "America/Toronto";
@@ -36,7 +38,7 @@
 
   services.upower.enable = true;
   security.pam.services.waylock = {
-  	text = ''
+    text = ''
       auth include login
     '';
   };
@@ -45,7 +47,7 @@
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [];
   };
 
@@ -53,7 +55,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   hardware.brillo.enable = true;
 
@@ -63,10 +65,10 @@
   # };
 
   sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -80,7 +82,7 @@
     libnotify
     procps
     pamixer
-    git 
+    git
     vim
     wget
     curl
@@ -88,21 +90,20 @@
   ];
 
   fonts = {
-  	fontDir.enable = true;
+    fontDir.enable = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "Iosevka" ]; })
+      (nerdfonts.override {fonts = ["Iosevka"];})
     ];
   };
 
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
-  environment.shells = [ pkgs.mksh ];
+  environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
 
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   system.stateVersion = "23.11"; # Did you read the comment? no
-
 }

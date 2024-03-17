@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.nixvim = {
     plugins.harpoon.enable = true;
     # Since specifying keymaps doesn't work for some reason

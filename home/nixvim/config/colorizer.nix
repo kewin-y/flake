@@ -1,5 +1,3 @@
-{... }:
-
-{
-	programs.nixvim.plugins.nvim-colorizer.enable = true;
+{...}: {
+  programs.nixvim.plugins.nvim-colorizer.enable = true;
 }
