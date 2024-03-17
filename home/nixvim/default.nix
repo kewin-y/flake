@@ -12,9 +12,9 @@
 		./config/telescope.nix
 		./config/treesitter.nix
 		./config/colorizer.nix
-		./config/lualine.nix
 		./config/staline.nix
     ./config/indent-blankline.nix
+    ./config/harpoon.nix
 	];
 
 	programs.nixvim.enable = true;

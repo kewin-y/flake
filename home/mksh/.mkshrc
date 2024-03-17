@@ -5,7 +5,6 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long li
 alias ld='eza -lhD --icons=auto' # long list dirs
 
 export EDITOR=nvim
-export TERMINAL=foot
 
 # This is from stackoverflow
 function _cd {

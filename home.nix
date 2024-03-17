@@ -23,10 +23,13 @@
     neofetch
     pfetch
     htop
+    obsidian
   ];
 
   home.sessionVariables = {
     # EDITOR = "peemacs";
+    EDITOR = "nvim";
+    TERMINAL = "foot";
   };
 
   # Thanks notohh
@@ -46,6 +49,5 @@
     };
   };
 
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
