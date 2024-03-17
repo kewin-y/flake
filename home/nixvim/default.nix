@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 	home.packages = with pkgs; [
@@ -15,6 +15,9 @@
 		./config/staline.nix
     ./config/indent-blankline.nix
     ./config/harpoon.nix
+    ./config/lsp.nix
+    ./config/cmp.nix
+    ./config/none-ls.nix
 	];
 
 	programs.nixvim.enable = true;

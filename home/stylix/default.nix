@@ -1,4 +1,4 @@
-{ config, lib, pkgs, wallpaper, ... }: 
+{ pkgs, wallpaper, ... }: 
 
 {
 	stylix = {
@@ -15,7 +15,17 @@
 		targets = {
 			hyprland.enable = false;
 			foot.enable = false;
-		};
-	};
 
+		};
+    fonts = {
+      monospace = {
+        name = "Iosevka";
+        package = pkgs.iosevka;
+      };
+      sansSerif = {
+        name = "Cantarell";
+        package = pkgs.cantarell-fonts;
+      };
+    };
+	};
 }

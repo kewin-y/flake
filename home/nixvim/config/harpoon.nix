@@ -1,4 +1,4 @@
-{ pkgs, confing, ... }:
+{ ... }:
 
 {
   programs.nixvim = {
