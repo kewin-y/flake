@@ -26,7 +26,7 @@
 			system = "x86_64-linux";
 			lib = nixpkgs.lib;
 			pkgs = nixpkgs.legacyPackages.${system};
-			wallpaper = ./wallpapers/kita.png;
+			wallpaper = ./wallpapers/mtfuji.png;
 		in {
 			nixosConfigurations = {
 				keven = lib.nixosSystem {

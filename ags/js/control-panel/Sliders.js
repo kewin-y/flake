@@ -16,7 +16,8 @@ const AudioSlider = (type = "speaker") =>
         `${type}-changed`,
       ),
       Widget.Label({
-        css: "min-width: 35px",
+        css: "min-width: 3rem;",
+        justification: "center",
       }).hook(
         audio,
         (self) => {

@@ -71,13 +71,13 @@
       {
         mode = ["n" "v"];
         key = "<leader>y";
-        action = ''[["+y"]]'';
+        action = ''"+y"'';
       }
 
       {
         mode = "n";
         key = "<leader>Y";
-        action = ''[["+Y"]]'';
+        action = ''"+Y"'';
       }
 
       {

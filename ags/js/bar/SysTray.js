@@ -10,10 +10,10 @@ const tray = () =>
     children: SystemTray.bind("items").as((items) => {
       return items.map((item) =>
         Widget.Button({
-          child: Widget.Icon({ binds: [["icon", item, "icon"]] }),
+          child: Widget.Icon({ icon: item.bind("icon") }),
+          tooltip_markup: item.bind("tooltip_markup"),
           on_primary_click: (_, event) => item.activate(event),
           on_secondary_click: (_, event) => item.openMenu(event),
-          binds: [["tooltip-markup", item, "tooltip-markup"]],
         }),
       );
     }),

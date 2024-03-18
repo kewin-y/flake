@@ -11,6 +11,7 @@
       "<leader>fo" = "oldfiles";
       "<leader>fb" = "buffers";
     };
+
     # https://github.com/hmajid2301/dotfiles/blob/ef9de22edb2dd0716e8955197b3050d2f6c97896/home-manager/editors/nvim/plugins/editor/telescope.nix#L5
     defaults = {
       vimgrep_arguments = [
