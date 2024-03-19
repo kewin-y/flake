@@ -14,8 +14,8 @@
       decoration = {
         rounding = "6";
         drop_shadow = "true";
-        shadow_range = "12";
-        "col.shadow" = "rgba(020202ee)";
+        shadow_range = "14";
+        "col.shadow" = "rgba(000000ee)";
         shadow_render_power = "16";
         inactive_opacity = "0.94";
 

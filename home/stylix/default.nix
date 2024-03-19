@@ -16,7 +16,7 @@
     # I put so much effort into theming hyprland and foot qwq
     targets = {
       hyprland.enable = false;
-      foot.enable = false;
+      # foot.enable = false;
     };
     fonts = {
       monospace = {

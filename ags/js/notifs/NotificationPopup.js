@@ -82,8 +82,8 @@ function Notification(n) {
       children: [
         icon,
         Widget.Box({
-          vertical: true,
           className: "content",
+          vertical: true,
           children: [title, body, actions],
         }),
       ],
