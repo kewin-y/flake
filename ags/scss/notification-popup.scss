@@ -27,7 +27,7 @@ window.notification-popups box.notifications {
     min-width: 20em;
     border-radius: 6px;
     margin: 0.4rem;
-    box-shadow: 0 0 2px 2px #000000;
+    box-shadow: 0 0 2px 2px $color0;
     background-color: $bg-dark;
 
     .content {
