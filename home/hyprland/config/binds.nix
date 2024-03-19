@@ -23,7 +23,7 @@ in {
         "${mainMod} ALT, j, resizeactive, 0 30"
       ];
       bindl = [
-        ", XF86AudioMute, exec, pamixer --toggle-mute"
+        ", XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
       ];
       bindel = [
         ", XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 5"
@@ -63,6 +63,12 @@ in {
               notify-send "Cheese!~" "Screenshot saved in $save_dir" -i $save_dir/$save_file
           fi
         '';
+
+        workspace = num: "${mainMod}, ${num}, workspace, ${num}";
+        moveToWorkspace = num: "${mainMod} SHIFT, ${num}, movetoworkspace, ${num}";
+        moveToWorkspaceSilent = num: "${mainMod} ALT, ${num}, movetoworkspacesilent, ${num}";
+
+        workspaceArr = [ 1 2 3 4 5 6 7 ];
       in [
         # Windows
         "${mainMod}, W, killactive"
@@ -89,27 +95,10 @@ in {
         "${mainMod}, j, movefocus, d"
         "ALT, Tab, movefocus, d"
 
-        # Switch workspaces
-        "${mainMod}, 1, workspace, 1"
-        "${mainMod}, 2, workspace, 2"
-        "${mainMod}, 3, workspace, 3"
-        "${mainMod}, 4, workspace, 4"
-        "${mainMod}, 5, workspace, 5"
-        "${mainMod}, 6, workspace, 6"
-        "${mainMod}, 7, workspace, 7"
 
         # Switch workspaces relative
         "${mainMod} CTRL, l, workspace, r+1"
         "${mainMod} CTRL, h, workspace, r-1"
-
-        # Move active window to a workspace
-        "${mainMod} SHIFT, 1, movetoworkspace, 1"
-        "${mainMod} SHIFT, 2, movetoworkspace, 2"
-        "${mainMod} SHIFT, 3, movetoworkspace, 3"
-        "${mainMod} SHIFT, 4, movetoworkspace, 4"
-        "${mainMod} SHIFT, 5, movetoworkspace, 5"
-        "${mainMod} SHIFT, 6, movetoworkspace, 6"
-        "${mainMod} SHIFT, 7, movetoworkspace, 7"
 
         # Move window around
         "${mainMod} SHIFT, h, movewindow, l"
@@ -125,15 +114,9 @@ in {
         "${mainMod}, Y, togglesplit, # dwindle"
         "${mainMod}, P, pseudo"
 
-        # Move window silently to workspace Super + Alt + [0-9]
-        "${mainMod} ALT, 1, movetoworkspacesilent, 1"
-        "${mainMod} ALT, 2, movetoworkspacesilent, 2"
-        "${mainMod} ALT, 3, movetoworkspacesilent, 3"
-        "${mainMod} ALT, 4, movetoworkspacesilent, 4"
-        "${mainMod} ALT, 5, movetoworkspacesilent, 5"
-        "${mainMod} ALT, 6, movetoworkspacesilent, 6"
-        "${mainMod} ALT, 7, movetoworkspacesilent, 7"
-      ];
+      ] ++ map (i: workspace (toString i)) workspaceArr
+        ++ map (i: moveToWorkspace (toString i)) workspaceArr
+        ++ map (i: moveToWorkspaceSilent (toString i)) workspaceArr;
     };
   };
 }

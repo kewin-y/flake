@@ -89,6 +89,7 @@
     mksh
   ];
 
+  # This is mostly for tofi
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [

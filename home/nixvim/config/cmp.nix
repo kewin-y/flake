@@ -60,7 +60,7 @@
       cmp-buffer = {enable = true;};
       cmp-path = {enable = true;}; # file system paths
       cmp_luasnip = {enable = true;}; # snippets
-      cmp-cmdline = {enable = false;}; # autocomplete for cmdline
+      cmp-cmdline = {enable = true;}; # autocomplete for cmdline
     };
     extraConfigLuaPost = ''
       luasnip = require("luasnip")
@@ -91,6 +91,28 @@
         Operator = "",
         TypeParameter = "",
       }
+
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
+          }
+        })
+      })
+      -- `/` cmdline setup.
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
     '';
   };
 }

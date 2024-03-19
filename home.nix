@@ -22,6 +22,8 @@
     obsidian
   ];
 
+  fonts.fontconfig.enable = true;
+
   home.sessionVariables = {
     # EDITOR = "peemacs";
     EDITOR = "nvim";

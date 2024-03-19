@@ -20,8 +20,8 @@
     };
     fonts = {
       monospace = {
-        name = "Iosevka";
-        package = pkgs.iosevka;
+        name = "Iosevka NF";
+        package = pkgs.nerdfonts.override { fonts = ["Iosevka"];};
       };
       sansSerif = {
         name = "Cantarell";
