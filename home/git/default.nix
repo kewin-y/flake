@@ -9,9 +9,5 @@
     lazygit = {
       enable = true;
     };
-
-    gh = {
-      enable = true;
-    };
   };
 }
