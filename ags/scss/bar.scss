@@ -27,17 +27,6 @@
     }
   }
 
-  .clock {
-    .icon {
-      color: $color14;
-    }
-
-    label {
-      font-weight: bold;
-      font-size: 1.1em;
-      color: $fg;
-    }
-  }
 
   .workspaces {
     background: $bg-light;
@@ -47,12 +36,12 @@
       padding: 0;
       color: $color8;
       margin: 0px 2px;
-
+      transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
       box {
-        margin: 0.75em;
-        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-        background: $color8;
+        min-height: 2em;
+        margin: 0.2em 0.8em;
+        background: transparentize($fg, 0.8);
         border-radius: 0.5rem;
       }
 
@@ -63,9 +52,9 @@
       }
 
       &.active {
+        min-height: 4em;
         box {
-          background: $color2;
-          min-height: 3em;
+          background: $color10;
         }
       }
 
@@ -125,7 +114,44 @@
     }
   }
 
+  .control-button {
+    .icon {
+      &.network {
+        color: $color6;
+      }
+
+      &.volume {
+        color: $color2;
+      }
+
+      &.power {
+        font-size: 0.9em;
+        color: $color9;
+      }
+    }
+  }
+
+  .clock {
+    border-radius: 4px;
+    padding: 0.8rem 0;
+    background: $bg-light;
+
+    .icon {
+      color: $color5;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: $fg;
+    }
+  }
+
   .battery-label{
+    border-radius: 4px;
+    padding: 0.4em 0;
+    background: $bg-light;
+
     .battery-bulb {
       background: $color4;
       min-height: 3px;
@@ -168,26 +194,7 @@
       padding: 0;
     }
 
-    border-radius: 4px;
-    padding: 0.4em 0;
-    background: $bg-light;
   }
 
-  .control-button {
-    .icon {
-      &.network {
-        color: $color5;
-      }
-
-      &.volume {
-        color: $color2;
-      }
-
-      &.power {
-        font-size: 0.9em;
-        color: $color1;
-      }
-    }
-  }
 }
 

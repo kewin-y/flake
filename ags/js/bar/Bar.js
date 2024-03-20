@@ -12,20 +12,19 @@ const Top = () =>
     spacing: 8,
     children: [Workspaces()],
   });
-const Middle = () =>
-  Widget.Box({
-    vertical: true,
-    css: "margin: 0.8em 0.2em",
-    spacing: 8,
-    children: [Clock()],
-  });
+// const Middle = () =>
+//   Widget.Box({
+//     vertical: true,
+//     css: "margin: 0.8em 0.2em",
+//     spacing: 8,
+//   });
 const Bottom = () =>
   Widget.Box({
     css: "margin: 0.8rem 0.2em",
     vertical: true,
     vpack: "end",
     spacing: 8,
-    children: [SysTray(), BatteryLabel(), ControlButton()],
+    children: [SysTray(), BatteryLabel(), Clock(), ControlButton()],
   });
 export const Bar = (monitor = 0) =>
   Widget.Window({
@@ -38,7 +37,7 @@ export const Bar = (monitor = 0) =>
       class_name: "cbox",
       vertical: true,
       start_widget: Top(),
-      center_widget: Middle(),
+      // center_widget: Middle(),
       end_widget: Bottom(),
     }),
   });

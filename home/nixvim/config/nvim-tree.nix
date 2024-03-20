@@ -15,7 +15,6 @@
     filters = {
       dotfiles = false;
     };
-
     git = {
       enable = false;
       ignore = true;

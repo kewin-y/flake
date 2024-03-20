@@ -10,41 +10,4 @@ window#cal-window {
     outline: none;
   }
 
-  .cal-box {
-    box-shadow: 0 0 2px 2px $color0;
-    border-radius: 6px;
-    margin: 0.8rem;
-    background: $bg-dark;
-    color: $fg;
-    font-size: 0.9em;
-    padding: 1rem 1rem 0.2rem;
-
-    .cal {
-      &.highlight {
-        padding: 10rem;
-      }
-
-      border-radius: 6px;
-      border: none;
-      padding: 0.2rem 0.25rem 0rem;
-      margin-left: 10px;
-    }
-  }
-
-  calendar:selected {
-    color: $color2;
-    background: transparent;
-  }
-
-  calendar.header {
-    color: $color14;
-  }
-
-  calendar {
-    background: $bg-dark;
-  }
-
-  calendar:indeterminate {
-    color: $bg-light;
-  }
 }

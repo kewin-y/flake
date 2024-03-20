@@ -31,9 +31,9 @@
         fg = "#${config.lib.stylix.colors.base01}";
         bg = "#${config.lib.stylix.colors.base01}";
       };
-      CmpItemAbbrMatch.fg = "#${config.lib.stylix.colors.base04}";
-      CmpItemAbbrMatchFuzzy.fg = "#${config.lib.stylix.colors.base04}";
-      CmpItemAbbr.fg = "#${config.lib.stylix.colors.base04}";
+      CmpItemAbbrMatch.fg = "#${config.lib.stylix.colors.base05}";
+      CmpItemAbbrMatchFuzzy.fg = "#${config.lib.stylix.colors.base05}";
+      CmpItemAbbr.fg = "#${config.lib.stylix.colors.base05}";
       CmpItemKind.fg = "#${config.lib.stylix.colors.base0E}";
       CmpItemMenu.fg = "#${config.lib.stylix.colors.base0E}";
       CmpItemKindSnippet.fg = "#${config.lib.stylix.colors.base0E}";

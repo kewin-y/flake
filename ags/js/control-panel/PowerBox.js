@@ -15,7 +15,6 @@ const PowerButton = (cmd, icon) =>
 export const PowerBox = () =>
   Widget.Box({
     class_name: "power-box",
-    hpack: "start", // Im too lazy bro im just putting it here...
     spacing: 8,
     children: [
       PowerButton("systemctl poweroff", "system-shutdown-symbolic"),

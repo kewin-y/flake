@@ -30,8 +30,9 @@ window#control-panel {
 
   .power-box {
     button {
-      min-width: 2.2em;
-      min-height: 2.2em;
+      min-width: 3.2rem;
+      min-height: 3.2rem;
+      font-size: 1.1rem;
 
       &:focus {
         background: $hover;
@@ -42,7 +43,7 @@ window#control-panel {
       }
 
       &:nth-child(1) {
-        color: $color1;
+        color: $color9;
       }
 
       &:nth-child(2) {
@@ -54,7 +55,7 @@ window#control-panel {
       }
 
       &:nth-child(4) {
-        color: $color4;
+        color: $color6;
       }
     }
   }
@@ -63,19 +64,14 @@ window#control-panel {
     all: unset;
     background: $bg-light;
     padding: 0 0.8em;
-    min-width: 25em;
     min-height: 3em;
     border-radius: 4px;
     font-size: 0.9em;
 
-    .icon {
-      margin-right: 0.4em;
-    }
-
     scale {
       trough {
         background: $hover;
-        min-height: 0.8em;
+        min-height: 0.8rem;
         border-radius: 8px;
 
         slider {
@@ -107,26 +103,53 @@ window#control-panel {
 
     &.microphone {
       .icon {
-        color: $color4;
+        color: $color14;
       }
 
       scale {
         trough {
           highlight {
-            background: $color4;
+            background: $color14;
           }
         }
       }
     }
   }
 
+  .cal-box {
+    border-radius: 4px;
+    background: $bg-light;
+    color: $fg;
+    font-size: 0.8em;
+    padding: 0.4rem 0.4rem 0.2rem;
+
+    .cal {
+      border: none; 
+      padding: 0.1rem 0.25rem 0.25rem 0.35rem;
+    }
+  }
+
+  calendar {
+    box-shadow: none;
+    background: $bg-light;
+    &:selected {
+      color: $color2;
+    }
+    &.header {
+      color: $color5;
+    }
+    &:indeterminate {
+      color: transparentize($fg, 0.9);
+    }
+  };
+
+
   .wifi {
     padding: 0 0.8em;
     min-height: 3em;
-    min-width: 25em;
 
     .icon {
-      color: $color5;
+      color: $color6;
     }
 
     &:hover {

@@ -17,6 +17,7 @@
     imv
     mpv
     neofetch
+    nitch
     pfetch
     htop
     obsidian
