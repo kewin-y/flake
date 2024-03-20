@@ -103,13 +103,13 @@ window#control-panel {
 
     &.microphone {
       .icon {
-        color: $color14;
+        color: $color10;
       }
 
       scale {
         trough {
           highlight {
-            background: $color14;
+            background: $color10;
           }
         }
       }
@@ -136,7 +136,7 @@ window#control-panel {
       color: $color2;
     }
     &.header {
-      color: $color5;
+      color: $color14;
     }
     &:indeterminate {
       color: transparentize($fg, 0.9);
