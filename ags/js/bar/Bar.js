@@ -8,20 +8,20 @@ const Top = () =>
   Widget.Box({
     vertical: true,
     vpack: "start",
-    css: "margin: 0.7em 0.2em",
+    css: "margin: 0.8rem 0.2em",
     spacing: 8,
     children: [Workspaces()],
   });
 const Middle = () =>
   Widget.Box({
     vertical: true,
-    css: "margin: 0.7em 0.2em",
+    css: "margin: 0.8em 0.2em",
     spacing: 8,
     children: [Clock()],
   });
 const Bottom = () =>
   Widget.Box({
-    css: "margin: 0.7em 0.2em",
+    css: "margin: 0.8rem 0.2em",
     vertical: true,
     vpack: "end",
     spacing: 8,

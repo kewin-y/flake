@@ -3,7 +3,21 @@ import { Speaker, Microphone } from "./Sliders.js";
 import { Wifi } from "./WifiWidget.js";
 import { uptime } from "../Variables.js";
 
+// Wifi, bluetooth (if i ever use it), battery (if i use this on my laptop)
 const TopBox = () =>
+  Widget.Box({
+    children: [Wifi()],
+  });
+
+// Volume sliders, brightness slider?
+const MiddleBox = () =>
+  Widget.Box({
+    spacing: 12,
+    vertical: true,
+    children: [Speaker(), Microphone()],
+  });
+
+const BottomBox = () =>
   Widget.Box({
     spacing: 12,
     children: [
@@ -16,19 +30,6 @@ const TopBox = () =>
     ],
   });
 
-// Volume sliders, brightness slider?
-const MiddleBox = () =>
-  Widget.Box({
-    spacing: 12,
-    vertical: true,
-    children: [Speaker(), Microphone()],
-  });
-
-// Wifi, bluetooth (if i ever use it), battery (if i use this on my laptop)
-const BottomBox = () =>
-  Widget.Box({
-    children: [Wifi()],
-  });
 
 export const ControlPanel = () =>
   Widget.Window({

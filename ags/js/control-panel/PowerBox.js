@@ -1,15 +1,6 @@
 import Widget from "resource:///com/github/Aylur/ags/widget.js";
-import { execAsync } from "resource:///com/github/Aylur/ags/utils.js";
 
 const LOCKCMD = `waylock -init-color 0x111517 -input-color 0x5a7d82 -fail-color 0xa54242`;
-
-/**
- * @param {string} cmd
- */
-const runCmd = (cmd) => {
-  App.closeWindow("control-panel");
-  execAsync(cmd);
-};
 
 /**
  * @param {string} cmd
@@ -17,7 +8,7 @@ const runCmd = (cmd) => {
  */
 const PowerButton = (cmd, icon) =>
   Widget.Button({
-    onClicked: () => runCmd(cmd),
+    onClicked: () => Utils.execAsync(cmd),
     child: Widget.Icon({ class_name: "icon", icon: icon }),
   });
 
