@@ -57,8 +57,10 @@ window.notification-popups box.notifications {
   .actions {
     .action-button {
       color: $fg;
-      background: adjust-color($bg-light, $lightness: 2%);
-      border-radius: 0.8em;
+      font-size: 0.9em;
+      background: adjust-color($bg-light, $lightness: 1.5%);
+      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+      border-radius: 0.4em;
       padding: 0.8em;
 
       &:first-child {
@@ -70,7 +72,7 @@ window.notification-popups box.notifications {
       }
 
       &:hover {
-        background: adjust-color($hover, $lightness: 2%);
+        background: adjust-color($hover, $lightness: 1.5%);
       }
     }
   }
