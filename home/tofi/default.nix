@@ -35,7 +35,7 @@
     late-keyboard-init = false
     multi-instance = true
     ascii-input = true
-    text-color = #${config.lib.stylix.colors.base07}
+    text-color = #${config.lib.stylix.colors.base05}
     selection-color = #${config.lib.stylix.colors.base0B}
     background-color = #${config.lib.stylix.colors.base00}
     border-color = #${config.lib.stylix.colors.base0B}

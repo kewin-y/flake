@@ -11,7 +11,7 @@ window#control-panel {
     margin: 0.8rem;
     border-radius: 6px;
     box-shadow: 0 0 2px 2px $color0;
-    padding: 0.8em;
+    padding: 0.6em;
   }
 
   .uptime {
@@ -71,8 +71,8 @@ window#control-panel {
     scale {
       trough {
         background: $hover;
-        min-height: 0.8rem;
-        border-radius: 8px;
+        min-height: 0.4rem;
+        border-radius: 2px;
 
         slider {
           background: none;
@@ -81,7 +81,7 @@ window#control-panel {
         }
 
         highlight {
-          border-radius: 16px;
+          border-radius: 2px;
           border: none;
         }
       }
