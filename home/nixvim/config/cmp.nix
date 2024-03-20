@@ -41,8 +41,9 @@
 
           window = {
             completion = {
-              border = "rounded";
-              winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+              scrollbar = false;
+              winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+              border = "solid";
             };
             documentation = {border = "rounded";};
           };

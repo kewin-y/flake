@@ -23,8 +23,31 @@
       undofile = true;
     };
 
+    # Referenced from: https://github.com/Manas140/Conscious/blob/main/lua/colors.lua
     highlight = {
-      WinSeparator.fg = "#${config.lib.stylix.colors.base02}";
+      WinSeparator.fg = "#${config.lib.stylix.colors.base01}";
+      NormalFloat.bg = "#${config.lib.stylix.colors.base01}";
+      FloatBorder = {
+        fg = "#${config.lib.stylix.colors.base01}";
+        bg = "#${config.lib.stylix.colors.base01}";
+      };
+      CmpItemAbbrMatch.fg = "#${config.lib.stylix.colors.base04}";
+      CmpItemAbbrMatchFuzzy.fg = "#${config.lib.stylix.colors.base04}";
+      CmpItemAbbr.fg = "#${config.lib.stylix.colors.base04}";
+      CmpItemKind.fg = "#${config.lib.stylix.colors.base0E}";
+      CmpItemMenu.fg = "#${config.lib.stylix.colors.base0E}";
+      CmpItemKindSnippet.fg = "#${config.lib.stylix.colors.base0E}";
+
+      TelescopePromptBorder = {
+        fg = "#${config.lib.stylix.colors.base01}";
+        bg = "#${config.lib.stylix.colors.base01}";
+      };
+      TelescopePromptNormal.bg = "#${config.lib.stylix.colors.base01}";
+      TelescopePromptPrefix = {
+        fg = "#${config.lib.stylix.colors.base08}";
+        bg = "#${config.lib.stylix.colors.base01}";
+      };
+      TelescopeSelection.bg = "#${config.lib.stylix.colors.base01}";
     };
 
     extraConfigLua = ''
