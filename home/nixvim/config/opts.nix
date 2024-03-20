@@ -21,6 +21,7 @@
       splitright = true;
       timeoutlen = 400;
       undofile = true;
+      conceallevel = 1;
     };
 
     # Referenced from: https://github.com/Manas140/Conscious/blob/main/lua/colors.lua

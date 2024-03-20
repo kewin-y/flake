@@ -12,7 +12,6 @@
     ./config/telescope.nix
     ./config/treesitter.nix
     ./config/colorizer.nix
-    ./config/staline.nix
     ./config/indent-blankline.nix
     ./config/harpoon.nix
     ./config/lsp.nix
@@ -20,6 +19,8 @@
     ./config/cmp.nix
     ./config/luasnip.nix
     ./config/lspkind.nix
+    ./config/lualine.nix
+    ./config/obsidian.nix
   ];
 
   programs.nixvim.enable = true;

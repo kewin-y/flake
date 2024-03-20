@@ -3,20 +3,18 @@ import { Speaker, Microphone } from "./Sliders.js";
 import { Wifi } from "./WifiWidget.js";
 import { Calendar } from "./Calendar.js";
 
-// Wifi, bluetooth (if i ever use it), battery (if i use this on my laptop)
 const TopBox = () =>
   Widget.Box({
     spacing: 12,
     vertical: true,
-    children: [Calendar(), Wifi()],
+    children: [Calendar(), ],
   });
 
-// Volume sliders, brightness slider?
 const MiddleBox = () =>
   Widget.Box({
     spacing: 12,
     vertical: true,
-    children: [Speaker(), Microphone()],
+    children: [Speaker(), Microphone(), Wifi()],
   });
 
 const BottomBox = () =>
