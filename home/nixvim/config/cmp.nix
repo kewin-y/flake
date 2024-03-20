@@ -42,10 +42,12 @@
           window = {
             completion = {
               scrollbar = false;
-              winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
-              border = "solid";
+              winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
-            documentation = {border = "rounded";};
+            documentation = {
+              scrollbar = false;
+              winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+            };
           };
 
           mapping = {
