@@ -2,12 +2,13 @@ import { PowerBox } from "./PowerBox.js";
 import { Speaker, Microphone } from "./Sliders.js";
 import { Wifi } from "./WifiWidget.js";
 import { Calendar } from "./Calendar.js";
+import { PopupWindow } from "../PopupWindow.js";
 
 const TopBox = () =>
   Widget.Box({
     spacing: 12,
     vertical: true,
-    children: [Calendar(), ],
+    children: [Calendar()],
   });
 
 const MiddleBox = () =>
@@ -23,13 +24,14 @@ const BottomBox = () =>
     children: [PowerBox()],
   });
 
+
 export const ControlPanel = () =>
-  Widget.Window({
-    name: "control-panel",
+  PopupWindow({
+    name: "control_panel",
+    transition: "slide_right",
+    transition_duration: 300,
     anchor: ["bottom", "left"],
-    visible: false,
-    setup: (self) =>
-      self.keybind("Escape", () => App.closeWindow("control-panel")),
+    keymode: "on-demand",
     child: Widget.Box({
       className: "control-box",
       spacing: 12,

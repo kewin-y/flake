@@ -1,5 +1,5 @@
-const audio = await Service.import("audio")
-const network = await Service.import("network")
+const audio = await Service.import("audio");
+const network = await Service.import("network");
 
 import { speakerIcon } from "../Variables.js";
 
@@ -40,9 +40,7 @@ const PowerIcon = () =>
 export const ControlButton = () =>
   Widget.Button({
     class_name: "control-button",
-    onClicked: () => {
-      App.toggleWindow("control-panel");
-    },
+    onClicked: () => App.toggleWindow("control_panel"),
     child: Widget.Box({
       vertical: true,
       spacing: 12,
