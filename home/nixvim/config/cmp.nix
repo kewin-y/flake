@@ -42,10 +42,12 @@
           window = {
             completion = {
               scrollbar = false;
+              border = "solid";
               winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
             documentation = {
               scrollbar = false;
+              border = "solid";
               winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
           };

@@ -5,7 +5,7 @@
 }: {
   stylix = {
     image = wallpaper;
-    base16Scheme = ./meut.yaml;
+    base16Scheme = ./far.yaml;
     polarity = "dark";
     cursor = {
       name = "Bibata-Modern-Ice";

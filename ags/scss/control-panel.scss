@@ -70,7 +70,7 @@ window#control-panel {
 
     scale {
       trough {
-        background: $hover;
+        background: transparentize($fg, 0.9);
         min-height: 0.4rem;
         border-radius: 2px;
 
