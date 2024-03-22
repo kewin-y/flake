@@ -12,7 +12,7 @@
         resize_on_border = "true";
       };
       decoration = {
-        rounding = "6";
+        rounding = "4";
         drop_shadow = "true";
         shadow_range = "14";
         "col.shadow" = "rgba(111115ee)";

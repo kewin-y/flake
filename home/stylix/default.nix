@@ -13,19 +13,18 @@
       size = 20;
     };
 
-    # I put so much effort into theming hyprland and foot qwq
     targets = {
       hyprland.enable = false;
-      # foot.enable = false;
     };
+
     fonts = {
       monospace = {
-        name = "Iosevka NF";
-        package = pkgs.nerdfonts.override { fonts = ["Iosevka"];};
+        name = "BlexMonoNerdFont";
+        package = pkgs.nerdfonts.override {fonts = ["IBMPlexMono"];};
       };
       sansSerif = {
-        name = "Cantarell";
-        package = pkgs.cantarell-fonts;
+        name = "IBM Plex Sans";
+        package = pkgs.ibm-plex;
       };
     };
   };

@@ -9,7 +9,7 @@
   ];
 
   home.file."./.config/tofi/config".text = ''
-    font = "/run/current-system/sw/share/X11/fonts/IosevkaNerdFont-Regular.ttf"
+    font = "/run/current-system/sw/share/X11/fonts/BlexMonoNerdFont-Regular.ttf"
     font-size = 10
     hint-font = true
     width = 20%

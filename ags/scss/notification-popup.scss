@@ -3,7 +3,7 @@ window.notification-popups box.notifications {
     all: unset;
   }
 
-  font-family: "Iosevka NF";
+  font-family: "IBM Plex Sans";
   padding: 0.4rem;
 
   .icon {
@@ -24,9 +24,9 @@ window.notification-popups box.notifications {
   }
 
   .notification {
-    min-width: 20em;
+    min-width: 25em;
     border-radius: 6px;
-    margin: 0.4rem;
+    margin: 0.6rem;
     box-shadow: 0 0 2px 2px $color0;
     background-color: $bg-dark;
 
@@ -58,6 +58,7 @@ window.notification-popups box.notifications {
     .action-button {
       color: $fg;
       font-size: 0.9em;
+      font-weight: bold;
       background: adjust-color($bg-light, $lightness: 1.5%);
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
       border-radius: 0.4em;

@@ -2,14 +2,15 @@ window#control_panel {
   background: transparent;
   * {
     all: unset;
-    font-family: "Iosevka NF";
+    font-family: "IBM Plex Sans";
+    font-weight: bold;
     border: none;
   }
 
   .control-box {
     background: $bg-dark;
     margin: 0.8rem;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: 0 0 2px 2px $color0;
     padding: 0.6em;
   }
@@ -30,8 +31,8 @@ window#control_panel {
 
   .power-box {
     button {
-      min-width: 3.2rem;
-      min-height: 3.2rem;
+      min-width: 3.8rem;
+      min-height: 3.8rem;
       font-size: 1.1rem;
 
       &:focus {
@@ -125,7 +126,7 @@ window#control_panel {
 
     .cal {
       border: none; 
-      padding: 0.1rem 0.25rem 0.25rem 0.35rem;
+      padding: 0.35rem 0.25rem 0.25rem 0.35rem;
     }
   }
 

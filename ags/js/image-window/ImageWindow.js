@@ -1,6 +1,6 @@
 export const ImageWindow = () =>
   Widget.Window({
-    name: "image-window",
+    name: "image_window",
     visible: false,
     layer: "background",
     anchor: ["bottom"],

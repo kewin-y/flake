@@ -6,8 +6,6 @@ import { ControlPanel } from "./js/control-panel/ControlPanel.js";
 const scss = `${App.configDir}/scss/style.scss`;
 const css = "/tmp/ags.css";
 
-print(`${App.configDir}`);
-
 Utils.exec(`sassc ${scss} ${css}`);
 
 App.config({
