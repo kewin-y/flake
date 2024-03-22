@@ -1,5 +1,6 @@
 window#control_panel {
   background: transparent;
+
   * {
     all: unset;
     font-family: "IBM Plex Sans";
@@ -9,7 +10,7 @@ window#control_panel {
 
   .control-box {
     background: $bg-dark;
-    margin: 0.8rem;
+    margin: 0.2rem;
     border-radius: 4px;
     box-shadow: 0 0 2px 2px $color0;
     padding: 0.6em;
@@ -125,7 +126,7 @@ window#control_panel {
     padding: 0.4rem 0.4rem 0.2rem;
 
     .cal {
-      border: none; 
+      border: none;
       padding: 0.35rem 0.25rem 0.25rem 0.35rem;
     }
   }
@@ -133,17 +134,19 @@ window#control_panel {
   calendar {
     box-shadow: none;
     background: $bg-light;
+
     &:selected {
       color: $color2;
     }
+
     &.header {
       color: $color14;
     }
+
     &:indeterminate {
       color: transparentize($fg, 0.9);
     }
-  };
-
+  }
 
   .wifi {
     padding: 0 0.8em;

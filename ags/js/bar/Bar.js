@@ -3,6 +3,7 @@ import { Clock } from "./Clock.js";
 import { SysTray } from "./SysTray.js";
 import { ControlButton } from "./ControlButton.js";
 import { BatteryLabel } from "./BatteryLabel.js";
+import { AppLauncherButton } from "./AppLauncherButton.js";
 
 const Top = () =>
   Widget.Box({
@@ -10,7 +11,7 @@ const Top = () =>
     vpack: "start",
     css: "margin: 0.8rem 0.2em",
     spacing: 8,
-    children: [Workspaces()],
+    children: [AppLauncherButton(), Workspaces()],
   });
 // const Middle = () =>
 //   Widget.Box({

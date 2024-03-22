@@ -29,7 +29,7 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    wallpaper = ./wallpapers/dogs.jpg;
+    wallpaper = ./wallpapers/forest.jpeg;
   in {
     nixosConfigurations = {
       keven = lib.nixosSystem {

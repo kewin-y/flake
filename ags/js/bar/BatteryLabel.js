@@ -1,13 +1,5 @@
 const battery = await Service.import("battery");
 
-function notifyBattery() {
-  print(battery.icon_name);
-  Utils.notify({
-    summary: "Battery",
-    body: `${battery.percent}%`,
-  });
-}
-
 export function BatteryLabel() {
   const batteryPercent = battery
     .bind("percent")
@@ -18,7 +10,6 @@ export function BatteryLabel() {
       .as((ch) => (ch ? "battery-label charging" : "battery-label")),
     visible: battery.bind("available"),
     vertical: true,
-    tooltip_text: "Love yourself",
     children: [
       Widget.Box({
         className: "battery-bulb",

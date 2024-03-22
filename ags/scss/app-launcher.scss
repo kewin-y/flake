@@ -1,0 +1,46 @@
+window#app_launcher {
+  background: transparent;
+
+  * {
+    all: unset;
+    font-family: "IBM Plex Sans";
+  }
+
+  button {
+    padding: 0.2rem;
+    border-radius: 4px;
+    min-width: 2rem;
+    min-height: 2rem;
+
+    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+
+    &:focus {
+      background: $color10;
+      color: $bg-dark;
+    }
+
+    &:hover {
+      background: $hover;
+      color: $fg;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+
+  .entry {
+    padding: 0.4rem;
+    background: $bg-light;
+    border-radius: 4px;
+  }
+
+  .app-l-box {
+    background: $bg-dark;
+    margin: 0.2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 2px $color0;
+    padding: 0.6rem;
+  }
+}

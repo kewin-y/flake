@@ -9,6 +9,11 @@ export const PopupWindow = ({
     name,
     visible: false,
     ...props,
+    keymode: "on-demand",
+    setup: (self) =>
+      self.keybind("Escape", () => {
+        App.closeWindow(name);
+      }),
     child: Widget.Box({
       css: "min-height: 2px; min-width: 2px",
       child: Widget.Revealer({

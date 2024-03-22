@@ -60,7 +60,7 @@ in {
           esac
 
           if [ -f "$save_dir/$save_file" ] ; then
-              notify-send "Cheese!~" "Screenshot saved in $save_dir" -i $save_dir/$save_file
+              notify-send "Smile! You're On Camera! 📸" "Screenshot saved in $save_dir" -i $save_dir/$save_file
           fi
         '';
 
@@ -68,53 +68,52 @@ in {
         moveToWorkspace = num: "${mainMod} SHIFT, ${num}, movetoworkspace, ${num}";
         moveToWorkspaceSilent = num: "${mainMod} ALT, ${num}, movetoworkspacesilent, ${num}";
 
-        workspaceArr = [ 1 2 3 4 5 6 7 ];
-      in [
-        # Windows
-        "${mainMod}, W, killactive"
-        "${mainMod}, delete, exit"
-        "${mainMod}, S, togglefloating"
-        "${mainMod}, G, togglegroup"
-        "${mainMod}, F, fullscreen"
+        workspaceArr = [1 2 3 4 5 6 7];
+      in
+        [
+          # Windows
+          "${mainMod}, W, killactive"
+          "${mainMod}, delete, exit"
+          "${mainMod}, S, togglefloating"
+          "${mainMod}, G, togglegroup"
+          "${mainMod}, F, fullscreen"
 
-        # Apps
-        "${mainMod}, return, exec, foot"
-        "${mainMod} CTRL, F, exec, firefox"
-        "${mainMod} CTRL, I, exec, thunar"
-        "${mainMod}, SPACE, exec, pkill -x tofi-drun || tofi-drun"
+          # Apps
+          "${mainMod}, return, exec, foot"
+          "${mainMod} CTRL, F, exec, firefox"
+          "${mainMod}, SPACE, exec, ags -t app_launcher"
 
-        # Screenshot
-        "${mainMod} SHIFT, S, exec, ${screenshot}/bin/screenshot s"
-        "${mainMod} ALT, S, exec, ${screenshot}/bin/screenshot m"
-        ",print, exec, ${screenshot}/bin/screenshot p"
+          # Screenshot
+          "${mainMod} SHIFT, S, exec, ${screenshot}/bin/screenshot s"
+          "${mainMod} ALT, S, exec, ${screenshot}/bin/screenshot m"
+          ",print, exec, ${screenshot}/bin/screenshot p"
 
-        # Focus
-        "${mainMod}, h, movefocus, l"
-        "${mainMod}, l, movefocus, r"
-        "${mainMod}, k, movefocus, u"
-        "${mainMod}, j, movefocus, d"
-        "ALT, Tab, movefocus, d"
+          # Focus
+          "${mainMod}, h, movefocus, l"
+          "${mainMod}, l, movefocus, r"
+          "${mainMod}, k, movefocus, u"
+          "${mainMod}, j, movefocus, d"
+          "ALT, Tab, movefocus, d"
 
+          # Switch workspaces relative
+          "${mainMod} CTRL, l, workspace, r+1"
+          "${mainMod} CTRL, h, workspace, r-1"
 
-        # Switch workspaces relative
-        "${mainMod} CTRL, l, workspace, r+1"
-        "${mainMod} CTRL, h, workspace, r-1"
+          # Move window around
+          "${mainMod} SHIFT, h, movewindow, l"
+          "${mainMod} SHIFT, l, movewindow, r"
+          "${mainMod} SHIFT, k, movewindow, u"
+          "${mainMod} SHIFT, j, movewindow, d"
 
-        # Move window around
-        "${mainMod} SHIFT, h, movewindow, l"
-        "${mainMod} SHIFT, l, movewindow, r"
-        "${mainMod} SHIFT, k, movewindow, u"
-        "${mainMod} SHIFT, j, movewindow, d"
+          # Special workspaces
+          "${mainMod}, E, movetoworkspacesilent, special"
+          "${mainMod}, U, togglespecialworkspace"
 
-        # Special workspaces
-        "${mainMod}, E, movetoworkspacesilent, special"
-        "${mainMod}, U, togglespecialworkspace"
-
-        # Toggle Layout
-        "${mainMod}, Y, togglesplit, # dwindle"
-        "${mainMod}, P, pseudo"
-
-      ] ++ map (i: workspace (toString i)) workspaceArr
+          # Toggle Layout
+          "${mainMod}, Y, togglesplit, # dwindle"
+          "${mainMod}, P, pseudo"
+        ]
+        ++ map (i: workspace (toString i)) workspaceArr
         ++ map (i: moveToWorkspace (toString i)) workspaceArr
         ++ map (i: moveToWorkspaceSilent (toString i)) workspaceArr;
     };

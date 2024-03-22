@@ -25,14 +25,13 @@ const BottomBox = () =>
     children: [PowerBox()],
   });
 
-
 export const ControlPanel = () =>
   PopupWindow({
     name: "control_panel",
     transition: "slide_right",
     transition_duration: 300,
     anchor: ["bottom", "left"],
-    keymode: "on-demand",
+    margins: [8],
     child: Widget.Box({
       className: "control-box",
       spacing: 12,

@@ -3,14 +3,14 @@
     ./mksh
     ./misc
     ./foot
-    ./tofi
+    # ./tofi
     ./hyprland
     ./ags
     ./theme
     ./stylix
     ./git
     ./dev
-    ./nixvim # This decreased my lifespan 
+    ./nixvim # This decreased my lifespan
     ./yazi
   ];
 }
