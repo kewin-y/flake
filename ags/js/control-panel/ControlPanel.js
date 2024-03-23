@@ -32,6 +32,7 @@ export const ControlPanel = () =>
     transition_duration: 300,
     anchor: ["bottom", "left"],
     margins: [8],
+    keymode: "on-demand",
     child: Widget.Box({
       className: "control-box",
       spacing: 12,

@@ -69,29 +69,32 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
   });
 
   return Widget.Box({
-    vertical: true,
-    class_name: "app-l-box",
-    children: [
-      entry,
+    class_name: "al-out-box",
+    child: Widget.Box({
+      vertical: true,
+      class_name: "al-in-box",
+      children: [
+        entry,
 
-      // wrap the list in a scrollable
-      Widget.Scrollable({
-        hscroll: "never",
-        css: `min-width: ${width}px;` + `min-height: ${height}px;`,
-        child: list,
-      }),
-    ],
-    setup: (self) =>
-      self.hook(App, (_, windowName, visible) => {
-        if (windowName !== WINDOW_NAME) return;
+        // wrap the list in a scrollable
+        Widget.Scrollable({
+          hscroll: "never",
+          css: `min-width: ${width}px;` + `min-height: ${height}px;`,
+          child: list,
+        }),
+      ],
+      setup: (self) =>
+        self.hook(App, (_, windowName, visible) => {
+          if (windowName !== WINDOW_NAME) return;
 
-        // when the applauncher shows up
-        if (visible) {
-          repopulate();
-          entry.text = "";
-          entry.grab_focus();
-        }
-      }),
+          // when the applauncher shows up
+          if (visible) {
+            repopulate();
+            entry.text = "";
+            entry.grab_focus();
+          }
+        }),
+    }),
   });
 };
 
@@ -102,6 +105,7 @@ export const applauncher = PopupWindow({
   transition_duration: 300,
   anchor: ["top", "left"],
   margins: [8],
+  keymode: "exclusive",
   child: Applauncher({
     width: 400,
     height: 300,

@@ -32,15 +32,21 @@ window#app_launcher {
 
   .entry {
     padding: 0.4rem;
-    background: $bg-light;
+    background: $bg-dark;
     border-radius: 4px;
   }
 
-  .app-l-box {
+  .al-out-box {
     background: $bg-dark;
+    padding: 0.6rem;
     margin: 0.2rem;
     border-radius: 4px;
     box-shadow: 0 0 2px 2px $color0;
-    padding: 0.6rem;
+
+    .al-in-box {
+      background: $bg-light;
+      border-radius: 4px;
+      padding: 0.6rem;
+    }
   }
 }
