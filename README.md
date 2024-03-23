@@ -1,5 +1,7 @@
 # Flaky Scalp
 
+Smile! You're On Camera! 📸
+
 ![screenshot](screenshots/sc.png)
 
 ## Inspo
@@ -10,3 +12,4 @@
 ## TODO
 
 - [ ] Refactor ags styles to incorporate scss mixins
+- [ ] Figure out qt theming (low priority)

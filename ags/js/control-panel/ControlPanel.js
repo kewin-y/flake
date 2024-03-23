@@ -25,18 +25,17 @@ const BottomBox = () =>
     children: [PowerBox()],
   });
 
-export const ControlPanel = () =>
-  PopupWindow({
-    name: "control_panel",
-    transition: "slide_right",
-    transition_duration: 300,
-    anchor: ["bottom", "left"],
-    margins: [8],
-    keymode: "on-demand",
-    child: Widget.Box({
-      className: "control-box",
-      spacing: 12,
-      vertical: true,
-      children: [TopBox(), MiddleBox(), BottomBox()],
-    }),
-  });
+export const controlpanel = PopupWindow({
+  name: "control_panel",
+  transition: "slide_right",
+  transition_duration: 300,
+  anchor: ["bottom", "left"],
+  margins: [8],
+  keymode: "on-demand",
+  child: Widget.Box({
+    className: "control-box",
+    spacing: 12,
+    vertical: true,
+    children: [TopBox(), MiddleBox(), BottomBox()],
+  }),
+});

@@ -3,7 +3,6 @@
     ./mksh
     ./misc
     ./foot
-    # ./tofi
     ./hyprland
     ./ags
     ./theme

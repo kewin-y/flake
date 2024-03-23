@@ -1,8 +1,8 @@
 import { Bar } from "./js/bar/Bar.js";
 import { NotificationPopup } from "./js/notifs/NotificationPopup.js";
-import { ImageWindow } from "./js/image-window/ImageWindow.js";
-import { ControlPanel } from "./js/control-panel/ControlPanel.js";
-import { applauncher } from "./js/AppLauncher/AppLauncher.js";
+// import { ImageWindow } from "./js/image-window/ImageWindow.js";
+import { controlpanel } from "./js/control-panel/ControlPanel.js";
+import { applauncher } from "./js/app-launcher/AppLauncher.js";
 
 const scss = `${App.configDir}/scss/style.scss`;
 const css = "/tmp/ags.css";
@@ -17,9 +17,9 @@ App.config({
   },
   windows: [
     Bar(),
-    ImageWindow(),
-    ControlPanel(),
+    // ImageWindow(),
     NotificationPopup(),
+    controlpanel,
     applauncher,
   ],
 });

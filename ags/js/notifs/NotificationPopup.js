@@ -32,7 +32,7 @@ function NotificationIcon({ app_entry, app_icon, image }) {
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
 function Notification(n) {
-  const icon = NotificationIcon(n)
+  const icon = NotificationIcon(n);
 
   const title = Widget.Label({
     class_name: "title",
@@ -57,19 +57,19 @@ function Notification(n) {
   const actions =
     n.actions.length > 0
       ? Widget.Box({
-        class_name: "actions",
-        children: n.actions.map(({ id, label }) =>
-          Widget.Button({
-            class_name: "action-button",
-            on_clicked: () => {
-              n.invoke(id);
-              n.dismiss();
-            },
-            hexpand: true,
-            child: Widget.Label(label),
-          }),
-        ),
-      })
+          class_name: "actions",
+          children: n.actions.map(({ id, label }) =>
+            Widget.Button({
+              class_name: "action-button",
+              on_clicked: () => {
+                n.invoke(id);
+                n.dismiss();
+              },
+              hexpand: true,
+              child: Widget.Label(label),
+            }),
+          ),
+        })
       : null;
 
   return Widget.EventBox(
