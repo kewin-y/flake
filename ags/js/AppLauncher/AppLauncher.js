@@ -104,7 +104,7 @@ export const applauncher = PopupWindow({
   margins: [8],
   child: Applauncher({
     width: 400,
-    height: 400,
+    height: 300,
     spacing: 12,
   }),
 });

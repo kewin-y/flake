@@ -6,6 +6,6 @@ export const AppLauncherButton = () =>
     onClicked: () => App.toggleWindow("app_launcher"),
     child: Widget.Icon({
       icon: NIXOS_ICON,
-      size: 20,
+      size: 22,
     }),
   });
