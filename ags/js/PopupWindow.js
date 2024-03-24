@@ -8,7 +8,6 @@ export const PopupWindow = ({
   Widget.Window({
     name,
     visible: false,
-    keymode,
     ...props,
     setup: (self) =>
       self.keybind("Escape", () => {
