@@ -3,7 +3,6 @@ export const PopupWindow = ({
   /** @type {any} */ child,
   /** @type {"none" | "crossfade" | "slide_left" | "slide_right" | "slide_down"} */ transition,
   /** @type {number} */ transition_duration,
-  /** @type {"exclusive" | "on-demand" | "none"} */ keymode,
   /** @type {any[]} */ ...props
 }) =>
   Widget.Window({

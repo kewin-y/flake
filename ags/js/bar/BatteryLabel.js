@@ -1,6 +1,6 @@
 const battery = await Service.import("battery");
 
-export function BatteryLabel() {
+export const BatteryLabel = () => {
   const batteryPercent = battery
     .bind("percent")
     .as((p) => (p > 0 ? p / 100 : 0));
@@ -27,4 +27,4 @@ export function BatteryLabel() {
       ),
     ],
   });
-}
+};

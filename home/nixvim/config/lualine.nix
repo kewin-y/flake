@@ -2,6 +2,7 @@
   programs.nixvim.plugins.lualine = {
     enable = true;
     globalstatus = true;
+    iconsEnabled = false;
     theme = "base16";
     componentSeparators = {
       left = "";
