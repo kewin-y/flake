@@ -23,6 +23,10 @@
       icon = {
         rules = [];
       };
+      status = {
+        separator_open = "";
+        separator_close = "";
+      };
     };
   };
 }

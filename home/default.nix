@@ -11,5 +11,6 @@
     ./dev
     ./nixvim # This decreased my lifespan
     ./yazi
+    ./zathura
   ];
 }

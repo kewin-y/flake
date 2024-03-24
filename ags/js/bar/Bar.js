@@ -13,12 +13,6 @@ const Top = () =>
     spacing: 8,
     children: [AppLauncherButton(), Workspaces()],
   });
-// const Middle = () =>
-//   Widget.Box({
-//     vertical: true,
-//     css: "margin: 0.8em 0.2em",
-//     spacing: 8,
-//   });
 const Bottom = () =>
   Widget.Box({
     css: "margin: 0.8rem 0.2em",
@@ -38,7 +32,6 @@ export const Bar = (monitor = 0) =>
       class_name: "cbox",
       vertical: true,
       start_widget: Top(),
-      // center_widget: Middle(),
       end_widget: Bottom(),
     }),
   });

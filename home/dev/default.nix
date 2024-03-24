@@ -1,6 +1,6 @@
-{pkgs, ...}:
+{...}:
 # Actually put stuff here maybe
 {
-  # Looks horrible 
+  # Looks horrible
   programs.vscode.enable = true;
 }
