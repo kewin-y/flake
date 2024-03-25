@@ -1,7 +1,5 @@
 # Flaky Scalp
 
-Smile! You're On Camera! 📸
-
 ![screenshot](screenshots/sc.png)
 
 ## Inspo
