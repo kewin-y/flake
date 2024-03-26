@@ -31,17 +31,20 @@
         };
       };
 
+      settings = {
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
+
       search.force = true;
-
-      userChrome = lib.readFile "${inputs.penguin-fox}/files/chrome/userChrome.css";
-      userContent = lib.readFile "${inputs.penguin-fox}/files/chrome/userContent.css";
-
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         istilldontcareaboutcookies
         return-youtube-dislikes
         tabliss
       ];
+
+      userChrome = lib.readFile "${inputs.penguin-fox}/files/chrome/userChrome.css";
+      userContent = lib.readFile "${inputs.penguin-fox}/files/chrome/userContent.css";
     };
   };
 }
