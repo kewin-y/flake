@@ -15,6 +15,7 @@
 
     targets = {
       hyprland.enable = false;
+      firefox.enable = false;
     };
 
     fonts = {

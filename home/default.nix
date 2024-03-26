@@ -12,5 +12,6 @@
     ./nixvim # This decreased my lifespan
     ./yazi
     ./zathura
+    ./firefox
   ];
 }

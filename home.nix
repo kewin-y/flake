@@ -9,10 +9,10 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+    allowUnfreePredicate = _: true;
   };
 
   home.packages = with pkgs; [
-    firefox-bin
     cinnamon.nemo-with-extensions
     imv
     mpv
@@ -21,6 +21,7 @@
     pfetch
     htop
     obsidian
+    obs-studio
   ];
 
   fonts.fontconfig.enable = true;

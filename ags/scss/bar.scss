@@ -16,8 +16,8 @@
     padding: 0.8rem 0;
     background: $bg-light;
     border-radius: 4px;
-    min-width: 2rem;
-    min-height: 2rem;
+    min-width: 1.8rem;
+    min-height: 1.8rem;
 
     transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
@@ -45,7 +45,6 @@
       transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
       box {
-        min-height: 2em;
         margin: 0.2em 0.8em;
         background: transparentize($fg, 0.8);
         border-radius: 0.1rem;
@@ -76,7 +75,15 @@
   }
 
   .tray {
+    min-height: 1.6rem;
+    padding: 2px 0;
+    border-radius: 4px;
+    background: $bg-light;
+
     button {
+      padding: 0;
+      margin: 0px 2px;
+
       &:first-child {
         margin-top: 4px;
       }
@@ -85,31 +92,16 @@
         margin-bottom: 4px;
       }
 
-      padding: 0px;
-      min-height: 24px;
-      min-width: 8px;
-
-      margin: 0px 2px;
-
-      image {
-        font-size: 10px;
-      }
-
       &:hover {
         color: $hover;
       }
     }
-
-    border-radius: 4px;
-    background: $bg-light;
-    min-height: 32px;
   }
 
   .tray-button {
     padding: 2px 0;
 
     .icon {
-      // font-size: 1.2em;
       color: $fg;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
 
@@ -120,7 +112,6 @@
       }
     }
   }
-
 
   .battery-label {
     border-radius: 4px;
@@ -181,7 +172,6 @@
 
     label {
       font-weight: bold;
-      font-size: 1.1em;
       color: $fg;
     }
   }
