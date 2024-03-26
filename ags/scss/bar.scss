@@ -1,8 +1,28 @@
+@mixin bar-button {
+  padding: 0.8rem 0;
+  background: $bg-light;
+  border-radius: 4px;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+
+  &:hover {
+    background: $hover;
+  }
+}
+
+@mixin bar-label {
+  border-radius: 4px;
+  padding: 0.4em 0;
+  background: $bg-light;
+}
+
 .bar {
   * {
     all: unset;
     font-family: "IBM Plex Sans";
-    font-size: 0.88rem;
+    font-size: 0.9rem;
   }
 
   .cbox {
@@ -13,17 +33,7 @@
   }
 
   button {
-    padding: 0.8rem 0;
-    background: $bg-light;
-    border-radius: 4px;
-    min-width: 1.8rem;
-    min-height: 1.8rem;
-
-    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-
-    &:hover {
-      background: $hover;
-    }
+    @include bar-button();
   }
 
   .app-l-button {
@@ -42,9 +52,10 @@
       padding: 0;
       color: $color8;
       margin: 0px 2px;
-      transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
       box {
+        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+        // transition: all 0.2s cubic-bezier(1, 1, 1, 1);
         margin: 0.2em 0.8em;
         background: transparentize($fg, 0.8);
         border-radius: 0.1rem;
@@ -57,9 +68,9 @@
       }
 
       &.active {
-        min-height: 4em;
 
         box {
+          min-height: 4em;
           background: $color10;
         }
       }
@@ -114,9 +125,7 @@
   }
 
   .battery-label {
-    border-radius: 4px;
-    padding: 0.4em 0;
-    background: $bg-light;
+    @include bar-label();
 
     .battery-bulb {
       background: $color4;
@@ -162,9 +171,7 @@
   }
 
   .clock {
-    border-radius: 4px;
-    padding: 0.8rem 0;
-    background: $bg-light;
+    @include bar-label();
 
     .icon {
       color: $color14;
@@ -187,7 +194,6 @@
       }
 
       &.power {
-        font-size: 0.9em;
         color: $color9;
       }
     }

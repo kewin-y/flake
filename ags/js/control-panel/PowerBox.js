@@ -11,7 +11,7 @@ const PowerButton = (cmd, icon) =>
     vexpand: true,
     hexpand: true,
     onClicked: () => Utils.execAsync(cmd),
-    child: Widget.Icon({ class_name: "icon", icon: icon }),
+    child: Widget.Icon({ class_name: "icon", icon: icon, size: 18 }),
   });
 
 export const PowerBox = () =>

@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # Startup time is ZERO CONCERN
   home.packages = with pkgs; [
     ripgrep
     wl-clipboard
@@ -21,6 +20,7 @@
     ./config/lspkind.nix
     ./config/lualine.nix
     ./config/obsidian.nix
+    ./config/markdown-preview.nix
   ];
 
   programs.nixvim.enable = true;
