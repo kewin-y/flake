@@ -4,6 +4,8 @@ window#app_launcher {
   * {
     all: unset;
     font-family: "IBM Plex Sans";
+    font-size: 0.9rem;
+    font-weight: bold;
   }
 
   button {
@@ -15,36 +17,31 @@ window#app_launcher {
     transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
     &:focus {
-      background: $color10;
-      color: $bg-dark;
+      background: $base0A;
+      color: $base00;
     }
 
     &:hover {
-      background: $hover;
-      color: $fg;
-    }
-
-    label {
-      font-size: 0.9rem;
-      font-weight: bold;
+      background: $base02;
+      color: $base05;
     }
   }
 
   .entry {
     padding: 0.4rem;
-    background: $bg-dark;
+    background: $base00;
     border-radius: 4px;
   }
 
   .al-out-box {
-    background: $bg-dark;
+    background: $base00;
     padding: 0.6rem;
     margin: 0.2rem;
     border-radius: 4px;
-    box-shadow: 0 0 2px 2px $color0;
+    box-shadow: 0 0 2px 2px #0e0e0e;
 
     .al-in-box {
-      background: $bg-light;
+      background: $base01;
       border-radius: 4px;
       padding: 0.6rem;
     }

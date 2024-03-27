@@ -17,26 +17,14 @@
       lualine_b = [
         {
           name = "branch";
-          separator = {
-            left = "";
-            right = "";
-          };
         }
 
         {
           name = "diff";
-          separator = {
-            left = "";
-            right = "";
-          };
         }
 
         {
           name = "diagnostics";
-          separator = {
-            left = "";
-            right = "";
-          };
         }
       ];
       lualine_c = ["filename"];

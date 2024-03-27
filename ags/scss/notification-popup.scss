@@ -1,9 +1,9 @@
 window.notification-popups box.notifications {
   * {
     all: unset;
+    font-family: "IBM Plex Sans";
   }
 
-  font-family: "IBM Plex Sans";
   padding: 0.4rem;
 
   .icon {
@@ -19,7 +19,7 @@ window.notification-popups box.notifications {
 
     image {
       font-size: 58px;
-      color: $fg;
+      color: $base05;
     }
   }
 
@@ -27,42 +27,46 @@ window.notification-popups box.notifications {
     min-width: 25em;
     border-radius: 6px;
     margin: 0.6rem;
-    box-shadow: 0 0 2px 2px $color0;
-    background-color: $bg-dark;
+    box-shadow: 0 0 2px 2px #0e0e0e;
+    background-color: $base00;
 
     .content {
-      background: $bg-light;
+      background: $base01;
       border-radius: 6px;
       padding: 0.8em;
     }
 
     &.critical {
-      border: 2px solid $color1;
+      border: 2px solid $base08;
     }
   }
 
   .title {
-    color: $fg;
+    color: $base05;
     font-weight: bold;
     font-size: 1.2em;
   }
 
   .body {
-    color: $fg;
+    color: $base05;
     font-size: 0.9em;
+
+    // Lmao
     margin-top: 0.8em;
     margin-bottom: 0.8em;
   }
 
   .actions {
     .action-button {
-      color: $fg;
+      color: $base05;
       font-size: 0.9em;
       font-weight: bold;
-      background: adjust-color($bg-light, $lightness: 1.5%);
+      background: $base02;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
       border-radius: 0.4em;
       padding: 0.8em;
+
+      margin: 0.4em;
 
       &:first-child {
         margin-left: 0;
@@ -73,7 +77,7 @@ window.notification-popups box.notifications {
       }
 
       &:hover {
-        background: adjust-color($hover, $lightness: 1.5%);
+        background: $base03;
       }
     }
   }

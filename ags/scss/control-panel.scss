@@ -1,11 +1,11 @@
 @mixin control-button {
   border-radius: 4px;
-  background: $bg-light;
+  background: $base01;
   transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 }
 
 @mixin wide-box {
-  background: $bg-light;
+  background: $base01;
   padding: 0 0.8em;
   min-height: 3em;
   border-radius: 4px;
@@ -16,7 +16,7 @@
 
   scale {
     trough {
-      background: transparentize($fg, 0.9);
+      background: transparentize($base05, 0.9);
       min-height: 0.4rem;
       border-radius: 2px;
 
@@ -35,27 +35,26 @@
 
   &.speaker {
     .icon {
-      color: $color2;
+      color: $base0B;
     }
 
     scale {
       trough {
         highlight {
-          background: $color2;
-        }
+          background: $base0B; }
       }
     }
   }
 
   &.microphone {
     .icon {
-      color: $color10;
+      color: $base0A;
     }
 
     scale {
       trough {
         highlight {
-          background: $color10;
+          background: $base0A;
         }
       }
     }
@@ -65,62 +64,61 @@
 @mixin cal {
   .cal-box {
     border-radius: 4px;
-    background: $bg-light;
-    color: $fg;
+    background: $base01;
+    color: $base05;
     padding: 0.4rem 0.4rem 0.2rem;
 
     .cal {
       border: none;
-      padding: 0.35rem 0.25rem 0.25rem 0.35rem;
+      padding: 0.25rem 0.15rem 0.15rem 0.25rem;
     }
   }
 
   calendar {
-    box-shadow: none;
     font-size: 0.9em;
-    background: $bg-light;
+    background: $base01;
 
     &:selected {
-      color: $color2;
+      color: $base0B;
     }
 
     &.header {
-      color: $color14;
+      color: $base0C;
     }
 
     &:indeterminate {
-      color: transparentize($fg, 0.9);
+      color: transparentize($base05, 0.9);
     }
   }
 }
 
 @mixin power-box {
   button {
-    min-width: 3.8rem;
-    min-height: 3.8rem;
+    min-width: 3.6rem;
+    min-height: 3.6rem;
 
     &:focus {
-      background: $hover;
+      background: $base02;
     }
 
     &:hover {
-      background: $hover;
+      background: $base02;
     }
 
     &:nth-child(1) {
-      color: $color9;
+      color: $base08;
     }
 
     &:nth-child(2) {
-      color: $color2;
+      color: $base0B;
     }
 
     &:nth-child(3) {
-      color: $color3;
+      color: $base09;
     }
 
     &:nth-child(4) {
-      color: $color6;
+      color: $base0D;
     }
   }
 }
@@ -136,10 +134,10 @@ window#control_panel {
   }
 
   .control-box {
-    background: $bg-dark;
+    background: $base00;
     margin: 0.2rem;
     border-radius: 4px;
-    box-shadow: 0 0 2px 2px $color0;
+    box-shadow: 0 0 2px 2px #0e0e0e;
     padding: 0.6rem;
   }
 
@@ -161,11 +159,11 @@ window#control_panel {
     @include wide-box();
 
     .icon {
-      color: $color6;
+      color: $base0D;
     }
 
     &:hover {
-      background: $hover;
+      background: $base02;
     }
   }
 }

@@ -107,7 +107,7 @@ export const applauncher = PopupWindow({
   margins: [8],
   keymode: "exclusive",
   child: Applauncher({
-    width: 400,
+    width: 380,
     height: 300,
     spacing: 12,
   }),
