@@ -32,6 +32,12 @@
         fg = "#${config.lib.stylix.colors.base01}";
         bg = "#${config.lib.stylix.colors.base01}";
       };
+
+      NvimTreeWindowPicker = {
+        fg = "#${config.lib.stylix.colors.base05}";
+        bg = "#${config.lib.stylix.colors.base01}";
+      };
+
       CmpItemAbbrMatch.fg = "#${config.lib.stylix.colors.base05}";
       CmpItemAbbrMatchFuzzy.fg = "#${config.lib.stylix.colors.base05}";
       CmpItemAbbr.fg = "#${config.lib.stylix.colors.base05}";

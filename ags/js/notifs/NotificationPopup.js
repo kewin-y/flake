@@ -23,7 +23,7 @@ function NotificationIcon({ app_entry, app_icon, image }) {
     className: "icon",
     centerWidget: Widget.Icon({
       icon,
-      size: 58,
+      size: 48,
       vpack: "center",
       hpack: "center",
     }),

@@ -1,24 +1,24 @@
 window.notification-popups box.notifications {
   * {
     all: unset;
-    font-family: "IBM Plex Sans";
+    font-family: "Maple Mono";
   }
 
   padding: 0.4rem;
 
   .icon {
-    min-width: 78px;
-    min-height: 78px;
+    min-width: 68px;
+    min-height: 68px;
     margin: 1rem;
 
     box {
-      min-width: 68px;
-      min-height: 68px;
+      min-width: 58px;
+      min-height: 58px;
       border-radius: 7px;
     }
 
     image {
-      font-size: 58px;
+      font-size: 48px;
       color: $base05;
     }
   }
@@ -44,12 +44,12 @@ window.notification-popups box.notifications {
   .title {
     color: $base05;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .body {
     color: $base05;
-    font-size: 0.9em;
+    font-size: 0.85rem;
 
     // Lmao
     margin-top: 0.8em;
@@ -59,7 +59,7 @@ window.notification-popups box.notifications {
   .actions {
     .action-button {
       color: $base05;
-      font-size: 0.9em;
+      font-size: 0.85rem;
       font-weight: bold;
       background: $base02;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);

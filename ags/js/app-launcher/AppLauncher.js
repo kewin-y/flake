@@ -11,12 +11,11 @@ const AppItem = (app) =>
     },
     attribute: { app },
     child: Widget.Box({
-      spacing: 12,
       children: [
-        Widget.Icon({
-          icon: app.icon_name || "",
-          size: 32,
-        }),
+        //Widget.Icon({
+        //  icon: app.icon_name || "",
+        //  size: 32,
+        //}),
         Widget.Label({
           class_name: "title",
           label: app.name,

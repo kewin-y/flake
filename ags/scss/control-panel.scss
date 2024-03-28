@@ -33,6 +33,10 @@
     }
   }
 
+  .icon {
+    margin-right: 0.8rem;
+  }
+
   &.speaker {
     .icon {
       color: $base0B;
@@ -41,7 +45,8 @@
     scale {
       trough {
         highlight {
-          background: $base0B; }
+          background: $base0B;
+        }
       }
     }
   }
@@ -70,12 +75,11 @@
 
     .cal {
       border: none;
-      padding: 0.25rem 0.15rem 0.15rem 0.25rem;
+      padding: 0.45rem 0.25rem 0.25rem 0.25rem;
     }
   }
 
   calendar {
-    font-size: 0.9em;
     background: $base01;
 
     &:selected {
@@ -94,8 +98,8 @@
 
 @mixin power-box {
   button {
-    min-width: 3.6rem;
-    min-height: 3.6rem;
+    min-width: 3.4rem;
+    min-height: 3.4rem;
 
     &:focus {
       background: $base02;
@@ -128,9 +132,9 @@ window#control_panel {
 
   * {
     all: unset;
-    font-family: "IBM Plex Sans";
+    font-family: "Maple Mono";
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .control-box {

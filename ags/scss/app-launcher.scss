@@ -3,8 +3,8 @@ window#app_launcher {
 
   * {
     all: unset;
-    font-family: "IBM Plex Sans";
-    font-size: 0.9rem;
+    font-family: "Maple Mono";
+    font-size: 0.85rem;
     font-weight: bold;
   }
 
@@ -31,6 +31,10 @@ window#app_launcher {
     padding: 0.4rem;
     background: $base00;
     border-radius: 4px;
+  }
+
+  .title {
+    margin: 0 0.4rem;
   }
 
   .al-out-box {

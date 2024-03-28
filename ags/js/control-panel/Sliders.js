@@ -1,4 +1,4 @@
-const audio = await Service.import("audio")
+const audio = await Service.import("audio");
 
 import { speakerIcon, microphoneIcon } from "../Variables.js";
 
@@ -15,8 +15,17 @@ const AudioSlider = (type = "speaker") =>
         },
         `${type}-changed`,
       ),
+      Widget.Slider({
+        hexpand: true,
+        draw_value: false,
+        on_change: ({ value }) => (audio[type].volume = value),
+        setup: (self) =>
+          self.hook(audio[type], () => {
+            self.value = audio[type].volume || 0;
+          }),
+      }),
       Widget.Label({
-        css: "min-width: 3.4rem; font-size: 0.9em;",
+        css: "min-width: 3.2rem;",
         justification: "center",
       }).hook(
         audio,
@@ -29,15 +38,6 @@ const AudioSlider = (type = "speaker") =>
         },
         `${type}-changed`,
       ),
-      Widget.Slider({
-        hexpand: true,
-        draw_value: false,
-        on_change: ({ value }) => (audio[type].volume = value),
-        setup: (self) =>
-          self.hook(audio[type], () => {
-            self.value = audio[type].volume || 0;
-          }),
-      }),
     ],
   });
 

@@ -21,8 +21,8 @@
 
     fonts = {
       monospace = {
-        name = "BlexMonoNerdFont";
-        package = pkgs.nerdfonts.override {fonts = ["IBMPlexMono"];};
+        name = "Maple Mono";
+        package = pkgs.maple-mono;
       };
       sansSerif = {
         name = "IBM Plex Sans";
