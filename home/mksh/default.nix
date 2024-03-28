@@ -1,10 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     mksh
-    eza
     fd
-    fzf
   ];
+
+  programs.fzf.enable = true;
+  programs.eza.enable= true;
 
   home.file.".mkshrc".source = ./.mkshrc;
 }

@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   # This doesn't work half the time
   home.packages = with pkgs; [
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugins
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
   ];
@@ -17,9 +16,9 @@
 
   qt = {
     style = {
-      name = "kvantum";
+      name = "gtk2";
     };
-    platformTheme = "qtct";
+    platformTheme = "gtk";
     enable = true;
   };
 }
