@@ -9,16 +9,16 @@ window.notification-popups box.notifications {
   .icon {
     min-width: 68px;
     min-height: 68px;
-    margin: 1rem;
+    margin: 0.5rem;
 
     box {
-      min-width: 58px;
-      min-height: 58px;
+      min-width: 48px;
+      min-height: 48px;
       border-radius: 7px;
     }
 
     image {
-      font-size: 48px;
+      font-size: 38px;
       color: $base05;
     }
   }
@@ -44,16 +44,12 @@ window.notification-popups box.notifications {
   .title {
     color: $base05;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .body {
     color: $base05;
     font-size: 0.85rem;
-
-    // Lmao
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
   }
 
   .actions {
@@ -65,8 +61,7 @@ window.notification-popups box.notifications {
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
       border-radius: 0.4em;
       padding: 0.8em;
-
-      margin: 0.4em;
+      margin: 0 0.4rem;
 
       &:first-child {
         margin-left: 0;

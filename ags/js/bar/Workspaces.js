@@ -1,5 +1,4 @@
 import Hyprland from "resource:///com/github/Aylur/ags/service/hyprland.js";
-import Widget from "resource:///com/github/Aylur/ags/widget.js";
 
 /** @param {any} ws */
 const dispatch = (ws) => Hyprland.messageAsync(`dispatch workspace ${ws}`);
@@ -13,7 +12,7 @@ export const Workspaces = () =>
         Widget.Button({
           attribute: i,
           child: Widget.Box({
-            vpack: "fill"
+            vpack: "fill",
           }),
           setup: (self) =>
             self.hook(Hyprland, () => {

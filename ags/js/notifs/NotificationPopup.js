@@ -23,7 +23,7 @@ function NotificationIcon({ app_entry, app_icon, image }) {
     className: "icon",
     centerWidget: Widget.Icon({
       icon,
-      size: 48,
+      size: 38,
       vpack: "center",
       hpack: "center",
     }),
@@ -82,6 +82,7 @@ function Notification(n) {
       children: [
         icon,
         Widget.Box({
+          spacing: 8,
           className: "content",
           vertical: true,
           children: [title, body, actions],

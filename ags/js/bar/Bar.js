@@ -13,6 +13,7 @@ const Top = () =>
     spacing: 8,
     children: [AppLauncherButton(), Workspaces()],
   });
+
 const Bottom = () =>
   Widget.Box({
     css: "margin: 0.8rem 0.2em",
@@ -21,6 +22,7 @@ const Bottom = () =>
     spacing: 8,
     children: [SysTray(), BatteryLabel(), Clock(), ControlButton()],
   });
+
 export const Bar = (monitor = 0) =>
   Widget.Window({
     name: `bar-${monitor}`,
