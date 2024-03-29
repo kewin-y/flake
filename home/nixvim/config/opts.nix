@@ -26,7 +26,8 @@
 
     # Referenced from: https://github.com/Manas140/Conscious/blob/main/lua/colors.lua
     highlight = {
-      WinSeparator.fg = "#${config.lib.stylix.colors.base01}";
+      WinSeparator.fg = "#${config.lib.stylix.colors.base02}";
+
       NormalFloat.bg = "#${config.lib.stylix.colors.base01}";
       FloatBorder = {
         fg = "#${config.lib.stylix.colors.base01}";

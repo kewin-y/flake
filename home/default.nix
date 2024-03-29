@@ -13,5 +13,6 @@
     ./yazi
     ./zathura
     ./firefox
+    ./waylock
   ];
 }
