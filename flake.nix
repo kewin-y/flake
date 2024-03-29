@@ -42,7 +42,6 @@
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
-    wallpaper = ./wallpapers/forest.jpeg;
   in {
     nixosConfigurations = {
       keven = lib.nixosSystem {
@@ -59,7 +58,7 @@
     homeConfigurations = {
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {inherit inputs wallpaper;};
+        extraSpecialArgs = {inherit inputs;};
         modules = [stylix.homeManagerModules.stylix nixvim.homeManagerModules.nixvim ./home.nix];
       };
     };

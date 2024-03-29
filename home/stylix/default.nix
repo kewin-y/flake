@@ -1,10 +1,6 @@
-{
-  pkgs,
-  wallpaper,
-  ...
-}: {
+{pkgs, ...}: {
   stylix = {
-    image = wallpaper;
+    image = ../../wallpapers/michael.png;
     base16Scheme = ./test.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/oxocarbon-dark.yaml";
     polarity = "dark";
