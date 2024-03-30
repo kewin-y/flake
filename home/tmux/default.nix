@@ -19,6 +19,8 @@
       bind-key -r -T prefix C-j resize-pane -D
       bind-key -r -T prefix C-h resize-pane -L
       bind-key -r -T prefix C-l resize-pane -R
+
+      set-option -g status-position top
     '';
   };
 }

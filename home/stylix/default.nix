@@ -13,6 +13,7 @@
     targets = {
       hyprland.enable = false;
       firefox.enable = false;
+      fzf.enable = false;
     };
 
     fonts = {
