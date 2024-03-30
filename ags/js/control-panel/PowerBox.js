@@ -1,5 +1,3 @@
-const LOCKCMD = `waylock -init-color 0x111517 -input-color 0x5a7d82 -fail-color 0xa54242`;
-
 /**
  * @param {string} cmd
  * @param {string} icon
@@ -21,7 +19,7 @@ export const PowerBox = () =>
     children: [
       PowerButton("systemctl poweroff", "system-shutdown-symbolic"),
       PowerButton("systemctl reboot", "system-reboot-symbolic"),
-      PowerButton(`${LOCKCMD}`, "system-lock-screen-symbolic"),
+      PowerButton("lockscript", "system-lock-screen-symbolic"),
       PowerButton(
         `bash -c "loginctl terminate-user $USER"`,
         "application-exit-symbolic",

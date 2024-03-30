@@ -14,5 +14,6 @@
     ./zathura
     ./firefox
     ./waylock
+    ./tmux
   ];
 }
