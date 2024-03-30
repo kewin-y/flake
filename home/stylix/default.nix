@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     image = ../../wallpapers/michael.png;
-    base16Scheme = ./test.yaml;
+    base16Scheme = ./paradise.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/mountain.yaml";
     polarity = "dark";
     cursor = {

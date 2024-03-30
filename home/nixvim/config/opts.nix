@@ -25,37 +25,37 @@
     };
 
     # Referenced from: https://github.com/Manas140/Conscious/blob/main/lua/colors.lua
-    highlight = {
-      WinSeparator.fg = "#${config.lib.stylix.colors.base02}";
+    highlight = with config.lib.stylix.colors; {
+      WinSeparator.fg = "#${base02}";
 
-      NormalFloat.bg = "#${config.lib.stylix.colors.base01}";
+      NormalFloat.bg = "#${base01}";
       FloatBorder = {
-        fg = "#${config.lib.stylix.colors.base01}";
-        bg = "#${config.lib.stylix.colors.base01}";
+        fg = "#${base01}";
+        bg = "#${base01}";
       };
 
       NvimTreeWindowPicker = {
-        fg = "#${config.lib.stylix.colors.base05}";
-        bg = "#${config.lib.stylix.colors.base01}";
+        fg = "#${base05}";
+        bg = "#${base01}";
       };
 
-      CmpItemAbbrMatch.fg = "#${config.lib.stylix.colors.base05}";
-      CmpItemAbbrMatchFuzzy.fg = "#${config.lib.stylix.colors.base05}";
-      CmpItemAbbr.fg = "#${config.lib.stylix.colors.base05}";
-      CmpItemKind.fg = "#${config.lib.stylix.colors.base0E}";
-      CmpItemMenu.fg = "#${config.lib.stylix.colors.base0E}";
-      CmpItemKindSnippet.fg = "#${config.lib.stylix.colors.base0E}";
+      CmpItemAbbrMatch.fg = "#${base05}";
+      CmpItemAbbrMatchFuzzy.fg = "#${base05}";
+      CmpItemAbbr.fg = "#${base05}";
+      CmpItemKind.fg = "#${base0E}";
+      CmpItemMenu.fg = "#${base0E}";
+      CmpItemKindSnippet.fg = "#${base0E}";
 
       TelescopePromptBorder = {
-        fg = "#${config.lib.stylix.colors.base01}";
-        bg = "#${config.lib.stylix.colors.base01}";
+        fg = "#${base01}";
+        bg = "#${base01}";
       };
-      TelescopePromptNormal.bg = "#${config.lib.stylix.colors.base01}";
+      TelescopePromptNormal.bg = "#${base01}";
       TelescopePromptPrefix = {
-        fg = "#${config.lib.stylix.colors.base08}";
-        bg = "#${config.lib.stylix.colors.base01}";
+        fg = "#${base08}";
+        bg = "#${base01}";
       };
-      TelescopeSelection.bg = "#${config.lib.stylix.colors.base01}";
+      TelescopeSelection.bg = "#${base01}";
     };
 
     extraConfigLua = ''
