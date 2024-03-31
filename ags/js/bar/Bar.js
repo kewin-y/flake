@@ -11,7 +11,7 @@ const Top = () =>
     vpack: "start",
     css: "margin: 0.8rem 0.2em",
     spacing: 8,
-    children: [AppLauncherButton(), Workspaces()],
+    children: [AppLauncherButton(), Workspaces(), SysTray()],
   });
 
 const Bottom = () =>
@@ -20,7 +20,7 @@ const Bottom = () =>
     vertical: true,
     vpack: "end",
     spacing: 8,
-    children: [SysTray(), BatteryLabel(), Clock(), ControlButton()],
+    children: [BatteryLabel(), Clock(), ControlButton()],
   });
 
 export const Bar = (monitor = 0) =>

@@ -23,7 +23,7 @@ export const SysTray = () => {
   const trayRevealer = Widget.Revealer({
     revealChild: false,
     transition_duration: 100,
-    transition: "slide_up",
+    transition: "slide_down",
     child: tray(),
     setup: (self) =>
       self.hook(showSysTray, () => {
@@ -35,7 +35,7 @@ export const SysTray = () => {
     class_name: "tray-button",
     child: Widget.Icon({
       class_name: "icon",
-      icon: "pan-start-symbolic",
+      icon: "go-down-symbolic",
       setup: (self) =>
         self.hook(showSysTray, () =>
           self.toggleClassName("showing", showSysTray.value),
@@ -49,6 +49,6 @@ export const SysTray = () => {
   return Widget.Box({
     spacing: 8,
     vertical: true,
-    children: [trayRevealer, button],
+    children: [button, trayRevealer],
   });
 };

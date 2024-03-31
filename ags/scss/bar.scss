@@ -115,10 +115,11 @@
       color: $base05;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
 
-      -gtk-icon-transform: rotate(90deg);
-
       &.showing {
-        -gtk-icon-transform: rotate(270deg);
+        -gtk-icon-transform: rotate(180deg);
+
+        // That's messed up bro
+        margin-left: 2px;
       }
     }
   }
