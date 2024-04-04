@@ -86,8 +86,14 @@
       color: $base0B;
     }
 
-    &.header {
+    &.header,
+    &.button {
+      color: $base0A;
+    }
+
+    &.highlight {
       color: $base0C;
+      // font-weight: bold;
     }
 
     &:indeterminate {
@@ -133,7 +139,7 @@ window#control_panel {
   * {
     all: unset;
     font-family: "Maple Mono";
-    font-weight: bold;
+    // font-weight: bold;
     font-size: 0.85rem;
   }
 
