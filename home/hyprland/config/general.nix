@@ -11,7 +11,7 @@
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "ags"
-        "${pkgs.swww}/bin/swww init"
+        "${pkgs.swww}/bin/swww-daemon"
       ];
       input = {
         kb_layout = "us";

@@ -2,7 +2,7 @@
   description = "here be dragons";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/staging-next";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
