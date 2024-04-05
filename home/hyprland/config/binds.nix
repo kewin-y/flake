@@ -33,7 +33,7 @@ in {
         ", XF86MonBrightnessDown, exec, ${pkgs.brillo}/bin/brillo -q -U 10"
       ];
       bind = let
-        # LOL
+        # credit: hyprdots
         screenshot = pkgs.writeShellScriptBin "screenshot" ''
           if [ -z "$XDG_PICTURES_DIR" ] ; then
               XDG_PICTURES_DIR="$HOME/Pictures"
@@ -58,6 +58,8 @@ in {
           *)
               exit ;;
           esac
+
+          rm "$temp_screenshot"
 
           if [ -f "$save_dir/$save_file" ] ; then
               notify-send "Smile! You're On Camera! 📸" "Screenshot saved in $save_dir" -i $save_dir/$save_file

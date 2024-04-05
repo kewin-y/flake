@@ -9,7 +9,7 @@ window.notification-popups box.notifications {
   .icon {
     min-width: 68px;
     min-height: 68px;
-    margin: 0.5rem;
+    margin: 1rem;
 
     box {
       min-width: 48px;
@@ -33,6 +33,7 @@ window.notification-popups box.notifications {
     .content {
       background: $base01;
       border-radius: 6px;
+      margin: 0.6rem 0.6rem 0.6rem 0rem;
       padding: 0.8em;
     }
 
