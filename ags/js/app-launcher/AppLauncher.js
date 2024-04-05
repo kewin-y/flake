@@ -12,10 +12,10 @@ const AppItem = (app) =>
     attribute: { app },
     child: Widget.Box({
       children: [
-        //Widget.Icon({
-        //  icon: app.icon_name || "",
-        //  size: 32,
-        //}),
+        Widget.Icon({
+          icon: app.icon_name || "",
+          size: 26,
+        }),
         Widget.Label({
           class_name: "title",
           label: app.name,

@@ -13,16 +13,17 @@ window#app_launcher {
     min-width: 2rem;
     min-height: 2rem;
 
+    color: $base05;
+
     transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
     &:focus {
-      background: $base0A;
-      color: $base00;
+      background: $base02;
+      color: $base0A;
     }
 
     &:hover {
       background: $base02;
-      color: $base05;
     }
   }
 
@@ -33,7 +34,7 @@ window#app_launcher {
   }
 
   .title {
-    margin: 0 0.4rem;
+    margin: 0 0.8rem;
   }
 
   .al-out-box {
