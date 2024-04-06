@@ -25,14 +25,14 @@ window.notification-popups box.notifications {
 
   .notification {
     min-width: 25em;
-    border-radius: 6px;
+    border-radius: 4px;
     margin: 0.6rem;
     box-shadow: 0 0 2px 2px #050505;
     background-color: $base00;
 
     .content {
       background: $base01;
-      border-radius: 6px;
+      border-radius: 4px;
       margin: 0.6rem 0.6rem 0.6rem 0rem;
       padding: 0.8em;
     }
