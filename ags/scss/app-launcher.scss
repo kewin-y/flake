@@ -40,9 +40,9 @@ window#app_launcher {
   .al-out-box {
     background: $base00;
     padding: 0.6rem;
-    margin: 0.4rem;
+    margin: 0.65rem;
     border-radius: 4px;
-    box-shadow: 0 0 2px 2px #050505;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
 
     .al-in-box {
       background: $base01;

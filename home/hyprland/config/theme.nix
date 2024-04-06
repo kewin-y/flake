@@ -10,11 +10,11 @@
         resize_on_border = "true";
       };
       decoration = {
-        rounding = "6";
+        rounding = "4";
         drop_shadow = "true";
-        shadow_range = "16";
-        "col.shadow" = "rgba(050505ff)";
-        shadow_render_power = "12";
+        shadow_range = "18";
+        "col.shadow" = "rgba(00000080)";
+        shadow_render_power = "3";
         inactive_opacity = "0.94";
 
         blur = {

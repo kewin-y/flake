@@ -103,7 +103,7 @@ export const applauncher = PopupWindow({
   transition: "slide_right",
   transition_duration: 300,
   anchor: ["top", "left"],
-  margins: [8],
+  margins: [4],
   keymode: "exclusive",
   child: Applauncher({
     width: 380,

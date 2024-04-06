@@ -30,7 +30,7 @@ export const controlpanel = PopupWindow({
   transition: "slide_right",
   transition_duration: 300,
   anchor: ["bottom", "left"],
-  margins: [8],
+  margins: [4],
   keymode: "on-demand",
   child: Widget.Box({
     className: "control-box",
