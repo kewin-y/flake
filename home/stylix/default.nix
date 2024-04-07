@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   stylix = {
     image = ../../wallpapers/wallhaven-v93z13.jpg;
-    base16Scheme = ./aquarium.yaml;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
-    polarity = "dark";
+    base16Scheme = ./far.yaml;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest.yaml";
+    polarity = "light";
     cursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
