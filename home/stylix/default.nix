@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     image = ../../wallpapers/wallhaven-v93z13.jpg;
-    base16Scheme = ./solarized-osaka.yaml;
+    base16Scheme = ./far.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     polarity = "light";
     cursor = {

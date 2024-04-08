@@ -23,7 +23,7 @@ export const SysTray = () => {
   const trayRevealer = Widget.Revealer({
     revealChild: false,
     transition_duration: 100,
-    transition: "slide_down",
+    transition: "slide_up",
     child: tray(),
     setup: (self) =>
       self.hook(showSysTray, () => {
@@ -49,6 +49,6 @@ export const SysTray = () => {
   return Widget.Box({
     spacing: 8,
     vertical: true,
-    children: [button, trayRevealer],
+    children: [trayRevealer, button],
   });
 };

@@ -53,9 +53,9 @@
       margin: 0px 2px;
 
       box {
-        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-        // transition: all 0.2s cubic-bezier(1, 1, 1, 1);
         margin: 0.2em 0.8em;
+        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+
         background: transparentize($base05, 0.9);
         border-radius: 0.1rem;
       }
@@ -67,7 +67,6 @@
       }
 
       &.active {
-
         box {
           min-height: 4em;
           background: $base0B;
@@ -114,12 +113,13 @@
     .icon {
       color: $base05;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+      -gtk-icon-transform: rotate(180deg);
+      margin-left: 2px;
 
       &.showing {
-        -gtk-icon-transform: rotate(180deg);
-
+        -gtk-icon-transform: rotate(0deg);
         // That's messed up bro
-        margin-left: 2px;
+        margin-left: 0;
       }
     }
   }
