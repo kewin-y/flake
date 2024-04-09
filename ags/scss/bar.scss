@@ -183,18 +183,16 @@
   }
 
   .control-button {
-    .icon {
-      &.network {
-        color: $base0D;
-      }
+    .network {
+      color: $base0D;
+    }
 
-      &.volume {
-        color: $base0B;
-      }
+    .volume {
+      color: $base0B;
+    }
 
-      &.power {
-        color: $base08;
-      }
+    .power {
+      color: $base08;
     }
   }
 }

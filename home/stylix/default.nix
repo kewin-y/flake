@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   stylix = {
     image = ../../wallpapers/wallhaven-v93z13.jpg;
-    base16Scheme = ./decay.yaml;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    base16Scheme = ./far.yaml;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
     polarity = "light";
     cursor = {
       name = "Bibata-Modern-Ice";

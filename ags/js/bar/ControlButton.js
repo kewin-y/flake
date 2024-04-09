@@ -5,7 +5,7 @@ import { speakerIcon } from "../Variables.js";
 
 const VolumeIndicator = () =>
   Widget.Icon({
-    className: "icon volume",
+    className: "volume",
   }).hook(
     audio,
     (self) => {
@@ -17,7 +17,7 @@ const VolumeIndicator = () =>
 /** @param {'wifi' | 'wired'} type */
 const NetworkIcon = (type) =>
   Widget.Icon({
-    className: "icon network",
+    className: "network",
     icon: network[type].bind("icon_name"),
   });
 
@@ -33,7 +33,7 @@ const NetworkIndicator = () =>
 
 const PowerIcon = () =>
   Widget.Icon({
-    className: "icon power",
+    className: "power",
     icon: "system-shutdown-symbolic",
   });
 
