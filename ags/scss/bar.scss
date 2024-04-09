@@ -53,7 +53,7 @@
       margin: 0px 2px;
 
       box {
-        margin: 0.2em 0.8em;
+        margin: 0.4em 0.8em;
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
         background: transparentize($base05, 0.9);
@@ -68,8 +68,8 @@
 
       &.active {
         box {
-          min-height: 4em;
-          background: $base0B;
+          min-height: 3em;
+          background: $base0A;
         }
       }
 
