@@ -20,7 +20,7 @@
     nitch
     pfetch
     htop
-    obsidian
+    # obsidian 
     obs-studio
   ];
 

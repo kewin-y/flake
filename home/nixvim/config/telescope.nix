@@ -2,10 +2,7 @@
   programs.nixvim.plugins.telescope = {
     enable = true;
     keymaps = {
-      "<C-p>" = {
-        action = "git_files";
-        desc = "Telescope Git Files";
-      };
+      "<C-p>" = "git_files";
       "<leader>fw" = "live_grep";
       "<leader>ff" = "find_files";
       "<leader>fo" = "oldfiles";
@@ -13,7 +10,7 @@
     };
 
     # https://github.com/hmajid2301/dotfiles/blob/ef9de22edb2dd0716e8955197b3050d2f6c97896/home-manager/editors/nvim/plugins/editor/telescope.nix#L5
-    defaults = {
+    settings.defaults = {
       vimgrep_arguments = [
         "${pkgs.ripgrep}/bin/rg"
         "-L"

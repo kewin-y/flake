@@ -1,6 +1,7 @@
+# neovim opts & highlight groups
 {config, ...}: {
   programs.nixvim = {
-    options = {
+    opts = {
       fillchars.eob = " ";
       termguicolors = true;
       shiftwidth = 2;

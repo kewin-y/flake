@@ -89,14 +89,6 @@
     mksh
   ];
 
-  # This is mostly for tofi
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      (nerdfonts.override {fonts = ["Iosevka"];})
-    ];
-  };
-
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 

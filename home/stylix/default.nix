@@ -18,8 +18,8 @@
 
     fonts = {
       monospace = {
-        name = "Iosevka NF";
-        package = pkgs.nerdfonts.override {fonts = ["Iosevka"];};
+        name = "ZedMono NF";
+        package = pkgs.nerdfonts.override {fonts = ["ZedMono"];};
       };
       sansSerif = {
         name = "IBM Plex Sans";
