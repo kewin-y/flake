@@ -53,12 +53,6 @@ window.notification-popups box.notifications {
     margin: 0 0.4rem;
   }
 
-  // .body {
-  //   color: $base05;
-  //   font-size: 0.85rem;
-  //   margin: 0 0.4rem;
-  // }
-
   .actions {
     .action-button {
       color: $base05;
@@ -69,14 +63,6 @@ window.notification-popups box.notifications {
       border-radius: 0.4em;
       padding: 0.8em;
       margin: 0 0.4rem;
-
-      // &:first-child {
-      //   margin-left: 0;
-      // }
-
-      // &:last-child {
-      //   margin-right: 0;
-      // }
 
       &:hover {
         background: $base03;

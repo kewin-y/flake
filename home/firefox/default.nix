@@ -8,26 +8,29 @@
     enable = true;
     profiles.kevin = {
       isDefault = true;
-      search.engines = {
-        "Nix Packages" = {
-          urls = [
-            {
-              template = "https://search.nixos.org/packages";
-              params = [
-                {
-                  name = "type";
-                  value = "packages";
-                }
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
+      search = {
+        default = "DuckDuckGo";
+        engines = {
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = ["@np"];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@np"];
+          };
         };
       };
 
@@ -41,6 +44,7 @@
         istilldontcareaboutcookies
         return-youtube-dislikes
         tabliss
+        leechblock-ng
       ];
 
       userChrome = lib.readFile "${inputs.penguin-fox}/files/chrome/userChrome.css";
