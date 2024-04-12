@@ -15,10 +15,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "keven";
-
   networking.networkmanager = {
     enable = true;
     appendNameservers = ["1.1.1.1"];
@@ -36,11 +36,17 @@
     };
   };
 
-  services.upower.enable = true;
-  security.pam.services.waylock = {
-    text = ''
-      auth include login
-    '';
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -57,46 +63,49 @@
   # Flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  hardware.brillo.enable = true;
-
-  # xdg.portal = {
-  #   enable = true;
-  #   xdgOpenUsePortal = true;
-  # };
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    libnotify
-    procps
-    pamixer
-    git
-    vim
     wget
     curl
-    mksh
+    git
+    pamixer
+    procps
+    libnotify
   ];
 
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
+  services.upower.enable = true;
+
+  security.pam.services.waylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
 
+  hardware.brillo.enable = true;
+
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+    };
+  };
 
   system.stateVersion = "23.11"; # Did you read the comment? no
 }

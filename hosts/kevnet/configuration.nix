@@ -42,14 +42,6 @@
     };
   };
 
-  services.upower.enable = true;
-
-  security.pam.services.waylock = {
-    text = ''
-      auth include login
-    '';
-  };
-
   hardware.opengl.enable = true;
 
   sound.enable = true;
@@ -87,11 +79,12 @@
     libnotify
   ];
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      (nerdfonts.override {fonts = ["IBMPlexMono"];})
-    ];
+  services.upower.enable = true;
+
+  security.pam.services.waylock = {
+    text = ''
+      auth include login
+    '';
   };
 
   programs.neovim = {
