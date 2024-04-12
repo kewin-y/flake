@@ -15,11 +15,11 @@ window#app_launcher {
 
     color: $base05;
 
-    transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+    transition: background 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
     &:focus {
       background: $base02;
-      color: $base0A;
+      color: $base0D;
     }
 
     &:hover {

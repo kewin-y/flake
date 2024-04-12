@@ -19,18 +19,18 @@
     alias ld='eza -lhD --icons=auto'
     alias yz='yazi'
 
-    export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#${base04},bg:#${base00},hl:#${base0D} --color=fg+:#${base06},bg+:#${base01},hl+:#${base0D} --color=info:#${base0A},prompt:#${base0A},pointer:#${base0C} --color=marker:#${base0C},spinner:#${base0C},header:#${base0D}'
+    export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#${base04},bg:#${base00},hl:#${base0D} --color=fg+:#${base06},bg+:#${base01},hl+:#${base0D} --color=info:#${base0D},prompt:#${base0D},pointer:#${base0C} --color=marker:#${base0C},spinner:#${base0C},header:#${base0D}'
 
     # This is from stackoverflow
     function _cd {
       \cd "$@"
       PS1=$(
         if [[ "''${PWD#$HOME}" != "$PWD" ]]; then
-          print -n "\e[1;38;5;14m~''${PWD#$HOME}"
+          print -n "\e[1;34m~''${PWD#$HOME}"
         else
-          print -n "\e[1;38;5;14m$PWD"
+          print -n "\e[1;34m$PWD"
         fi
-        print -n " \e[1;33m$ \e[0m"
+        print -n " \e[1;32m$ \e[0m"
       )
     }
 

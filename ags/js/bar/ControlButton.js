@@ -44,6 +44,6 @@ export const ControlButton = () =>
     child: Widget.Box({
       vertical: true,
       spacing: 8,
-      children: [NetworkIndicator(), VolumeIndicator(), PowerIcon()],
+      children: [VolumeIndicator(), NetworkIndicator(), PowerIcon()],
     }),
   });
