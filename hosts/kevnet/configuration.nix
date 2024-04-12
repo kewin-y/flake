@@ -77,6 +77,8 @@
     pamixer
     procps
     libnotify
+
+    unityhub 
   ];
 
   services.upower.enable = true;
