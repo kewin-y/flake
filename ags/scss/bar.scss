@@ -180,12 +180,16 @@
   }
 
   .control-button {
-    .network {
-      color: $base0D;
+    .speaker {
+      color: $base0B;
     }
 
-    .volume {
-      color: $base0B;
+    .microphone {
+      color: $base0A;
+    }
+
+    .network {
+      color: $base0D;
     }
 
     .power {

@@ -1,17 +1,28 @@
 const audio = await Service.import("audio");
 const network = await Service.import("network");
 
-import { speakerIcon } from "../Variables.js";
+import { speakerIcon, microphoneIcon } from "../Variables.js";
 
-const VolumeIndicator = () =>
+const SpeakerIndicator = () =>
   Widget.Icon({
-    className: "volume",
+    className: "speaker",
   }).hook(
     audio,
     (self) => {
       self.icon = speakerIcon();
     },
     "speaker-changed",
+  );
+
+const MicrophoneIndicator = () =>
+  Widget.Icon({
+    className: "microphone",
+  }).hook(
+    audio,
+    (self) => {
+      self.icon = microphoneIcon();
+    },
+    "microphone-changed",
   );
 
 /** @param {'wifi' | 'wired'} type */
@@ -44,6 +55,6 @@ export const ControlButton = () =>
     child: Widget.Box({
       vertical: true,
       spacing: 8,
-      children: [VolumeIndicator(), NetworkIndicator(), PowerIcon()],
+      children: [SpeakerIndicator(), MicrophoneIndicator(), NetworkIndicator(), PowerIcon()],
     }),
   });
