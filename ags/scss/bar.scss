@@ -14,7 +14,7 @@
 
 @mixin bar-label {
   border-radius: 4px;
-  padding: 0.4em 0;
+  padding: 0.8em 0;
   background: $base01;
 }
 
@@ -22,7 +22,7 @@
   * {
     all: unset;
     font-family: "ZedMono NF";
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .cbox {
@@ -40,7 +40,7 @@
     padding: 2px 0;
 
     .icon {
-      color: $base05;
+      color: $base0D;
     }
   }
 
@@ -111,12 +111,12 @@
     padding: 2px 0;
 
     .icon {
+      color: $base05;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+      -gtk-icon-transform: rotate(180deg);
 
       &.showing {
-        -gtk-icon-transform: rotate(180deg);
-        // That's messed up bro
-        margin-left: 3px;
+        -gtk-icon-transform: rotate(0deg);
       }
     }
   }

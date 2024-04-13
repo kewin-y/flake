@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "ZedMono NF:size=10.5";
+        font = lib.mkForce "ZedMono NF:size=11";
         box-drawings-uses-font-glyphs = "no";
         pad = "16x16";
       };

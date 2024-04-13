@@ -54,7 +54,7 @@ export const ControlButton = () =>
     onClicked: () => App.toggleWindow("control_panel"),
     child: Widget.Box({
       vertical: true,
-      spacing: 8,
+      spacing: 12,
       children: [SpeakerIndicator(), MicrophoneIndicator(), NetworkIndicator(), PowerIcon()],
     }),
   });

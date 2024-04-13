@@ -82,12 +82,9 @@
   calendar {
     background: $base01;
 
-    &:selected {
-      color: $base0D;
-    }
-
     &.header,
-    &.button {
+    &.button,
+    &:selected {
       color: $base0D;
     }
 
@@ -102,16 +99,19 @@
 }
 
 @mixin power-box {
+  background: $base01;
+  padding: 0.8em;
   button {
-    min-width: 3.4rem;
-    min-height: 3.4rem;
+    background: $base02;
+    min-width: 3rem;
+    min-height: 3rem;
 
     &:focus {
-      background: $base02;
+      background: $base03;
     }
 
     &:hover {
-      background: $base02;
+      background: $base03;
     }
 
     &:nth-child(1) {
@@ -139,7 +139,7 @@ window#control_panel {
     all: unset;
     font-family: "ZedMono NF";
     // font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .control-box {

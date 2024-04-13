@@ -35,7 +35,8 @@ export const SysTray = () => {
     class_name: "tray-button",
     child: Widget.Icon({
       class_name: "icon",
-      icon: "arrow-up",
+      size: 10,
+      icon: "keyboard-hide-symbolic",
       setup: (self) =>
         self.hook(showSysTray, () =>
           self.toggleClassName("showing", showSysTray.value),

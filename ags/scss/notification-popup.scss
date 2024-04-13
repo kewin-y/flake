@@ -2,6 +2,7 @@ window.notification-popups box.notifications {
   * {
     all: unset;
     font-family: "ZedMono NF";
+    font-size: 0.9rem;
   }
 
   padding: 4px;
@@ -49,14 +50,12 @@ window.notification-popups box.notifications {
   .title,
   .body {
     color: $base05;
-    font-size: 0.85rem;
     margin: 0 0.4rem;
   }
 
   .actions {
     .action-button {
       color: $base05;
-      font-size: 0.85rem;
       font-weight: bold;
       background: $base02;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);

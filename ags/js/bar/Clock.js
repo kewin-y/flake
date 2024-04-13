@@ -3,12 +3,12 @@ import { execAsync } from "resource:///com/github/Aylur/ags/utils.js";
 export const Clock = () =>
   Widget.Box({
     class_name: "clock",
-    spacing: 8,
+    spacing: 12,
     vertical: true,
     children: [
       Widget.Icon({
         class_name: "icon",
-        icon: "x-office-calendar-symbolic",
+        icon: "clock-applet-symbolic",
       }),
       Widget.Label({
         setup: (self) =>
