@@ -5,7 +5,7 @@
 }: {
   stylix = {
     image = ../../wallpapers/wallhaven-v93z13.jpg;
-    base16Scheme = ./paradise.yaml;
+    base16Scheme = ./aquarium.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
     polarity = "light";
     cursor = {

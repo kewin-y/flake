@@ -8,6 +8,7 @@
         tsserver.enable = true;
         cssls.enable = true;
         marksman.enable = true;
+        omnisharp.enable = true;
         rust-analyzer = {
           enable = true;
           installCargo = true;
