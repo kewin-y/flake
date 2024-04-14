@@ -4,14 +4,14 @@
 }: {
   home.packages = with pkgs; [
     polkit_gnome
-    swww
+    swaybg 
   ];
   wayland.windowManager.hyprland = {
     settings = {
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "ags"
-        "${pkgs.swww}/bin/swww-daemon"
+        "${pkgs.swaybg}/bin/swaybg -i ${../../../wallpapers/wallhaven-exyr1w.jpg}"
       ];
       input = {
         kb_layout = "us";

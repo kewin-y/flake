@@ -14,3 +14,4 @@
 
 - [x] Refactor ags styles to incorporate scss mixins
 - [ ] Figure out qt theming (low priority)
+- [ ] Change widget layout for better compatibility (horizontal bottom bar)
