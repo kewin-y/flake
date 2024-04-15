@@ -1,5 +1,5 @@
 @mixin bar-button {
-  padding: 0.8rem 0;
+  padding: 0rem 0.8rem;
   background: $base01;
   border-radius: 4px;
   min-width: 1.8rem;
@@ -14,7 +14,7 @@
 
 @mixin bar-label {
   border-radius: 4px;
-  padding: 0.8em 0;
+  padding: 0 0.8rem;
   background: $base01;
 }
 
@@ -26,7 +26,7 @@
   }
 
   .cbox {
-    margin: 0rem 0.65rem 0rem 0em;
+    margin: 0.65rem 0rem 0rem 0em;
     background: $base00;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     padding: 0.2em;
@@ -37,7 +37,7 @@
   }
 
   .app-l-button {
-    padding: 2px 0;
+    padding: 0 2px;
 
     .icon {
       color: $base05;
@@ -50,10 +50,10 @@
 
     button {
       padding: 0;
-      margin: 0px 2px;
+      margin: 2px 0;
 
       box {
-        margin: 0.4em 0.8em;
+        margin: 0.8em 0.4rem;
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
         background: transparentize($base05, 0.9);
@@ -68,24 +68,24 @@
 
       &.active {
         box {
-          min-height: 3em;
+          min-width: 3em;
           background: $base0D;
         }
       }
 
       &:first-child {
-        margin-top: 4px;
+        margin-left: 4px;
       }
 
       &:last-child {
-        margin-bottom: 4px;
+        margin-right: 4px;
       }
     }
   }
 
   .tray {
-    min-height: 1.6rem;
-    padding: 2px 0;
+    min-width: 1.6rem;
+    padding: 0 2px;
     border-radius: 4px;
     background: $base01;
 
@@ -94,11 +94,11 @@
       margin: 0px 2px;
 
       &:first-child {
-        margin-top: 4px;
+        margin-left: 2px;
       }
 
       &:last-child {
-        margin-bottom: 4px;
+        margin-right: 2px;
       }
 
       &:hover {
@@ -108,15 +108,15 @@
   }
 
   .tray-button {
-    padding: 2px 0;
+    padding: 0 2px;
 
     .icon {
       color: $base05;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
-      -gtk-icon-transform: rotate(180deg);
+      -gtk-icon-transform: rotate(90deg);
 
       &.showing {
-        -gtk-icon-transform: rotate(0deg);
+        -gtk-icon-transform: rotate(270deg);
       }
     }
   }
@@ -126,16 +126,16 @@
 
     .battery-bulb {
       background: $base0C;
-      min-height: 3px;
-      border-radius: 0.2em 0.2em 0px 0px;
-      margin: 0 0.8em;
+      min-width: 3px;
+      border-radius: 0.2em 0 0 0.2em;
+      margin: 0.9em 0;
     }
 
     levelbar {
       trough {
         border: 2px solid $base0C;
         border-radius: 0.2em;
-        margin: 0 0.6em;
+        margin: 0.5rem 0em;
 
         block.filled {
           background: $base0C;
@@ -145,24 +145,23 @@
 
     &.charging {
       .battery-bulb {
-        background: $base0A;
+        background: $base0B;
       }
 
       levelbar {
         trough {
-          border: 2px solid $base0A;
+          border: 2px solid $base0B;
         }
 
         block.filled {
-          background: $base0A;
+          background: $base0B;
         }
       }
     }
 
     label {
       color: $base05;
-      margin-top: 0.4em;
-      font-size: 0.8em;
+      margin-left: 12px;
       padding: 0;
     }
   }
@@ -180,6 +179,8 @@
   }
 
   .control-button {
+    @include bar-label();
+
     .speaker {
       color: $base0B;
     }
