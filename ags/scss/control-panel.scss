@@ -100,7 +100,9 @@
 
 @mixin power-box {
   background: $base01;
+  border-radius: 4px;
   padding: 0.8em;
+
   button {
     background: $base02;
     min-width: 3rem;

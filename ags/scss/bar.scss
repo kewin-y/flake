@@ -1,9 +1,13 @@
-@mixin bar-button {
-  padding: 0rem 0.8rem;
-  background: $base01;
+@mixin bar-label {
   border-radius: 4px;
+  padding: 0 0.8rem;
+  background: $base01;
   min-width: 1.8rem;
   min-height: 1.8rem;
+}
+
+@mixin bar-button {
+  @include bar-label();
 
   transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
@@ -12,10 +16,8 @@
   }
 }
 
-@mixin bar-label {
-  border-radius: 4px;
-  padding: 0 0.8rem;
-  background: $base01;
+@mixin small-label {
+  padding: 0 2px;
 }
 
 .bar {
@@ -37,7 +39,7 @@
   }
 
   .app-l-button {
-    padding: 0 2px;
+    @include small-label();
 
     .icon {
       color: $base05;
@@ -84,10 +86,8 @@
   }
 
   .tray {
-    min-width: 1.6rem;
-    padding: 0 2px;
-    border-radius: 4px;
-    background: $base01;
+    @include bar-label();
+    @include small-label();
 
     button {
       padding: 0;
@@ -108,7 +108,7 @@
   }
 
   .tray-button {
-    padding: 0 2px;
+    @include small-label();
 
     .icon {
       color: $base05;
