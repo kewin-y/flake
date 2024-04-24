@@ -46,9 +46,6 @@
         tabliss
         leechblock-ng
       ];
-
-      userChrome = lib.readFile "${inputs.penguin-fox}/files/chrome/userChrome.css";
-      userContent = lib.readFile "${inputs.penguin-fox}/files/chrome/userContent.css";
     };
   };
 }

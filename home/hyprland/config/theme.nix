@@ -1,7 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      exec = ["hyprctl setcursor Bibata-Modern-Ice 20"];
       general = {
         gaps_in = "8";
         gaps_out = "12";

@@ -659,22 +659,6 @@
         "type": "github"
       }
     },
-    "penguin-fox": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1712319001,
-        "narHash": "sha256-7+eA34alQJpKNsGKdHkjFLbRg1yX6J9yORLAytV2jO0=",
-        "owner": "p3nguin-kun",
-        "repo": "penguinFox",
-        "rev": "748d17932ab20ef59db90b7241b5efa70031beb7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "p3nguin-kun",
-        "repo": "penguinFox",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -711,7 +695,6 @@
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
-        "penguin-fox": "penguin-fox",
         "stylix": "stylix"
       }
     },
