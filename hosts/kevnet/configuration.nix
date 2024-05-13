@@ -79,6 +79,7 @@
     libnotify
 
     unityhub 
+    godot_4
   ];
 
   services.upower.enable = true;
