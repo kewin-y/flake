@@ -78,8 +78,9 @@
     procps
     libnotify
 
-    unityhub 
+    unityhub
     godot_4
+    obsidian
   ];
 
   services.upower.enable = true;
