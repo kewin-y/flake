@@ -10,6 +10,7 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
 
     ags.url = "github:Aylur/ags";
 
@@ -24,6 +25,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = {

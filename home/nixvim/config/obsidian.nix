@@ -12,6 +12,10 @@
           name = "work";
           path = "~/Documents/kevin-notes";
         }
+        {
+          name = "notes";
+          path = "~/Documents/notes";
+        }
       ];
     };
   };

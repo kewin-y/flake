@@ -1,6 +1,16 @@
-{...}: {
+{inputs, ...}: {
+  imports = [
+    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
+  ];
+
+  programs.hyprcursor-phinger.enable = true;
+
   wayland.windowManager.hyprland = {
     settings = {
+      env = [
+        "HYPRCURSOR_THEME,phinger-cursors-light-hyprcursor"
+        "HYPRCURSOR_SIZE,24"
+      ];
       general = {
         gaps_in = "8";
         gaps_out = "12";

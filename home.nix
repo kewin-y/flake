@@ -30,7 +30,6 @@
     TERMINAL = "foot";
   };
 
-  # Thanks notohh
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

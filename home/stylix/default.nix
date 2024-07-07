@@ -8,10 +8,11 @@
     base16Scheme = ./paradise.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
     polarity = "light";
+
     cursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 20;
+      name = "phinger-cursors-light";
+      package = pkgs.phinger-cursors;
+      size = 24;
     };
 
     targets = {

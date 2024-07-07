@@ -17,7 +17,7 @@
     style = {
       name = "gtk2";
     };
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
     enable = true;
   };
 }
