@@ -16,18 +16,16 @@
     cinnamon.nemo-with-extensions
     imv
     mpv
-    neofetch
+    fastfetch
     nitch
     pfetch
     htop
-    # obsidian 
     obs-studio
   ];
 
   fonts.fontconfig.enable = true;
 
   home.sessionVariables = {
-    # EDITOR = "peemacs";
     EDITOR = "nvim";
     TERMINAL = "foot";
   };

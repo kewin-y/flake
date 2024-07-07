@@ -79,7 +79,6 @@
     libnotify
 
     unityhub
-    godot_4
     obsidian
   ];
 
@@ -100,6 +99,8 @@
   users.defaultUserShell = pkgs.mksh;
 
   hardware.brillo.enable = true;
+
+  hardware.ckb-next.enable = true;
 
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
