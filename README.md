@@ -1,4 +1,4 @@
-# Flaky Scalp
+# Nix Confiurations
 
 ![screenshot](screenshots/sc.png)
 

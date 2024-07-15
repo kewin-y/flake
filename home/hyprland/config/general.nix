@@ -31,10 +31,6 @@
         preserve_split = true;
       };
 
-      master = {
-        new_is_master = true;
-      };
-
       misc = {
         vrr = "0";
         enable_swallow = true;
@@ -43,10 +39,10 @@
     };
 
     # Help Me
-    # extraConfig = ''
-    #   env=QT_AUTO_SCREEN_SCALE_FACTOR,1
-    #   env=QT_QPA_PLATFORM,wayland;xcb
-    #   env=QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-    # '';
+    extraConfig = ''
+      env=QT_AUTO_SCREEN_SCALE_FACTOR,1
+      env=QT_QPA_PLATFORM,wayland;xcb
+      env=QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+    '';
   };
 }

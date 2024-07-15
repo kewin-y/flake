@@ -5,11 +5,10 @@
     ./foot
     ./hyprland
     ./ags
-    ./theme
     ./stylix
     ./git
     ./dev
-    ./nixvim # This decreased my lifespan
+    ./nixvim 
     ./yazi
     ./zathura
     ./firefox

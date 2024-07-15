@@ -4,6 +4,7 @@
   ...
 }: {
   stylix = {
+    enable = true;
     image = ../../wallpapers/wallhaven-exyr1w.jpg;
     base16Scheme = ./paradise.yaml;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
@@ -35,5 +36,17 @@
         package = pkgs.ibm-plex;
       };
     };
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme.override {color = "nordic";};
+    };
+  };
+
+  qt = { 
+    enable = true;
   };
 }

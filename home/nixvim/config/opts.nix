@@ -12,6 +12,7 @@
       laststatus = 3;
       showmode = false;
       smartcase = true;
+      foldmethod = "manual";
       mouse = "a";
       number = true;
       numberwidth = 2;
