@@ -1,4 +1,4 @@
-# Nix Confiurations
+# NixOS-related configurations
 
 ![screenshot](screenshots/sc.png)
 
@@ -14,3 +14,5 @@
 
 - [x] Refactor ags styles to incorporate scss mixins
 - [ ] Figure out qt theming (low priority)
+
+
