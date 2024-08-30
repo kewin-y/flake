@@ -1,5 +1,4 @@
 @mixin bar-label {
-  border-radius: 4px;
   padding: 0 0.8rem;
   background: $base01;
   min-width: 1.8rem;
@@ -48,7 +47,6 @@
 
   .workspaces {
     background: $base01;
-    border-radius: 4px;
 
     button {
       padding: 0;
@@ -59,7 +57,6 @@
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
         background: transparentize($base05, 0.9);
-        border-radius: 0.1rem;
       }
 
       &.occupied {
