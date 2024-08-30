@@ -6,8 +6,7 @@
   stylix = {
     enable = true;
     image = ../../wallpapers/wallhaven-exyr1w.jpg;
-    base16Scheme = ./paradise.yaml;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
+    base16Scheme = ./far.yaml;
     polarity = "light";
 
     cursor = {

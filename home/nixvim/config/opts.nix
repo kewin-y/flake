@@ -17,7 +17,6 @@
       number = true;
       numberwidth = 2;
       ruler = false;
-      relativenumber = true;
       signcolumn = "yes";
       splitbelow = true;
       splitright = true;
