@@ -83,12 +83,6 @@
 
   services.upower.enable = true;
 
-  security.pam.services.waylock = {
-    text = ''
-      auth include login
-    '';
-  };
-
   security.pam.services.hyprlock = {};
 
   programs.neovim = {

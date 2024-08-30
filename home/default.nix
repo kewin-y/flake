@@ -12,7 +12,6 @@
     ./yazi
     ./zathura
     ./firefox
-    ./waylock
     ./tmux
   ];
 }
