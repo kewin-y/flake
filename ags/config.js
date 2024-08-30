@@ -17,7 +17,6 @@ App.config({
   },
   windows: [
     Bar(),
-    // ImageWindow(),
     NotificationPopup(),
     controlpanel,
     applauncher,
