@@ -89,6 +89,8 @@
     '';
   };
 
+  security.pam.services.hyprlock = {};
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
