@@ -4,9 +4,8 @@
     sources = {
       formatting = {
         alejandra = {enable = true;};
-        prettier = {
+        prettierd = {
           enable = true;
-          disableTsServerFormatter = true;
         };
         csharpier = {enable = true;};
         stylua = {enable = true;};
