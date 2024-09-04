@@ -45,6 +45,7 @@
         return-youtube-dislikes
         tabliss
         leechblock-ng
+        vimium
       ];
     };
   };
