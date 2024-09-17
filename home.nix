@@ -21,7 +21,11 @@
     pfetch
     htop
     obs-studio
+    unityhub
+    obsidian
   ];
+
+  programs.btop.enable = true;
 
   fonts.fontconfig.enable = true;
 
