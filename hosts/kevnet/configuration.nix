@@ -76,9 +76,6 @@
     pamixer
     procps
     libnotify
-
-    unityhub
-    obsidian
   ];
 
   services.upower.enable = true;
