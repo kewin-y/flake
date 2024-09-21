@@ -7,6 +7,7 @@
         nvim_cmp = true;
       };
       new_notes_location = "current_dir";
+      templates.subdir = "templates";
       workspaces = [
         {
           name = "work";
