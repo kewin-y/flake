@@ -5,8 +5,11 @@
 }: {
   stylix = {
     enable = true;
-    image = ../../wallpapers/wallhaven-exyr1w.jpg;
-    base16Scheme = ./far.yaml;
+
+    # Don't change this 
+    image = ../../wallpapers/wallhaven-4l6lor.jpg;
+
+    base16Scheme = ./paradise.yaml;
     polarity = "light";
 
     cursor = {
