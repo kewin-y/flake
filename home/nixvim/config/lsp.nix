@@ -5,8 +5,8 @@
       enable = true;
       servers = {
         nil-ls.enable = true;
-        tsserver.enable = true;
-        # cssls.enable = true;
+        ts-ls.enable = true;
+        cssls.enable = true;
         astro.enable = true;
         tailwindcss.enable = true;
         marksman.enable = true;
