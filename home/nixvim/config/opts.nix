@@ -1,6 +1,22 @@
 # neovim opts & highlight groups
 {config, ...}: {
   programs.nixvim = {
+    autoCmd = [
+      {
+        event = ["BufWritePre"];
+        pattern = ["*"];
+        # from https://vi.stackexchange.com/questions/37421/how-to-remove-neovim-trailing-white-space
+        callback = {
+          __raw = ''
+              function(ev)
+                save_cursor = vim.fn.getpos(".")
+                vim.cmd([[%s/\s\+$//e]])
+                vim.fn.setpos(".", save_cursor)
+              end
+          '';
+        };
+      }
+    ];
     opts = {
       fillchars.eob = " ";
       termguicolors = true;
