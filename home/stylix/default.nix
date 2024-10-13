@@ -6,8 +6,8 @@
   stylix = {
     enable = true;
 
-    # Don't change this 
-    image = ../../wallpapers/wallhaven-4l6lor.jpg;
+    # Placeholder
+    image = ../../wallpapers/happy.jpg;
 
     base16Scheme = ./paradise.yaml;
     polarity = "light";
@@ -48,7 +48,7 @@
     };
   };
 
-  qt = { 
+  qt = {
     enable = true;
   };
 }
