@@ -20,7 +20,7 @@
     ./config/lspkind.nix
     ./config/lualine.nix
     ./config/obsidian.nix
-    ./config/icons.nix
+    ./config/base16.nix
   ];
 
   programs.nixvim.enable = true;

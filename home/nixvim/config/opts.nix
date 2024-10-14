@@ -1,4 +1,3 @@
-# neovim opts & highlight groups
 {config, ...}: {
   programs.nixvim = {
     autoCmd = [

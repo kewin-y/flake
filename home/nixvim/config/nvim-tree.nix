@@ -15,6 +15,7 @@
     filters = {
       dotfiles = false;
     };
+
     git = {
       enable = false;
       ignore = true;
@@ -29,6 +30,11 @@
 
     renderer = {
       rootFolderLabel = false;
+      icons = {
+        webdevColors = false;
+        show.file = false;
+        show.folder = false;
+      };
     };
   };
 }
