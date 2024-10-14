@@ -7,7 +7,7 @@
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "ags"
-        "${pkgs.swaybg}/bin/swaybg -i ${../../../wallpapers/slate.jpg} -m fill"
+        "${pkgs.swaybg}/bin/swaybg -i ${../../../wallpapers/fury.jpg} -m fill"
       ];
       input = {
         kb_layout = "us";
