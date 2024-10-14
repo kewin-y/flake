@@ -4,7 +4,7 @@
     plugins.lsp = {
       enable = true;
       servers = {
-        nil-ls.enable = true;
+        nixd.enable = true;
         ts-ls.enable = true;
         cssls.enable = true;
         astro.enable = true;
@@ -93,7 +93,7 @@
       border = "single",
       silent = true,
       max_height = 12,
-      max_width = 100,
+      max_width = 300,
     })
     '';
   };

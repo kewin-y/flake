@@ -28,7 +28,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     stylix,
