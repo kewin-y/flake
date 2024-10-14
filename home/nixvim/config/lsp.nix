@@ -87,5 +87,14 @@
         };
       };
     };
+
+    extraConfigLuaPost = ''
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = "single",
+      silent = true,
+      max_height = 12,
+      max_width = 100,
+    })
+    '';
   };
 }
