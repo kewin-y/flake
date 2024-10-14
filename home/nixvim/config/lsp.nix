@@ -1,4 +1,3 @@
-# rust-analyzer settings & hover from https://github.com/redyf/Neve
 {...}: {
   programs.nixvim = {
     plugins.lsp = {
@@ -14,17 +13,8 @@
         clangd.enable = true;
         rust-analyzer = {
           enable = true;
-          installCargo = true;
-          installRustc = true;
-          settings = {
-            checkOnSave = true;
-            check = {
-              command = "clippy";
-            };
-            procMacro = {
-              enable = true;
-            };
-          };
+          installRustc = false;
+          installCargo = false;
         };
       };
       keymaps = {
