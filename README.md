@@ -6,3 +6,7 @@
 - https://github.com/namishh/crystal
 - https://github.com/paradise-theme/paradise
 - https://github.com/dkeg/crayolo
+
+## TODO
+
+- [ ] Move Nixvim configuration to standalone flake
