@@ -27,6 +27,7 @@
     obs-studio
     unityhub
     obsidian
+    wl-clipboard
     inputs.nixvim-config.packages.${system}.default
   ];
 
