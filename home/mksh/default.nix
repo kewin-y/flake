@@ -11,6 +11,7 @@
   programs.fzf.enable = true;
   programs.eza.enable = true;
 
+  # RAHHH
   home.file.".mkshrc".text = with config.lib.stylix.colors; ''
     # vim: ft=sh
     alias  l='eza -lh  --icons=auto'

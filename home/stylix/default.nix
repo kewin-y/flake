@@ -6,7 +6,7 @@
   stylix = {
     enable = true;
 
-    # Placeholder
+    # Placeholder (literally doesn't matter)
     image = ../../wallpapers/happy.jpg;
 
     base16Scheme = ./paradise.yaml;
