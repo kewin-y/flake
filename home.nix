@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./home
   ];
@@ -23,6 +27,7 @@
     obs-studio
     unityhub
     obsidian
+    inputs.nixvim-config.packages.${system}.default
   ];
 
   programs.btop.enable = true;

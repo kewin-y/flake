@@ -10,16 +10,14 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
     hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
+
+    nixvim-config.url = "git+https://codeberg.org/ykevin_u/nixvim.git";
 
     ags.url = "github:Aylur/ags";
 
     stylix.url = "github:danth/stylix";
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -31,7 +29,6 @@
     nixpkgs,
     home-manager,
     stylix,
-    nixvim,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -54,7 +51,7 @@
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [stylix.homeManagerModules.stylix nixvim.homeManagerModules.nixvim ./home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home.nix];
       };
     };
   };

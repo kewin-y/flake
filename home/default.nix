@@ -8,7 +8,7 @@
     ./stylix
     ./git
     ./dev
-    ./nixvim 
+    # ./nixvim
     ./yazi
     ./zathura
     ./firefox
