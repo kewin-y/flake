@@ -27,6 +27,6 @@
 
   config = {
     wallpaper = ../wallpapers/fury.jpg;
-    font = "JetBrainsMono";
+    font = "IosevkaTerm";
   };
 }

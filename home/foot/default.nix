@@ -3,8 +3,8 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.font} NF:size=10";
-        box-drawings-uses-font-glyphs = "yes";
+        font = lib.mkForce "${config.font} NF:size=11";
+        box-drawings-uses-font-glyphs = "no";
         pad = "16x16";
       };
 

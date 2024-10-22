@@ -20,6 +20,7 @@
 }
 
 .bar {
+
   .cbox {
     margin: 0.65rem 0rem 0rem 0em;
     background: $base00;
@@ -47,7 +48,7 @@
       margin: 2px 0;
 
       box {
-        margin: 0.8em 0.4rem;
+        margin: 0.9em 0.3rem;
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
         background: transparentize($base05, 0.9);
@@ -61,7 +62,7 @@
 
       &.active {
         box {
-          min-width: 3em;
+          min-width: 2em;
           background: $base0D;
         }
       }
