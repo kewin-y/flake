@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  # TODO Add bindings for pdfs, text files, etc. 
-  # I DONT WANNA 
+  # TODO Add bindings for pdfs, text files, etc.
+  # I DONT WANNA
   programs.yazi = {
     enable = true;
     settings = {
@@ -23,7 +23,11 @@
     };
     theme = {
       icon = {
-        rules = [];
+        globs = [];
+        dirs = [];
+        files = [];
+        exts = [];
+        conds = [];
       };
       status = {
         separator_open = "";

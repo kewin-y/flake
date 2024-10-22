@@ -21,12 +21,12 @@
     };
 
     font = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
     };
   };
 
   config = {
     wallpaper = ../wallpapers/fury.jpg;
-    font = "cozette";
+    font = "JetBrainsMono";
   };
 }

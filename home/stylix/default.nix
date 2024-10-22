@@ -32,7 +32,7 @@
     fonts = {
       monospace = {
         name = "cozette";
-        package = pkgs.${config.font};
+        package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
       };
       sansSerif = {
         name = "IBM Plex Sans";
