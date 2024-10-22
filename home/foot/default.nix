@@ -1,9 +1,9 @@
-{lib, ...}: {
+{config, lib, ...}: {
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "ZedMono NF:size=11";
+        font = lib.mkForce "${config.font}HiDpi :size=10";
         box-drawings-uses-font-glyphs = "no";
         pad = "16x16";
       };

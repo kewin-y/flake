@@ -1,5 +1,11 @@
-// There has got to be a better way to do this 
+// There has got to be a better way to do this
 @import "/home/kevin/.config/ags_res/colors.scss";
+
+* {
+  all: unset;
+  font-family: "CozetteHiDpi";
+  font-size: 13px;
+}
 
 @import "./bar.scss";
 @import "./notification-popup.scss";

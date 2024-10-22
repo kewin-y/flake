@@ -131,13 +131,6 @@
 window#control_panel {
   background: transparent;
 
-  * {
-    all: unset;
-    font-family: "ZedMono NF";
-    // font-weight: bold;
-    font-size: 0.9rem;
-  }
-
   .control-box {
     background: $base00;
     margin: 0.65rem;

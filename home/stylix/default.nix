@@ -7,7 +7,7 @@
     enable = true;
 
     # Placeholder (literally doesn't matter)
-    image = ../../wallpapers/happy.jpg;
+    image = config.wallpaper;
 
     base16Scheme = ./paradise.yaml;
     polarity = "light";
@@ -31,8 +31,8 @@
 
     fonts = {
       monospace = {
-        name = "ZedMono NF";
-        package = pkgs.nerdfonts.override {fonts = ["ZedMono"];};
+        name = "cozette";
+        package = pkgs.${config.font};
       };
       sansSerif = {
         name = "IBM Plex Sans";

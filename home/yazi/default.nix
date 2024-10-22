@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  # TODO Add bindings for pdfs, text files, etc. 
+  # I DONT WANNA 
   programs.yazi = {
     enable = true;
     settings = {

@@ -1,5 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
+    # Mostly for testing
     swaybg
   ];
   wayland.windowManager.hyprland = {
@@ -7,7 +12,7 @@
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "ags"
-        "${pkgs.swaybg}/bin/swaybg -i ${../../../wallpapers/fury.jpg} -m fill"
+        "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} -m fill"
       ];
       input = {
         kb_layout = "us";
