@@ -117,7 +117,7 @@
     @include bar-label();
 
     .battery-bulb {
-      background: $base0C;
+      background: $base04;
       min-width: 3px;
       border-radius: 0.2em 0 0 0.2em;
       margin: 0.9em 0;
@@ -125,26 +125,20 @@
 
     levelbar {
       trough {
-        border: 2px solid $base0C;
+        border: 1px solid $base04;
         border-radius: 0.2em;
         margin: 0.5rem 0em;
 
         block.filled {
           background: $base0C;
+          border-radius: 0.1em;
+          margin: 0.15em;
         }
       }
     }
 
     &.charging {
-      .battery-bulb {
-        background: $base0B;
-      }
-
       levelbar {
-        trough {
-          border: 2px solid $base0B;
-        }
-
         block.filled {
           background: $base0B;
         }

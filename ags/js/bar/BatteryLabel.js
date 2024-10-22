@@ -15,7 +15,7 @@ export const BatteryLabel = () => {
         hexpand: false,
       }),
       Widget.LevelBar({
-        widthRequest: 48,
+        widthRequest: 40,
         value: batteryPercent,
         inverted: true
       }),
