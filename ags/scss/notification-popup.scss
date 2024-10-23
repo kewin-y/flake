@@ -13,7 +13,7 @@ window.notification-popups box.notifications {
 
     image {
       font-size: 38px;
-      color: $base05;
+      color: $base04;
     }
   }
 
@@ -25,7 +25,7 @@ window.notification-popups box.notifications {
 
     .content {
       background: $base01;
-      margin: 0.6rem 0.6rem 0.6rem 0rem;
+      margin: 0.6rem 0.6rem 0rem 0rem;
       padding: 0.8em;
     }
 
@@ -40,21 +40,22 @@ window.notification-popups box.notifications {
 
   .title,
   .body {
-    color: $base05;
+    color: $base04;
     margin: 0 0.4rem;
   }
 
   .actions {
+    margin: 0rem 0.6rem 0.6rem 0rem;
+
     .action-button {
-      color: $base05;
+      color: $base04;
       font-weight: bold;
-      background: $base02;
+      background: $base01;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
       padding: 0.8em;
-      margin: 0 0.4rem;
 
       &:hover {
-        background: $base03;
+        background: $base02;
       }
     }
   }

@@ -58,20 +58,28 @@ function Notification(n) {
   const actions =
     n.actions.length > 0
       ? Widget.Box({
-          class_name: "actions",
-          children: n.actions.map(({ id, label }) =>
-            Widget.Button({
-              class_name: "action-button",
-              on_clicked: () => {
-                n.invoke(id);
-                n.dismiss();
-              },
-              hexpand: true,
-              child: Widget.Label(label),
-            }),
-          ),
-        })
+        class_name: "actions",
+        spacing: 8,
+        children: n.actions.map(({ id, label }) =>
+          Widget.Button({
+            class_name: "action-button",
+            on_clicked: () => {
+              n.invoke(id);
+              n.dismiss();
+            },
+            hexpand: true,
+            child: Widget.Label(label),
+          }),
+        ),
+      })
       : null;
+
+  const content = Widget.Box({
+    className: "content",
+    spacing: 8,
+    vertical: true,
+    children: [title, body],
+  });
 
   const notif = Widget.Box({
     class_name: `notification ${n.urgency}`,
@@ -79,9 +87,8 @@ function Notification(n) {
       icon,
       Widget.Box({
         spacing: 8,
-        className: "content",
         vertical: true,
-        children: [title, body, actions],
+        children: [content, actions],
       }),
     ],
   });

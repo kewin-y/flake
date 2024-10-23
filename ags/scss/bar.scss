@@ -20,7 +20,6 @@
 }
 
 .bar {
-
   .cbox {
     margin: 0.65rem 0rem 0rem 0em;
     background: $base00;
@@ -36,7 +35,7 @@
     @include small-label();
 
     .icon {
-      color: $base05;
+      color: $base04;
     }
   }
 
@@ -51,12 +50,12 @@
         margin: 0.9em 0.3rem;
         transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
-        background: transparentize($base05, 0.9);
+        background: transparentize($base04, 0.9);
       }
 
       &.occupied {
         box {
-          background: $base05;
+          background: $base04;
         }
       }
 
@@ -103,7 +102,7 @@
     @include small-label();
 
     .icon {
-      color: $base05;
+      color: $base04;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
       -gtk-icon-transform: rotate(90deg);
 
@@ -146,7 +145,7 @@
     }
 
     label {
-      color: $base05;
+      color: $base04;
       margin-left: 12px;
       padding: 0;
     }
@@ -155,12 +154,8 @@
   .clock {
     @include bar-label();
 
-    .icon {
-      color: $base0C;
-    }
-
     label {
-      color: $base05;
+      color: $base04;
     }
   }
 

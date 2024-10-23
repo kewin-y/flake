@@ -14,7 +14,7 @@
 
   scale {
     trough {
-      background: transparentize($base05, 0.9);
+      background: transparentize($base04, 0.9);
       min-height: 0.4rem;
 
       slider {
@@ -94,20 +94,17 @@
 }
 
 @mixin power-box {
-  background: $base01;
-  padding: 0.8em;
-
   button {
-    background: $base02;
-    min-width: 3rem;
-    min-height: 3rem;
+    background: $base01;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
 
     &:focus {
-      background: $base03;
+      background: $base02;
     }
 
     &:hover {
-      background: $base03;
+      background: $base02;
     }
 
     &:nth-child(1) {
