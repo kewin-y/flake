@@ -17,12 +17,8 @@ export const BatteryLabel = () => {
       Widget.LevelBar({
         widthRequest: 40,
         value: batteryPercent,
-        inverted: true
+        inverted: true,
       }),
-      Widget.Label({}).hook(
-        battery,
-        (self) => (self.label = `${battery.percent}%`),
-      ),
     ],
   });
 };
