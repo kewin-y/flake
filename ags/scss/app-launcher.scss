@@ -1,4 +1,10 @@
 window#app_launcher {
+  * {
+    all: unset;
+    font-family: "IosevkaTerm NF";
+    font-size: 0.9rem;
+  }
+
   background: transparent;
 
   button {

@@ -1,4 +1,10 @@
 window.notification-popups box.notifications {
+  * {
+    all: unset;
+    font-family: "IosevkaTerm NF";
+    font-size: 0.9rem;
+  }
+
   padding: 4px;
 
   .icon {
