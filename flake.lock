@@ -852,11 +852,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1729635232,
-        "narHash": "sha256-ECi8bwFbgEw68Xu1NiJBMq+oMFMfG892SkMEoQ+ROCw=",
+        "lastModified": 1729789132,
+        "narHash": "sha256-qmBVJYM1HIqcDq1cbriJw/DZi7CTwIWVoO8/eFtORAc=",
         "ref": "refs/heads/master",
-        "rev": "0017d55f4164c6b2b1294c31cb3c3c480b42b8cb",
-        "revCount": 3,
+        "rev": "80da6c2ac5d7cde5fc1faed604c22b7975ab6ba0",
+        "revCount": 4,
         "type": "git",
         "url": "https://codeberg.org/ykevin_u/nixvim.git"
       },
