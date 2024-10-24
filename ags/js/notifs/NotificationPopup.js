@@ -78,6 +78,7 @@ function Notification(n) {
     className: "content",
     spacing: 8,
     vertical: true,
+    vexpand: true,
     children: [title, body],
   });
 
@@ -86,7 +87,6 @@ function Notification(n) {
     children: [
       icon,
       Widget.Box({
-        spacing: 8,
         vertical: true,
         children: [content, actions],
       }),
