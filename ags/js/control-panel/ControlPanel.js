@@ -5,11 +5,13 @@ import { Calendar } from "./Calendar.js";
 import { PopupWindow } from "../PopupWindow.js";
 
 // It's funny cause I only need 2 boxes lol
+// Music Maybe?
+// I love music
 const TopBox = () =>
   Widget.Box({
     spacing: 12,
     vertical: true,
-    children: [Calendar()],
+    children: [],
   });
 
 const MiddleBox = () =>
@@ -36,6 +38,6 @@ export const controlpanel = PopupWindow({
     className: "control-box",
     spacing: 12,
     vertical: true,
-    children: [TopBox(), MiddleBox(), BottomBox()],
+    children: [MiddleBox(), BottomBox()],
   }),
 });

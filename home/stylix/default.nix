@@ -9,7 +9,7 @@
     # Placeholder (literally doesn't matter)
     image = config.wallpaper;
 
-    base16Scheme = ./paradise.yaml;
+    base16Scheme = ./far.yaml;
     polarity = "light";
 
     cursor = {
@@ -31,7 +31,7 @@
 
     fonts = {
       monospace = {
-        name = "cozette";
+        name = "${config.font}";
         package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
       };
       sansSerif = {

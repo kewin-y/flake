@@ -5,22 +5,26 @@ import { ControlButton } from "./ControlButton.js";
 import { BatteryLabel } from "./BatteryLabel.js";
 import { AppLauncherButton } from "./AppLauncherButton.js";
 
-const StartBox = () =>
+const Start = () =>
   Widget.Box({
-    // vertical: true,
     hpack: "start",
-    css: "margin: 0.2rem 0.8em",
+    css: "margin: 0.2rem 0.8rem",
     spacing: 8,
-    children: [AppLauncherButton(), Workspaces()],
+    children: [AppLauncherButton(), SysTray()],
   });
 
-const EndBox = () =>
+const Center = () =>
   Widget.Box({
-    css: "margin: 0.2rem 0.8em",
-    // vertical: true,
+    css: "margin: 0.2rem 0.8rem",
+    children: [Workspaces()],
+  });
+
+const End = () =>
+  Widget.Box({
     hpack: "end",
+    css: "margin: 0.2rem 0.8rem",
     spacing: 8,
-    children: [SysTray(), BatteryLabel(), Clock(), ControlButton()],
+    children: [BatteryLabel(), Clock(), ControlButton()],
   });
 
 export const Bar = (monitor = 0) =>
@@ -32,8 +36,8 @@ export const Bar = (monitor = 0) =>
     exclusivity: "exclusive",
     child: Widget.CenterBox({
       class_name: "cbox",
-      // vertical: true,
-      start_widget: StartBox(),
-      end_widget: EndBox(),
+      start_widget: Start(),
+      center_widget: Center(),
+      end_widget: End(),
     }),
   });

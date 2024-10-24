@@ -7,11 +7,11 @@ export const Workspaces = () =>
     class_name: "workspaces",
     child: Widget.Box({
       spacing: 4,
-      children: Array.from({ length: 7 }, (_, i) => i + 1).map((i) =>
+      children: Array.from({ length: 5 }, (_, i) => i + 1).map((i) =>
         Widget.Button({
           attribute: i,
-          child: Widget.Box({
-            vpack: "fill",
+          child: Widget.Label({
+            label: `${i}`
           }),
           setup: (self) =>
             self.hook(Hyprland, () => {

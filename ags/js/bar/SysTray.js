@@ -48,6 +48,6 @@ export const SysTray = () => {
 
   return Widget.Box({
     spacing: 8,
-    children: [trayRevealer, button],
+    children: [button, trayRevealer],
   });
 };

@@ -29,6 +29,7 @@
     obsidian
     wl-clipboard
     inputs.nixvim-config.packages.${system}.default
+    ripgrep
   ];
 
   programs.btop.enable = true;

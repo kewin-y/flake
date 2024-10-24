@@ -31,7 +31,7 @@ window.notification-popups box.notifications {
 
     .content {
       background: $base01;
-      margin: 0.6rem 0.6rem 0rem 0rem;
+      margin: 0.6rem; 
       padding: 0.8em;
     }
 
@@ -51,7 +51,7 @@ window.notification-popups box.notifications {
   }
 
   .actions {
-    margin: 0rem 0.6rem 0.6rem 0rem;
+    margin: 0 0.6rem 0.6rem 0.6rem;
 
     .action-button {
       color: $base04;

@@ -16,7 +16,7 @@
 }
 
 @mixin small-label {
-  padding: 0 2px;
+  padding: 0;
 }
 
 .bar {
@@ -46,30 +46,24 @@
   }
 
   .workspaces {
-    background: $base01;
-
     button {
-      padding: 0;
-      margin: 2px 0;
+      @include bar-button();
+      @include small-label();
 
-      box {
-        margin: 0.9em 0.3rem;
-        transition: all 0.4s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-
-        background: transparentize($base04, 0.9);
-      }
+      background: transparent;
+      color: $base04;
 
       &.occupied {
-        box {
-          background: $base04;
-        }
+        background: $base01;
       }
 
       &.active {
-        box {
-          min-width: 2em;
-          background: $base0D;
-        }
+        color: $base0D;
+        background: $base01;
+      }
+
+      &:hover {
+        background: $base02;
       }
 
       &:first-child {
@@ -88,7 +82,6 @@
 
     button {
       padding: 0;
-      margin: 2px 0;
 
       &:first-child {
         margin-left: 2px;
@@ -125,17 +118,17 @@
       background: $base04;
       min-width: 3px;
       border-radius: 0.2em 0 0 0.2em;
-      margin: 0.9em 0;
+      margin: 0.7em 0;
     }
 
     levelbar {
       trough {
         border: 1px solid $base04;
         border-radius: 0.2em;
-        margin: 0.5rem 0em;
+        margin: 0.4rem 0em;
 
         block.filled {
-          background: $base0C;
+          background: $base04;
           border-radius: 0.1em;
           margin: 0.15em;
         }
