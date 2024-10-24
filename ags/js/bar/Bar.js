@@ -24,7 +24,7 @@ const End = () =>
     hpack: "end",
     css: "margin: 0.2rem 0.8rem",
     spacing: 8,
-    children: [BatteryLabel(), Clock(), ControlButton()],
+    children: [Clock(), BatteryLabel(), ControlButton()],
   });
 
 export const Bar = (monitor = 0) =>
