@@ -2,6 +2,7 @@ import Hyprland from "resource:///com/github/Aylur/ags/service/hyprland.js";
 
 /** @param {any} ws */
 const dispatch = (ws) => Hyprland.messageAsync(`dispatch workspace ${ws}`);
+
 export const Workspaces = () =>
   Widget.EventBox({
     class_name: "workspaces",

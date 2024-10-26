@@ -2,6 +2,7 @@ import { App, Astal, Gtk } from "astal/gtk3";
 import { Variable } from "astal";
 
 import Clock from "./components/Clock";
+import Workspaces from "./components/Workspaces";
 
 const time = Variable("").poll(1000, "date");
 
@@ -18,7 +19,7 @@ function BarStart() {
 function BarCenter() {
   return (
     <box css={boxcss} spacing={8}>
-      <label label={"My Guy Im clincally insane"}></label>
+      <Workspaces />
     </box>
   );
 }
