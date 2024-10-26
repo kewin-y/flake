@@ -8,7 +8,7 @@
 
   programs.ags = {
     enable = true;
-    configDir = ../../astal;
+    # configDir = ../../astal;
     extraPackages = with pkgs; [
       dart-sass
       pavucontrol
