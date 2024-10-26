@@ -6,9 +6,12 @@
 }: {
   imports = [inputs.ags.homeManagerModules.default];
 
+  home.packages = [
+  ];
+
   programs.ags = {
     enable = true;
-    configDir = ../../astal;
+    # configDir = ../../ags;
     extraPackages = with pkgs; [
       dart-sass
       pavucontrol
@@ -18,6 +21,7 @@
       inputs.ags.packages.${pkgs.system}.network
       inputs.ags.packages.${pkgs.system}.tray
       inputs.ags.packages.${pkgs.system}.wireplumber
+      inputs.ags.packages.${pkgs.system}.notifd
     ];
   };
 
