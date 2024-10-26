@@ -1,16 +1,13 @@
 import { App, Astal, Gtk } from "astal/gtk3";
-import { Variable } from "astal";
 
 import Clock from "./components/Clock";
 import Workspaces from "./components/Workspaces";
 
-const time = Variable("").poll(1000, "date");
-
-const boxcss = "margin: 0.2rem 0.8rem";
+const BOXCSS = "margin: 0.2rem 0.8rem";
 
 function BarStart() {
   return (
-    <box halign={Gtk.Align.START} css={boxcss} spacing={8}>
+    <box halign={Gtk.Align.START} css={BOXCSS} spacing={8}>
       <label label={"My Guy Im clincally insane"}></label>
     </box>
   );
@@ -18,7 +15,7 @@ function BarStart() {
 
 function BarCenter() {
   return (
-    <box css={boxcss} spacing={8}>
+    <box css={BOXCSS} spacing={8}>
       <Workspaces />
     </box>
   );
@@ -26,7 +23,7 @@ function BarCenter() {
 
 function BarEnd() {
   return (
-    <box halign={Gtk.Align.END} css={boxcss} spacing={8}>
+    <box halign={Gtk.Align.END} css={BOXCSS} spacing={8}>
       <Clock />
     </box>
   );

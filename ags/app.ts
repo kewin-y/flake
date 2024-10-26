@@ -1,5 +1,6 @@
 import { App } from "astal/gtk3";
 import Bar from "./src/widget/bar";
+import Launcher from "./src/widget/launcher";
 
 import { writeFile } from "astal/file";
 import { exec } from "astal/process";
@@ -33,5 +34,6 @@ App.start({
   css: target,
   main() {
     Bar();
+    Launcher();
   },
 });
