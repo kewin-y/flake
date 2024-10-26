@@ -6,13 +6,15 @@
 }: {
   imports = [inputs.ags.homeManagerModules.default];
 
-  home.packages = [inputs.ags.packages.${pkgs.system}.io];
+  home.packages = with pkgs; [
+    dart-sass
+    inputs.ags.packages.${pkgs.system}.io
+  ];
 
   programs.ags = {
     enable = true;
-    # configDir = ../../ags;
+    configDir = ../../ags;
     extraPackages = with pkgs; [
-      dart-sass
       pavucontrol
       inputs.ags.packages.${pkgs.system}.battery
       inputs.ags.packages.${pkgs.system}.hyprland

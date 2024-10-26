@@ -1,0 +1,180 @@
+@mixin bar-label {
+  padding: 0 0.8rem;
+  background: $base01;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+}
+
+@mixin bar-button {
+  @include bar-label();
+
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+
+  &:hover {
+    background: $base02;
+  }
+}
+
+@mixin small-label {
+  padding: 0;
+}
+
+.bar {
+  * {
+    all: unset;
+    font-family: "IosevkaTerm NF";
+    font-size: 0.9rem;
+  }
+
+  .cbox {
+    margin: 0.65rem 0rem 0rem 0em;
+    background: $base00;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    padding: 0.2em;
+  }
+
+  button {
+    @include bar-button();
+  }
+
+  .app-l-button {
+    @include small-label();
+
+    .icon {
+      color: $base04;
+    }
+  }
+
+  .workspaces {
+    button {
+      @include bar-button();
+      @include small-label();
+
+      background: transparent;
+      color: $base04;
+
+      &.occupied {
+        background: $base01;
+      }
+
+      &.active {
+        color: $base0D;
+        background: $base01;
+      }
+
+      &:hover {
+        background: $base02;
+      }
+
+      &:first-child {
+        margin-left: 4px;
+      }
+
+      &:last-child {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .tray {
+    @include bar-label();
+    @include small-label();
+
+    button {
+      padding: 0;
+
+      &:first-child {
+        margin-left: 2px;
+      }
+
+      &:last-child {
+        margin-right: 2px;
+      }
+
+      &:hover {
+        color: $base02;
+      }
+    }
+  }
+
+  .tray-button {
+    @include small-label();
+
+    .icon {
+      color: $base04;
+      transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+      -gtk-icon-transform: rotate(90deg);
+
+      &.showing {
+        -gtk-icon-transform: rotate(270deg);
+      }
+    }
+  }
+
+  .battery-label {
+    @include bar-label();
+
+    .battery-bulb {
+      background: $base04;
+      min-width: 3px;
+      border-radius: 0.2em 0 0 0.2em;
+      margin: 0.7em 0;
+    }
+
+    levelbar {
+      trough {
+        border: 1px solid $base04;
+        border-radius: 0.2em;
+        margin: 0.4rem 0em;
+
+        block.filled {
+          background: $base04;
+          border-radius: 0.1em;
+          margin: 0.15em;
+        }
+      }
+    }
+
+    &.charging {
+      levelbar {
+        block.filled {
+          background: $base0B;
+        }
+      }
+    }
+
+    label {
+      color: $base04;
+      margin-left: 12px;
+      padding: 0;
+    }
+  }
+
+  .clock {
+    @include bar-label();
+
+    label {
+      color: $base04;
+    }
+  }
+
+  .control-button {
+    @include bar-label();
+
+    .speaker {
+      color: $base0B;
+    }
+
+    .microphone {
+      color: $base0A;
+    }
+
+    .network {
+      color: $base0D;
+    }
+
+    .power {
+      color: $base08;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+@mixin control-button {
+  background: $base01;
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+}
+
+@mixin wide-box {
+  background: $base01;
+  padding: 0 0.8em;
+  min-height: 3em;
+}
+
+@mixin slider {
+  @include wide-box();
+
+  scale {
+    trough {
+      background: transparentize($base04, 0.9);
+      min-height: 0.4rem;
+
+      slider {
+        background: none;
+        box-shadow: none;
+        border: none;
+      }
+
+      highlight {
+        border: none;
+      }
+    }
+  }
+
+  .icon {
+    margin-right: 0.8rem;
+  }
+
+  &.speaker {
+    .icon {
+      color: $base0B;
+    }
+
+    scale {
+      trough {
+        highlight {
+          background: $base0B;
+        }
+      }
+    }
+  }
+
+  &.microphone {
+    .icon {
+      color: $base0A;
+    }
+
+    scale {
+      trough {
+        highlight {
+          background: $base0A;
+        }
+      }
+    }
+  }
+}
+
+@mixin cal {
+  .cal-box {
+    background: $base01;
+    color: $base05;
+    padding: 0.4rem 0.4rem 0.2rem;
+
+    .cal {
+      border: none;
+      padding: 0.45rem 0.25rem 0.25rem 0.25rem;
+    }
+  }
+
+  calendar {
+    background: $base01;
+
+    &.header,
+    &.button,
+    &:selected {
+      color: $base0D;
+    }
+
+    &.highlight {
+      color: $base0C;
+    }
+
+    &:indeterminate {
+      color: transparentize($base05, 0.9);
+    }
+  }
+}
+
+@mixin power-box {
+  button {
+    background: $base01;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+
+    &:focus {
+      background: $base02;
+    }
+
+    &:hover {
+      background: $base02;
+    }
+
+    &:nth-child(1) {
+      color: $base08;
+    }
+
+    &:nth-child(2) {
+      color: $base0B;
+    }
+
+    &:nth-child(3) {
+      color: $base09;
+    }
+
+    &:nth-child(4) {
+      color: $base0D;
+    }
+  }
+}
+
+window#control_panel {
+  * {
+    all: unset;
+    font-family: "IosevkaTerm NF";
+    font-size: 0.9rem;
+  }
+
+  background: transparent;
+
+  .control-box {
+    background: $base00;
+    margin: 0.65rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    padding: 0.6rem;
+  }
+
+  button {
+    @include control-button();
+  }
+
+  @include cal();
+
+  .audio-slider {
+    @include slider();
+  }
+
+  .power-box {
+    @include power-box();
+  }
+
+  .wifi {
+    @include wide-box();
+
+    .icon {
+      color: $base0D;
+    }
+
+    &:hover {
+      background: $base02;
+    }
+  }
+}
