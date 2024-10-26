@@ -6,8 +6,7 @@
 }: {
   imports = [inputs.ags.homeManagerModules.default];
 
-  home.packages = [
-  ];
+  home.packages = [inputs.ags.packages.${pkgs.system}.io];
 
   programs.ags = {
     enable = true;
