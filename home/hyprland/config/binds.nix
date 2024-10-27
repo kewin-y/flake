@@ -83,7 +83,7 @@ in {
           # Apps
           "${mainMod}, return, exec, foot"
           "${mainMod} CTRL, F, exec, firefox"
-          "${mainMod}, SPACE, exec, ags -t app-launcher"
+          "${mainMod}, SPACE, exec, astal toggle-popup app-launcher"
 
           # Screenshot
           "${mainMod} SHIFT, S, exec, ${screenshot}/bin/screenshot s"

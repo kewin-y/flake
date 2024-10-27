@@ -50,7 +50,7 @@ export function PopupWindow({
         hexpand={true}
         vexpand={true}
         child={child || <box></box>}
-        revealChild={true}
+        revealChild={false}
       ></revealer>
     </window>
   );
