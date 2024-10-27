@@ -9,4 +9,4 @@
 
 ## TODO:
 
-- [ ] Rewrite AGS in astal 😢
+- [ ] Rewrite AGS for v2 😢

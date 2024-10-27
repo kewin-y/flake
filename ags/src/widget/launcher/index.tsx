@@ -90,7 +90,7 @@ function Inner({ width, height, spacing }: InnerProps) {
 }
 
 export default function Launcher() {
-  const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.RIGHT;
+  const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.LEFT;
   return (
     <PopupWindow
       name={WINDOW_NAME}
