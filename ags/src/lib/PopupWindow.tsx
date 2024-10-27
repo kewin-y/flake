@@ -1,15 +1,29 @@
-import { App, Astal, Gtk } from "astal/gtk3";
+import { App, Gtk, Widget } from "astal/gtk3";
+import { timeout } from "astal";
 import Gdk from "gi://Gdk?version=3.0";
 
-type Props = {
+export function closePopupWindow(win: Gtk.Window) {
+  (win.get_child() as Gtk.Revealer).revealChild = false;
+  timeout(300, () => win.hide());
+}
+
+export function togglePopupWindow(windowName: string) {
+  const win = App.get_window(windowName)!;
+  if (win.is_visible() === false) {
+    win.show();
+    (win.get_child() as Gtk.Revealer).revealChild = true;
+  } else {
+    closePopupWindow(win);
+  }
+}
+
+type Props = Omit<Widget.WindowProps, "name"> & {
   name: string;
   transition: Gtk.RevealerTransitionType;
   duration: number;
   child?: JSX.Element;
-  // ?????? ??? ?? ? ??? ??? ?? ?? ? ???? ? ?? ? ??? ? ?? ?? ? ?? ??  ?? ?
-  [key: string]: any;
 };
-export default function PopupWindow({
+export function PopupWindow({
   name,
   transition,
   duration,
@@ -20,32 +34,24 @@ export default function PopupWindow({
     <window
       name={name}
       visible={false}
+      widthRequest={2}
+      heightRequest={2}
       {...rest}
-      onKeyPressEvent={(_, event) => {
+      onKeyPressEvent={(self, event) => {
         const keyVal = event.get_keyval()[1];
         if (keyVal === Gdk.KEY_Escape) {
-          App.toggle_window(name);
+          togglePopupWindow(name);
         }
       }}
     >
-      <box css={"min-height: 2px; min-width: 2px"}>
-        <revealer
-          transitionType={transition}
-          transitionDuration={duration}
-          child={child || <box></box>}
-          setup={(self) => {
-            self.hook(
-              App,
-              "window-toggled",
-              (_, wn: string, visible: boolean) => {
-                if (wn === name) {
-                  self.revealChild = visible;
-                }
-              },
-            );
-          }}
-        ></revealer>
-      </box>
+      <revealer
+        transitionType={transition}
+        transitionDuration={duration}
+        hexpand={true}
+        vexpand={true}
+        child={child || <box></box>}
+        revealChild={true}
+      ></revealer>
     </window>
   );
 }

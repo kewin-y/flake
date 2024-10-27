@@ -13,7 +13,7 @@
 
   programs.ags = {
     enable = true;
-    configDir = ../../ags;
+    # configDir = ../../ags;
     extraPackages = with pkgs; [
       pavucontrol
       inputs.ags.packages.${pkgs.system}.battery
@@ -23,6 +23,7 @@
       inputs.ags.packages.${pkgs.system}.tray
       inputs.ags.packages.${pkgs.system}.wireplumber
       inputs.ags.packages.${pkgs.system}.notifd
+      inputs.ags.packages.${pkgs.system}.apps
     ];
   };
 
