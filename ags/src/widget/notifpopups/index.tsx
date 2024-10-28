@@ -13,7 +13,7 @@ function NotifIcon(notif: AstalNotifd.Notification) {
           ? notif.app_icon
           : "dialog-information-symbolic"
       }
-      icon_size={128}
+      css={"font-size: 38px;"}
       valign={Gtk.Align.CENTER}
       halign={Gtk.Align.CENTER}
     />
@@ -155,6 +155,7 @@ export default function NotificationPopups(monitor = 0) {
           ? notif.get_expire_timeout() * 1000
           : 3000;
 
+      // Like 5 million errors
       timeout(expire, () => removeNotifPopup(n));
     }
   });

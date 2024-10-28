@@ -1,7 +1,8 @@
 import { App, Astal, Gtk } from "astal/gtk3";
 
-import Clock from "./components/Clock";
 import Workspaces from "./components/Workspaces";
+import Clock from "./components/Clock";
+import BatteryLevel from "./components/Battery";
 
 const BOXCSS = "margin: 0.2rem 0.8rem";
 
@@ -25,6 +26,7 @@ function BarEnd() {
   return (
     <box halign={Gtk.Align.END} css={BOXCSS} spacing={8}>
       <Clock />
+      <BatteryLevel />
     </box>
   );
 }

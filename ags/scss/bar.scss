@@ -124,6 +124,10 @@
           border-radius: 0.1em;
           margin: 0.15em;
         }
+
+        block {
+          background: transparentize($color: $base04, $amount: 0.9)
+        }
       }
     }
 
@@ -132,12 +136,15 @@
         block.filled {
           background: $base0B;
         }
+        block {
+          background: transparentize($color: $base0B, $amount: 0.9)
+        }
       }
     }
 
     label {
       color: $base04;
-      margin-left: 12px;
+      margin-right: 12px;
       padding: 0;
     }
   }

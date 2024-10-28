@@ -1,4 +1,4 @@
-import { PopupWindow, togglePopupWindow } from "../../lib/PopupWindow";
+import { PopupWindow, togglePopupWindow } from "../PopupWindow";
 import { App, Astal, Gtk } from "astal/gtk3";
 import Apps from "gi://AstalApps";
 
@@ -59,6 +59,7 @@ function Inner({ width, height, spacing }: InnerProps) {
         }
       }}
       onChanged={(self) => {
+        // Horrifying
         const results = apps.fuzzy_query(self.text).map((itm) => itm.name);
         applicationBtns.forEach((itm) => {
           itm.set_visible(results.includes(itm.name));
