@@ -22,7 +22,7 @@ writeFile(
   tmpscss,
   `
   * {
-    font-size: 0.9rem;
+    font-family: lexend;
     &:not(menu):not(menuitem):not(separator):not(tooltip) {
       all: unset;
     }

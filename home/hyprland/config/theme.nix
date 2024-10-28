@@ -14,12 +14,12 @@
       general = {
         gaps_in = "8";
         gaps_out = "12";
-        border_size = "3";
+        border_size = "0";
         layout = "dwindle";
         resize_on_border = "true";
       };
       decoration = {
-        rounding = "0";
+        rounding = "3";
         drop_shadow = "true";
         shadow_range = "18";
         "col.shadow" = "rgba(00000066)";

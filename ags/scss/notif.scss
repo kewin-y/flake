@@ -33,7 +33,8 @@ window.notification-popups box.notifications {
   .title,
   .body {
     color: $base04;
-    margin: 0 0.4rem;
+    font-size: 14px;
+    margin: 0.1rem 0.4rem;
   }
 
   .actions {
@@ -46,6 +47,7 @@ window.notification-popups box.notifications {
       background: $base01;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
       padding: 0.8em;
+      font-size: 14px;
 
       &:hover {
         background: $base02;

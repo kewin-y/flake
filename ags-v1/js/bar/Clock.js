@@ -1,4 +1,4 @@
-import { execAsync } from "resource:///com/github/Aylur/ags/utils.js";
+import { execAsync } from "astal/process ff";
 
 export const Clock = () =>
   Widget.Box({
@@ -8,7 +8,7 @@ export const Clock = () =>
       Widget.Label({
         setup: (self) =>
           self.poll(1000, (self) =>
-            execAsync(["date", "+%H:%M | %b %d"]).then((date) => (self.label = date)),
+            execAsync(["date", "+%H:%M"]).then((date) => (self.label = date)),
           ),
       }),
     ],
