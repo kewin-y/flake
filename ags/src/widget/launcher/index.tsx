@@ -3,7 +3,7 @@ import { App, Astal, Gtk } from "astal/gtk3";
 import Apps from "gi://AstalApps";
 import PowerMenu from "./components/PowerMenu";
 
-const WINDOW_NAME = "app-launcher";
+export const WINDOW_NAME = "app-launcher";
 
 function ApplicationItem(application: Apps.Application) {
   return (

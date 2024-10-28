@@ -1,5 +1,7 @@
 import { App, Astal, Gtk } from "astal/gtk3";
 
+import LauncherButton from "./components/LauncherButton";
+import SysTray from "./components/SysTray";
 import Workspaces from "./components/Workspaces";
 import Clock from "./components/Clock";
 import BatteryLevel from "./components/Battery";
@@ -9,6 +11,8 @@ const BOXCSS = "margin: 0.2rem 0.8rem";
 function BarStart() {
   return (
     <box halign={Gtk.Align.START} css={BOXCSS} spacing={8}>
+      <LauncherButton />
+      <SysTray />
     </box>
   );
 }

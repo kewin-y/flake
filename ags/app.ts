@@ -9,7 +9,6 @@ import { exec } from "astal/process";
 
 import barStyle from "inline:./scss/bar.scss";
 import notifStyle from "inline:./scss/notif.scss";
-import panelStyle from "inline:./scss/panel.scss";
 import launcherStyle from "inline:./scss/launcher.scss";
 
 import { HOME } from "./src/lib/constants";
@@ -31,7 +30,6 @@ writeFile(
   @import "${colorsPath}";
   ${barStyle}
   ${notifStyle}
-  ${panelStyle}
   ${launcherStyle}
 `,
 );

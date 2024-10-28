@@ -35,10 +35,10 @@
     @include bar-button();
   }
 
-  .app-l-button {
+  .launcher-button {
     @include small-label();
 
-    .icon {
+    icon {
       color: $base04;
     }
   }
@@ -68,17 +68,12 @@
   .tray {
     @include bar-label();
     @include small-label();
+    background: transparent;
 
     button {
-      padding: 0;
-
-      &:first-child {
-        margin-left: 2px;
-      }
-
-      &:last-child {
-        margin-right: 2px;
-      }
+      @include bar-button();
+      @include small-label();
+      background: transparent;
 
       &:hover {
         color: $base02;
@@ -89,7 +84,7 @@
   .tray-button {
     @include small-label();
 
-    .icon {
+    icon {
       color: $base04;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
       -gtk-icon-transform: rotate(90deg);
