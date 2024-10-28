@@ -8,14 +8,14 @@
 
   home.packages = with pkgs; [
     dart-sass
+    pavucontrol
     inputs.ags.packages.${pkgs.system}.io
   ];
 
   programs.ags = {
     enable = true;
-    # configDir = ../../ags;
-    extraPackages = with pkgs; [
-      pavucontrol
+    configDir = ../../ags;
+    extraPackages = [
       inputs.ags.packages.${pkgs.system}.battery
       inputs.ags.packages.${pkgs.system}.hyprland
       inputs.ags.packages.${pkgs.system}.mpris
@@ -27,7 +27,7 @@
     ];
   };
 
-  # This is so jank
+  # Hmm ...
   home.file.".config/ags_res/colors.scss".text = with config.lib.stylix.colors; ''
     $base00: #${base00};
     $base01: #${base01};

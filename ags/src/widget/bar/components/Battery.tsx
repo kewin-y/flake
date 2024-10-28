@@ -18,7 +18,13 @@ export default function BatteryLevel() {
           (p) => `${p > 0 ? Math.floor(p * 100) : 0}%`,
         )}
       />
-      <icon icon={bind(bat, "batteryIconName")} />
+      <circularprogress
+        heightRequest={16}
+        widthRequest={16}
+        className={"progress"}
+        rounded={true}
+        value={bind(bat, "percentage").as((p) => (p > 0 ? p : 0))}
+      />
     </box>
   );
 }

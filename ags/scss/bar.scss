@@ -23,6 +23,7 @@
 
 .bar {
   font-size: 14px;
+
   .cbox {
     margin: 0.65rem 0rem 0rem 0em;
     background: $base00;
@@ -101,6 +102,18 @@
 
   .battery-label {
     @include bar-label();
+
+    .progress {
+      font-size: 0.2rem;
+      color: $base04;
+      background: transparentize($color: $base04, $amount: 0.8);
+    }
+
+    &.charging .progress {
+      color: $base0B;
+      background: transparentize($color: $base0B, $amount: 0.8);
+    }
+
     label {
       color: $base04;
       margin-right: 8px;

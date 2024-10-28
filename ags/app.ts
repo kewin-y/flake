@@ -22,11 +22,12 @@ writeFile(
   tmpscss,
   `
   * {
-    font-family: lexend;
+    font-family: rubik;
     &:not(menu):not(menuitem):not(separator):not(tooltip) {
       all: unset;
     }
   }
+
   @import "${colorsPath}";
   ${barStyle}
   ${notifStyle}

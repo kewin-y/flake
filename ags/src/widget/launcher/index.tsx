@@ -1,12 +1,15 @@
 import { PopupWindow, togglePopupWindow } from "../PopupWindow";
 import { App, Astal, Gtk } from "astal/gtk3";
 import Apps from "gi://AstalApps";
+import PowerMenu from "./components/PowerMenu";
 
 const WINDOW_NAME = "app-launcher";
 
 function ApplicationItem(application: Apps.Application) {
   return (
     <button
+      className="app-entry"
+      heightRequest={38}
       name={application.name}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);
@@ -14,11 +17,10 @@ function ApplicationItem(application: Apps.Application) {
       }}
     >
       <box>
-        <icon icon={application.iconName} icon_size={26} />
+        <icon icon={application.iconName} css={"font-size: 26px"} />
         <label
           className="title"
           label={application.name}
-          xalign={0}
           valign={Gtk.Align.CENTER}
         ></label>
       </box>
@@ -46,11 +48,9 @@ function Inner({ width, height, spacing }: InnerProps) {
 
   const Search = (
     <entry
-      className={"entry"}
+      className="search"
+      heightRequest={38}
       hexpand={true}
-      css={`
-        margin-bottom: ${spacing}px;
-      `}
       onActivate={(self) => {
         const results = apps.fuzzy_query(self.text);
         if (results[0]) {
@@ -76,19 +76,22 @@ function Inner({ width, height, spacing }: InnerProps) {
   });
 
   return (
-    <box
-      className={"launcher-box"}
-      vertical={true}
-      children={[
-        Search,
-        <scrollable
-          heightRequest={height}
-          widthRequest={width}
-          hscroll={Gtk.PolicyType.NEVER}
-          child={List}
-        ></scrollable>,
-      ]}
-    ></box>
+    <box className={"launcher-box"}>
+      <PowerMenu />
+      <box
+        vertical={true}
+        spacing={spacing}
+        children={[
+          Search,
+          <scrollable
+            heightRequest={height}
+            widthRequest={width}
+            hscroll={Gtk.PolicyType.NEVER}
+            child={List}
+          ></scrollable>,
+        ]}
+      ></box>
+    </box>
   );
 }
 
@@ -106,7 +109,7 @@ export default function Launcher() {
       monitor={0}
     >
       <box>
-        <Inner width={300} height={380} spacing={12} />
+        <Inner width={300} height={380} spacing={8} />
       </box>
     </PopupWindow>
   );

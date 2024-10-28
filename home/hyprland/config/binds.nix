@@ -62,7 +62,7 @@ in {
           rm "$temp_screenshot"
 
           if [ -f "$save_dir/$save_file" ] ; then
-              notify-send "Smile! You're On Camera! 📸" "Screenshot saved in $save_dir" -i $save_dir/$save_file
+              notify-send "Screenshot" "Screenshot saved in $save_dir" -i $save_dir/$save_file
           fi
         '';
 

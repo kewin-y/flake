@@ -35,8 +35,8 @@
         package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
       };
       sansSerif = {
-        name = "lexend";
-        package = pkgs.lexend;
+        name = "rubik";
+        package = pkgs.rubik;
       };
     };
   };

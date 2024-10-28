@@ -9,7 +9,6 @@ const BOXCSS = "margin: 0.2rem 0.8rem";
 function BarStart() {
   return (
     <box halign={Gtk.Align.START} css={BOXCSS} spacing={8}>
-      <label label={"My Guy Im clincally insane"}></label>
     </box>
   );
 }
