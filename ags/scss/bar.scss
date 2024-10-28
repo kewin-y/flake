@@ -87,10 +87,13 @@
     icon {
       color: $base04;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
-      -gtk-icon-transform: rotate(90deg);
+      -gtk-icon-transform: rotate(270deg);
+      margin-left: 2px;
 
       &.showing {
-        -gtk-icon-transform: rotate(270deg);
+        margin-left: 0px;
+        margin-right: 1px;
+        -gtk-icon-transform: rotate(90deg);
       }
     }
   }

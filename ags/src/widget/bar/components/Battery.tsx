@@ -21,6 +21,8 @@ export default function BatteryLevel() {
       <circularprogress
         heightRequest={16}
         widthRequest={16}
+        startAt={0.75}
+        endAt={0.75}
         className={"progress"}
         rounded={true}
         value={bind(bat, "percentage").as((p) => (p > 0 ? p : 0))}
