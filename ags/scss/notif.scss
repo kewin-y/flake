@@ -1,10 +1,4 @@
 window.notification-popups box.notifications {
-  * {
-    all: unset;
-    font-family: "IosevkaTerm NF";
-    font-size: 0.9rem;
-  }
-
   padding: 4px;
 
   .notif-icon {
@@ -14,6 +8,7 @@ window.notification-popups box.notifications {
   }
 
   .notification {
+    border-radius: 3px;
     min-width: 25em;
     margin: 0.65rem;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
@@ -21,7 +16,8 @@ window.notification-popups box.notifications {
 
     .content {
       background: $base01;
-      margin: 0.6rem 0.6rem 0.6rem 0.6rem; 
+      border-radius: 3px;
+      margin: 0.6rem 0.6rem 0.6rem 0.6rem;
       padding: 0.8em;
     }
 
@@ -45,6 +41,7 @@ window.notification-popups box.notifications {
 
     .action-button {
       color: $base04;
+      border-radius: 3px;
       font-weight: bold;
       background: $base01;
       transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);

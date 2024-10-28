@@ -35,8 +35,8 @@
         package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
       };
       sansSerif = {
-        name = "IBM Plex Sans";
-        package = pkgs.ibm-plex;
+        name = "lexend";
+        package = pkgs.lexend;
       };
     };
   };

@@ -17,33 +17,28 @@ window#app_launcher {
     transition: background 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 
     &:focus {
-      background: $base02;
+      background: $base01;
       color: $base0D;
     }
 
     &:hover {
-      background: $base02;
+      background: $base01;
     }
   }
 
   .entry {
     padding: 0.4rem;
-    background: $base00;
+    background: $base01;
   }
 
   .title {
     margin: 0 0.8rem;
   }
 
-  .al-out-box {
-    background: $base00;
+  .al-box {
     padding: 0.6rem;
+    background: blanchedalmond;
     margin: 0.65rem;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
-
-    .al-in-box {
-      background: $base01;
-      padding: 0.6rem;
-    }
   }
 }

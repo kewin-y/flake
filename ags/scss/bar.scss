@@ -1,5 +1,6 @@
 @mixin bar-label {
   padding: 0 0.8rem;
+  border-radius: 3px;
   background: $base01;
   color: $base04;
   min-width: 1.8rem;
@@ -21,12 +22,6 @@
 }
 
 .bar {
-  * {
-    all: unset;
-    font-family: "IosevkaTerm NF";
-    font-size: 0.9rem;
-  }
-
   .cbox {
     margin: 0.65rem 0rem 0rem 0em;
     background: $base00;
@@ -105,47 +100,9 @@
 
   .battery-label {
     @include bar-label();
-
-    .battery-bulb {
-      background: $base04;
-      min-width: 3px;
-      border-radius: 0.2em 0 0 0.2em;
-      margin: 0.7em 0;
-    }
-
-    levelbar {
-      trough {
-        border: 1px solid $base04;
-        border-radius: 0.2em;
-        margin: 0.4rem 0em;
-
-        block.filled {
-          background: $base04;
-          border-radius: 0.1em;
-          margin: 0.15em;
-        }
-
-        block {
-          background: transparentize($color: $base04, $amount: 0.9)
-        }
-      }
-    }
-
-    &.charging {
-      levelbar {
-        block.filled {
-          background: $base0B;
-        }
-        block {
-          background: transparentize($color: $base0B, $amount: 0.9)
-        }
-      }
-    }
-
     label {
       color: $base04;
-      margin-right: 12px;
-      padding: 0;
+      margin-right: 8px;
     }
   }
 

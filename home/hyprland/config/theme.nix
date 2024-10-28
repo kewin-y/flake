@@ -14,7 +14,7 @@
       general = {
         gaps_in = "8";
         gaps_out = "12";
-        border_size = "0";
+        border_size = "3";
         layout = "dwindle";
         resize_on_border = "true";
       };

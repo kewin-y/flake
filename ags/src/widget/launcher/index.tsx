@@ -76,21 +76,19 @@ function Inner({ width, height, spacing }: InnerProps) {
   });
 
   return (
-    <box className={"al-out-box"}>
-      <box
-        className={"al-in-box"}
-        vertical={true}
-        children={[
-          Search,
-          <scrollable
-            heightRequest={height}
-            widthRequest={width}
-            hscroll={Gtk.PolicyType.NEVER}
-            child={List}
-          ></scrollable>,
-        ]}
-      ></box>
-    </box>
+    <box
+      className={"launcher-box"}
+      vertical={true}
+      children={[
+        Search,
+        <scrollable
+          heightRequest={height}
+          widthRequest={width}
+          hscroll={Gtk.PolicyType.NEVER}
+          child={List}
+        ></scrollable>,
+      ]}
+    ></box>
   );
 }
 

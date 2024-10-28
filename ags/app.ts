@@ -21,6 +21,12 @@ const target = "/tmp/style.css";
 writeFile(
   tmpscss,
   `
+  * {
+    font-size: 0.9rem;
+    &:not(menu):not(menuitem):not(separator):not(tooltip) {
+      all: unset;
+    }
+  }
   @import "${colorsPath}";
   ${barStyle}
   ${notifStyle}
