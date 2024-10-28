@@ -7,20 +7,17 @@ window.notification-popups box.notifications {
 
   padding: 4px;
 
-  .icon {
+  .notif-icon {
     min-width: 68px;
     min-height: 68px;
     margin: 1rem;
 
-    box {
-      min-width: 48px;
-      min-height: 48px;
-    }
-
-    image {
+    icon {
       font-size: 38px;
       color: $base04;
     }
+
+
   }
 
   .notification {

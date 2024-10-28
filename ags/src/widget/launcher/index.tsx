@@ -1,5 +1,5 @@
 import { PopupWindow, togglePopupWindow } from "../../lib/PopupWindow";
-import { App, Astal, Gtk, Widget } from "astal/gtk3";
+import { App, Astal, Gtk } from "astal/gtk3";
 import Apps from "gi://AstalApps";
 
 const WINDOW_NAME = "app-launcher";
@@ -30,43 +30,47 @@ type InnerProps = { width: number; height: number; spacing: number };
 
 // Idiot
 // This works for me since I barely have any apps installed
+// Also for some reason fuzzy_match() does not exist
 // TODO: Fix this garbage
 function Inner({ width, height, spacing }: InnerProps) {
   const apps = Apps.Apps.new();
 
   const applications = apps.fuzzy_query("");
-  const applicationWidgets = applications.map(ApplicationItem);
+  const applicationBtns = applications.map(ApplicationItem);
 
-  const List = new Widget.Box({
-    vertical: true,
-    spacing: spacing,
-    children: applicationWidgets,
-  });
+  const List = (
+    <box vertical={true} spacing={spacing}>
+      {applicationBtns}
+    </box>
+  );
 
-  const Search = new Widget.Entry({
-    className: "entry",
-    hexpand: true,
-    css: `margin-bottom: ${spacing}px;`,
-    onActivate: (self) => {
-      const results = apps.fuzzy_query(self.text);
-      if (results[0]) {
-        togglePopupWindow(WINDOW_NAME);
-        results[0].launch();
-      }
-    },
-    // This is kind of stupid
-    onChanged: (self) => {
-      const results = apps.fuzzy_query(self.text).map((itm) => itm.name);
-      applicationWidgets.forEach((itm) => {
-        itm.set_visible(results.includes(itm.name));
-      });
-    },
-  });
+  const Search = (
+    <entry
+      className={"entry"}
+      hexpand={true}
+      css={`
+        margin-bottom: ${spacing}px;
+      `}
+      onActivate={(self) => {
+        const results = apps.fuzzy_query(self.text);
+        if (results[0]) {
+          togglePopupWindow(WINDOW_NAME);
+          results[0].launch();
+        }
+      }}
+      onChanged={(self) => {
+        const results = apps.fuzzy_query(self.text).map((itm) => itm.name);
+        applicationBtns.forEach((itm) => {
+          itm.set_visible(results.includes(itm.name));
+        });
+      }}
+    />
+  );
 
   App.connect("window-toggled", (_, win) => {
     if (win.name === WINDOW_NAME) {
-      Search.set_text("");
-      Search.grab_focus();
+      (Search as Gtk.Entry).set_text("");
+      (Search as Gtk.Entry).grab_focus();
     }
   });
 
@@ -100,6 +104,7 @@ export default function Launcher() {
       anchor={anchor}
       margin={4}
       keymode={Astal.Keymode.EXCLUSIVE}
+      monitor={0}
     >
       <box>
         <Inner width={300} height={380} spacing={12} />

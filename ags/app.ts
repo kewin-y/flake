@@ -1,6 +1,7 @@
 import { App } from "astal/gtk3";
 import Bar from "./src/widget/bar";
 import Launcher from "./src/widget/launcher";
+import NotificationPopups from "./src/widget/notifpopups";
 import { togglePopupWindow } from "./src/lib/PopupWindow";
 
 import { writeFile } from "astal/file";
@@ -33,15 +34,16 @@ exec(`sass ${tmpscss} ${target}`);
 
 App.start({
   requestHandler(req, res) {
-    const [cmd, ...args] = req.split(" ")
+    const [cmd, ...args] = req.split(" ");
     if (cmd == "toggle-popup") {
-      togglePopupWindow(args[0])
-      res("")
+      togglePopupWindow(args[0]);
+      res("");
     }
   },
   css: target,
   main() {
     Bar();
     Launcher();
+    NotificationPopups();
   },
 });

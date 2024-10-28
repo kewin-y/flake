@@ -1,6 +1,5 @@
-import { App, Gtk, Widget } from "astal/gtk3";
+import { App, Gtk, Widget, Gdk } from "astal/gtk3";
 import { timeout } from "astal";
-import Gdk from "gi://Gdk?version=3.0";
 
 export function closePopupWindow(win: Gtk.Window) {
   (win.get_child() as Gtk.Revealer).revealChild = false;
@@ -17,19 +16,20 @@ export function togglePopupWindow(windowName: string) {
   }
 }
 
-type Props = Omit<Widget.WindowProps, "name"> & {
+type PopupWindowProps = Omit<Widget.WindowProps, "name"> & {
   name: string;
   transition: Gtk.RevealerTransitionType;
   duration: number;
   child?: JSX.Element;
 };
+
 export function PopupWindow({
   name,
   transition,
   duration,
   child,
   ...rest
-}: Props) {
+}: PopupWindowProps) {
   return (
     <window
       name={name}
@@ -40,7 +40,7 @@ export function PopupWindow({
       onKeyPressEvent={(self, event) => {
         const keyVal = event.get_keyval()[1];
         if (keyVal === Gdk.KEY_Escape) {
-          togglePopupWindow(name);
+          closePopupWindow(self);
         }
       }}
     >
