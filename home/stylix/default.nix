@@ -10,7 +10,7 @@
     image = config.wallpaper;
 
     base16Scheme = ./themes/oxocarbon.yaml;
-    polarity = "light";
+    polarity = "dark";
 
     cursor = {
       name = "phinger-cursors-light";
@@ -46,8 +46,8 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Papirus-Light";
-      package = pkgs.papirus-icon-theme.override {color = "nordic";};
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme.override {color = "blue";};
     };
   };
 
