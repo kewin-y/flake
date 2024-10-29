@@ -26,7 +26,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-ex5xrw.jpg;
+    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
     font = "IosevkaTerm";
   };
 }
