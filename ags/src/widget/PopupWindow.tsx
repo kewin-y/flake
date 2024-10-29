@@ -1,9 +1,11 @@
 import { App, Gtk, Widget, Gdk } from "astal/gtk3";
 import { timeout } from "astal";
 
+const TRANSITION_DURATION = 300;
+
 export function closePopupWindow(win: Gtk.Window) {
   (win.get_child() as Gtk.Revealer).revealChild = false;
-  timeout(300, () => win.hide());
+  timeout(TRANSITION_DURATION, () => win.hide());
 }
 
 export function togglePopupWindow(windowName: string) {
@@ -19,14 +21,12 @@ export function togglePopupWindow(windowName: string) {
 type PopupWindowProps = Omit<Widget.WindowProps, "name"> & {
   name: string;
   transition: Gtk.RevealerTransitionType;
-  duration: number;
   child?: JSX.Element;
 };
 
 export function PopupWindow({
   name,
   transition,
-  duration,
   child,
   ...rest
 }: PopupWindowProps) {
@@ -46,7 +46,7 @@ export function PopupWindow({
     >
       <revealer
         transitionType={transition}
-        transitionDuration={duration}
+        transitionDuration={TRANSITION_DURATION}
         hexpand={true}
         vexpand={true}
         child={child || <box></box>}

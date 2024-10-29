@@ -102,7 +102,6 @@ export default function Launcher() {
       name={WINDOW_NAME}
       application={App}
       transition={Gtk.RevealerTransitionType.SLIDE_UP}
-      duration={300}
       anchor={anchor}
       margin={4}
       keymode={Astal.Keymode.EXCLUSIVE}
