@@ -21,7 +21,7 @@
       input-field = with config.lib.stylix.colors; [
         {
           size = "200, 50";
-          rounding = 0;
+          rounding = 6;
           position = "0, 0";
           monitor = "";
           dots_center = true;
