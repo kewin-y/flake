@@ -20,6 +20,7 @@ const target = "/tmp/style.css";
 writeFile(
   tmpscss,
   `
+  @import "${colorsPath}";
   * {
     font-family: rubik;
     icon {
@@ -30,7 +31,6 @@ writeFile(
     }
   }
 
-  @import "${colorsPath}";
   ${barStyle}
   ${notifStyle}
   ${launcherStyle}
