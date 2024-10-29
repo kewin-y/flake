@@ -887,11 +887,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730170889,
-        "narHash": "sha256-9xsltqBVXyEglisJLrSI5HU+qdj9b9KV6Fy8ItJfVog=",
+        "lastModified": 1730171451,
+        "narHash": "sha256-EVgOxauJ2MYz9Ou6mjbrMSlrK/2HcohuMdCbAcfalWM=",
         "ref": "refs/heads/master",
-        "rev": "5b3207fc1593f8a393305018bf6db3693cb82498",
-        "revCount": 9,
+        "rev": "86678693cfb93e50ec6bb5a8168323662340f4cc",
+        "revCount": 10,
         "type": "git",
         "url": "https://codeberg.org/ykevin_u/nixvim.git"
       },

@@ -26,7 +26,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/fury.jpg;
+    wallpaper = ../wallpapers/wallhaven-ex5xrw.jpg;
     font = "IosevkaTerm";
   };
 }
