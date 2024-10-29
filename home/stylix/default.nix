@@ -9,7 +9,7 @@
     # Placeholder (literally doesn't matter)
     image = config.wallpaper;
 
-    base16Scheme = ./themes/sakura.yaml;
+    base16Scheme = ./themes/brushtrees.yaml;
     polarity = "light";
 
     cursor = {
@@ -21,6 +21,7 @@
     targets = {
       hyprland.enable = false;
       nixvim.enable = false;
+      neovim.enable = false;
       firefox.enable = false;
       fzf.enable = false;
       tmux.enable = false;
@@ -45,7 +46,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Papirus-Dark";
+      name = "Papirus-Light";
       package = pkgs.papirus-icon-theme.override {color = "nordic";};
     };
   };

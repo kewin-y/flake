@@ -22,6 +22,9 @@ writeFile(
   `
   * {
     font-family: rubik;
+    icon {
+      $color: $base04;
+    }
     &:not(menu):not(menuitem):not(separator):not(tooltip) {
       all: unset;
     }
