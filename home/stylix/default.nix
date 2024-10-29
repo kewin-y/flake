@@ -47,7 +47,7 @@
     enable = true;
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override {color = "cyan";};
+      package = pkgs.papirus-icon-theme.override {color = "blue";};
     };
   };
 
