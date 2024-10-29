@@ -9,7 +9,7 @@
     # Placeholder (literally doesn't matter)
     image = config.wallpaper;
 
-    base16Scheme = ./themes/brushtrees.yaml;
+    base16Scheme = ./themes/oxocarbon.yaml;
     polarity = "light";
 
     cursor = {
