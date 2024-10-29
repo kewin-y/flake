@@ -9,7 +9,7 @@
     # Placeholder (literally doesn't matter)
     image = config.wallpaper;
 
-    base16Scheme = ./themes/cupkake;
+    base16Scheme = ./themes/sakura.yaml;
     polarity = "light";
 
     cursor = {
@@ -20,6 +20,7 @@
 
     targets = {
       hyprland.enable = false;
+      nixvim.enable = false;
       firefox.enable = false;
       fzf.enable = false;
       tmux.enable = false;
