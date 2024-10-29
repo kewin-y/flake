@@ -23,6 +23,12 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    penguin-fox = {
+      url = "github:p3nguin-kun/penguinFox";
+      flake = false;
+    };
+
   };
 
   outputs = {
