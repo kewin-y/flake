@@ -80,7 +80,7 @@ function Notif(notif: AstalNotifd.Notification) {
     <eventbox onClick={() => notif.dismiss()}>
       <box className={`notification ${notif.urgency}`}>
         {NotifIcon(notif)}
-        <box vertical={true}>
+        <box vertical={true} className={"left"}>
           {Content}
           {Actions}
         </box>

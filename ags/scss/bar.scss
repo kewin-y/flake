@@ -126,23 +126,7 @@
     }
   }
 
-  .control-button {
+  .indicators {
     @include bar-label();
-
-    .speaker {
-      color: $base0B;
-    }
-
-    .microphone {
-      color: $base0A;
-    }
-
-    .network {
-      color: $base0D;
-    }
-
-    .power {
-      color: $base08;
-    }
   }
 }

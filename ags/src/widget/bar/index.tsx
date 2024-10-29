@@ -5,6 +5,7 @@ import SysTray from "./components/SysTray";
 import Workspaces from "./components/Workspaces";
 import Clock from "./components/Clock";
 import BatteryLevel from "./components/Battery";
+import Indicators from "./components/Indicators";
 
 const BOXCSS = "margin: 0.2rem 0.8rem";
 
@@ -30,6 +31,7 @@ function BarEnd() {
     <box halign={Gtk.Align.END} css={BOXCSS} spacing={8}>
       <Clock />
       <BatteryLevel />
+      <Indicators />
     </box>
   );
 }
@@ -42,8 +44,6 @@ export default function Bar(monitor = 0) {
   return (
     <window
       name={`bar-${monitor}`}
-      // Important because it allows to toggle windows KTHXBYE
-      // Why are you toggling the bar 😂
       application={App}
       className="bar"
       monitor={monitor}
