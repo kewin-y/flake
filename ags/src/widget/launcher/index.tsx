@@ -84,8 +84,8 @@ function Inner({ width, height, spacing }: InnerProps) {
         children={[
           Search,
           <scrollable
-            heightRequest={height}
             widthRequest={width}
+            heightRequest={height}
             hscroll={Gtk.PolicyType.NEVER}
             child={List}
           ></scrollable>,
@@ -100,10 +100,8 @@ export default function Launcher() {
   return (
     <PopupWindow
       name={WINDOW_NAME}
-      application={App}
       transition={Gtk.RevealerTransitionType.SLIDE_UP}
       anchor={anchor}
-      margin={4}
       keymode={Astal.Keymode.EXCLUSIVE}
       monitor={0}
     >

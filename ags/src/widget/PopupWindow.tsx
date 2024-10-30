@@ -33,6 +33,7 @@ export function PopupWindow({
   return (
     <window
       name={name}
+      application={App}
       visible={false}
       widthRequest={2}
       heightRequest={2}
