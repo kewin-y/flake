@@ -47,9 +47,6 @@
         leechblock-ng
         vimium
       ];
-
-      userChrome = lib.readFile "${inputs.penguin-fox}/files/chrome/userChrome.css";
-      userContent = lib.readFile "${inputs.penguin-fox}/files/chrome/userContent.css";
     };
   };
 }

@@ -24,11 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    penguin-fox = {
-      url = "github:p3nguin-kun/penguinFox";
-      flake = false;
-    };
-
   };
 
   outputs = {
