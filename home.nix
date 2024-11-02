@@ -6,10 +6,16 @@
   imports = [
     ./home
   ];
+
   home.username = "kevin";
   home.homeDirectory = "/home/kevin";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    TERMINAL = "foot";
+  };
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -28,18 +34,13 @@
     unityhub
     obsidian
     wl-clipboard
-    inputs.nixvim-config.packages.${system}.default
     ripgrep
+    inputs.nixvim-config.packages.${system}.default
   ];
 
   programs.btop.enable = true;
 
   fonts.fontconfig.enable = true;
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    TERMINAL = "foot";
-  };
 
   xdg.mimeApps = {
     enable = true;
