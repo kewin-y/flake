@@ -12,7 +12,7 @@ import notifStyle from "inline:./scss/notif.scss";
 import launcherStyle from "inline:./scss/launcher.scss";
 import panelStyle from "inline:./scss/panel.scss";
 
-import { HOME } from "./src/lib/constants";
+import { HOME } from "./src/shared/constants";
 import Panel from "./src/widget/panel";
 
 const colorsPath = `${HOME}/.config/ags_res/colors.scss`;

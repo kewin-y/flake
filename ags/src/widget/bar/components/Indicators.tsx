@@ -1,7 +1,7 @@
 import Wp from "gi://AstalWp";
 import { bind } from "astal";
 import { togglePopupWindow } from "../../PopupWindow";
-import WifiIcon from "../../../lib/WifiIcon";
+import WifiIcon from "../../../shared/WifiIcon";
 
 export default function Indicators() {
   const speaker = Wp.get_default()?.audio.defaultSpeaker!;

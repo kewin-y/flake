@@ -1,6 +1,6 @@
 import Network from "gi://AstalNetwork";
 import { bind } from "astal";
-import WifiIcon from "../../../lib/WifiIcon";
+import WifiIcon from "../../../shared/WifiIcon";
 
 export default function Wifi() {
   const network = Network.get_default();
