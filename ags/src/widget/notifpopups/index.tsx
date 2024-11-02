@@ -166,12 +166,14 @@ export default function NotificationPopups(monitor = 0) {
     if (widget) removeNotifPopup(widget);
   });
 
+  const anchor = Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT;
+
   return (
     <window
       monitor={monitor}
       name={`notifications${monitor}`}
       className={"notification-popups"}
-      anchor={Astal.WindowAnchor.TOP}
+      anchor={anchor}
       layer={Astal.Layer.OVERLAY}
     >
       {NotifList}
