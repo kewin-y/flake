@@ -11,8 +11,7 @@ export default function WifiIcon() {
     } else if (n === Network.Primary.WIFI) {
       return <icon icon={bind(wifi, "iconName")} />;
     } else {
-      // TODO: Find a better icon for this (unknown network)
-      return <icon icon={"dialog-information-symbolic"} />;
+      return <icon icon={"dialog-question-symbolic"} />;
     }
   });
 }
