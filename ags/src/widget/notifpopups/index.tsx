@@ -86,7 +86,7 @@ function NotifWidget(notif: AstalNotifd.Notification) {
       {Header}
       <box>
         {NotifIcon(notif)}
-        <box vertical={true} valign={Gtk.Align.CENTER}>
+        <box className="left" vertical={true} valign={Gtk.Align.CENTER}>
           {Body}
           {Actions}
         </box>

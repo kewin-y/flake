@@ -23,7 +23,7 @@ window.notification-popups box.notifications {
       border-radius: 3px;
       padding: 0.5rem;
 
-      margin: 0.65rem;
+      margin: 0.65rem 0.65rem 0 0.65rem;
 
       .title {
         font-weight: bold;
@@ -43,26 +43,28 @@ window.notification-popups box.notifications {
       }
     }
 
-    .body {
-      color: $base04;
-      font-size: 14px;
-    }
+    .left {
+      margin: 0.65rem 0.65rem 0.65rem 0;
 
-    .actions {
-      margin-right: 0.65rem;
-      margin-top: 0.65rem;
-      margin-bottom: 0.65rem;
-
-      .action-button {
+      .body {
         color: $base04;
-        border-radius: 3px;
-        background: $base01;
-        transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-        padding: 0.5em;
         font-size: 14px;
+      }
 
-        &:hover {
-          background: $base02;
+      .actions {
+        margin-top: 0.65rem;
+
+        .action-button {
+          color: $base04;
+          border-radius: 3px;
+          background: $base01;
+          transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+          padding: 0.5em;
+          font-size: 14px;
+
+          &:hover {
+            background: $base02;
+          }
         }
       }
     }
