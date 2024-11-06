@@ -7,11 +7,6 @@ pkgs.writeShellScriptBin "screenshot" ''
   SAVED_IMAGE="$SCREENSHOT_DIR/$IMAGE_NAME"
   TMP_SCREENSHOT="/tmp/$IMAGE_NAME"
 
-  SWAPPY_DIR="$HOME/.config/swappy/"
-  mkdir -p $SWAPPY_DIR
-  echo -e "[Default]\nsave_dir=$SCREENSHOT_DIR\nsave_filename_format=$IMAGE_NAME" > $SWAPPY_DIR/config
-
-
   case $1 in
     "f")
       ${pkgs.wayshot}/bin/wayshot -f $TMP_SCREENSHOT
@@ -34,6 +29,10 @@ pkgs.writeShellScriptBin "screenshot" ''
 
   case "$ACTION" in
     "save")
+      SWAPPY_DIR="$HOME/.config/swappy/"
+      mkdir -p $SWAPPY_DIR
+      echo -e "[Default]\nsave_dir=$SCREENSHOT_DIR\nsave_filename_format=$IMAGE_NAME" > $SWAPPY_DIR/config
+
       ${pkgs.swappy}/bin/swappy -f $TMP_SCREENSHOT
 
       if [ -f "$SAVED_IMAGE" ]; then
