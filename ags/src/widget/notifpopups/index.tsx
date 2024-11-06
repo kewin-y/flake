@@ -22,41 +22,46 @@ function NotifIcon(notif: AstalNotifd.Notification) {
   return <centerbox className={"notif-icon"} centerWidget={icon} />;
 }
 
-function Notif(notif: AstalNotifd.Notification) {
-  const Title = () => (
+function NotifWidget(notif: AstalNotifd.Notification) {
+  const Title = (
     <label
       className={"title"}
       justify={Gtk.Justification.LEFT}
       halign={Gtk.Align.START}
       truncate={true}
+      maxWidthChars={100}
       label={notif.summary}
       useMarkup={true}
     />
   );
 
-  const Body = () => (
+  const Body = (
     <label
       className={"body"}
       justify={Gtk.Justification.LEFT}
       halign={Gtk.Align.START}
-      maxWidthChars={24}
       wrap={true}
       label={notif.body.trim()}
       useMarkup={true}
     />
   );
 
-  const Content = (
-    <box
-      className={"content"}
-      spacing={8}
-      vertical={true}
-      vexpand={true}
-      hexpand={true}
+  const CloseButton = (
+    <button
+      className={"close-button"}
+      onClicked={() => notif.dismiss()}
+      halign={Gtk.Align.END}
     >
-      <Title />
-      <Body />
-    </box>
+      <icon icon={"window-close-symbolic"} />
+    </button>
+  );
+
+  const Header = (
+    <centerbox
+      className={"header"}
+      startWidget={Title}
+      endWidget={CloseButton}
+    ></centerbox>
   );
 
   const Actions =
@@ -77,15 +82,16 @@ function Notif(notif: AstalNotifd.Notification) {
     ) : null;
 
   const NotifInner = (
-    <eventbox onClick={() => notif.dismiss()}>
-      <box className={`notification ${notif.urgency}`}>
+    <box className={`notification ${notif.urgency}`} vertical={true}>
+      {Header}
+      <box>
         {NotifIcon(notif)}
-        <box vertical={true} className={"left"}>
-          {Content}
+        <box vertical={true} valign={Gtk.Align.CENTER}>
+          {Body}
           {Actions}
         </box>
       </box>
-    </eventbox>
+    </box>
   );
 
   const InnerRevealer = (
@@ -120,9 +126,7 @@ function Notif(notif: AstalNotifd.Notification) {
 export default function NotificationPopups(monitor = 0) {
   const notifs: Gtk.Widget[] = [];
 
-  function removeNotifPopup(widget: ReturnType<typeof Notif>) {
-    if (widget.visible === false) return;
-
+  function removeNotifPopup(widget: ReturnType<typeof NotifWidget>) {
     const outerRevealer = widget as Gtk.Revealer;
     const innerRevealer = outerRevealer.get_child() as Gtk.Revealer;
 
@@ -147,7 +151,7 @@ export default function NotificationPopups(monitor = 0) {
     if (notif) {
       const lst = NotifList as Astal.Box;
       const old = lst.get_children();
-      const n = Notif(notif);
+      const n = NotifWidget(notif);
       lst.set_children([...old, n]);
 
       const expire =
