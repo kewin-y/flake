@@ -26,6 +26,10 @@ pkgs.writeShellScriptBin "screenshot" ''
 
   ${pkgs.wl-clipboard}/bin/wl-copy < $TMP_SCREENSHOT
 
+  if [ ! -f "$TMP_SCREENSHOT" ]; then
+    exit
+  fi
+
   ACTION=$(${pkgs.libnotify}/bin/notify-send "Screenshot" "Screenshot copied to clipboard." -i "multimedia-photo-viewer-symbolic" -A "save=Save")
 
   case "$ACTION" in
