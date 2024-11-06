@@ -38,7 +38,7 @@ in {
         moveToWorkspace = num: "${mainMod} SHIFT, ${num}, movetoworkspace, ${num}";
         moveToWorkspaceSilent = num: "${mainMod} ALT, ${num}, movetoworkspacesilent, ${num}";
 
-        workspaceArr = [1 2 3 4 5 6 7];
+        workspaceArr = [1 2 3 4 5];
       in
         [
           # Windows
