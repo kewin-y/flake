@@ -14,16 +14,16 @@
 
   programs.ags = {
     enable = true;
-    # configDir = ../../ags;
-    extraPackages = [
-      inputs.ags.packages.${pkgs.system}.battery
-      inputs.ags.packages.${pkgs.system}.hyprland
-      inputs.ags.packages.${pkgs.system}.mpris
-      inputs.ags.packages.${pkgs.system}.network
-      inputs.ags.packages.${pkgs.system}.tray
-      inputs.ags.packages.${pkgs.system}.wireplumber
-      inputs.ags.packages.${pkgs.system}.notifd
-      inputs.ags.packages.${pkgs.system}.apps
+    configDir = ../../ags;
+    extraPackages = with inputs.ags.packages.${pkgs.system}; [
+      battery
+      hyprland
+      mpris
+      network
+      tray
+      wireplumber
+      notifd
+      apps
     ];
   };
 
