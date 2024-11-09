@@ -2,9 +2,6 @@ import AstalNotifd from "gi://AstalNotifd";
 import { Gtk, Astal } from "astal/gtk3";
 import { timeout, idle } from "astal";
 
-const notifd = AstalNotifd.get_default();
-const TRANSITION_DURATION = 300;
-
 function NotifIcon(notif: AstalNotifd.Notification) {
   const icon = (
     <icon
@@ -22,7 +19,9 @@ function NotifIcon(notif: AstalNotifd.Notification) {
   return <centerbox className={"notif-icon"} centerWidget={icon} />;
 }
 
-function NotifWidget(notif: AstalNotifd.Notification) {
+export const NOTIF_TRANSITION_DURATION = 300;
+
+export function NotifWidget(notif: AstalNotifd.Notification) {
   const Title = (
     <label
       className={"title"}
@@ -73,7 +72,6 @@ function NotifWidget(notif: AstalNotifd.Notification) {
             hexpand={true}
             onClicked={() => {
               notif.invoke(a.id);
-              notif.dismiss();
             }}
             child={<label label={a.label} />}
           ></button>
@@ -97,7 +95,7 @@ function NotifWidget(notif: AstalNotifd.Notification) {
   const InnerRevealer = (
     <revealer
       transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
-      transitionDuration={TRANSITION_DURATION}
+      transitionDuration={NOTIF_TRANSITION_DURATION}
     >
       {NotifInner}
     </revealer>
@@ -107,7 +105,7 @@ function NotifWidget(notif: AstalNotifd.Notification) {
     <revealer
       name={notif.id.toString()}
       transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
-      transitionDuration={TRANSITION_DURATION}
+      transitionDuration={NOTIF_TRANSITION_DURATION}
     >
       {InnerRevealer}
     </revealer>
@@ -115,72 +113,10 @@ function NotifWidget(notif: AstalNotifd.Notification) {
 
   idle(() => {
     (OuterRevealer as Gtk.Revealer).revealChild = true;
-    timeout(TRANSITION_DURATION, () => {
+    timeout(NOTIF_TRANSITION_DURATION, () => {
       (InnerRevealer as Gtk.Revealer).revealChild = true;
     });
   });
 
   return OuterRevealer;
-}
-
-export default function NotificationPopups(monitor = 0) {
-  const notifs: Gtk.Widget[] = [];
-
-  function removeNotifPopup(widget: ReturnType<typeof NotifWidget>) {
-    const outerRevealer = widget as Gtk.Revealer;
-    const innerRevealer = outerRevealer.get_child() as Gtk.Revealer;
-
-    innerRevealer.revealChild = false;
-
-    timeout(TRANSITION_DURATION, () => {
-      outerRevealer.revealChild = false;
-      timeout(TRANSITION_DURATION, () => {
-        widget.destroy();
-      });
-    });
-  }
-
-  const NotifList = (
-    <box vertical={true} className={"notifications"}>
-      {notifs}
-    </box>
-  );
-
-  notifd.connect("notified", (_, id) => {
-    const notif = notifd.get_notification(id);
-    if (notif) {
-      const lst = NotifList as Astal.Box;
-      const old = lst.get_children();
-      const n = NotifWidget(notif);
-      lst.set_children([...old, n]);
-
-      const expire =
-        notif.get_expire_timeout() > 0
-          ? notif.get_expire_timeout() * 1000
-          : 3000;
-
-      // Like 5 million errors
-      timeout(expire, () => removeNotifPopup(n));
-    }
-  });
-
-  notifd.connect("resolved", (_, id) => {
-    const lst = NotifList as Astal.Box;
-    const widget = lst.get_children().find((n) => n.name === id.toString());
-    if (widget) removeNotifPopup(widget);
-  });
-
-  const anchor = Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT;
-
-  return (
-    <window
-      monitor={monitor}
-      name={`notifications${monitor}`}
-      className={"notification-popups"}
-      anchor={anchor}
-      layer={Astal.Layer.OVERLAY}
-    >
-      {NotifList}
-    </window>
-  );
 }

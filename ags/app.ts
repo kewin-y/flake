@@ -1,7 +1,8 @@
 import { App } from "astal/gtk3";
 import Bar from "./src/widget/bar";
 import Launcher from "./src/widget/launcher";
-import NotificationPopups from "./src/widget/notifpopups";
+import NotificationPopups from "./src/widget/notifs/popups";
+import Panel from "./src/widget/panel";
 import { togglePopupWindow } from "./src/widget/PopupWindow";
 
 import { writeFile } from "astal/file";
@@ -13,7 +14,6 @@ import launcherStyle from "inline:./scss/launcher.scss";
 import panelStyle from "inline:./scss/panel.scss";
 
 import { HOME } from "./src/shared/constants";
-import Panel from "./src/widget/panel";
 
 const colorsPath = `${HOME}/.config/ags_res/colors.scss`;
 const tmpscss = "/tmp/style.scss";
