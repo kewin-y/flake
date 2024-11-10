@@ -26,7 +26,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
+    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
     font = "Iosevka";
   };
 }
