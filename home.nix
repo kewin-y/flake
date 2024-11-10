@@ -6,7 +6,7 @@
 }: let
   nixvim = inputs.nixvim-config.packages.${pkgs.system}.default;
   nvim = nixvim.extend {
-    config.scheme = lib.mkForce "material";
+    config.scheme = lib.mkForce "far";
   };
 in {
   imports = [
