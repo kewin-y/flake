@@ -26,7 +26,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/designr.jpg;
+    wallpaper = ../wallpapers/maria-eduarda-caffaro-Sscq2oELMOM-unsplash.jpg;
     font = "Iosevka";
   };
 }

@@ -12,6 +12,9 @@ window.notification-popups box.notifications {
       min-width: 68px;
       min-height: 68px;
       margin: 0.65rem;
+      icon {
+        color: $base04;
+      }
     }
 
     &.critical {
@@ -27,6 +30,7 @@ window.notification-popups box.notifications {
 
       .title {
         font-weight: bold;
+        color: $base04;
         font-size: 14px;
       }
 
