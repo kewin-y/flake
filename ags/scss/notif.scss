@@ -32,12 +32,12 @@ window.notification-popups box.notifications {
 
       .close-button {
         icon {
-          color: $base0C;
+          color: $base08;
         }
 
         &:hover {
           icon {
-            color: transparentize($color: $base0C, $amount: 0.3);
+            color: transparentize($color: $base08, $amount: 0.3);
           }
         }
       }
