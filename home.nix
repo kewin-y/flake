@@ -1,8 +1,14 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
-}: {
+}: let
+  nixvim = inputs.nixvim-config.packages.${pkgs.system}.default;
+  nvim = nixvim.extend {
+    config.scheme = lib.mkForce "paradise";
+  };
+in {
   imports = [
     ./home
   ];
@@ -35,7 +41,7 @@
     obsidian
     wl-clipboard
     ripgrep
-    inputs.nixvim-config.packages.${system}.default
+    nvim
   ];
 
   programs.btop.enable = true;
