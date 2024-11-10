@@ -27,6 +27,6 @@
 
   config = {
     wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
-    font = "JetBrainsMono";
+    font = "Iosevka";
   };
 }

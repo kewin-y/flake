@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.font} NF:size=10";
+        font = lib.mkForce "${config.font} Nerd Font Propo:size=11";
         box-drawings-uses-font-glyphs = "no";
         pad = "16x16";
       };
