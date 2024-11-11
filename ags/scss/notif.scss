@@ -1,3 +1,4 @@
+window#panel box.notif-centre,
 window.notification-popups box.notifications {
   padding: 4px;
 
@@ -12,6 +13,7 @@ window.notification-popups box.notifications {
       min-width: 68px;
       min-height: 68px;
       margin: 0.65rem;
+
       icon {
         color: $base04;
       }
