@@ -22,10 +22,12 @@ export default function NotifCentre() {
   return (
     <box className={"notif-centre"} vertical={true}>
       <centerbox
-        className={"header"}
+        className={"nc-header"}
         startWidget={<label label={"Notifications"} halign={Gtk.Align.START} />}
         endWidget={
-          <button halign={Gtk.Align.END}
+          <button
+            className={"clear-button"}
+            halign={Gtk.Align.END}
             onClicked={() => {
               const notifs = notifd.get_notifications();
 
@@ -39,9 +41,8 @@ export default function NotifCentre() {
         }
       />
       <scrollable
-        widthRequest={340}
-        heightRequest={380}
-        css={"margin: 0.6em;"}
+        widthRequest={320}
+        heightRequest={550}
         hscroll={Gtk.PolicyType.NEVER}
         child={NotifList}
       ></scrollable>

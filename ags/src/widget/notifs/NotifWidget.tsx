@@ -50,6 +50,8 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
       className={"close-button"}
       onClicked={() => notif.dismiss()}
       halign={Gtk.Align.END}
+      widthRequest={12}
+      heightRequest={12}
     >
       <icon icon={"window-close-symbolic"} />
     </button>

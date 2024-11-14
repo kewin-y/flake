@@ -8,10 +8,11 @@ const notifd = AstalNotifd.get_default();
 export default function NotificationPopups(monitor = 0) {
   const notifMap: Map<number, Gtk.Widget> = new Map();
 
-  const NotifList = <box vertical={true} className={"notifications"} />;
+  const NotifList = (
+    <box vertical={true} spacing={8} className={"notifications"} />
+  );
 
-  function removeNotifPopup(id : number) {
-
+  function removeNotifPopup(id: number) {
     const widget = notifMap.get(id);
 
     if (!widget) return;

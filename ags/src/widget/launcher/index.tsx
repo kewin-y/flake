@@ -8,7 +8,7 @@ export const WINDOW_NAME = "app-launcher";
 function ApplicationItem(application: Apps.Application) {
   return (
     <button
-      className="app-entry"
+      className="search-entry"
       heightRequest={38}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);
@@ -86,6 +86,7 @@ function InnerLauncher({ width, height, spacing }: InnerProps) {
       <box
         vertical={true}
         spacing={spacing}
+        className={"apps"}
         children={[
           Search,
           <scrollable
