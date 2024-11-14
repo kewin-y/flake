@@ -14,16 +14,34 @@ export default function NotifCentre() {
   );
 
   const NotifList = (
-    <box vertical={true} className={"notifications"}>
+    <box spacing={8} vertical={true} className={"notifications"}>
       {NotifWidgets}
     </box>
   );
 
   return (
-    <box className={"notif-centre"}>
+    <box className={"notif-centre"} vertical={true}>
+      <centerbox
+        className={"header"}
+        startWidget={<label label={"Notifications"} halign={Gtk.Align.START} />}
+        endWidget={
+          <button halign={Gtk.Align.END}
+            onClicked={() => {
+              const notifs = notifd.get_notifications();
+
+              for (const n of notifs) {
+                notifd.get_notification(n.id).dismiss();
+              }
+            }}
+          >
+            <icon icon={"edit-delete-symbolic"} />
+          </button>
+        }
+      />
       <scrollable
-        widthRequest={300}
+        widthRequest={340}
         heightRequest={380}
+        css={"margin: 0.6em;"}
         hscroll={Gtk.PolicyType.NEVER}
         child={NotifList}
       ></scrollable>
