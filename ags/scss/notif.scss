@@ -1,17 +1,24 @@
-window.notification-popups box.notifications {
-  padding: 4px;
-
+@mixin notif($drop-shadow) {
   .notification {
     border-radius: 3px;
-    margin: 0.65rem;
     min-width: 20rem;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+
+    @if $drop-shadow {
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+      margin: 0.65em;
+    }
+
+    @else {
+      box-shadow: none;
+    }
+
     background-color: $base00;
 
     .notif-icon {
       min-width: 68px;
       min-height: 68px;
       margin: 0.65rem;
+
       icon {
         color: $base04;
       }
@@ -73,4 +80,11 @@ window.notification-popups box.notifications {
       }
     }
   }
+}
+
+window#panel box.notif-centre {
+  @include notif($drop-shadow: false);
+}
+window.notification-popups box.notifications {
+  @include notif($drop-shadow: true);
 }

@@ -38,7 +38,6 @@
       }
     }
   }
-
 }
 
 window#panel {
@@ -48,9 +47,33 @@ window#panel {
     font-size: 14px;
     border-radius: 3px;
     background: $base00;
-    margin: 0.65rem;
+    margin: 0.65em;
     padding: 0.6rem;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .notif-centre {
+    background: $base01;
+    border-radius: 3px;
+    min-height: 3em;
+    color: $base04;
+
+    .header {
+      margin: 0.6em 0.6em 0 0.6em;
+      font-weight: bold;
+
+      button {
+        icon {
+          color: $base08;
+        }
+
+        &:hover {
+          icon {
+            color: transparentize($color: $base08, $amount: 0.3);
+          }
+        }
+      }
+    }
   }
 
   button {

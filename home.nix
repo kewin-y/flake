@@ -6,7 +6,7 @@
 }: let
   nixvim = inputs.nixvim-config.packages.${pkgs.system}.default;
   nvim = nixvim.extend {
-    config.scheme = lib.mkForce "oxocarbon";
+    config.theme = lib.mkForce "oxocarbon";
   };
 in {
   imports = [
