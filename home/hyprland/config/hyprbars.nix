@@ -16,6 +16,10 @@
         col.text = "rgb(${base01}";
         bar_precedence_over_border = false;
         bar_part_of_window = true;
+        hyprbars-button = [
+          "rgb(${base08}), 10, , hyprctl dispatch killactive"
+          "rgb(${base0B}), 10, , hyprctl dispatch fullscreen 1"
+        ];
       };
     };
   };
