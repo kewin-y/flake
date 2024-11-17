@@ -16,6 +16,8 @@
         col.text = "rgb(${base01}";
         bar_precedence_over_border = false;
         bar_part_of_window = true;
+        bar_padding = 12;
+        bar_text_align = "left";
         hyprbars-button = [
           "rgb(${base08}), 10, , hyprctl dispatch killactive"
           "rgb(${base0B}), 10, , hyprctl dispatch fullscreen 1"
