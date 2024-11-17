@@ -1,6 +1,9 @@
 import AstalNotifd from "gi://AstalNotifd";
 import { Gtk, Astal } from "astal/gtk3";
 import { timeout, idle } from "astal";
+import GLib from "gi://GLib";
+
+const NOTIF_TRANSITION_DURATION = 300;
 
 function NotifIcon(notif: AstalNotifd.Notification) {
   const icon = (
@@ -19,7 +22,24 @@ function NotifIcon(notif: AstalNotifd.Notification) {
   return <centerbox className={"notif-icon"} centerWidget={icon} />;
 }
 
-export const NOTIF_TRANSITION_DURATION = 300;
+const time = (time: number, format = "%H:%M") =>
+  GLib.DateTime.new_from_unix_local(time).format(format)!;
+
+export function removeNotif(id: number, notifMap: Map<number, Gtk.Widget>) {
+  const widget = notifMap.get(id);
+
+  if (widget == null) return;
+
+  const revealerWrapper = widget as Gtk.Revealer;
+
+  revealerWrapper.revealChild = false;
+
+  timeout(NOTIF_TRANSITION_DURATION, () => {
+    widget.destroy();
+  });
+
+  notifMap.delete(id);
+}
 
 export function NotifWidget(notif: AstalNotifd.Notification) {
   const Title = (
@@ -34,6 +54,15 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
     />
   );
 
+  const Time = (
+    <label
+      className={"time"}
+      justify={Gtk.Justification.RIGHT}
+      halign={Gtk.Align.END}
+      label={time(notif.time)}
+    />
+  );
+
   const Body = (
     <label
       className={"body"}
@@ -45,21 +74,11 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
     />
   );
 
-  const CloseButton = (
-    <button
-      className={"close-button"}
-      onClicked={() => notif.dismiss()}
-      halign={Gtk.Align.END}
-    >
-      <icon icon={"window-close-symbolic"} />
-    </button>
-  );
-
   const Header = (
     <centerbox
       className={"header"}
       startWidget={Title}
-      endWidget={CloseButton}
+      endWidget={Time}
     ></centerbox>
   );
 
@@ -80,43 +99,32 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
     ) : null;
 
   const NotifInner = (
-    <box className={`notification ${notif.urgency}`} vertical={true}>
-      {Header}
-      <box>
-        {NotifIcon(notif)}
-        <box className="left" vertical={true} valign={Gtk.Align.CENTER}>
-          {Body}
-          {Actions}
+    <eventbox onClick={() => notif.dismiss()}>
+      <box className={`notification ${notif.urgency}`} vertical={true}>
+        {Header}
+        <box>
+          {NotifIcon(notif)}
+          <box className="left" vertical={true} valign={Gtk.Align.CENTER}>
+            {Body}
+            {Actions}
+          </box>
         </box>
       </box>
-    </box>
+    </eventbox>
   );
 
-  const InnerRevealer = (
+  const RevealerWrapper = (
     <revealer
-      transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
+      transitionType={Gtk.RevealerTransitionType.SLIDE_UP}
+      revealChild={false}
       transitionDuration={NOTIF_TRANSITION_DURATION}
-    >
-      {NotifInner}
-    </revealer>
-  );
-
-  const OuterRevealer = (
-    <revealer
-      name={notif.id.toString()}
-      transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN}
-      transitionDuration={NOTIF_TRANSITION_DURATION}
-    >
-      {InnerRevealer}
-    </revealer>
+      child={NotifInner}
+    ></revealer>
   );
 
   idle(() => {
-    (OuterRevealer as Gtk.Revealer).revealChild = true;
-    timeout(NOTIF_TRANSITION_DURATION, () => {
-      (InnerRevealer as Gtk.Revealer).revealChild = true;
-    });
+    (RevealerWrapper as Gtk.Revealer).revealChild = true;
   });
 
-  return OuterRevealer;
+  return RevealerWrapper;
 }

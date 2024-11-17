@@ -38,6 +38,13 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
 
+      userChrome = ''
+        .titlebar-close {
+            display:none !important;
+        }
+        #alltabs-button { display: none !important; }
+      '';
+
       search.force = true;
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin

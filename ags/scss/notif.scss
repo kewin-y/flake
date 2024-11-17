@@ -1,23 +1,13 @@
-@mixin notif($drop-shadow) {
+@mixin notif() {
   .notification {
-    border-radius: 3px;
-    min-width: 20rem;
-
-    @if $drop-shadow {
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
-      margin: 0.65em;
-    }
-
-    @else {
-      box-shadow: none;
-    }
-
+    border: 2px solid $base01;
+    min-width: 20em;
     background-color: $base00;
 
     .notif-icon {
       min-width: 68px;
       min-height: 68px;
-      margin: 0.65rem;
+      margin: 0.7em;
 
       icon {
         color: $base04;
@@ -30,13 +20,15 @@
 
     .header {
       background: $base01;
-      border-radius: 3px;
-      padding: 0.5rem;
-
-      margin: 0.65rem 0.65rem 0 0.65rem;
+      padding: 0.5em;
 
       .title {
         font-weight: bold;
+        color: $base04;
+        font-size: 14px;
+      }
+
+      .time {
         color: $base04;
         font-size: 14px;
       }
@@ -55,7 +47,7 @@
     }
 
     .left {
-      margin: 0.65rem 0.65rem 0.65rem 0;
+      margin: 0.7em 0.7em 0.7em 0;
 
       .body {
         color: $base04;
@@ -63,11 +55,10 @@
       }
 
       .actions {
-        margin-top: 0.65rem;
+        margin-top: 0.7em;
 
         .action-button {
           color: $base04;
-          border-radius: 3px;
           background: $base01;
           transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
           padding: 0.5em;
@@ -83,8 +74,10 @@
 }
 
 window#panel box.notif-centre {
-  @include notif($drop-shadow: false);
+  @include notif();
 }
+
 window.notification-popups box.notifications {
-  @include notif($drop-shadow: true);
+  margin: 0.7em;
+  @include notif();
 }

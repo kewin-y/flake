@@ -1,6 +1,5 @@
 @mixin bar-label {
   padding: 0 0.8rem;
-  border-radius: 3px;
   background: $base01;
   color: $base04;
   min-width: 1.8rem;
@@ -25,9 +24,8 @@
   font-size: 14px;
 
   .cbox {
-    margin: 0.65rem 0rem 0rem 0em;
+    border-top: 2px solid $base01;
     background: $base00;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     padding: 0.2em;
   }
 

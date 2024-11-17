@@ -5,17 +5,21 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
 
     nixvim-config.url = "git+https://codeberg.org/ykevin_u/nixvim.git";
 
-    ags.url = "github:Aylur/ags/v2";
+    ags.url = "github:Aylur/ags";
 
     stylix.url = "github:danth/stylix";
 
@@ -51,7 +55,7 @@
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [stylix.homeManagerModules.stylix ./home.nix];
+        modules = [stylix.homeManagerModules.stylix inputs.hyprland.homeManagerModules.default ./home.nix];
       };
     };
   };
