@@ -26,7 +26,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
+    wallpaper = ../wallpapers/doodad-oxocarbon.png;
     font = "Iosevka";
   };
 }
