@@ -5,12 +5,11 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -56,7 +55,7 @@
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [stylix.homeManagerModules.stylix ./home.nix];
+        modules = [stylix.homeManagerModules.stylix inputs.hyprland.homeManagerModules.default ./home.nix];
       };
     };
   };
