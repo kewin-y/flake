@@ -1,7 +1,6 @@
 @mixin notif() {
   .notification {
     border: 2px solid $base01;
-    border-radius: 3px;
     min-width: 20em;
     background-color: $base00;
 
@@ -60,7 +59,6 @@
 
         .action-button {
           color: $base04;
-          border-radius: 3px;
           background: $base01;
           transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
           padding: 0.5em;

@@ -1,12 +1,10 @@
 @mixin control-button {
   background: $base01;
-  border-radius: 3px;
   transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
 }
 
 @mixin wide-box {
   background: $base01;
-  border-radius: 3px;
   padding: 0 0.8em;
   min-height: 3em;
   color: $base04;
@@ -17,7 +15,6 @@
 }
 
 @mixin tall-box {
-  border-radius: 3px;
   padding: 0.8em;
   color: $base04;
 }
@@ -28,7 +25,6 @@
   scale {
     trough {
       background: transparentize($base05, 0.9);
-      border-radius: 3px;
       min-width: 0.4rem;
 
       slider {
@@ -39,7 +35,6 @@
 
       highlight {
         border: none;
-        border-radius: 3px;
         background: $base04;
       }
     }
@@ -51,7 +46,6 @@ window#panel {
 
   .panel-box {
     font-size: 14px;
-    border-radius: 3px;
     border: 2px solid $base01;
     background: $base00;
     margin: 0.7em;
@@ -100,7 +94,6 @@ window#panel {
 
     .wifi {
       background: scale-color($color: $base01, $lightness: 5%);
-      border-radius: 3px;
     }
   }
 }
