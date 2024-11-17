@@ -15,7 +15,7 @@
 
     nixvim-config.url = "git+https://codeberg.org/ykevin_u/nixvim.git";
 
-    ags.url = "github:Aylur/ags/v2";
+    ags.url = "github:Aylur/ags";
 
     stylix.url = "github:danth/stylix";
 
