@@ -55,38 +55,33 @@ window#panel {
     border: 2px solid $base01;
     background: $base00;
     margin: 0.7em;
-  }
 
-  .notif-centre {
-    margin: 0.65em;
+    .notif-centre {
+      scrollbar {
+        background: none;
+      }
 
-    // ?? ??? ??
-    scrollbar {
-      background: none;
-    }
+      margin: 0.65em;
 
-    .nc-header {
-      font-weight: bold;
+      .nc-header {
+        font-weight: bold;
         margin-bottom: 0.65em;
 
-      .clear-button {
-        background: transparent;
+        .clear-button {
+          background: transparent;
 
-        icon {
-          color: $base08;
-        }
-
-        &:hover {
           icon {
-            color: transparentize($color: $base08, $amount: 0.3);
+            color: $base04;
+          }
+
+          &:hover {
+            icon {
+              color: transparentize($color: $base04, $amount: 0.3);
+            }
           }
         }
       }
     }
-  }
-
-  button {
-    @include control-button();
   }
 
   .right {

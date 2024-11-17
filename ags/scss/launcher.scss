@@ -34,7 +34,11 @@ window#app-launcher {
     .apps {
       margin: 0.65em;
 
-      .search-entry {
+      scrollbar {
+        background: none;
+      }
+
+      .app-item {
         padding: 0.4em;
         border-radius: 3px;
 
@@ -55,7 +59,7 @@ window#app-launcher {
       }
     }
 
-    .search {
+    .search-entry {
       padding: 0.4rem;
       border-radius: 3px;
       background: $base01;
