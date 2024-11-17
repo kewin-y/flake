@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, config, ...}: {
   imports = [
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
@@ -11,10 +11,12 @@
         "HYPRCURSOR_THEME,phinger-cursors-light-hyprcursor"
         "HYPRCURSOR_SIZE,24"
       ];
-      general = {
+      general = with config.lib.stylix.colors; {
         gaps_in = "8";
         gaps_out = "12";
-        border_size = "0";
+        border_size = "2";
+        col.inactive_border = "#${base01}";
+        col.active_border = "#${base01}";
         layout = "dwindle";
         resize_on_border = "true";
       };
