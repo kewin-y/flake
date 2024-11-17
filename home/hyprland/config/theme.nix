@@ -15,8 +15,8 @@
         gaps_in = "8";
         gaps_out = "12";
         border_size = "2";
-        col.inactive_border = "#${base01}";
-        col.active_border = "#${base01}";
+        "col.inactive_border" = "#${base01}";
+        "col.active_border" = "#${base01}";
         layout = "dwindle";
         resize_on_border = "true";
       };
