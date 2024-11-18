@@ -1,10 +1,7 @@
 import AstalNotifd from "gi://AstalNotifd";
 import { Gtk, Astal } from "astal/gtk3";
 import { timeout } from "astal";
-import {
-  NotifWidget,
-  removeNotif,
-} from "../NotifWidget";
+import { NotifWidget, removeNotif } from "../NotifWidget";
 
 const notifd = AstalNotifd.get_default();
 

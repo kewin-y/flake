@@ -1,7 +1,6 @@
 @mixin notif() {
   .notification {
     border: 2px solid $base01;
-    min-width: 20em;
     background-color: $base00;
 
     .notif-icon {

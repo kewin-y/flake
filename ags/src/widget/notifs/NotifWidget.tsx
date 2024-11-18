@@ -100,7 +100,11 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
 
   const NotifInner = (
     <eventbox onClick={() => notif.dismiss()}>
-      <box className={`notification ${notif.urgency}`} vertical={true}>
+      <box
+        className={`notification ${notif.urgency}`}
+        widthRequest={320}
+        vertical={true}
+      >
         {Header}
         <box>
           {NotifIcon(notif)}
