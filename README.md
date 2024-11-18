@@ -1,5 +1,9 @@
 # NixOS-related configurations
 
+## TODO:
+
+- [ ] Create sensible modules
+
 ## Acknowledgements
 
 - https://github.com/Aylur/ags

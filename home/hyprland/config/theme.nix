@@ -21,17 +21,10 @@
         resize_on_border = "true";
       };
       decoration = {
+        shadow.enabled = false;
         rounding = "0";
-        inactive_opacity = "0.94";
-
-        blur = {
-          enabled = "yes";
-          size = "3";
-          passes = "4";
-          new_optimizations = "on";
-          ignore_opacity = "on";
-          xray = "false";
-        };
+        dim_inactive = true;
+        dim_strength = 0.3;
       };
     };
   };

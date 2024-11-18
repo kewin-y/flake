@@ -13,7 +13,7 @@
       "plugin:hyprbars" = {
         bar_color = "rgb(${base01})";
         bar_height = 32;
-        col.text = "rgb(${base01}";
+        "col.text" = "rgb(${base05})";
         bar_precedence_over_border = false;
         bar_part_of_window = true;
         bar_padding = 12;

@@ -9,7 +9,7 @@
     # Placeholder (literally doesn't matter)
     image = config.wallpaper;
 
-    base16Scheme = ./themes/oxocarbon.yaml;
+    base16Scheme = ./themes/${config.theme}.yaml;
     polarity = "dark";
 
     cursor = {

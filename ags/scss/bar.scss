@@ -1,7 +1,7 @@
 @mixin bar-label {
   padding: 0 0.8rem;
   background: $base01;
-  color: $base04;
+  color: $base05;
   min-width: 1.8rem;
   min-height: 1.8rem;
 }
@@ -37,7 +37,7 @@
     @include small-label();
 
     icon {
-      color: $base04;
+      color: $base05;
     }
   }
 
@@ -49,11 +49,11 @@
       color: $base03;
 
       &.occupied {
-        color: $base04;
+        color: $base05;
       }
 
       &.active {
-        color: $base04;
+        color: $base05;
         background: $base01;
       }
 
@@ -83,7 +83,7 @@
     @include small-label();
 
     icon {
-      color: $base04;
+      color: $base05;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
       -gtk-icon-transform: rotate(270deg);
       margin-left: 2px;
@@ -101,8 +101,8 @@
 
     .progress {
       font-size: 0.2rem;
-      color: $base04;
-      background: transparentize($color: $base04, $amount: 0.8);
+      color: $base05;
+      background: transparentize($color: $base05, $amount: 0.8);
     }
 
     &.charging .progress {
@@ -111,7 +111,7 @@
     }
 
     label {
-      color: $base04;
+      color: $base05;
       margin-right: 8px;
     }
   }
@@ -120,7 +120,7 @@
     @include bar-label();
 
     label {
-      color: $base04;
+      color: $base05;
     }
   }
 

@@ -17,7 +17,7 @@ window#app-launcher {
 
       button {
         background: scale-color($color: $base01, $lightness: 5%);
-        color: $base04;
+        color: $base05;
 
         &:focus {
           background: scale-color($color: $base02, $lightness: 5%);
@@ -39,7 +39,7 @@ window#app-launcher {
       .app-item {
         padding: 0.4em;
 
-        color: $base04;
+        color: $base05;
 
         &:focus {
           background: $base02;
@@ -58,7 +58,7 @@ window#app-launcher {
     .search-entry {
       padding: 0.4rem;
       background: $base01;
-      color: $base04;
+      color: $base05;
     }
   }
 }

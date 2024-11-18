@@ -7,7 +7,7 @@
   background: $base01;
   padding: 0 0.8em;
   min-height: 3em;
-  color: $base04;
+  color: $base05;
 
   icon {
     margin-right: 0.8rem;
@@ -16,7 +16,7 @@
 
 @mixin tall-box {
   padding: 0.8em;
-  color: $base04;
+  color: $base05;
 }
 
 @mixin vert-slider {
@@ -35,7 +35,7 @@
 
       highlight {
         border: none;
-        background: $base04;
+        background: $base05;
       }
     }
   }
@@ -65,12 +65,12 @@ window#panel {
           background: transparent;
 
           icon {
-            color: $base04;
+            color: $base05;
           }
 
           &:hover {
             icon {
-              color: transparentize($color: $base04, $amount: 0.3);
+              color: transparentize($color: $base05, $amount: 0.3);
             }
           }
         }
