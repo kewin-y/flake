@@ -61,7 +61,7 @@ export default function NotifCentre() {
         }
       />
       <scrollable
-        widthRequest={320}
+        widthRequest={330}
         heightRequest={550}
         hscroll={Gtk.PolicyType.NEVER}
         child={<NotifList />}

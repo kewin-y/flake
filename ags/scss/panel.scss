@@ -29,6 +29,7 @@ window#panel {
   background: transparent;
 
   .panel-box {
+    font-family: "Iosevka Nerd Font Propo";
     font-size: 14px;
     border: 2px solid $base01;
     background: $base00;
@@ -39,11 +40,11 @@ window#panel {
         background: none;
       }
 
-      margin: 0.65em;
+      margin: 0.7em;
 
       .nc-header {
         font-weight: bold;
-        margin-bottom: 0.65em;
+        margin-bottom: 0.7em;
 
         .clear-button {
           background: transparent;

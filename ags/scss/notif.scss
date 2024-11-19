@@ -1,5 +1,6 @@
 @mixin notif() {
   .notification {
+    font-family: "Iosevka Nerd Font Propo";
     border: 2px solid $base01;
     background-color: $base00;
 
@@ -77,6 +78,6 @@ window#panel box.notif-centre {
 }
 
 window.notification-popups box.notifications {
-  margin: 0.7em;
+  padding: 0.7em;
   @include notif();
 }

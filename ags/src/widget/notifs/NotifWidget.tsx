@@ -13,8 +13,7 @@ function NotifIcon(notif: AstalNotifd.Notification) {
           ? notif.app_icon
           : "dialog-information-symbolic"
       }
-      css={"font-size: 38px;"}
-      valign={Gtk.Align.CENTER}
+      css={"font-size: 38px;"} valign={Gtk.Align.CENTER}
       halign={Gtk.Align.CENTER}
     />
   );
@@ -102,7 +101,7 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
     <eventbox onClick={() => notif.dismiss()}>
       <box
         className={`notification ${notif.urgency}`}
-        widthRequest={320}
+        widthRequest={330}
         vertical={true}
       >
         {Header}
