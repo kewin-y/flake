@@ -1,10 +1,6 @@
-@mixin tall-box {
+@mixin vert-slider {
   padding: 0.8em;
   color: $base05;
-}
-
-@mixin vert-slider {
-  @include tall-box();
 
   scale {
     trough {
@@ -35,6 +31,29 @@ window#panel {
     background: $base00;
     margin: 0.7em;
 
+    .pb-left {
+      background: $base01;
+      padding: 0.7em;
+
+      .audio-slider {
+        background: scale-color($color: $base01, $lightness: 5%);
+
+        icon {
+          margin-top: 0.8em;
+        }
+
+        @include vert-slider();
+      }
+
+      .wifi {
+        background: scale-color($color: $base01, $lightness: 5%);
+
+        icon {
+          color: $base05;
+        }
+      }
+    }
+
     .notif-centre {
       scrollbar {
         background: none;
@@ -44,6 +63,7 @@ window#panel {
 
       .nc-header {
         font-weight: bold;
+        color: $base05;
         margin-bottom: 0.7em;
 
         .clear-button {
@@ -60,25 +80,6 @@ window#panel {
           }
         }
       }
-    }
-  }
-
-  .right {
-    background: $base01;
-    padding: 0.65em;
-
-    .audio-slider {
-      background: scale-color($color: $base01, $lightness: 5%);
-
-      icon {
-        margin-top: 0.8em;
-      }
-
-      @include vert-slider();
-    }
-
-    .wifi {
-      background: scale-color($color: $base01, $lightness: 5%);
     }
   }
 }
