@@ -36,7 +36,7 @@ pkgs.writeShellScriptBin "screenshot" ''
       ${pkgs.swappy}/bin/swappy -f $TMP_SCREENSHOT
 
       if [ -f "$SAVED_IMAGE" ]; then
-        ${pkgs.libnotify}/bin/notify-send "Image Saved" "Image saved successfully." -i "multimedia-photo-viewer-symbolic"
+        ${pkgs.libnotify}/bin/notify-send "Screenshot Saved" "Screenshot saved successfully." -i "multimedia-photo-viewer-symbolic"
         rm "$TMP_SCREENSHOT"
       fi
     ;;
