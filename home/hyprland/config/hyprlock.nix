@@ -20,7 +20,7 @@
       input-field = with config.lib.stylix.colors; [
         {
           size = "200, 50";
-          rounding = 6;
+          rounding = 0;
           position = "0, 0";
           monitor = "";
           dots_center = true;
@@ -28,8 +28,8 @@
           dots_spacing = 0.25;
           fade_on_empty = false;
           font_color = "rgb(${base05})";
-          inner_color = "rgb(${base01})";
-          outer_color = "rgb(${base00})";
+          inner_color = "rgb(${base00})";
+          outer_color = "rgb(${base01})";
           check_color = "rgb(${base09})";
           fail_color = "rgb(${base08})";
           outline_thickness = 2;

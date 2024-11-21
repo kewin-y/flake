@@ -40,7 +40,7 @@
 
   config = {
     wallpaper = ../wallpapers/doodad-oxocarbon.png;
-    theme = "material-darker";
+    theme = "paradise";
     font = "Iosevka";
   };
 }
