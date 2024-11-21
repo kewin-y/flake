@@ -16,17 +16,15 @@ export default function Audio() {
       }}
     >
       <box className="audio-slider"
-        vertical={true}
-        heightRequest={150}
+        hexpand={true}
+        heightRequest={38}
       >
+        <icon icon={bind(speaker, "volumeIcon")} />
         <slider
-          vexpand={true}
-          vertical={true}
-          inverted={true}
+          hexpand={true}
           onDragged={({ value }) => (speaker.volume = value)}
           value={bind(speaker, "volume")}
         />
-        <icon icon={bind(speaker, "volumeIcon")} />
       </box>
     </eventbox>
   );

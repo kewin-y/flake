@@ -69,12 +69,8 @@
   }
 }
 
+window.notification-popups box.notifications,
 window#panel box.notif-centre box.notifications {
-  min-width: 320px;
-  @include notif();
-}
-
-window.notification-popups box.notifications {
   min-width: 320px;
   margin: 0.7em;
   @include notif();

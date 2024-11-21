@@ -13,25 +13,24 @@ window#app-launcher {
     }
 
     .power-menu {
-      background: $base01;
-      padding: 0.65em;
+      margin: 0.7em 0 0.7em 0.7em;
 
       button {
-        background: scale-color($color: $base01, $lightness: 5%);
+        background: $base01;
         color: $base05;
 
         &:focus {
-          background: scale-color($color: $base02, $lightness: 5%);
+          background: $base02;
         }
 
         &:hover {
-          background: scale-color($color: $base02, $lightness: 5%);
+          background: $base02;
         }
       }
     }
 
     .apps {
-      margin: 0.65em;
+      margin: 0.7em;
 
       scrollbar {
         background: none;

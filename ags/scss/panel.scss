@@ -1,11 +1,11 @@
-@mixin vert-slider {
-  padding: 0.8em;
+@mixin panel-slider {
   color: $base05;
+  padding: 0 0.7em;
 
   scale {
     trough {
       background: transparentize($base05, 0.9);
-      min-width: 0.4rem;
+      min-height: 0.4em;
 
       slider {
         background: none;
@@ -29,22 +29,21 @@ window#panel {
     background: $base00;
     margin: 0.7em;
 
-    .pb-left {
-      background: $base01;
-      padding: 0.7em;
+    .pb-lower {
+      margin: 0.7em;
 
       .audio-slider {
-        background: scale-color($color: $base01, $lightness: 5%);
+        background: $base01;
 
         icon {
-          margin-top: 0.8em;
+          margin-right: 0.8em;
         }
 
-        @include vert-slider();
+        @include panel-slider();
       }
 
       .wifi {
-        background: scale-color($color: $base01, $lightness: 5%);
+        background: $base01;
 
         icon {
           color: $base05;
@@ -57,13 +56,12 @@ window#panel {
         background: none;
       }
 
-      margin: 0.7em;
-
       .nc-header {
         font-size: 15px;
         font-family: "Iosevka Nerd Font Propo";
         color: $base05;
-        margin-bottom: 0.7em;
+        padding: 0.7em;
+        background: $base01;
 
         .clear-button {
           background: transparent;
