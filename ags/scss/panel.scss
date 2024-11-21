@@ -2,15 +2,31 @@
   color: $base05;
   padding: 0 0.7em;
 
+  &.mute {
+    scale {
+      trough {
+        slider {
+          background: $base03;
+        }
+
+        highlight {
+          background: $base03;
+        }
+      }
+    }
+  }
+
   scale {
     trough {
       background: transparentize($base05, 0.9);
-      min-height: 0.4em;
+      min-height: 4px;
 
       slider {
-        background: none;
-        box-shadow: none;
-        border: none;
+        background: $base05;
+        min-height: 7px;
+        min-width: 7px;
+        box-shadow: 0 0 0 2px $base01;
+        margin: -4px;
       }
 
       highlight {

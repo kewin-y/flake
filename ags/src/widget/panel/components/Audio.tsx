@@ -4,6 +4,7 @@ import { Gtk } from "astal/gtk3";
 
 export default function Audio() {
   const speaker = Wp.get_default()?.default_speaker!;
+
   return (
     <eventbox
       valign={Gtk.Align.END}
@@ -15,7 +16,10 @@ export default function Audio() {
         }
       }}
     >
-      <box className="audio-slider"
+      <box
+        className={bind(speaker, "mute").as((m) =>
+          m ? "audio-slider mute" : "audio-slider"
+        )}
         hexpand={true}
         heightRequest={38}
       >
