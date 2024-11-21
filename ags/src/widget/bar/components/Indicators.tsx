@@ -11,7 +11,6 @@ export default function Indicators() {
       <box spacing={8}>
         {WifiIcon()}
         <icon icon={bind(speaker, "volumeIcon")} />
-        <icon icon="notifications-applet-symbolic" />
       </box>
     </button>
   );
