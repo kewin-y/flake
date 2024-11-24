@@ -30,6 +30,7 @@
         "material"
         "oxocarbon"
         "paradise"
+        "ocean"
       ];
     };
 
@@ -39,8 +40,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
-    theme = "far";
+    wallpaper = ../wallpapers/wallhaven-8x3qoy.jpg;
+    theme = "ocean";
     font = "Iosevka";
   };
 }
