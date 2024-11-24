@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-wy2z1p.jpg;
+    wallpaper = ../wallpapers/wallhaven-8x3qoy.jpg;
     theme = "paradise";
     font = "Iosevka";
   };
