@@ -18,11 +18,19 @@ window#app-launcher {
       font-size: 14px;
       color: $base05;
 
-      button {
-        color: $base05;
+      .lock {
+        color: $base0B;
 
         &:hover {
-          color: transparentize($color: $base05, $amount: 0.3);
+          color: transparentize($color: $base0B, $amount: 0.3);
+        }
+      }
+
+      .poff {
+        color: $base08;
+
+        &:hover {
+          color: transparentize($color: $base08, $amount: 0.3);
         }
       }
     }

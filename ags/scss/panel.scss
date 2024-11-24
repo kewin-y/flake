@@ -1,5 +1,4 @@
-@mixin panel-slider {
-  color: $base05;
+@mixin panel-slider($color) {
   padding: 0 0.7em;
 
   &.mute {
@@ -16,13 +15,17 @@
     }
   }
 
+  icon {
+    color: $color;
+  }
+
   scale {
     trough {
-      background: transparentize($base05, 0.9);
+      background: transparentize($color, 0.9);
       min-height: 4px;
 
       slider {
-        background: $base05;
+        background: $color;
         min-height: 7px;
         min-width: 7px;
         border-radius: 25px;
@@ -31,13 +34,9 @@
 
       highlight {
         border: none;
-        background: $base05;
+        background: $color;
       }
     }
-  }
-  label {
-    font-size: 14px;
-    font-family: "GeisMono Nerd Font Propo";
   }
 }
 
@@ -55,15 +54,12 @@ window#panel {
       .audio-slider {
         background: $base01;
 
-        @include panel-slider();
+        @include panel-slider($base0B);
       }
 
       .wifi {
         background: $base01;
-
-        icon {
-          color: $base05;
-        }
+        color: $base0D;
       }
     }
 
@@ -82,14 +78,10 @@ window#panel {
         .clear-button {
           background: transparent;
 
-          icon {
-            color: $base05;
-          }
+          color: $base08;
 
           &:hover {
-            icon {
-              color: transparentize($color: $base05, $amount: 0.3);
-            }
+            color: transparentize($color: $base08, $amount: 0.3);
           }
         }
       }

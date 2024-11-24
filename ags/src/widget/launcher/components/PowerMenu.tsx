@@ -1,14 +1,15 @@
 import { execAsync } from "astal/process";
 import { USER } from "../../../shared/constants";
-import { Gtk } from "astal/gtk3";
+import { Gtk, Widget } from "astal/gtk3";
 
-type PowerButtonProps = { cmd: string; icon: string };
-function PowerButton({ cmd, icon }: PowerButtonProps) {
+type PowerButtonProps = Widget.ButtonProps & { cmd: string; icon: string };
+function PowerButton({ cmd, icon, ...rest }: PowerButtonProps) {
   return (
     <button
       onClicked={() => execAsync(cmd)}
       heightRequest={20}
       widthRequest={20}
+      {...rest}
     >
       <icon icon={icon} css="font-size: 14px" />
     </button>
@@ -21,16 +22,16 @@ export default function PowerMenu() {
       className={"power-menu"}
       start_widget={<label halign={Gtk.Align.START} label={USER} />}
       endWidget={
-        <box className={"pm-buttons"} halign={Gtk.Align.END} spacing={8}>
-          <PowerButton cmd="hyprlock" icon="system-lock-screen-symbolic" />
+        <box halign={Gtk.Align.END} spacing={4}>
           <PowerButton
-            cmd={`bash -c "loginctl terminate-user $USER"`}
-            icon="application-exit-symbolic"
+            cmd="hyprlock"
+            icon="system-lock-screen-symbolic"
+            className={"lock"}
           />
-          <PowerButton cmd="systemctl reboot" icon="system-reboot-symbolic" />
           <PowerButton
             cmd="systemctl poweroff"
             icon="system-shutdown-symbolic"
+            className={"poff"}
           />
         </box>
       }
