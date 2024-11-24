@@ -12,8 +12,17 @@ window#app-launcher {
       transition: background 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
     }
 
+    .uptime {
+      background: $base01;
+      padding: 0.7em;
+    }
+
     .power-menu {
       margin: 0.7em 0 0.7em 0.7em;
+
+      .search-icon {
+        background: $base01;
+      }
 
       button {
         background: $base01;

@@ -69,7 +69,6 @@
     curl
     git
     pamixer
-    procps
     libnotify
   ];
 

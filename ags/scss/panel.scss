@@ -25,7 +25,7 @@
         background: $base05;
         min-height: 7px;
         min-width: 7px;
-        box-shadow: 0 0 0 2px $base01;
+        border-radius: 25px;
         margin: -4px;
       }
 
@@ -73,7 +73,7 @@ window#panel {
       }
 
       .nc-header {
-        font-size: 15px;
+        font-size: 14px;
         font-family: "Iosevka Nerd Font Propo";
         color: $base05;
         padding: 0.7em;

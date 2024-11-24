@@ -15,7 +15,7 @@ function PowerButton({ cmd, icon }: PowerButtonProps) {
 }
 
 export default function PowerMenu() {
-  const menu = (
+  return  (
     <box valign={Gtk.Align.END} vertical={true} spacing={8}>
       <PowerButton cmd="hyprlock" icon="system-lock-screen-symbolic" />
       <PowerButton
@@ -25,25 +25,5 @@ export default function PowerMenu() {
       <PowerButton cmd="systemctl reboot" icon="system-reboot-symbolic" />
       <PowerButton cmd="systemctl poweroff" icon="system-shutdown-symbolic" />
     </box>
-  );
-  const pfp = (
-    <box
-      valign={Gtk.Align.START}
-      heightRequest={38}
-      widthRequest={38}
-      css={`
-        background-image: url("${SRC}/assets/pfp.png");
-        background-size: cover;
-        border-radius: 25px;
-      `}
-    />
-  );
-  return (
-    <centerbox
-      className={"power-menu"}
-      vertical={true}
-      startWidget={pfp}
-      endWidget={menu}
-    ></centerbox>
   );
 }
