@@ -6,14 +6,13 @@ import GLib from "gi://GLib";
 const NOTIF_TRANSITION_DURATION = 300;
 
 function NotifIcon(notif: AstalNotifd.Notification) {
+  if (!Astal.Icon.lookup_icon(notif.app_icon)) return;
+
   const icon = (
     <icon
-      icon={
-        Astal.Icon.lookup_icon(notif.app_icon)
-          ? notif.app_icon
-          : "dialog-information-symbolic"
-      }
-      css={"font-size: 38px;"} valign={Gtk.Align.CENTER}
+      icon={notif.app_icon}
+      css={"font-size: 38px;"}
+      valign={Gtk.Align.CENTER}
       halign={Gtk.Align.CENTER}
     />
   );
@@ -66,6 +65,7 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
     <label
       className={"body"}
       justify={Gtk.Justification.LEFT}
+      justifyFill={true}
       halign={Gtk.Align.START}
       wrap={true}
       label={notif.body.trim()}
@@ -99,12 +99,9 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
 
   const NotifInner = (
     <eventbox onClick={() => notif.dismiss()}>
-      <box
-        className={`notification ${notif.urgency}`}
-        vertical={true}
-      >
+      <box className={`notification ${notif.urgency}`} vertical={true}>
         {Header}
-        <box>
+        <box css={"padding: 0.7em;"}>
           {NotifIcon(notif)}
           <box className="notif-left" vertical={true} valign={Gtk.Align.CENTER}>
             {Body}

@@ -34,6 +34,8 @@
     obsidian
     wl-clipboard
     ripgrep
+
+    vesktop
   ];
 
   programs.btop.enable = true;

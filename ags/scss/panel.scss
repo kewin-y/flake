@@ -35,6 +35,10 @@
       }
     }
   }
+  label {
+    font-size: 14px;
+    font-family: "GeisMono Nerd Font Propo";
+  }
 }
 
 window#panel {
@@ -50,10 +54,6 @@ window#panel {
 
       .audio-slider {
         background: $base01;
-
-        icon {
-          margin-right: 0.8em;
-        }
 
         @include panel-slider();
       }

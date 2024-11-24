@@ -18,10 +18,11 @@ export default function Audio() {
     >
       <box
         className={bind(speaker, "mute").as((m) =>
-          m ? "audio-slider mute" : "audio-slider"
+          m ? "audio-slider mute" : "audio-slider",
         )}
         hexpand={true}
         heightRequest={38}
+        spacing={12}
       >
         <icon icon={bind(speaker, "volumeIcon")} />
         <slider

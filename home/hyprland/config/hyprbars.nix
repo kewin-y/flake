@@ -18,7 +18,7 @@
         bar_part_of_window = true;
         bar_padding = 12;
         bar_text_size = 11;
-        bar_text_font = "Iosevka Nerd Font Propo";
+        bar_text_font = "${config.font} Nerd Font Propo";
         bar_text_align = "left";
         hyprbars-button = [
           "rgb(${base08}), 10, , hyprctl dispatch killactive"

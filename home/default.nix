@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/doodad-oxocarbon.png;
+    wallpaper = ../wallpapers/wallhaven-wy2z1p.jpg;
     theme = "paradise";
     font = "Iosevka";
   };

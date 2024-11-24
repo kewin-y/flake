@@ -20,7 +20,6 @@
 
     targets = {
       hyprland.enable = false;
-      nixvim.enable = false;
       neovim.enable = false;
       firefox.enable = false;
       fzf.enable = false;

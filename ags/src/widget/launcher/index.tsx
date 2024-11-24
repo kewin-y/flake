@@ -2,7 +2,6 @@ import { PopupWindow, togglePopupWindow } from "../PopupWindow";
 import { App, Astal, Gtk } from "astal/gtk3";
 import Apps from "gi://AstalApps";
 import PowerMenu from "./components/PowerMenu";
-import Uptime from "./components/Uptime";
 
 export const WINDOW_NAME = "app-launcher";
 
@@ -85,39 +84,15 @@ function InnerLauncher({ width, height, spacing }: InnerProps) {
 
   return (
     <box className={"launcher-box"} vertical={true}>
-      <Uptime />
-      <box>
-        <centerbox
-          className={"power-menu"}
-          vertical={true}
-          startWidget={
-            <button
-              widthRequest={38}
-              heightRequest={38}
-              tooltipText={"Search Apps"}
-              valign={Gtk.Align.START}
-              child={<icon icon="system-search-symbolic" />}
-              onClicked={() => launch()}
-              className={"search-icon"}
-              css="font-size: 16px"
-            />
-          }
-          endWidget={<PowerMenu />}
-        />
-        <box
-          vertical={true}
-          spacing={spacing}
-          className={"apps"}
-          children={[
-            Search,
-            <scrollable
-              widthRequest={width}
-              heightRequest={height}
-              hscroll={Gtk.PolicyType.NEVER}
-              child={List}
-            ></scrollable>,
-          ]}
-        ></box>
+      <PowerMenu />
+      <box vertical={true} spacing={spacing} className={"apps"}>
+        {Search}
+        <scrollable
+          widthRequest={width}
+          heightRequest={height}
+          hscroll={Gtk.PolicyType.NEVER}
+          child={List}
+        ></scrollable>
       </box>
     </box>
   );

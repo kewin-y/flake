@@ -43,6 +43,8 @@ export default function NotifCentre() {
         endWidget={
           <button
             className={"clear-button"}
+            heightRequest={20}
+            widthRequest={20}
             halign={Gtk.Align.END}
             onClicked={() => {
               const notifs = notifd.get_notifications();
@@ -52,7 +54,7 @@ export default function NotifCentre() {
               }
             }}
           >
-            <icon icon={"edit-delete-symbolic"} />
+            <icon icon={"edit-delete-symbolic"} css={"font-size: 14px;"} />
           </button>
         }
       />
