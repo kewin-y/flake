@@ -17,12 +17,12 @@
 
   options = {
     wallpaper = lib.mkOption {
-      default = ../wallpapers/fury.jpg;
+      default = ../wallpapers/mountains.jpg;
       type = lib.types.path;
     };
 
     theme = lib.mkOption {
-      default = "oxocarbon";
+      default = "material-darker";
       type = lib.types.enum [
         "oxocarbon"
         "far"
@@ -39,8 +39,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/provrb.jpg;
-    theme = "material";
+    wallpaper = ../wallpapers/mountains.jpg;
+    theme = "material-darker";
     font = "Iosevka";
   };
 }
