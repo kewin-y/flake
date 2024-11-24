@@ -127,14 +127,5 @@
 
   .indicators {
     @include bar-button();
-
-    :first-child {
-      :first-child {
-        color: $base0B;
-      }
-      :last-child {
-        color: $base0D;
-      }
-    }
   }
 }
