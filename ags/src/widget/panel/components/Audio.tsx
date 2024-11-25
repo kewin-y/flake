@@ -21,7 +21,7 @@ export default function Audio() {
           m ? "audio-slider mute" : "audio-slider",
         )}
         hexpand={true}
-        heightRequest={32}
+        heightRequest={38}
         spacing={12}
       >
         <icon icon={bind(speaker, "volumeIcon")} />

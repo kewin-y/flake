@@ -9,7 +9,7 @@ function ApplicationItem(application: Apps.Application) {
   return (
     <button
       className="app-item"
-      heightRequest={32}
+      heightRequest={38}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);
         application.launch();
@@ -108,7 +108,7 @@ export default function Launcher() {
       monitor={0}
     >
       <box>
-        <InnerLauncher width={300} height={380} spacing={8} />
+        <InnerLauncher width={300} height={400} spacing={8} />
       </box>
     </PopupWindow>
   );

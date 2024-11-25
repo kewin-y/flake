@@ -56,6 +56,7 @@
       &.active {
         color: $base05;
         background: $base01;
+        box-shadow: 0 -2px 0 0 $base0D inset;
       }
 
       &:hover {

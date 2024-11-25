@@ -43,12 +43,12 @@ window#app-launcher {
       }
 
       .app-item {
-        padding: 0.4em;
-
+        padding-left: 0.7em;
         color: $base05;
 
         &:focus {
           background: $base02;
+          box-shadow: 2px 0 0 0 $base0D inset;
         }
 
         &:hover {
@@ -58,7 +58,7 @@ window#app-launcher {
     }
 
     .search-entry {
-      padding: 0.4rem;
+      padding-left: 0.7em;
       background: $base01;
       color: $base05;
     }
