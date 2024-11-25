@@ -40,7 +40,7 @@
 
   config = {
     wallpaper = ../wallpapers/mountains.jpg;
-    theme = "material-darker";
+    theme = "paradise";
     font = "Iosevka";
   };
 }

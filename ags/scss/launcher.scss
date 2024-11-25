@@ -2,7 +2,7 @@ window#app-launcher {
   background: transparent;
 
   .launcher-box {
-    font-family: "Iosevka Nerd Font Propo";
+    font-family: "Iosevka NFP";
     font-size: 14px;
     background: $base00;
     border: 2px solid $base01;
@@ -53,10 +53,6 @@ window#app-launcher {
 
         &:hover {
           background: $base02;
-        }
-
-        .title {
-          margin: 0 0.8rem;
         }
       }
     }

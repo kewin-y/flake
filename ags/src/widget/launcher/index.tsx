@@ -16,7 +16,6 @@ function ApplicationItem(application: Apps.Application) {
       }}
     >
       <box>
-        <icon icon={application.iconName} css={"font-size: 26px"} />
         <label
           className="title"
           label={application.name}
