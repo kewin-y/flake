@@ -1,5 +1,7 @@
 # NixOS-related configurations
 
+![Screenshot](screenshots/sc.png)
+
 ## TODO:
 
 - [ ] Create sensible modules
