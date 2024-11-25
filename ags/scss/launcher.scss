@@ -22,7 +22,7 @@ window#app-launcher {
         color: $base0B;
 
         &:hover {
-          color: transparentize($color: $base0B, $amount: 0.3);
+          color: scale-color($color: $base0B, $lightness: -20%);
         }
       }
 
@@ -30,7 +30,7 @@ window#app-launcher {
         color: $base08;
 
         &:hover {
-          color: transparentize($color: $base08, $amount: 0.3);
+          color: scale-color($color: $base08, $lightness: -20%);
         }
       }
     }

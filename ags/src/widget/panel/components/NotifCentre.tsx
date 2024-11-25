@@ -35,6 +35,15 @@ export default function NotifCentre() {
     removeNotif(id, notifMap);
   });
 
+  const NotifScroll = (
+    <scrollable
+      name={"notif-scroll"}
+      heightRequest={550}
+      hscroll={Gtk.PolicyType.NEVER}
+      child={NotifList}
+    ></scrollable>
+  );
+
   return (
     <box className={"notif-centre"} vertical={true}>
       <centerbox
@@ -58,11 +67,7 @@ export default function NotifCentre() {
           </button>
         }
       />
-      <scrollable
-        heightRequest={550}
-        hscroll={Gtk.PolicyType.NEVER}
-        child={NotifList}
-      ></scrollable>
+      {NotifScroll}
     </box>
   );
 }

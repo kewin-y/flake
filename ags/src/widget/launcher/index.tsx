@@ -9,7 +9,7 @@ function ApplicationItem(application: Apps.Application) {
   return (
     <button
       className="app-item"
-      heightRequest={38}
+      heightRequest={32}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);
         application.launch();

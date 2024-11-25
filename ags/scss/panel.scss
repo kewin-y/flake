@@ -59,6 +59,7 @@ window#panel {
 
       .wifi {
         background: $base01;
+        color: $base05;
       }
     }
 
@@ -80,7 +81,7 @@ window#panel {
           color: $base08;
 
           &:hover {
-            color: transparentize($color: $base08, $amount: 0.3);
+            color: scale-color($color: $base08, $lightness: -20%);
           }
         }
       }
