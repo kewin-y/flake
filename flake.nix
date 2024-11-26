@@ -1,5 +1,5 @@
 {
-  description = "here be dragons";
+  description = " ... ";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";

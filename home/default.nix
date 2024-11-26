@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/mountains.jpg;
+    wallpaper = ../wallpapers/wallhaven-6km68w.jpg;
     theme = "paradise";
     font = "Iosevka";
   };
