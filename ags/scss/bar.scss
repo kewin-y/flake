@@ -116,11 +116,7 @@
         margin: 0.55em 0;
 
         block.filled {
-            background: scale-color($color: $base0D, $lightness: -15%);
-        }
-
-        block {
-          background: $base03;
+          background: scale-color($color: $base0D, $lightness: -15%);
         }
       }
     }
