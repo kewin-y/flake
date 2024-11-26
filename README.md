@@ -2,6 +2,8 @@
 
 ![Screenshot](screenshots/sc.png)
 
+> This screenshot probably looks different than my actual setup.
+
 ## TODO:
 
 - [ ] Create sensible modules
