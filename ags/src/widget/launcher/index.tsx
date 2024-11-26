@@ -9,7 +9,7 @@ function ApplicationItem(application: Apps.Application) {
   return (
     <button
       className="app-item"
-      heightRequest={38}
+      heightRequest={30}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);
         application.launch();
@@ -59,7 +59,7 @@ function InnerLauncher({ width, height, spacing }: InnerProps) {
   const Search = (
     <entry
       className="search-entry"
-      heightRequest={38}
+      heightRequest={30}
       hexpand={true}
       onActivate={() => launch()}
       onChanged={(self) => {

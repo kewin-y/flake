@@ -1,7 +1,7 @@
 @mixin notif() {
   .notification {
-    font-size: 14px;
-    font-family: "Iosevka NFP";
+    font-size: 13px;
+    font-family: "Iosevka Nerd Font Propo";
     border: 2px solid $base01;
     background-color: $base00;
 
@@ -57,7 +57,6 @@
           color: $base05;
           background: $base01;
           transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-          padding: 0.5em;
 
           &:hover {
             background: $base02;

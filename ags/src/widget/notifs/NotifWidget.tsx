@@ -86,6 +86,7 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
       <box className={"actions"} spacing={8}>
         {notif.get_actions().map((a) => (
           <button
+            heightRequest={30}
             className={"action-button"}
             hexpand={true}
             onClicked={() => {

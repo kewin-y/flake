@@ -9,7 +9,7 @@ export default function Indicators() {
   return (
     <button className="indicators" onClicked={() => togglePopupWindow("panel")}>
       <box spacing={8}>
-        <icon icon={bind(speaker, "volumeIcon")} />
+        <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px"} />
         {WifiIcon()}
       </box>
     </button>

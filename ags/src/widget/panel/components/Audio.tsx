@@ -21,10 +21,10 @@ export default function Audio() {
           m ? "audio-slider mute" : "audio-slider",
         )}
         hexpand={true}
-        heightRequest={38}
+        heightRequest={30}
         spacing={12}
       >
-        <icon icon={bind(speaker, "volumeIcon")} />
+        <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px;"} />
         <slider
           hexpand={true}
           onDragged={({ value }) => (speaker.volume = value)}
