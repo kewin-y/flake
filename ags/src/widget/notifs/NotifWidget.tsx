@@ -68,14 +68,12 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
       useMarkup={true}
       justify={Gtk.Justification.LEFT}
       halign={Gtk.Align.START}
-      // WHY
-      // Just use Awesome LOL
-      maxWidthChars={32}
+      maxWidthChars={28}
       wrap={true}
       label={notif.body.trim()}
     />
   );
-4
+  4;
   const Header = (
     <centerbox
       className={"header"}
@@ -106,11 +104,11 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
       <box className={`notification ${notif.urgency}`} vertical={true}>
         {Header}
         <box css={"padding: 0.7em;"}>
+          {NotifIcon(notif)}
           <box className="notif-left" vertical={true} valign={Gtk.Align.CENTER}>
             {Body}
             {Actions}
           </box>
-          {NotifIcon(notif)}
         </box>
       </box>
     </eventbox>
