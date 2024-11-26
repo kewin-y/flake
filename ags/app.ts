@@ -40,6 +40,7 @@ writeFile(
 exec(`sass ${tmpscss} ${target}`);
 
 App.start({
+  icons: `${SRC}/assets/icons`,
   requestHandler(req, res) {
     const [cmd, ...args] = req.split(" ");
     if (cmd == "toggle-popup") {

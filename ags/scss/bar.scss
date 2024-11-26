@@ -2,6 +2,7 @@
   padding: 0 0.8em;
   background: $base01;
   color: $base05;
+  font-size: 13px;
   min-width: 2.1em;
   min-height: 2.1em;
 }
@@ -17,12 +18,12 @@
 }
 
 @mixin small-label {
+  font-size: 13px;
   padding: 0;
 }
 
 .bar {
   font-family: "Iosevka Nerd Font Propo";
-  font-size: 13px;
 
   .cbox {
     border-top: 2px solid $base01;
@@ -101,20 +102,46 @@
   .battery-label {
     @include bar-label();
 
-    .progress {
-      font-size: 0.2em;
-      color: $base05;
-      background: transparentize($color: $base05, $amount: 0.8);
+    .battery-bulb {
+      background: $base05;
+      margin: 0.9em 0;
+      border-radius: 2px;
     }
 
-    &.charging .progress {
-      color: $base0B;
-      background: transparentize($color: $base0B, $amount: 0.8);
+    levelbar {
+      trough {
+        border: 1px solid $base05;
+        border-radius: 2px;
+        padding: 1px;
+        margin: 0.55em 0;
+
+        block.filled {
+            background: scale-color($color: $base0D, $lightness: -15%);
+        }
+
+        block {
+          background: $base03;
+        }
+      }
+    }
+
+    &.charging {
+      levelbar {
+        trough {
+          block.filled {
+            background: scale-color($color: $base0B, $lightness: -15%);
+          }
+        }
+      }
+    }
+
+    .battery-flash {
+      color: $base05;
+      font-size: 10px;
     }
 
     label {
       color: $base05;
-      margin-left: 8px;
     }
   }
 
