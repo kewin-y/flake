@@ -15,7 +15,7 @@ import notifStyle from "inline:./scss/notif.scss";
 import launcherStyle from "inline:./scss/launcher.scss";
 import panelStyle from "inline:./scss/panel.scss";
 
-const colorsPath = `${HOME}/.config/ags_res/colors.scss`;
+const colorsPath = `${HOME}/.config/ags_res/test.scss`;
 const tmpscss = "/tmp/style.scss";
 const target = "/tmp/style.css";
 

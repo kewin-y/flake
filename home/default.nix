@@ -30,6 +30,7 @@
         "material"
         "oxocarbon"
         "paradise"
+        "test"
       ];
     };
 
@@ -40,7 +41,7 @@
 
   config = {
     wallpaper = ../wallpapers/mountains.jpg;
-    theme = "paradise";
+    theme = "test";
     font = "Iosevka";
   };
 }
