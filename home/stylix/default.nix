@@ -21,6 +21,7 @@
     targets = {
       hyprland.enable = false;
       neovim.enable = false;
+      nixvim.enable = false;
       firefox.enable = false;
       fzf.enable = false;
       tmux.enable = false;
