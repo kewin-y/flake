@@ -40,7 +40,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/mountains.jpg;
+    wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
     theme = "test";
     font = "Iosevka";
   };

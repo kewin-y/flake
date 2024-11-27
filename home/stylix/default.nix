@@ -22,7 +22,7 @@
       hyprland.enable = false;
       neovim.enable = false;
       nixvim.enable = false;
-      firefox.enable = false;
+      # firefox.enable = false;
       fzf.enable = false;
       tmux.enable = false;
       hyprlock.enable = false;
@@ -47,7 +47,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Papirus-Dark";
+      name = "Papirus-Light";
       package = pkgs.papirus-icon-theme.override {color = "blue";};
     };
   };
