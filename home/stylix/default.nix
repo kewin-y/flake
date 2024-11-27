@@ -10,7 +10,7 @@
     image = config.wallpaper;
 
     base16Scheme = ./themes/${config.theme}.yaml;
-    polarity = "dark";
+    polarity = "light";
 
     cursor = {
       name = "phinger-cursors-light";
