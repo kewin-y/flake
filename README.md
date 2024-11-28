@@ -4,10 +4,6 @@
 
 > This screenshot probably looks different than my actual setup.
 
-## TODO:
-
-- [ ] Create sensible modules
-
 ## Acknowledgements
 
 - https://github.com/Aylur/ags

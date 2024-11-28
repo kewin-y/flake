@@ -41,7 +41,7 @@
 
   config = {
     wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
-    theme = "test";
+    theme = "paradise";
     font = "Iosevka";
   };
 }
