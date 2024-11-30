@@ -41,10 +41,10 @@ function BarEnd() {
   return (
     <box halign={Gtk.Align.END} spacing={8} css={"margin-right: 0.8em"}>
       <SysTray />
-      <Clock />
-      <BatteryLevel />
-      <Separator />
       <Indicators />
+      <Separator />
+      <BatteryLevel />
+      <Clock />
     </box>
   );
 }

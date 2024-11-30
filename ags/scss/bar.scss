@@ -39,7 +39,7 @@
   .cbox {
     border-top: 2px solid $base01;
     background: $base00;
-    padding: 0.4em;
+    padding: 0.3em;
   }
 
   button {
@@ -48,7 +48,7 @@
 
   separator {
     background: $base03;
-    margin: 0.2em 0;
+    margin: 0.4em 0;
   }
 
   .launcher-button {
@@ -83,13 +83,16 @@
   }
 
   .clients {
-    font-family: "Rubik";
-
     button {
-      color: $base05;
+      @include small-label();
+      background: transparent;
 
       &.focused {
-        color: $base0D;
+        background: $base01;
+      }
+
+      &:hover {
+        background: $base02;
       }
     }
   }
