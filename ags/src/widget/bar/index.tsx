@@ -7,13 +7,32 @@ import SysTray from "./components/SysTray";
 import Clock from "./components/Clock";
 import BatteryLevel from "./components/Battery";
 import Indicators from "./components/Indicators";
+import Separator from "../../astalify/Separator";
 
 function BarStart() {
   return (
-    <box halign={Gtk.Align.START} spacing={8} css={"margin-left: 0.8em;"} hexpand={true}>
+    <box
+      halign={Gtk.Align.START}
+      spacing={8}
+      css={"margin-left: 0.8em;"}
+      hexpand={true}
+    >
       <LauncherButton />
-      <Workspaces />
+      <Separator />
       <Clients />
+    </box>
+  );
+}
+
+function BarCenter() {
+  return (
+    <box
+      halign={Gtk.Align.CENTER}
+      spacing={8}
+      css={"margin: 0 0.8em;"}
+      hexpand={true}
+    >
+      <Workspaces />
     </box>
   );
 }
@@ -24,6 +43,7 @@ function BarEnd() {
       <SysTray />
       <Clock />
       <BatteryLevel />
+      <Separator />
       <Indicators />
     </box>
   );
@@ -47,6 +67,7 @@ export default function Bar(monitor = 0) {
       <centerbox
         className="cbox"
         startWidget={BarStart()}
+        centerWidget={BarCenter()}
         endWidget={BarEnd()}
       ></centerbox>
     </window>

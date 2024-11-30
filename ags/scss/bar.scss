@@ -7,6 +7,14 @@
   min-height: 28px;
 }
 
+@mixin transparent-label {
+  @include bar-label();
+
+  background: transparent;
+  padding: 0;
+  margin: 0 0.2em;
+}
+
 @mixin bar-button {
   @include bar-label();
 
@@ -36,6 +44,11 @@
 
   button {
     @include bar-button();
+  }
+
+  separator {
+    background: $base03;
+    margin: 0.2em 0;
   }
 
   .launcher-button {
@@ -71,8 +84,10 @@
 
   .clients {
     font-family: "Rubik";
+
     button {
       color: $base05;
+
       &.focused {
         color: $base0D;
       }
@@ -80,8 +95,6 @@
   }
 
   .tray {
-    @include bar-label();
-    @include small-label();
     background: transparent;
 
     button {
@@ -100,7 +113,7 @@
 
     icon {
       color: $base05;
-      font-size: 13px;
+      font-size: 12px;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
 
       &.showing {
@@ -110,11 +123,11 @@
   }
 
   .battery-label {
-    @include bar-label();
+    @include transparent-label();
 
     .battery-bulb {
       background: $base05;
-      margin: 0.7em 0;
+      margin: 0.8em 0;
       border-radius: 2px;
     }
 
@@ -123,7 +136,7 @@
         border: 1px solid $base05;
         border-radius: 2px;
         padding: 1px;
-        margin: 0.4em 0;
+        margin: 0.5em 0;
 
         block.filled {
           background: scale-color($color: $base0D, $lightness: -15%);
@@ -145,14 +158,10 @@
       color: $base05;
       font-size: 10px;
     }
-
-    label {
-      color: $base05;
-    }
   }
 
   .clock {
-    @include bar-label();
+    @include transparent-label();
 
     label {
       color: $base05;
