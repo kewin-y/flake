@@ -3,10 +3,10 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.font} Font 14 Nerd Font Propo:size=10.5";
-        font-bold = lib.mkForce "${config.font} Font 14 Nerd Font Propo:size=10.5";
-        font-italic = lib.mkForce "${config.font} Font 14 Nerd Font Propo:size=10.5";
-        font-bold-italic = lib.mkForce "${config.font} Font 14 Nerd Font Propo:size=10.5";
+        font = lib.mkForce "${config.font} Nerd Font Propo:size=12";
+        font-bold = lib.mkForce "${config.font} Nerd Font Propo:size=12";
+        font-italic = lib.mkForce "${config.font} Nerd Font Propo:size=12";
+        font-bold-italic = lib.mkForce "${config.font} Nerd Font Propo:size=12";
         box-drawings-uses-font-glyphs = "no";
         pad = "16x16";
       };
