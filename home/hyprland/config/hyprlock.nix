@@ -33,8 +33,8 @@
           check_color = "rgb(${base09})";
           fail_color = "rgb(${base08})";
           outline_thickness = 2;
-          placeholder_text = ''<span foreground="##${base05}" font-family="${config.font} NFP">Password...</span>'';
-          fail_text = ''<span foreground="##${base08}" font-family="${config.font} NFP">Failed to Authenticate</span>'';
+          placeholder_text = ''<span foreground="##${base05}" font-family="Rubik">Password...</span>'';
+          fail_text = ''<span foreground="##${base08}" font-family="Rubik">Failed to Authenticate</span>'';
           shadow_passes = 2;
         }
       ];

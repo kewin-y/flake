@@ -2,7 +2,7 @@
   padding: 0 0.8em;
   background: $base01;
   color: $base05;
-  font-size: 13px;
+  font-size: 14px;
   min-width: 2.1em;
   min-height: 2.1em;
 }
@@ -18,12 +18,12 @@
 }
 
 @mixin small-label {
-  font-size: 13px;
+  font-size: 14px;
   padding: 0;
 }
 
 .bar {
-  font-family: "Iosevka Nerd Font Propo";
+  font-family: "GohuFont 14 Nerd Font Propo";
 
   .cbox {
     border-top: 2px solid $base01;

@@ -18,8 +18,8 @@
         bar_precedence_over_border = false;
         bar_part_of_window = true;
         bar_padding = 12;
-        bar_text_size = 10;
-        bar_text_font = "${config.font} NFP";
+        bar_text_size = 11;
+        bar_text_font = "${config.font}Font 11 Nerd Font Propo";
         bar_text_align = "left";
         hyprbars-button = [
           "rgb(${base08}), 8, , hyprctl dispatch killactive"

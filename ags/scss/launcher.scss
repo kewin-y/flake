@@ -2,8 +2,8 @@ window#app-launcher {
   background: transparent;
 
   .launcher-box {
-    font-family: "Iosevka Nerd Font Propo";
-    font-size: 13px;
+    font-family: "GohuFont 14 Nerd Font Propo";
+    font-size: 14px;
     background: $base00;
     border: 2px solid $base01;
     margin: 0.7em;
@@ -15,7 +15,7 @@ window#app-launcher {
     .power-menu {
       background: $base01;
       padding: 0.7em;
-      font-size: 13px;
+      font-size: 14px;
       color: $base05;
 
       .lock {
