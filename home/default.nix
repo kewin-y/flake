@@ -40,8 +40,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
-    theme = "paradise";
+    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
+    theme = "oxocarbon";
     font = "Iosevka";
   };
 }

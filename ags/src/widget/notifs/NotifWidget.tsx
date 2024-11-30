@@ -6,11 +6,13 @@ import GLib from "gi://GLib";
 const NOTIF_TRANSITION_DURATION = 300;
 
 function NotifIcon(notif: AstalNotifd.Notification) {
-  if (!Astal.Icon.lookup_icon(notif.app_icon)) return;
-
   const icon = (
     <icon
-      icon={notif.app_icon}
+      icon={
+        Astal.Icon.lookup_icon(notif.app_icon)
+          ? notif.app_icon
+          : "notification-symbolic"
+      }
       css={"font-size: 38px;"}
       valign={Gtk.Align.CENTER}
       halign={Gtk.Align.CENTER}
