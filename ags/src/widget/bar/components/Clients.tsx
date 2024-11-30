@@ -1,5 +1,6 @@
 import Hyprland from "gi://AstalHyprland";
 import { bind } from "astal";
+import Pango from "gi://Pango";
 
 export default function Clients() {
   const hypr = Hyprland.get_default();
@@ -13,7 +14,11 @@ export default function Clients() {
             )}
             onClick={() => client.focus()}
           >
-            <label label={bind(client, "title")} />
+            <label
+              label={bind(client, "title")}
+              ellipsize={Pango.EllipsizeMode.END}
+              maxWidthChars={24}
+            />
           </button>
         )),
       )}

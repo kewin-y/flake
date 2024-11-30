@@ -68,7 +68,7 @@ export function NotifWidget(notif: AstalNotifd.Notification) {
       useMarkup={true}
       justify={Gtk.Justification.LEFT}
       halign={Gtk.Align.START}
-      maxWidthChars={28}
+      maxWidthChars={18}
       wrap={true}
       label={notif.body.trim()}
     />
