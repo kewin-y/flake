@@ -1,34 +1,27 @@
 import { App, Astal, Gtk } from "astal/gtk3";
 
 import LauncherButton from "./components/LauncherButton";
-import SysTray from "./components/SysTray";
 import Workspaces from "./components/Workspaces";
+import Clients from "./components/Clients";
+import SysTray from "./components/SysTray";
 import Clock from "./components/Clock";
 import BatteryLevel from "./components/Battery";
 import Indicators from "./components/Indicators";
 
-const BOXCSS = "margin: 0.2rem 0.8rem";
-
 function BarStart() {
   return (
-    <box halign={Gtk.Align.START} css={BOXCSS} spacing={8}>
+    <box halign={Gtk.Align.START} spacing={8} css={"margin-left: 0.8em;"} hexpand={true}>
       <LauncherButton />
-      <SysTray />
-    </box>
-  );
-}
-
-function BarCenter() {
-  return (
-    <box css={BOXCSS} spacing={8}>
       <Workspaces />
+      <Clients />
     </box>
   );
 }
 
 function BarEnd() {
   return (
-    <box halign={Gtk.Align.END} css={BOXCSS} spacing={8}>
+    <box halign={Gtk.Align.END} spacing={8} css={"margin-right: 0.8em"}>
+      <SysTray />
       <Clock />
       <BatteryLevel />
       <Indicators />
@@ -54,7 +47,6 @@ export default function Bar(monitor = 0) {
       <centerbox
         className="cbox"
         startWidget={BarStart()}
-        centerWidget={BarCenter()}
         endWidget={BarEnd()}
       ></centerbox>
     </window>

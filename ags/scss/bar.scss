@@ -3,7 +3,7 @@
   background: $base01;
   color: $base05;
   font-size: 16px;
-  min-width: 28px;
+
   min-height: 28px;
 }
 
@@ -20,15 +20,18 @@
 @mixin small-label {
   font-size: 16px;
   padding: 0;
+
+  min-width: 28px;
+  min-height: 28px;
 }
 
 .bar {
-  font-family: "ProggyClean Nerd Font Mono";
+  font-family: "Iosevka Nerd Font Mono";
 
   .cbox {
     border-top: 2px solid $base01;
     background: $base00;
-    padding: 0.2em;
+    padding: 0.4em;
   }
 
   button {
@@ -49,20 +52,29 @@
 
       background: transparent;
       color: $base03;
-      padding-left: 1px;
 
       &.occupied {
         color: $base05;
       }
 
       &.active {
-        color: $base05;
+        color: $base0D;
         background: $base01;
-        box-shadow: 0 -2px 0 0 $base0D inset;
+        // box-shadow: 0 -2px 0 0 $base0D inset;
       }
 
       &:hover {
         background: $base02;
+      }
+    }
+  }
+
+  .clients {
+    font-family: "Iosevka Nerd Font Mono";
+    button {
+      color: $base05;
+      &.focused {
+        color: $base0D;
       }
     }
   }
@@ -88,13 +100,11 @@
 
     icon {
       color: $base05;
-      font-size: 10px;
+      font-size: 12px;
       transition: all 0.2s cubic-bezier(1, 1, 1, 1);
-      -gtk-icon-transform: rotate(270deg);
 
       &.showing {
-        -gtk-icon-transform: rotate(90deg);
-        margin-right: 2px;
+        -gtk-icon-transform: rotate(180deg);
       }
     }
   }
@@ -113,7 +123,7 @@
         border: 1px solid $base05;
         border-radius: 2px;
         padding: 1px;
-        margin: 0.40em 0;
+        margin: 0.4em 0;
 
         block.filled {
           background: scale-color($color: $base0D, $lightness: -15%);

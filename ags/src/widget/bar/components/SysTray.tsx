@@ -45,7 +45,7 @@ export default function SysTray() {
       onClick={() => showSysTray.set(!showSysTray.get())}
     >
       <icon
-        icon="keyboard-hide-symbolic"
+        icon="pan-start-symbolic"
         className={showSysTray((showing) => (showing ? "showing" : ""))}
       />
     </button>
@@ -53,8 +53,8 @@ export default function SysTray() {
 
   return (
     <box spacing={8}>
-      {TrayButton}
       {TrayItems}
+      {TrayButton}
     </box>
   );
 }
