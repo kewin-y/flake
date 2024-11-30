@@ -7,7 +7,7 @@ export default function Clients() {
   return (
     <box className={"clients"} spacing={4} hexpand={true}>
       {bind(hypr, "clients").as((clients) =>
-        clients.slice(0, 10).map((client) => (
+        clients.slice(0, 5).map((client) => (
           <button
             className={bind(hypr, "focusedClient").as((focusedClient) =>
               focusedClient?.pid === client.pid ? "focused" : "",
@@ -15,6 +15,7 @@ export default function Clients() {
             onClick={() => client.focus()}
           >
             <box spacing={8}>
+              <icon icon={bind(client, "class")} css={"font-size: 16px;"} />
               <label
                 label={bind(client, "title")}
                 ellipsize={Pango.EllipsizeMode.END}

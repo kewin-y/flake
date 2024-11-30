@@ -15,7 +15,8 @@ function ApplicationItem(application: Apps.Application) {
         application.launch();
       }}
     >
-      <box>
+      <box spacing={8}>
+        <icon icon={application.iconName} css={"font-size: 16px;"} />
         <label
           className="title"
           label={application.name}
