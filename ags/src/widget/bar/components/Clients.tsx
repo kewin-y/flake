@@ -14,11 +14,13 @@ export default function Clients() {
             )}
             onClick={() => client.focus()}
           >
-            <label
-              label={bind(client, "title")}
-              ellipsize={Pango.EllipsizeMode.END}
-              maxWidthChars={24}
-            />
+            <box spacing={8}>
+              <label
+                label={bind(client, "title")}
+                ellipsize={Pango.EllipsizeMode.END}
+                maxWidthChars={24}
+              />
+            </box>
           </button>
         )),
       )}
