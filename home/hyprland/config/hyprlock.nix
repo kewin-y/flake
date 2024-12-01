@@ -12,8 +12,9 @@
 
       background = [
         {
-          blur_passes = 3;
-          blur_size = 8;
+          blur_passes = 2;
+          blur_size = 4;
+          path = "${config.wallpaper}";
         }
       ];
 
@@ -33,9 +34,9 @@
           check_color = "rgb(${base09})";
           fail_color = "rgb(${base08})";
           outline_thickness = 2;
-          placeholder_text = ''<span foreground="##${base05}" font-family="Rubik">Password...</span>'';
-          fail_text = ''<span foreground="##${base08}" font-family="Rubik">Failed to Authenticate</span>'';
-          shadow_passes = 2;
+          font_family = "Rubik";
+          placeholder_text = ''<span>Password...</span>'';
+          fail_text = ''<span>Failed to Authenticate</span>'';
         }
       ];
     };
