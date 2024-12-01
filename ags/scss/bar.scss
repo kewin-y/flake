@@ -97,9 +97,9 @@
     background: $base01;
 
     .tray-items>box {
-      margin: 2px;
+      min-width: 28px;
       button {
-        @include square-label($size: 24px);
+        @include square-label($size: 28px);
         &:hover {
           background: $base02;
         }
