@@ -32,6 +32,7 @@
         "paradise"
         "test"
         "decay"
+        "rose-pine-dawn"
       ];
     };
 
@@ -41,8 +42,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-6km68w.jpg;
-    theme = "decay";
+    wallpaper = ../wallpapers/nanmokaken.jpg;
+    theme = "rose-pine-dawn";
     font = "Iosevka";
   };
 }
