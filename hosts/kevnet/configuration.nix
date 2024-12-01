@@ -42,7 +42,7 @@
     };
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -60,7 +60,6 @@
     isNormalUser = true;
     description = "Kevin";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -76,6 +75,34 @@
     pamixer
     libnotify
   ];
+
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      dejavu_fonts
+      (nerdfonts.override {fonts = ["Iosevka"];})
+      rubik
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [
+          "Rubik"
+          "Noto Sans CJK"
+        ];
+        serif = [
+          "DejaVu Serif"
+          "Noto Serif CJK"
+        ];
+        monospace = [
+          "Iosevka Nerd Font Propo"
+          "Noto Sans Mono CJK"
+        ];
+      };
+    };
+  };
 
   services.upower.enable = true;
 

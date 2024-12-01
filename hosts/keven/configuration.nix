@@ -72,6 +72,11 @@
     libnotify
   ];
 
+  fonts.packages = with pkgs; [
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+  ];
+
   services.upower.enable = true;
 
   security.pam.services.hyprlock = {};
