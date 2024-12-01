@@ -8,8 +8,8 @@
         pad = "16x16";
       };
 
-      cursor = {
-        color = "111516 c2c4c2";
+      cursor = with config.lib.stylix.colors; {
+        color = "${base00} ${base05}";
       };
     };
   };
