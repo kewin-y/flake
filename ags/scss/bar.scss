@@ -84,11 +84,11 @@
 
   .clients {
     button {
-      @include small-label();
       background: transparent;
 
       &.focused {
         background: $base01;
+        color: $base0D;
       }
 
       &:hover {

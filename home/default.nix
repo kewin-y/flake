@@ -31,6 +31,7 @@
         "oxocarbon"
         "paradise"
         "test"
+        "decay"
       ];
     };
 
@@ -40,8 +41,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
-    theme = "far";
+    wallpaper = ../wallpapers/wallhaven-6km68w.jpg;
+    theme = "decay";
     font = "Iosevka";
   };
 }
