@@ -13,6 +13,7 @@
     ./firefox
     ./tmux
     ./nixvim
+    ./spicetify
   ];
 
   options = {
