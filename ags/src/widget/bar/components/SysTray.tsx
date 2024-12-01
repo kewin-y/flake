@@ -10,7 +10,7 @@ export default function SysTray() {
     <revealer
       revealChild={showSysTray()}
       transitionDuration={200}
-      className="tray"
+      className="tray-items"
       transitionType={Gtk.RevealerTransitionType.SLIDE_LEFT}
     >
       <box spacing={4}>
@@ -55,7 +55,7 @@ export default function SysTray() {
   );
 
   return (
-    <box spacing={8}>
+    <box className={"tray"}>
       {TrayItems}
       {TrayButton}
     </box>

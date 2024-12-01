@@ -2,9 +2,6 @@
   padding: 0 0.8em;
   background: $base01;
   color: $base05;
-  font-size: 13px;
-
-  min-height: 28px;
 }
 
 @mixin transparent-label {
@@ -25,21 +22,22 @@
   }
 }
 
-@mixin small-label {
-  font-size: 13px;
-  padding: 0;
+@mixin square-label($size) {
+  @include bar-label();
 
-  min-width: 28px;
-  min-height: 28px;
+  padding: 0;
+  min-width: $size;
+  min-height: $size;
 }
 
 .bar {
   font-family: "Rubik";
+  font-size: 13px;
 
   .cbox {
     border-top: 2px solid $base01;
     background: $base00;
-    padding: 0.3em;
+    padding: 0.4em;
   }
 
   button {
@@ -52,33 +50,31 @@
   }
 
   .launcher-button {
-    @include small-label();
+    @include square-label($size: 28px);
 
     icon {
       color: $base05;
     }
   }
 
-  .workspaces {
-    button {
-      @include small-label();
+  .workspaces>button {
+    @include square-label($size: 28px);
 
-      background: transparent;
-      color: $base03;
+    background: transparent;
+    color: $base03;
 
-      &.occupied {
-        color: $base05;
-      }
+    &.occupied {
+      color: $base05;
+    }
 
-      &.active {
-        color: $base0D;
-        background: $base01;
-        // box-shadow: 0 -2px 0 0 $base0D inset;
-      }
+    &.active {
+      color: $base0D;
+      background: $base01;
+      // box-shadow: 0 -2px 0 0 $base0D inset;
+    }
 
-      &:hover {
-        background: $base02;
-      }
+    &:hover {
+      background: $base02;
     }
   }
 
@@ -98,29 +94,29 @@
   }
 
   .tray {
-    background: transparent;
+    background: $base01;
 
-    button {
-      @include bar-button();
-      @include small-label();
-      background: transparent;
-
-      &:hover {
-        color: $base02;
+    .tray-items>box {
+      margin: 2px;
+      button {
+        @include square-label($size: 24px);
+        &:hover {
+          background: $base02;
+        }
       }
     }
-  }
 
-  .tray-button {
-    @include small-label();
+    .tray-button {
+      padding: 0 0.35em;
 
-    icon {
-      color: $base05;
-      font-size: 12px;
-      transition: all 0.2s cubic-bezier(1, 1, 1, 1);
+      icon {
+        color: $base05;
+        font-size: 12px;
+        transition: all 0.2s cubic-bezier(1, 1, 1, 1);
 
-      &.showing {
-        -gtk-icon-transform: rotate(180deg);
+        &.showing {
+          -gtk-icon-transform: rotate(180deg);
+        }
       }
     }
   }
@@ -169,9 +165,5 @@
     label {
       color: $base05;
     }
-  }
-
-  .indicators {
-    @include bar-button();
   }
 }

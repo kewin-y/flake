@@ -31,7 +31,7 @@ function BarCenter() {
       css={"margin: 0 0.8em;"}
       hexpand={true}
     >
-      <Clients />
+      {Clients()}
     </box>
   );
 }
@@ -39,11 +39,11 @@ function BarCenter() {
 function BarEnd() {
   return (
     <box halign={Gtk.Align.END} spacing={8} css={"margin-right: 0.8em"}>
+      <Clock />
+      <BatteryLevel />
+      <Separator />
       <SysTray />
       <Indicators />
-      <Separator />
-      <BatteryLevel />
-      <Clock />
     </box>
   );
 }
