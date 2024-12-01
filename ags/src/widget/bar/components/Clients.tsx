@@ -5,39 +5,32 @@ import Pango from "gi://Pango";
 
 export default function Clients() {
   const hypr = Hyprland.get_default();
-  return (
-    <box
-      className={"clients"}
-      spacing={4}
-      hexpand={true}
-      setup={(self) => {
-        self.hook(hypr, "event", () => {
-          const activeWorkspace = hypr.focused_workspace;
-          self.set_children(
-            activeWorkspace.get_clients().map((client) => (
-              <button
-                className={bind(hypr, "focusedClient").as((focusedClient) =>
-                  focusedClient?.pid === client.pid ? "focused" : "",
-                )}
-                onClick={() => client.focus()}
-              >
-                <box spacing={8}>
-                  <icon
-                    halign={Gtk.Align.CENTER}
-                    icon={bind(client, "class")}
-                    css={"font-size: 16px;"}
-                  />
-                  <label
-                    label={bind(client, "title")}
-                    max_width_chars={18}
-                    ellipsize={Pango.EllipsizeMode.END}
-                  />
-                </box>
-              </button>
-            )),
-          );
-        });
-      }}
-    ></box>
-  );
+
+  return bind(hypr, "focused_workspace").as((workspace) => (
+    <box spacing={4} className={"clients"}>
+      {bind(workspace, "clients").as((clients) =>
+        clients.slice(0, 8).map((client) => (
+          <button
+            className={bind(hypr, "focusedClient").as((focusedClient) =>
+              focusedClient?.address === client.address ? "focused" : "",
+            )}
+            onClick={() => client.focus()}
+          >
+            <box spacing={8}>
+              <icon
+                halign={Gtk.Align.CENTER}
+                icon={bind(client, "class")}
+                css={"font-size: 16px;"}
+              />
+              <label
+                label={bind(client, "title")}
+                max_width_chars={18}
+                ellipsize={Pango.EllipsizeMode.END}
+              />
+            </box>
+          </button>
+        )),
+      )}
+    </box>
+  ));
 }
