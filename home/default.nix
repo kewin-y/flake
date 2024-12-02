@@ -43,8 +43,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
-    theme = "yoru";
+    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
+    theme = "oxocarbon";
     font = "Iosevka";
   };
 }
