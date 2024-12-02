@@ -16,6 +16,7 @@
     ];
 
     # Tell me why card was base04 😂
+    # player being base05 was also insane
     # See https://github.com/danth/stylix/blob/74ee1ed5057e44edbcc36aa189a91d31eda60485/modules/spicetify/spicetify.nix
     theme = {
       name = "stylix";
@@ -31,7 +32,7 @@
           highlight          = ${base02}
           highlight-elevated = ${base03}
           sidebar            = ${base01}
-          player             = ${base05}
+          player             = ${base02}
           card               = ${base02}
           shadow             = ${base00}
           selected-row       = ${base05}
