@@ -33,6 +33,7 @@
         "test"
         "decay"
         "rose-pine-dawn"
+        "yoru"
       ];
     };
 
@@ -42,8 +43,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
-    theme = "far";
+    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
+    theme = "yoru";
     font = "Iosevka";
   };
 }

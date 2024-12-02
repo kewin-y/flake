@@ -1,4 +1,4 @@
-# Light theme looks ugly as
+# Looks ugly with light theme
 {
   inputs,
   pkgs,
