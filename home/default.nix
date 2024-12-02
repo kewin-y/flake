@@ -42,8 +42,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/mountains.jpg;
-    theme = "paradise";
+    wallpaper = ../wallpapers/accordion.png;
+    theme = "far";
     font = "Iosevka";
   };
 }
