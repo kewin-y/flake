@@ -25,7 +25,6 @@
     theme = lib.mkOption {
       default = "material-darker";
       type = lib.types.enum [
-        "oxocarbon"
         "far"
         "material-darker"
         "material"
@@ -43,8 +42,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/nanmokaken.jpg;
-    theme = "rose-pine-dawn";
+    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
+    theme = "decay";
     font = "Iosevka";
   };
 }
