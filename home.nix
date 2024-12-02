@@ -23,7 +23,7 @@
 
   home.packages = with pkgs; [
     nemo-with-extensions
-    imv
+    swayimg
     mpv
     fastfetch
     nitch

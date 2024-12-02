@@ -29,10 +29,8 @@
 
     export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#${base04},bg:#${base00},hl:#${base0D} --color=fg+:#${base06},bg+:#${base01},hl+:#${base0D} --color=info:#${base0D},prompt:#${base0D},pointer:#${base0C} --color=marker:#${base0C},spinner:#${base0C},header:#${base0D}'
 
-
-    # This is from stackoverflow
-    function _cd {
-      \cd "$@"
+    function cd {
+      command cd "$@"
       PS1=$(
         if [[ "''${PWD#$HOME}" != "$PWD" ]]; then
           print -n "\e[1;34m~''${PWD#$HOME}"
@@ -42,7 +40,6 @@
         print -n " \e[1;32m$ \e[0m"
       )
     }
-    alias cd=_cd
 
     function cdd {
       local dir=$(fd -H -t d -a | fzf)

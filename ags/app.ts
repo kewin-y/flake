@@ -26,7 +26,11 @@ writeFile(
   @import "${colorsPath}";
 
   * {
-      all: unset;
+    all: unset;
+    &:not(icon) {
+      font-family: "Rubik";
+      font-size: 13px;
+    }
   }
 
   ${miscStyle}

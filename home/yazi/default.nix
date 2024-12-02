@@ -19,19 +19,19 @@ in {
       opener = {
         image = [
           {
-            run = ''${pkgs.imv}/bin/imv "$1"'';
+            run = ''${pkgs.swayimg}/bin/swayimg "$1"'';
             desc = "View Image";
           }
         ];
         video = [
           {
-            run = ''${pkgs.imv}/bin/imv "$1"'';
+            run = ''${pkgs.mpv}/bin/mpv "$1"'';
             desc = "Watch Video";
           }
         ];
         audio = [
           {
-            run = ''${pkgs.imv}/bin/imv "$1"''; # Hmm
+            run = ''${pkgs.mpv}/bin/mpv "$1"''; # Hmm
             desc = "Listen to Audio";
           }
         ];

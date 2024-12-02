@@ -45,7 +45,6 @@ in {
           "${mainMod}, W, killactive"
           "${mainMod}, delete, exit"
           "${mainMod}, S, togglefloating"
-          "${mainMod}, G, togglegroup"
           "${mainMod}, F, fullscreen"
 
           # Apps
