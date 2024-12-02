@@ -42,8 +42,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
-    theme = "decay";
+    wallpaper = ../wallpapers/mountains.jpg;
+    theme = "paradise";
     font = "Iosevka";
   };
 }

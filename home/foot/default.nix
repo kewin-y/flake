@@ -5,7 +5,7 @@
       main = {
         font = lib.mkForce "${config.font} Nerd Font Propo:size=10";
         box-drawings-uses-font-glyphs = "no";
-        pad = "16x16";
+        pad = "24x24";
       };
 
       cursor = with config.lib.stylix.colors; {
