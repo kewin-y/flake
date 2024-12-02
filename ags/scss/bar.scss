@@ -138,7 +138,7 @@
         margin: 0.5em 0;
 
         block.filled {
-          background: scale-color($color: $base0D, $lightness: -15%);
+          background: $base03;
         }
       }
     }
@@ -147,7 +147,7 @@
       levelbar {
         trough {
           block.filled {
-            background: scale-color($color: $base0B, $lightness: -15%);
+            background: $base0D;
           }
         }
       }

@@ -19,7 +19,7 @@ export default function Clients() {
             <box spacing={8}>
               <icon
                 halign={Gtk.Align.CENTER}
-                icon={bind(client, "class")}
+                icon={bind(client, "class").as(c => c.toLowerCase())}
                 css={"font-size: 16px;"}
               />
               <label
