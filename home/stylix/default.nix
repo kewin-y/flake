@@ -10,7 +10,7 @@
     image = config.wallpaper;
 
     base16Scheme = ./themes/${config.theme}.yaml;
-    polarity = "dark";
+    polarity = "light";
 
     cursor = {
       name = "phinger-cursors-light";
@@ -47,7 +47,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Papirus-Dark";
+      name = "Papirus-Light";
       package = pkgs.papirus-icon-theme.override {color = "blue";};
     };
   };

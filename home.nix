@@ -34,7 +34,6 @@
     obsidian
     wl-clipboard
     ripgrep
-
     vesktop
   ];
 

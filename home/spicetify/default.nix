@@ -28,9 +28,9 @@
       subtext = base05;
       main = base00;
       main-elevated = base02;
+      sidebar = base01;
       highlight = base01;
       highlight-elevated = base02;
-      sidebar = base01;
       player = base01;
       card = base02;
       shadow = base00;

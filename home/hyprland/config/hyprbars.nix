@@ -22,8 +22,8 @@
         bar_title_enabled = false;
         bar_text_align = "left";
         hyprbars-button = [
-          "rgb(${base08}), 10, , hyprctl dispatch killactive"
-          "rgb(${base0B}), 10, , hyprctl dispatch fullscreen 1"
+          "rgb(${base08}), 8, , hyprctl dispatch killactive"
+          "rgb(${base0B}), 8, , hyprctl dispatch fullscreen 1"
         ];
       };
     };
