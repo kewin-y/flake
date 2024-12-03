@@ -916,11 +916,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1733181054,
-        "narHash": "sha256-9NvYyRyUEXVAggxBcu68tD9LEkXQZAiE53YcpP8TpLs=",
+        "lastModified": 1733183491,
+        "narHash": "sha256-tbXf/58uRHCc8qSLCfBFbYsJO5Jr/SpTa0M0HJQwhBs=",
         "ref": "refs/heads/master",
-        "rev": "98068915159471dbadd7b421a2dac54a3d36d2c0",
-        "revCount": 36,
+        "rev": "46483ee70f18a1ac0d06a0b29529cedc1a669e5c",
+        "revCount": 37,
         "type": "git",
         "url": "https://codeberg.org/ykevin_u/nixvim.git"
       },

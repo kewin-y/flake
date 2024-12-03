@@ -7,6 +7,7 @@
       set -g allow-passthrough on
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
+      set -g default-terminal "tmux-256color"
       set-option -sa terminal-overrides ",foot*:Tc"
 
       setw -g mode-keys vi
