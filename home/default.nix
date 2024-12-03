@@ -43,7 +43,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
+    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
     theme = "yoru";
     font = "Iosevka";
   };

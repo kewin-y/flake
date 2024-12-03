@@ -4,6 +4,7 @@ window#app-launcher {
   .launcher-box {
     background: $base00;
     border: 2px solid $base01;
+    border-radius: 5px;
     margin: 0.7em;
 
     button {
@@ -40,6 +41,7 @@ window#app-launcher {
       }
 
       .app-item {
+        border-radius: 5px;
         padding-left: 0.7em;
         color: $base05;
 
@@ -56,6 +58,7 @@ window#app-launcher {
     }
 
     .search-entry {
+      border-radius: 5px;
       padding-left: 0.7em;
       background: $base01;
       color: $base05;

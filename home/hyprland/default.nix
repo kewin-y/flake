@@ -6,7 +6,7 @@
     ./config/anims.nix
     ./config/general.nix
     ./config/hyprlock.nix
-    ./config/hyprbars.nix
+    # ./config/hyprbars.nix
   ];
 
   wayland.windowManager.hyprland = {

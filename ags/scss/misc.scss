@@ -1,7 +1,7 @@
 // Ok so this is probably jank since im not unset all
 menu {
   border: 2px solid $base01;
-  border-radius: 0;
+  border-radius: 5px;
   background: $base00;
   padding: 0.2em;
 
@@ -10,7 +10,7 @@ menu {
   }
 
   menuitem {
-    border-radius: 0;
+    border-radius: 5px;
     padding: 0.4em;
     color: $base05;
 
@@ -24,7 +24,7 @@ menu {
 
 tooltip {
   background: $base00;
-  border-radius: 0;
+  border-radius: 5px;
   border: 2px solid $base01;
   color: $base05;
 
