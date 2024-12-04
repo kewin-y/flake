@@ -77,7 +77,7 @@
   ];
 
   fonts = {
-    packages = with pkgs; [
+    packages = with pkgs; [kevnet
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
@@ -105,7 +105,7 @@
   };
 
   services.upower.enable = true;
-
+  services.gvfs.enable = true;
   security.pam.services.hyprlock = {};
 
   programs.neovim = {

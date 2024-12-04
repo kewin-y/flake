@@ -101,7 +101,7 @@
   };
 
   services.upower.enable = true;
-
+  services.gvfs.enable = true;
   security.pam.services.hyprlock = {};
 
   programs.neovim = {

@@ -3,6 +3,7 @@ import { PopupWindow } from "../PopupWindow";
 import Audio from "./components/Audio";
 import Wifi from "./components/Wifi";
 import NotifCentre from "./components/NotifCentre";
+import Media from "./components/Media";
 
 export default function Panel() {
   const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.RIGHT;
@@ -17,9 +18,12 @@ export default function Panel() {
     >
       <box className="panel-box" vertical={true}>
         <NotifCentre />
-        <box spacing={8} className={"pb-lower"}>
-          <Audio />
-          <Wifi />
+        <box spacing={8} className={"pb-lower"} vertical>
+          <Media />
+          <box spacing={8}>
+            <Audio />
+            <Wifi />
+          </box>
         </box>
       </box>
     </PopupWindow>

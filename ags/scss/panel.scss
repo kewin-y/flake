@@ -53,6 +53,16 @@ window#panel {
     .pb-lower {
       margin: 0.7em;
 
+      .media-player {
+        background: $base01;
+        border-radius: 5px;
+        .music-icon {
+          min-width: 68px;
+          min-height: 68px;
+          margin-right: 0.7em;
+        }
+      }
+
       .audio-slider {
         background: $base01;
 
