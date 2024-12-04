@@ -64,5 +64,7 @@
 
 window.notification-popups box.notifications,
 window#panel box.notif-centre box.notifications {
+  min-width: 300px;
+  margin: 0.7em;
   @include notif();
 }
