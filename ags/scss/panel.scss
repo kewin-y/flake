@@ -82,7 +82,7 @@ window#panel {
           color: $base08;
 
           &:hover {
-            background: scale-color($color: $base08_transparent, $lightness: -20%);
+            background: scale-color($color: $base08_transparent, $lightness: 10%);
           }
         }
       }
