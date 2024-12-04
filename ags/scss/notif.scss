@@ -8,6 +8,7 @@
       min-width: 68px;
       min-height: 68px;
       margin-right: 0.7em;
+      color: $base05;
     }
 
     &.critical {
@@ -39,7 +40,7 @@
       }
     }
 
-    .notif-left {
+    .notif-right{
       .body {
         color: $base05;
       }

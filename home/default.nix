@@ -43,8 +43,8 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/mountains.jpg;
-    theme = "yoru";
+    wallpaper = ../wallpapers/nanmokaken.jpg;
+    theme = "rose-pine-dawn";
     font = "Iosevka";
   };
 }
