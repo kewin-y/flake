@@ -10,7 +10,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
 
   const artist = player
     ? bind(player, "artist").as((a) => a || "Unknown Artist")
-    : "Nothing Playing";
+    : "...";
 
   return (
     <box className={"media-player"} hexpand>

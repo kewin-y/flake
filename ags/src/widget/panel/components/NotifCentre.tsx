@@ -52,8 +52,8 @@ export default function NotifCentre() {
         endWidget={
           <button
             className={"clear-button"}
-            heightRequest={24}
-            widthRequest={24}
+            heightRequest={18}
+            widthRequest={18}
             halign={Gtk.Align.END}
             onClicked={() => {
               const notifs = notifd.get_notifications();

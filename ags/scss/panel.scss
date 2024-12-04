@@ -52,8 +52,33 @@ window#panel {
     background: $base00;
     margin: 0.7em;
 
+    .header {
+      padding: 0.7em;
+      background: $base01;
+      color: $base05;
+    }
+
     .pb-lower {
       margin: 0.7em;
+
+      .notif-centre {
+        border: 2px solid $base01;
+        border-radius: 5px;
+
+        scrollbar {
+          background: none;
+        }
+
+        .nc-header {
+          color: $base05;
+          padding: 0.7em;
+          background: $base01;
+
+          .clear-button {
+            @include color-button($base08);
+          }
+        }
+      }
 
       .media-player {
         background: $base01;
@@ -130,21 +155,9 @@ window#panel {
         border-radius: 5px;
         background: $base01;
         color: $base05;
-      }
-    }
 
-    .notif-centre {
-      scrollbar {
-        background: none;
-      }
-
-      .nc-header {
-        color: $base05;
-        padding: 0.7em;
-        background: $base01;
-
-        .clear-button {
-          @include color-button($base08);
+        &:hover {
+          background: $base02;
         }
       }
     }

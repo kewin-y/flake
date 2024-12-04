@@ -1,9 +1,11 @@
 import { Gtk, Astal, App } from "astal/gtk3";
 import { PopupWindow } from "../PopupWindow";
-import Audio from "./components/Audio";
+import Speaker from "./components/Audio";
 import Wifi from "./components/Wifi";
 import NotifCentre from "./components/NotifCentre";
 import Media from "./components/Media";
+import Uptime from "./components/Uptime";
+import { USER } from "../../shared/constants";
 
 export default function Panel() {
   const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.RIGHT;
@@ -17,11 +19,16 @@ export default function Panel() {
       keymode={Astal.Keymode.ON_DEMAND}
     >
       <box className="panel-box" vertical={true}>
-        <NotifCentre />
+        <centerbox
+          className={"header"}
+          startWidget={<label halign={Gtk.Align.START} label={USER} />}
+          endWidget={<Uptime />}
+        />
         <box spacing={8} className={"pb-lower"} vertical>
           <Media />
+          <NotifCentre />
           <box spacing={8}>
-            <Audio />
+            <Speaker />
             <Wifi />
           </box>
         </box>
