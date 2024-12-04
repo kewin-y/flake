@@ -16,8 +16,6 @@
 @mixin bar-button {
   @include bar-label();
 
-  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-
   &:hover {
     background: $base02;
   }

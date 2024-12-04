@@ -7,33 +7,17 @@ window#app-launcher {
     border-radius: 5px;
     margin: 0.7em;
 
-    button {
-      transition: background 0.5s cubic-bezier(0.17, 0.67, 0.24, 1.46);
-    }
-
     .power-menu {
       background: $base01;
       padding: 0.7em;
       color: $base05;
 
       .lock {
-        border-radius: 5px;
-        color: $base0B;
-        background: $base0B_transparent;
-
-        &:hover {
-          background: scale-color($color: $base0B_transparent, $lightness: 10%);
-        }
+        @include color-button($base0B);
       }
 
       .poff {
-        border-radius: 5px;
-        color: $base08;
-        background: $base08_transparent;
-
-        &:hover {
-          background: scale-color($color: $base08_transparent, $lightness: 10%);
-        }
+        @include color-button($base08);
       }
     }
 

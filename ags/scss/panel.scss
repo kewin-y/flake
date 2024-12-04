@@ -77,13 +77,7 @@ window#panel {
         background: $base01;
 
         .clear-button {
-          border-radius: 5px;
-          background: $base08_transparent;
-          color: $base08;
-
-          &:hover {
-            background: scale-color($color: $base08_transparent, $lightness: 10%);
-          }
+          @include color-button($base08);
         }
       }
     }

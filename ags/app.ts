@@ -14,29 +14,20 @@ import barStyle from "inline:./scss/bar.scss";
 import notifStyle from "inline:./scss/notif.scss";
 import launcherStyle from "inline:./scss/launcher.scss";
 import panelStyle from "inline:./scss/panel.scss";
-import miscStyle from "inline:./scss/misc.scss";
+import sharedStyle from "inline:./scss/shared.scss";
 
 const colorsPath = `${HOME}/.config/ags_res/colors.scss`;
 const tmpscss = "/tmp/style.scss";
 const target = "/tmp/style.css";
+
+// Insanity
 
 writeFile(
   tmpscss,
   `
   @import "${colorsPath}";
 
-  $base08_transparent: mix($base01, $base08, 90%);
-  $base0B_transparent: mix($base01, $base0B, 90%);
-
-  * {
-    all: unset;
-    &:not(icon) {
-      font-family: "Rubik";
-      font-size: 13px;
-    }
-  }
-
-  ${miscStyle}
+  ${sharedStyle}
   ${barStyle}
   ${panelStyle}
   ${notifStyle}
