@@ -77,12 +77,12 @@ window#panel {
         background: $base01;
 
         .clear-button {
-          background: transparent;
-
-          color: $base08;
+          border-radius: 5px;
+          background: $base08;
+          color: $base01;
 
           &:hover {
-            color: scale-color($color: $base08, $lightness: -20%);
+            background: scale-color($color: $base08, $lightness: -20%);
           }
         }
       }

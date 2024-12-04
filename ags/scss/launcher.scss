@@ -17,18 +17,22 @@ window#app-launcher {
       color: $base05;
 
       .lock {
-        color: $base0B;
+        border-radius: 5px;
+        color: $base01;
+        background: $base0B;
 
         &:hover {
-          color: scale-color($color: $base0B, $lightness: -20%);
+          background: scale-color($color: $base0B, $lightness: -20%);
         }
       }
 
       .poff {
-        color: $base08;
+        border-radius: 5px;
+        color: $base01;
+        background: $base08;
 
         &:hover {
-          color: scale-color($color: $base08, $lightness: -20%);
+          background: scale-color($color: $base08, $lightness: -20%);
         }
       }
     }

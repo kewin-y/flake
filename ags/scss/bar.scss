@@ -120,8 +120,6 @@
   }
 
   .battery-label {
-    @include transparent-label();
-
     .battery-bulb {
       background: $base05;
       margin: 0.8em 0;
