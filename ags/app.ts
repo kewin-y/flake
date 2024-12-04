@@ -25,6 +25,9 @@ writeFile(
   `
   @import "${colorsPath}";
 
+  $base08_transparent: mix($base01, $base08, 90%);
+  $base0B_transparent: mix($base01, $base0B, 90%);
+
   * {
     all: unset;
     &:not(icon) {

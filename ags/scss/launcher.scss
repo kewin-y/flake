@@ -18,21 +18,21 @@ window#app-launcher {
 
       .lock {
         border-radius: 5px;
-        color: $base01;
-        background: $base0B;
+        color: $base0B;
+        background: $base0B_transparent;
 
         &:hover {
-          background: scale-color($color: $base0B, $lightness: -20%);
+          background: scale-color($color: $base0B_transparent, $lightness: 10%);
         }
       }
 
       .poff {
         border-radius: 5px;
-        color: $base01;
-        background: $base08;
+        color: $base08;
+        background: $base08_transparent;
 
         &:hover {
-          background: scale-color($color: $base08, $lightness: -20%);
+          background: scale-color($color: $base08_transparent, $lightness: 10%);
         }
       }
     }
@@ -52,7 +52,6 @@ window#app-launcher {
         &:focus {
           background: $base02;
           color: $base0D;
-          // box-shadow: 2px 0 0 0 $base0D inset;
         }
 
         &:hover {
