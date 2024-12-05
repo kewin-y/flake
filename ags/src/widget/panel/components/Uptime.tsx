@@ -9,6 +9,7 @@ export default function Uptime() {
 
   return (
     <label
+      heightRequest={24}
       halign={Gtk.Align.END}
       label={uptime_pretty()}
       onDestroy={() => uptime_pretty.drop()}

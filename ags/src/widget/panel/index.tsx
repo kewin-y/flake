@@ -22,6 +22,7 @@ export default function Panel() {
         <centerbox
           className={"header"}
           startWidget={<label halign={Gtk.Align.START} label={USER} />}
+          heightRequest={24}
           endWidget={<Uptime />}
         />
         <box spacing={8} className={"pb-lower"} vertical>
