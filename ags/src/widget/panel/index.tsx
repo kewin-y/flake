@@ -1,6 +1,6 @@
 import { Gtk, Astal, App } from "astal/gtk3";
 import { PopupWindow } from "../PopupWindow";
-import Speaker from "./components/Audio";
+import { Speaker } from "./components/Audio";
 import Wifi from "./components/Wifi";
 import NotifCentre from "./components/NotifCentre";
 import Media from "./components/Media";
