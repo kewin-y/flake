@@ -7,6 +7,8 @@ import Media from "./components/Media";
 import Uptime from "./components/Uptime";
 import { USER } from "../../shared/constants";
 
+// Reminder to self: don't make bluetooth, wifi config widget, etc.
+
 export default function Panel() {
   const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.RIGHT;
 
