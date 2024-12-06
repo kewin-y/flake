@@ -20,8 +20,8 @@
 
       input-field = with config.lib.stylix.colors; [
         {
-          size = "200, 50";
-          rounding = 0;
+          size = "180, 50";
+          rounding = 5;
           position = "0, 0";
           monitor = "";
           dots_center = true;
@@ -35,8 +35,8 @@
           fail_color = "rgb(${base08})";
           outline_thickness = 2;
           font_family = "Rubik";
-          placeholder_text = ''<span>Password...</span>'';
-          fail_text = ''<span>Failed to Authenticate</span>'';
+          placeholder_text = ''Password...'';
+          fail_text = ''Failed to Authenticate'';
         }
       ];
     };
