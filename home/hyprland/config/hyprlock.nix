@@ -2,26 +2,29 @@
   programs.hyprlock = {
     enable = true;
 
-    settings = {
+    settings = with config.lib.stylix.colors; {
       general = {
         disable_loading_bar = true;
-        grace = 1;
+        grace = 0;
         hide_cursor = true;
         no_fade_in = false;
       };
 
       background = [
         {
-          blur_passes = 2;
-          blur_size = 4;
+          blur_passes = 0;
+          contrast = 0.8916;
+          brightness = 0.8172;
+          vibrancy = 0.1696;
+          vibrancy_darkness = 0.0;
           path = "${config.wallpaper}";
         }
       ];
 
-      input-field = with config.lib.stylix.colors; [
+      input-field = [
         {
           size = "180, 50";
-          rounding = 5;
+          rounding = -1;
           position = "0, 0";
           monitor = "";
           dots_center = true;
@@ -33,10 +36,10 @@
           outer_color = "rgb(${base01})";
           check_color = "rgb(${base09})";
           fail_color = "rgb(${base08})";
-          outline_thickness = 2;
           font_family = "Rubik";
-          placeholder_text = ''Password...'';
-          fail_text = ''Failed to Authenticate'';
+          outline_thickness = 2;
+          placeholder_text = ''<b>Password...</b>'';
+          fail_text = ''<b>Failed to Authenticate</b>'';
         }
       ];
     };

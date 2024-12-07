@@ -38,6 +38,7 @@ writeFile(
 exec(`sass ${tmpscss} ${target}`);
 
 App.start({
+  instanceName: "kevin-shell",
   icons: `${SRC}/assets/icons`,
   requestHandler(req, res) {
     const [cmd, ...args] = req.split(" ");

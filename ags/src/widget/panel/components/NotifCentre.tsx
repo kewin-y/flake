@@ -19,7 +19,7 @@ export default function NotifCentre() {
         spacing={8}
         className={"notifications"}
       >
-        {bind(notifs)};
+        {bind(notifs)}
       </box>
     </scrollable>
   );

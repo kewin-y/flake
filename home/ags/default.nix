@@ -10,13 +10,16 @@
     dart-sass
     pavucontrol
     procps
+    gjs
     inputs.ags.packages.${pkgs.system}.io
   ];
 
   programs.ags = {
     enable = true;
-    configDir = ../../ags;
+    # configDir = ../../ags;
     extraPackages = with inputs.ags.packages.${pkgs.system}; [
+      pkgs.gtk-session-lock
+      auth
       battery
       hyprland
       mpris
