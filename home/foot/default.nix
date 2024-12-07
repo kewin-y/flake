@@ -7,10 +7,10 @@
     enable = true;
     settings = {
       main = {
-        font = lib.mkForce "${config.font} NFP:style=Regular:size=10.5";
-        font-bold = lib.mkForce "${config.font} NFP:style=Bold:size=10.5";
-        font-italic = lib.mkForce "${config.font} NFP:style=Italic:size=10.5";
-        font-bold-italic = lib.mkForce "${config.font} NFP:style=Bold Italic:size=10.5";
+        font = lib.mkForce "Iosevka NFP:style=Regular:size=10.5";
+        font-bold = lib.mkForce "Iosevka NFP:style=Bold:size=10.5";
+        font-italic = lib.mkForce "Iosevka NFP:style=Italic:size=10.5";
+        font-bold-italic = lib.mkForce "Iosevka NFP:style=Bold Italic:size=10.5";
         box-drawings-uses-font-glyphs = "no";
         pad = "24x24";
       };

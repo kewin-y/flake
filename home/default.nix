@@ -36,15 +36,10 @@
         "yoru"
       ];
     };
-
-    font = lib.mkOption {
-      type = lib.types.str;
-    };
   };
 
   config = {
     wallpaper = ../wallpapers/nanmokaken.jpg;
     theme = "rose-pine-dawn";
-    font = "Iosevka";
   };
 }
