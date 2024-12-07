@@ -78,7 +78,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       dejavu_fonts
-      (nerdfonts.override {fonts = ["Iosevka"];})
+      nerd-fonts.iosevka
       rubik
     ];
 

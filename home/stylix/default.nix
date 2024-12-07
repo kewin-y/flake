@@ -34,8 +34,8 @@
 
     fonts = {
       monospace = {
-        name = "${config.font}";
-        package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
+        name = "Iosevka Nerd Font Propo";
+        package = pkgs.nerd-fonts.iosevka;
       };
       sansSerif = {
         name = "rubik";
