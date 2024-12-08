@@ -107,6 +107,7 @@
   services.upower.enable = true;
   services.gvfs.enable = true;
   security.pam.services.hyprlock = {};
+  security.pam.services.astal-auth = {};
 
   programs.neovim = {
     enable = true;
