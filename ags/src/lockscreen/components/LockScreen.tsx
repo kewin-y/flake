@@ -36,8 +36,8 @@ export default function LockScreen(lockScreenProps: Props) {
         <Header />
         <box className={"bot"} expand spacing={32}>
           <box
-            heightRequest={220}
-            widthRequest={220}
+            heightRequest={180}
+            widthRequest={180}
             valign={Gtk.Align.CENTER}
             halign={Gtk.Align.CENTER}
             expand={false}
