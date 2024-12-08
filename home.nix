@@ -35,6 +35,7 @@
     wl-clipboard
     ripgrep
     vesktop
+    pavucontrol
   ];
 
   programs.btop.enable = true;

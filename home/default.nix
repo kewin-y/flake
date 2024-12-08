@@ -1,19 +1,18 @@
 {lib, ...}: {
   imports = [
-    ./mksh
-    ./misc
-    ./foot
-    ./hyprland
     ./ags
-    ./stylix
-    ./git
-    ./dev
-    ./yazi
-    ./zathura
     ./firefox
-    ./tmux
+    ./foot
+    ./git
+    ./hyprland
+    ./misc
+    ./mksh
     ./nixvim
     ./spicetify
+    ./stylix
+    ./tmux
+    ./yazi
+    ./zathura
   ];
 
   options = {

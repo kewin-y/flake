@@ -8,9 +8,7 @@
 
   home.packages = with pkgs; [
     dart-sass
-    pavucontrol
     procps
-    gjs
     inputs.ags.packages.${pkgs.system}.io
   ];
 
