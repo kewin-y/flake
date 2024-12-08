@@ -1,6 +1,7 @@
 # NixOS-related configurations
 
-![Screenshot](screenshots/sc.png)
+![Screenshot](screenshots/screenshot.png)
+![Lock](screenshots/lock.png)
 
 > This screenshot probably looks different than my actual setup.
 
