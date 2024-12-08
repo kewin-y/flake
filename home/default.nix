@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
-    theme = "paradise";
+    wallpaper = ../wallpapers/nanmokaken.jpg;
+    theme = "rose-pine-dawn";
   };
 }
