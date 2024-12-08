@@ -55,7 +55,6 @@ function main() {
   });
 
   pam.connect("fail", () => {
-    print("Hello");
     authenticationFailure.set(true);
     pam.start_authenticate();
   });

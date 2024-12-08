@@ -1,3 +1,6 @@
+# TBT when I ripped off hyprdots
+# I don't even use any of these apps and pavucontrol doesn't even float
+
 {...}: {
   wayland.windowManager.hyprland = {
     settings = {
@@ -9,7 +12,6 @@
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-applet)$"
         "float,class:^(nm-connection-editor)$"
-        "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
       ];
     };
   };

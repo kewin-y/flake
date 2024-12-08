@@ -16,7 +16,7 @@
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
+      shuffle
     ];
 
     theme = spicePkgs.themes.comfy;

@@ -11,8 +11,6 @@
     hash = "sha256-I9u1d3l0AyNW/t1A7MAxfA6Wu1/L3XKUoWPZ9L85WTM=";
   };
 in {
-  # TODO Add bindings for pdfs, text files, etc.
-  # I DONT WANNA
   programs.yazi = {
     enable = true;
     settings = {

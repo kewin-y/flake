@@ -5,7 +5,6 @@
     ./config/rules.nix
     ./config/anims.nix
     ./config/general.nix
-    ./config/hyprlock.nix
     # ./config/hyprbars.nix
   ];
 
