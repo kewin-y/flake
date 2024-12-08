@@ -35,6 +35,7 @@
   .main-box {
     background: $base00;
     border: 4px solid $base01;
+    box-shadow: 0 0 24px 3px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
 
     .header {

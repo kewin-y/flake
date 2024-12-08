@@ -1,4 +1,8 @@
-{inputs, config, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: {
   imports = [
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
   ];
@@ -21,7 +25,12 @@
         resize_on_border = "true";
       };
       decoration = {
-        shadow.enabled = false;
+        shadow = {
+          enabled = true;
+          range = 18;
+          render_power = 3;
+          color= "rgba(00000066)";
+        };
         rounding = "5";
         dim_inactive = true;
         dim_strength = 0.05;
