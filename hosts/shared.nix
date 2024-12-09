@@ -97,7 +97,7 @@
       defaultEditor = true;
     };
 
-    # I'm sorry for using hyprland
+    # Sorry for using Hyprland
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -106,8 +106,6 @@
 
   environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
-
-  hardware.brillo.enable = true;
 
   services.openssh = {
     enable = true;
