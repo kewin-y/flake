@@ -1,8 +1,10 @@
 import { Gtk } from "astal/gtk3";
 import { bind } from "astal";
 import NotifMap from "../../notifs/NotifMap";
-
 import AstalNotifd from "gi://AstalNotifd";
+
+const WIDTH = 280;
+
 export default function NotifCentre() {
   const notifs = new NotifMap(true);
   const notifd = AstalNotifd.get_default();
@@ -11,7 +13,7 @@ export default function NotifCentre() {
     <scrollable
       name={"notif-scroll"}
       vexpand
-      widthRequest={300}
+      widthRequest={WIDTH}
       hscroll={Gtk.PolicyType.NEVER}
     >
       <box vertical={true} spacing={8} className={"notifications"}>
@@ -23,7 +25,7 @@ export default function NotifCentre() {
   const NoNotifs = (
     <centerbox
       vexpand
-      widthRequest={300}
+      widthRequest={WIDTH}
       name={"no-notifs"}
       centerWidget={
         <box

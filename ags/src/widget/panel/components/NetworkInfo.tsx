@@ -23,7 +23,6 @@ export default function NetworkWidget() {
       <box
         spacing={8}
         valign={Gtk.Align.END}
-        widthRequest={90}
         halign={Gtk.Align.START}
       >
         {NetworkUtils.NetworkIcon()}

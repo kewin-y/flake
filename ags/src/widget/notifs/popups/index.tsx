@@ -7,7 +7,7 @@ export default function NotificationPopups(monitor = 0) {
 
   const NotifList = (
     <box
-      widthRequest={300}
+      widthRequest={280}
       vertical={true}
       spacing={8}
       className={"notifications"}

@@ -16,12 +16,7 @@ export function Speaker() {
         }
       }}
     >
-      <box
-        className="speaker-slider"
-        vertical
-        hexpand
-        spacing={8}
-      >
+      <box className="speaker-slider" vertical spacing={8}>
         <label label={"Volume"} halign={Gtk.Align.START} />
         <box spacing={8}>
           <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px;"} />
