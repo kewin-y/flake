@@ -1,27 +1,10 @@
-import WifiIcon from "../../../shared/WifiIcon";
-import { bind, Variable } from "astal";
+import * as NetworkUtils from "../../../shared/NetworkUtils";
+import { bind } from "astal";
 import Network from "gi://AstalNetwork";
 import { Gtk } from "astal/gtk3";
 
 export default function Wifi() {
   const network = Network.get_default();
-  const { wifi } = network;
-
-  const label = Variable.derive(
-    [bind(network, "primary"), bind(wifi, "ssid")],
-    (primary, ssid) => {
-      switch (primary) {
-        case Network.Primary.WIRED:
-          return "Wired";
-        case Network.Primary.WIFI:
-          return ssid;
-        case Network.Primary.UNKNOWN:
-          return "Unknown";
-        default:
-          return "Unknown";
-      }
-    },
-  );
 
   return (
     <box
@@ -34,8 +17,11 @@ export default function Wifi() {
     >
       <label label={"Network"} halign={Gtk.Align.START} />
       <box spacing={8}>
-        <icon icon={bind(WifiIcon())} css={"font-size: 13px;"} />
-        <label label={bind(label)} />
+        <icon
+          icon={bind(NetworkUtils.NetworkIcon())}
+          css={"font-size: 13px;"}
+        />
+        <label label={bind(NetworkUtils.NetworkName())} />
       </box>
     </box>
   );
