@@ -143,15 +143,14 @@ window#panel {
         @include panel-slider($base05);
       }
 
-      .wifi {
+      .network {
         border-radius: 5px;
         padding: 0.7em;
         background: $base01;
         color: $base05;
 
         &.connected {
-          background: $base0D;
-          color: $base01;
+          background: mix($base01, $base0D, 90%);
         }
       }
     }

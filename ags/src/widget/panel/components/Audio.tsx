@@ -19,8 +19,8 @@ export function Speaker() {
       <box
         className="speaker-slider"
         vertical
+        hexpand
         spacing={8}
-        widthRequest={150}
       >
         <label label={"Volume"} halign={Gtk.Align.START} />
         <box spacing={8}>
