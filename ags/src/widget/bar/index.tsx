@@ -46,7 +46,7 @@ function BarEnd() {
   );
 }
 
-export default function Bar(monitor = 0) {
+export default function Bar(monitor = Gdk.Monitor) {
   const anchor =
     Astal.WindowAnchor.RIGHT |
     Astal.WindowAnchor.BOTTOM |
@@ -56,7 +56,7 @@ export default function Bar(monitor = 0) {
       name={`bar-${monitor}`}
       application={App}
       className="bar"
-      monitor={monitor}
+      gdkmonitor={monitor}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={anchor}
       heightRequest={12}
