@@ -16,18 +16,22 @@ export function Speaker() {
         }
       }}
     >
-      <box
-        className="speaker-slider"
-        hexpand={true}
-        heightRequest={30}
-        spacing={12}
-      >
-        <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px;"} />
-        <slider
-          hexpand={true}
-          onDragged={({ value }) => (speaker.volume = value)}
-          value={bind(speaker, "volume")}
-        />
+      <box className="speaker-slider" hexpand vertical spacing={8}>
+        <label label={"Volume"} halign={Gtk.Align.START} />
+        <box spacing={8}>
+          <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px;"} />
+          <slider
+            hexpand
+            onDragged={({ value }) => (speaker.volume = value)}
+            value={bind(speaker, "volume")}
+          />
+          <label
+            label={bind(speaker, "volume").as(
+              (vol) => `${Math.floor(vol * 100)}%`,
+            )}
+            widthRequest={32}
+          />
+        </box>
       </box>
     </eventbox>
   );
