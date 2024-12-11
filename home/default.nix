@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/hunter-so-_Sl9SshvMO0-unsplash.jpg;
+    wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
     theme = "solarized-light";
   };
 }
