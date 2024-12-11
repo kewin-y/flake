@@ -34,8 +34,8 @@
 
     fonts = {
       monospace = {
-        name = "Iosevka Nerd Font Propo";
-        package = pkgs.nerd-fonts.iosevka;
+        name = "CommitMono Nerd Font Propo";
+        package = pkgs.nerd-fonts.commit-mono;
       };
       sansSerif = {
         name = "rubik";
