@@ -1,4 +1,4 @@
-import { App, Astal, Gtk } from "astal/gtk3";
+import { App, Astal, Gtk, Gdk } from "astal/gtk3";
 
 import LauncherButton from "./components/LauncherButton";
 import Workspaces from "./components/Workspaces";
@@ -11,11 +11,7 @@ import Separator from "../../astalify/Separator";
 
 function BarStart() {
   return (
-    <box
-      halign={Gtk.Align.START}
-      spacing={8}
-      hexpand={true}
-    >
+    <box halign={Gtk.Align.START} spacing={8} hexpand={true}>
       <LauncherButton />
       <Separator />
       <Workspaces />
@@ -25,10 +21,7 @@ function BarStart() {
 
 function BarCenter() {
   return (
-    <box
-      spacing={8}
-      hexpand={true}
-    >
+    <box spacing={8} hexpand={true}>
       {Clients()}
     </box>
   );
@@ -46,7 +39,7 @@ function BarEnd() {
   );
 }
 
-export default function Bar(monitor = Gdk.Monitor) {
+export default function Bar(monitor: Gdk.Monitor) {
   const anchor =
     Astal.WindowAnchor.RIGHT |
     Astal.WindowAnchor.BOTTOM |
