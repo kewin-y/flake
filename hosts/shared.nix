@@ -62,7 +62,6 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       dejavu_fonts
-      nerd-fonts.commit-mono
       rubik
     ];
 
@@ -77,7 +76,7 @@
           "Noto Serif CJK"
         ];
         monospace = [
-          "CommitMono Nerd Font Propo"
+          "DejaVu Sans Mono"
           "Noto Sans Mono CJK"
         ];
       };
