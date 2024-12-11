@@ -64,9 +64,7 @@
     }
 
     &.active {
-      color: $base0D;
       background: $base01;
-      // box-shadow: 0 -2px 0 0 $base0D inset;
     }
 
     &:hover {
@@ -80,7 +78,6 @@
 
       &.focused {
         background: $base01;
-        color: $base0D;
       }
 
       &:hover {
