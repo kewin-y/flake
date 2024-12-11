@@ -9,7 +9,6 @@ export default function NotificationPopups(monitor = 0) {
     <box
       widthRequest={280}
       vertical={true}
-      spacing={8}
       className={"notifications"}
     >
       {bind(notifs)}

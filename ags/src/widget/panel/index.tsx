@@ -30,9 +30,9 @@ export default function Panel() {
           heightRequest={24}
           endWidget={<Uptime />}
         />
-        <box spacing={8} className={"pb-lower"} vertical>
-          <NotifCentre />
+        <box spacing={12} className={"pb-lower"} vertical>
           <Media />
+          <NotifCentre />
           <Speaker />
           <NetworkInfo />
         </box>

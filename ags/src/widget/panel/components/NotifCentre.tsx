@@ -16,7 +16,7 @@ export default function NotifCentre() {
       widthRequest={WIDTH}
       hscroll={Gtk.PolicyType.NEVER}
     >
-      <box vertical={true} spacing={8} className={"notifications"}>
+      <box vertical={true} className={"notifications"}>
         {bind(notifs)}
       </box>
     </scrollable>
