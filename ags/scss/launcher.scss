@@ -23,7 +23,7 @@ window#app-launcher {
     }
 
     .apps {
-      margin: 12px;
+      margin: pxToRem(12px);
 
       scrollbar {
         background: none;

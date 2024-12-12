@@ -25,6 +25,7 @@ const target = "/tmp/style.css";
 writeFile(
   tmpscss,
   `
+  @use 'sass:math';
   @import "${colorsPath}";
 
   ${sharedStyle}

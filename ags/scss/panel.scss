@@ -45,7 +45,7 @@ window#panel {
     }
 
     .pb-lower {
-      margin: 12px;
+      margin: pxToRem(12px);
 
       .notif-centre {
         border: 2px solid $base01;
