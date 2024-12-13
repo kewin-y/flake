@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-4oem1l.jpg;
-    theme = "solarized-light";
+    wallpaper = ../wallpapers/accordion.png;
+    theme = "far";
   };
 }
