@@ -9,6 +9,7 @@
       set -ga update-environment TERM_PROGRAM
       set -g default-terminal "tmux-256color"
       set-option -sa terminal-overrides ",foot*:Tc"
+      set-option -g default-shell $SHELL
 
       setw -g mode-keys vi
 

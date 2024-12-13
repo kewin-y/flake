@@ -22,6 +22,7 @@
     alias ll='eza -lha --sort=name --group-directories-first'
     alias ld='eza -lhD '
     alias yz='yazi'
+    alias dev='nix develop --command mksh'
 
     HISTFILE=$HOME/.mksh_history
     HISTSIZE=5000
