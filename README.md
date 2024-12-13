@@ -9,7 +9,6 @@
 
 - These are personal configurations.
 - I have no idea what I'm doing, so exercise caution when taking stuff lol.
-- Only give 100% effort when they deserve it.
 
 ## Acknowledgements
 

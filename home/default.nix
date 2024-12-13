@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/accordion.png;
-    theme = "far";
+    wallpaper = ../wallpapers/wallhaven-6o9g8l.jpg;
+    theme = "material-darker";
   };
 }
