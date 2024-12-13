@@ -7,13 +7,11 @@ import SysTray from "./components/SysTray";
 import Clock from "./components/Clock";
 import BatteryLevel from "./components/Battery";
 import Indicators from "./components/Indicators";
-import Separator from "../../astalify/Separator";
 
 function BarStart() {
   return (
     <box halign={Gtk.Align.START} spacing={8} hexpand={true}>
       <LauncherButton />
-      <Separator />
       <Workspaces />
     </box>
   );
@@ -32,7 +30,6 @@ function BarEnd() {
     <box halign={Gtk.Align.END} spacing={8}>
       <Clock />
       <BatteryLevel />
-      <Separator />
       <SysTray />
       <Indicators />
     </box>

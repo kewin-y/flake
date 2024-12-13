@@ -40,11 +40,6 @@
     @include bar-button();
   }
 
-  separator {
-    background: $base03;
-    margin: 0.4em 0;
-  }
-
   .launcher-button {
     @include square-label($size: pxToRem(28px));
 
