@@ -33,6 +33,7 @@
     };
 
     fonts = {
+      sizes.terminal = 11;
       monospace = {
         name = "Maple Mono NF";
         package = pkgs.maple-mono-NF;

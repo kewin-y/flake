@@ -40,6 +40,6 @@
 
   config = {
     wallpaper = ../wallpapers/wallhaven-6o9g8l.jpg;
-    theme = "material-darker";
+    theme = "far";
   };
 }
