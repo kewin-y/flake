@@ -28,9 +28,11 @@ function BarCenter() {
 function BarEnd() {
   return (
     <box halign={Gtk.Align.END} spacing={8}>
-      <Clock />
-      <BatteryLevel />
-      <SysTray />
+      <box spacing={12}>
+        <Clock />
+        <BatteryLevel />
+        <SysTray />
+      </box>
       <Indicators />
     </box>
   );
