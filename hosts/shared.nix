@@ -54,6 +54,11 @@
     git
     pamixer
     libnotify
+    wl-clipboard
+    ripgrep
+    fastfetch
+    nitch
+    pfetch
   ];
 
   fonts = {

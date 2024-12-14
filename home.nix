@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./home
   ];
@@ -25,17 +22,11 @@
     nemo-with-extensions
     swayimg
     mpv
-    fastfetch
-    nitch
-    pfetch
     htop
-    obs-studio
-    unityhub
     obsidian
-    wl-clipboard
-    ripgrep
     vesktop
     pavucontrol
+    obs-studio
   ];
 
   programs.btop.enable = true;
