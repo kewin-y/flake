@@ -38,7 +38,7 @@ in {
         moveToWorkspace = num: "${mainMod} SHIFT, ${num}, movetoworkspace, ${num}";
         moveToWorkspaceSilent = num: "${mainMod} ALT, ${num}, movetoworkspacesilent, ${num}";
 
-        workspaceArr = [1 2 3 4 5];
+        workspaces = [1 2 3 4 5];
       in
         [
           # Windows
@@ -82,9 +82,9 @@ in {
           "${mainMod}, Y, togglesplit, # dwindle"
           "${mainMod}, P, pseudo"
         ]
-        ++ map (i: workspace (toString i)) workspaceArr
-        ++ map (i: moveToWorkspace (toString i)) workspaceArr
-        ++ map (i: moveToWorkspaceSilent (toString i)) workspaceArr;
+        ++ map (i: workspace (toString i)) workspaces
+        ++ map (i: moveToWorkspace (toString i)) workspaces
+        ++ map (i: moveToWorkspaceSilent (toString i)) workspaces;
     };
   };
 }
