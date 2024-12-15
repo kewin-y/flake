@@ -38,14 +38,14 @@ function BarEnd() {
   );
 }
 
-export default function Bar(monitor: Gdk.Monitor) {
+export default function Bar(monitor: Gdk.Monitor, index: number) {
   const anchor =
     Astal.WindowAnchor.RIGHT |
     Astal.WindowAnchor.BOTTOM |
     Astal.WindowAnchor.LEFT;
   return (
     <window
-      name={`bar-${monitor}`}
+      name={`bar-${index}`}
       application={App}
       className="bar"
       gdkmonitor={monitor}
