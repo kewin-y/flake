@@ -33,10 +33,10 @@
     };
 
     fonts = {
-      sizes.terminal = 12;
+      sizes.terminal = 11;
       monospace = {
-        name = "tamzen";
-        package = pkgs.tamzen;
+        name = "Maple Mono NF";
+        package = pkgs.maple-mono-NF;
       };
       sansSerif = {
         name = "rubik";
