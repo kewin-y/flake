@@ -68,6 +68,9 @@
       noto-fonts-color-emoji
       dejavu_fonts
       rubik
+      siji
+      maple-mono-NF
+      tamzen
     ];
 
     fontconfig = {
