@@ -29,7 +29,7 @@
   };
 
   # Hmm ...
-  home.file.".config/ags_res/colors.scss".text = with config.lib.stylix.colors; ''
+  home.file.".config/ags/scss/colors.scss".text = with config.lib.stylix.colors; ''
     $base00: #${base00};
     $base01: #${base01};
     $base02: #${base02};
