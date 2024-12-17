@@ -1,23 +1,6 @@
-@mixin color-hover($bg-color) {
-  $hover-bg: if(lightness($bg-color) > 50%,
-      darken($bg-color, 10%),
-      lighten($bg-color, 10%));
-
-  &:hover {
-    background-color: $hover-bg;
-  }
-}
-
-@mixin color-button($bg-color) {
-  $bg-translucent: if(lightness($base01) > 50%,
-      mix($base01, $bg-color, 80%),
-      mix($base01, $bg-color, 90%));
-
-  border-radius: 5px;
-  color: $bg-color;
-  background: $bg-translucent;
-  @include color-hover($bg-translucent);
-}
+@use 'sass:math';
+@import '../scss/colors.scss';
+@import '../scss/shared.scss';
 
 * {
   all: unset;

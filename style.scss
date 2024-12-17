@@ -1,8 +1,23 @@
-@use 'sass:math';
-@import './scss/colors.scss';
-@import './scss/shared.scss';
-@import './scss/bar.scss';
-@import './scss/panel.scss';
-@import './scss/notif.scss';
-@import './scss/launcher.scss';
+@use "sass:math";
+@import "./scss/colors.scss";
+@import "./scss/shared.scss";
 
+* {
+  &:not(separator) {
+    all: unset;
+  }
+
+  &:not(icon) {
+    font-family: "Rubik";
+    font-size: 13px;
+  }
+
+  button {
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+  }
+}
+
+@import "./scss/bar.scss";
+@import "./scss/panel.scss";
+@import "./scss/notif.scss";
+@import "./scss/launcher.scss";
