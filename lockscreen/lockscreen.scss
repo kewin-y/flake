@@ -1,6 +1,5 @@
 @use 'sass:math';
 @import '../scss/colors.scss';
-@import '../scss/shared.scss';
 
 * {
   all: unset;
@@ -11,6 +10,8 @@
     transition: all 0.8s cubic-bezier(0.17, 0.67, 0.24, 1.46);
   }
 }
+
+@import '../scss/shared.scss';
 
 .lock-screen {
   background: $base00;

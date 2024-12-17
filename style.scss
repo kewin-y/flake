@@ -1,6 +1,5 @@
 @use "sass:math";
 @import "./scss/colors.scss";
-@import "./scss/shared.scss";
 
 * {
   &:not(separator) {
@@ -17,6 +16,7 @@
   }
 }
 
+@import "./scss/shared.scss";
 @import "./scss/bar.scss";
 @import "./scss/panel.scss";
 @import "./scss/notif.scss";
