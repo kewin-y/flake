@@ -31,7 +31,7 @@
           render_power = 3;
           color= "rgba(00000066)";
         };
-        rounding = "5";
+        rounding = "0";
         dim_inactive = true;
         dim_strength = 0.05;
       };
