@@ -50,8 +50,8 @@ in {
           # Apps
           "${mainMod}, return, exec, foot"
           "${mainMod} CTRL, F, exec, firefox"
-          "${mainMod}, SPACE, exec, astal -i shell toggle-popup app-launcher"
-          "${mainMod}, B, exec, astal -i shell -t bar-0"
+          "${mainMod}, SPACE, exec, astal toggle-popup app-launcher"
+          "${mainMod}, B, exec, astal -t bar-0"
 
           # Screenshot
           "${mainMod} SHIFT, S, exec, ${screenshot}/bin/screenshot s"
