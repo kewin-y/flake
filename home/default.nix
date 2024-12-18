@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/wallhaven-6o9g8l.jpg;
+    wallpaper = ../wallpapers/provrb.jpg;
     theme = "test";
   };
 }
