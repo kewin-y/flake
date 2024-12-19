@@ -40,6 +40,6 @@
 
   config = {
     wallpaper = ../wallpapers/nanmokaken.jpg;
-    theme = "rose-pine-dawn";
+    theme = "test";
   };
 }

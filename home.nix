@@ -31,8 +31,6 @@
 
   programs.btop.enable = true;
 
-  fonts.fontconfig.enable = true;
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

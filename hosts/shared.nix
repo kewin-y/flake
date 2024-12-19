@@ -74,6 +74,15 @@
     ];
 
     fontconfig = {
+      enable = true;
+      localConf = ''
+        <alias>
+          <family>monospace</family>
+          <prefer>
+            <family>Siji</family>
+          </prefer>
+        </alias>
+      '';
       defaultFonts = {
         sansSerif = [
           "Rubik"

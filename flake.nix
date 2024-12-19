@@ -47,12 +47,12 @@
     nixosConfigurations = {
       keven = lib.nixosSystem {
         system = system;
-        modules = [./hosts/keven/configuration.nix];
+        modules = [./hosts/keven/configuration.nix (import ./overlays)];
         specialArgs = {inherit inputs;};
       };
       kevnet = lib.nixosSystem {
         system = system;
-        modules = [./hosts/kevnet/configuration.nix];
+        modules = [./hosts/kevnet/configuration.nix (import ./overlays)];
         specialArgs = {inherit inputs;};
       };
     };
