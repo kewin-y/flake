@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/nanmokaken.jpg;
+    wallpaper = ../wallpapers/designr.jpg;
     theme = "test";
   };
 }
