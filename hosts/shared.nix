@@ -71,6 +71,7 @@
       siji
       maple-mono-NF
       tamzen
+      pkgs.nerd-fonts.roboto-mono
     ];
 
     fontconfig = {

@@ -33,10 +33,10 @@
     };
 
     fonts = {
-      sizes.terminal = 11;
+      sizes.terminal = 10;
       monospace = {
-        name = "tamzen";
-        package = pkgs.tamzen;
+        name = "RobotoMono Nerd Font";
+        package = pkgs.nerd-fonts.roboto-mono;
       };
       sansSerif = {
         name = "rubik";
