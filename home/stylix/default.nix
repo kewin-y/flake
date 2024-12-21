@@ -33,7 +33,7 @@
     };
 
     fonts = {
-      sizes.terminal = 10;
+      sizes.terminal = 11;
       monospace = {
         name = "tamzen";
         package = pkgs.tamzen;
