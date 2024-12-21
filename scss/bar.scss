@@ -53,7 +53,7 @@ $min-size: 28px;
     }
 
     &.active {
-      color: $base05;
+      color: $base0D;
       background: $base01;
     }
 
@@ -68,6 +68,7 @@ $min-size: 28px;
 
       &.focused {
         background: $base01;
+        color: $base0D;
       }
 
       &:hover {
