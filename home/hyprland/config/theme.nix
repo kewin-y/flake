@@ -16,9 +16,9 @@
         "HYPRCURSOR_SIZE,24"
       ];
       general = with config.lib.stylix.colors; {
-        gaps_in = "8";
-        gaps_out = "12";
-        border_size = "2";
+        gaps_in = 8;
+        gaps_out = 12;
+        border_size = 2;
         "col.inactive_border" = "rgb(${base01})";
         "col.active_border" = "rgb(${base01})";
         layout = "dwindle";
@@ -31,7 +31,7 @@
           render_power = 3;
           color= "rgba(00000066)";
         };
-        rounding = "0";
+        rounding = 5;
         dim_inactive = true;
         dim_strength = 0.05;
       };
