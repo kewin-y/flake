@@ -39,7 +39,7 @@
   };
 
   config = {
-    wallpaper = ../wallpapers/designr.jpg;
-    theme = "test";
+    wallpaper = ../wallpapers/mountains.jpg;
+    theme = "paradise";
   };
 }
