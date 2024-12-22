@@ -44,7 +44,7 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-6o9g8l.jpg;
+  wallpaper = ./wallpapers/wallhaven-wqy77r.jpg;
   theme = "test";
   themeVariant = "light";
 
