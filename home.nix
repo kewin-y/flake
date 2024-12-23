@@ -44,9 +44,9 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-wqy77r.jpg;
-  theme = "test";
-  themeVariant = "light";
+  wallpaper = ./wallpapers/wallhaven-n622g6.jpg;
+  theme = "yoru";
+  themeVariant = "dark";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

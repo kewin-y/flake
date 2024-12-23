@@ -10,3 +10,4 @@
 - https://x.com/nanmokaken/status/1316817301736308736
 - https://wallhaven.cc/w/6o9g8l
 - https://wallhaven.cc/w/wqy77r
+- https://wallhaven.cc/w/n622g6
