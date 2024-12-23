@@ -44,8 +44,8 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-n622g6.jpg;
-  theme = "yoru";
+  wallpaper = ./wallpapers/wallhaven-rdr5gj.jpg;
+  theme = "oxocarbon";
   themeVariant = "dark";
 
   programs.btop.enable = true;
