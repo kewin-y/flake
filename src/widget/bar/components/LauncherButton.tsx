@@ -7,7 +7,7 @@ export default function LauncherButton() {
       className={"launcher-button"}
       onClicked={() => togglePopupWindow(WINDOW_NAME)}
     >
-      <icon icon={"emote-love-symbolic"} css="font-size: 14px;" />
+      <icon icon={"system-search-symbolic"} css="font-size: 14px;" />
     </button>
   );
 }
