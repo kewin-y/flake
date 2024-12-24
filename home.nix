@@ -44,9 +44,9 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-rdr5gj.jpg;
-  theme = "oxocarbon";
-  themeVariant = "dark";
+  wallpaper = ./wallpapers/wallhaven-wqy77r.jpg;
+  theme = "test";
+  themeVariant = "light";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;
