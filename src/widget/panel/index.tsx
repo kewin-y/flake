@@ -34,9 +34,9 @@ export default function Panel() {
             <BluetoothInfo />
             <NetworkInfo />
           </box>
+          <Speaker />
           <NotifCentre />
           <Media />
-          <Speaker />
         </box>
       </box>
     </PopupWindow>

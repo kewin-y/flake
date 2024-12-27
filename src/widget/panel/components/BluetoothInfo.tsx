@@ -54,6 +54,7 @@ export default function BluetoothInfo() {
                 ? "bluetooth-active-symbolic"
                 : "bluetooth-disabled-symbolic",
             )}
+            css={"font-size: 13px"}
           />
           {bluetoothLabel()}
         </box>
