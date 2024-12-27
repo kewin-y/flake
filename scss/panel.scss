@@ -152,6 +152,8 @@ window#panel {
         background: $base01;
         color: $base05;
 
+        transition: background 0.8s cubic-bezier(0.17, 0.67, 0.24, 1.46);
+
         &.active {
           color: $base01;
           background: $base0D;
