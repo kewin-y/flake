@@ -30,13 +30,13 @@ export default function Panel() {
           endWidget={<Uptime />}
         />
         <box spacing={12} className={"pb-lower"} vertical>
-          <Media />
           <NotifCentre />
+          <Media />
+          <Speaker />
           <box spacing={12} homogeneous>
             <BluetoothInfo />
             <NetworkInfo />
           </box>
-          <Speaker />
         </box>
       </box>
     </PopupWindow>

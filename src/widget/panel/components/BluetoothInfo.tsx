@@ -7,19 +7,28 @@ export default function BluetoothInfo() {
   const bluetooth = Bluetooth.get_default();
 
   const bluetoothLabel = Variable.derive(
-    [bind(bluetooth, "is_powered"), bind(bluetooth, "devices"), bind(bluetooth, "is_connected")],
+    [
+      bind(bluetooth, "is_powered"),
+      bind(bluetooth, "devices"),
+      bind(bluetooth, "is_connected"),
+    ],
     (powered, devices) => {
       if (powered) {
         for (const device of devices) {
           if (device.connected) {
-            return device.alias;
+            return (
+              <label
+                label={bind(device, "alias")}
+                ellipsize={Pango.EllipsizeMode.END}
+                max_width_chars={12}
+              />
+            );
           }
         }
-        return "Disconnected";
+        return <label label={"Disconnected"} />;
       }
 
-      return "Off"
-
+      return <label label={"Off"} />;
     },
   );
 
@@ -46,11 +55,7 @@ export default function BluetoothInfo() {
                 : "bluetooth-disabled-symbolic",
             )}
           />
-          <label
-            label={bluetoothLabel()}
-            ellipsize={Pango.EllipsizeMode.END}
-            max_width_chars={12}
-          />
+          {bluetoothLabel()}
         </box>
       }
     />
