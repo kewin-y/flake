@@ -11,9 +11,10 @@ export default function BluetoothInfo() {
     [
       bind(bluetooth, "is_powered"),
       bind(bluetooth, "devices"),
+      bind(bluetooth, "adapter"),
       bind(bluetooth, "is_connected"),
     ],
-    (powered, devices) => {
+    (powered, devices, adapter, _) => {
       if (powered) {
         for (const device of devices) {
           if (device.connected) {
@@ -28,8 +29,9 @@ export default function BluetoothInfo() {
         }
         return <label label={"On"} />;
       }
+      if (adapter) return <label label={"Off"} />;
 
-      return <label label={"Off"} />;
+      return <label label={"Unavailable"} />;
     },
   );
 
@@ -55,6 +57,9 @@ export default function BluetoothInfo() {
       }
       className={bind(bluetooth, "is_powered").as((powered) =>
         powered ? "info active" : "info",
+      )}
+      cursor={bind(bluetooth, "adapter").as((adapter) =>
+        adapter ? "pointer" : "not-allowed",
       )}
     />
   );

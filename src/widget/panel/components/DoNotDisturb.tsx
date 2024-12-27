@@ -14,7 +14,7 @@ export default function DoNotDisturb() {
       }}
       info={
         <box spacing={8} valign={Gtk.Align.END} halign={Gtk.Align.START}>
-          <icon icon={"blueman-block-symbolic"} />
+          <icon icon={"dnd-symbolic"} />
           <label
             label={bind(notifd, "dontDisturb").as((dnd) =>
               dnd ? "On" : "Off",

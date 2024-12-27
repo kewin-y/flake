@@ -7,15 +7,14 @@ import { bind } from "astal";
 function Player({ player }: { player: Mpris.Player | null }) {
   const title = player
     ? bind(player, "title").as((t) => t || "Unknown Track")
-    : "It's Quiet";
+    : "Nothing Playing";
 
   const artist = player
     ? bind(player, "artist").as((a) => a || "Unknown Artist")
     : "...";
 
   return (
-    <box className={"media-player"} hexpand >
-      {/* Icon/ Cover Art (This code is ###)*/}
+    <box className={"media-player"} hexpand>
       {player ? (
         <box
           className={"cover-art"}
@@ -45,7 +44,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
         <box vertical>
           <label
             ellipsize={Pango.EllipsizeMode.END}
-            maxWidthChars={18}
+            maxWidthChars={24}
             halign={Gtk.Align.START}
             label={title}
             tooltipText={title}
@@ -60,7 +59,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
             className={"artist"}
           />
         </box>
-        {player ? (
+        {player && (
           <box vertical spacing={8}>
             <slider
               hexpand
@@ -104,7 +103,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
               }
             />
           </box>
-        ) : null}
+        )}
       </box>
     </box>
   );
