@@ -15,6 +15,19 @@ export default function Panel() {
     Astal.WindowAnchor.BOTTOM |
     Astal.WindowAnchor.RIGHT;
 
+  const Toggles = (
+    <box spacing={12} homogeneous>
+      <box spacing={12} vertical>
+        <BluetoothInfo />
+        <DoNotDisturb />
+      </box>
+      <box spacing={12} vertical>
+        <NetworkInfo />
+        <MicToggle />
+      </box>
+    </box>
+  );
+
   return (
     <PopupWindow
       name="panel"
@@ -31,17 +44,8 @@ export default function Panel() {
           endWidget={<Uptime />}
         />
         <box spacing={12} className={"pb-lower"} vertical>
-          <box spacing={12} homogeneous>
-            <box spacing={12} vertical>
-              <BluetoothInfo />
-              <DoNotDisturb />
-            </box>
-            <box spacing={12} vertical>
-              <NetworkInfo />
-              <MicToggle />
-            </box>
-          </box>
           <Speaker />
+          {Toggles}
           <Media />
           <NotifCentre />
         </box>
