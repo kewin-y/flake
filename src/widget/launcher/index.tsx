@@ -99,11 +99,11 @@ function InnerLauncher({ width, height, spacing }: InnerProps) {
 }
 
 export default function Launcher() {
-  const anchor = Astal.WindowAnchor.BOTTOM | Astal.WindowAnchor.LEFT;
+  const anchor = Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT;
   return (
     <PopupWindow
       name={WINDOW_NAME}
-      transition={Gtk.RevealerTransitionType.SLIDE_UP}
+      transition={Gtk.RevealerTransitionType.SLIDE_DOWN}
       anchor={anchor}
       keymode={Astal.Keymode.EXCLUSIVE}
       monitor={0}
