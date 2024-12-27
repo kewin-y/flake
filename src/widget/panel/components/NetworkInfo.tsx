@@ -4,7 +4,7 @@ import Network from "gi://AstalNetwork";
 import { Gtk } from "astal/gtk3";
 import Pango from "gi://Pango";
 
-export default function NetworkWidget() {
+export default function NetworkInfo() {
   const network = Network.get_default();
   const { wifi } = network;
 
@@ -13,8 +13,8 @@ export default function NetworkWidget() {
       className={bind(network, "connectivity").as((conn) =>
         conn !== Network.Connectivity.NONE &&
         conn !== Network.Connectivity.UNKNOWN
-          ? "network connected"
-          : "network",
+          ? "info active"
+          : "info",
       )}
       vertical
       heightRequest={60}

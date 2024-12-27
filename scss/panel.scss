@@ -146,13 +146,13 @@ window#panel {
         @include panel-slider($base05);
       }
 
-      .network {
+      .info {
         border-radius: 5px;
         padding: 0.7em;
         background: $base01;
         color: $base05;
 
-        &.connected {
+        &.active {
           color: $base01;
           background: $base0D;
         }
