@@ -8,7 +8,7 @@ import { Variable, timeout } from "astal";
 
 const NOTIF_TRANSITION_DURATION = 300;
 
-export const WIDTH = 300;
+export const WIDTH = 320;
 
 export class NotifMap implements Subscribable {
   private map: Map<number, Gtk.Widget> = new Map();
