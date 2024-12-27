@@ -44,7 +44,7 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-wqy77r.jpg;
+  wallpaper = ./wallpapers/wallhaven-jx1qwp.jpg;
   theme = "rose-pine";
   themeVariant = "dark";
 
