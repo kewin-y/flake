@@ -153,7 +153,8 @@ window#panel {
         color: $base05;
 
         &.connected {
-          background: mix($base01, $base0D, 90%);
+          color: $base01;
+          background: $base0D;
         }
       }
     }
