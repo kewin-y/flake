@@ -1,6 +1,6 @@
 import { Gtk, Astal, App } from "astal/gtk3";
 import { PopupWindow } from "../PopupWindow";
-import { Speaker } from "./components/Audio";
+import { Speaker, MicToggle } from "./components/Audio";
 import NetworkInfo from "./components/NetworkInfo";
 import BluetoothInfo from "./components/BluetoothInfo";
 import DoNotDisturb from "./components/DoNotDisturb";
@@ -38,6 +38,7 @@ export default function Panel() {
             </box>
             <box spacing={12} vertical>
               <NetworkInfo />
+              <MicToggle />
             </box>
           </box>
           <Speaker />

@@ -5,7 +5,7 @@ type ToggleProps = {
   title: string;
   clicked(self: Gtk.EventBox): void;
   info: Gtk.Widget;
-  className?: string | Binding<string | undefined> | undefined;
+  className: string | Binding<string | undefined> | undefined;
   cursor?: string | Binding<string | undefined> | undefined;
 };
 export default function Toggle(toggleProps: ToggleProps) {
