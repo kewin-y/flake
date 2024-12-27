@@ -9,6 +9,7 @@ function ApplicationItem(application: Apps.Application) {
   return (
     <button
       className="app-item"
+      cursor={"pointer"}
       heightRequest={30}
       onClicked={() => {
         togglePopupWindow(WINDOW_NAME);

@@ -7,14 +7,14 @@ import { bind } from "astal";
 function Player({ player }: { player: Mpris.Player | null }) {
   const title = player
     ? bind(player, "title").as((t) => t || "Unknown Track")
-    : "Nothing Playing";
+    : "It's Quiet";
 
   const artist = player
     ? bind(player, "artist").as((a) => a || "Unknown Artist")
     : "...";
 
   return (
-    <box className={"media-player"} hexpand>
+    <box className={"media-player"} hexpand >
       {/* Icon/ Cover Art (This code is ###)*/}
       {player ? (
         <box
@@ -29,7 +29,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
           centerWidget={
             <icon
               icon="emblem-music-symbolic"
-              css={"font-size: 38px;"}
+              css={"font-size: 14px;"}
               valign={Gtk.Align.CENTER}
               halign={Gtk.Align.CENTER}
             />

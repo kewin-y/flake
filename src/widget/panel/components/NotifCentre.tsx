@@ -1,6 +1,6 @@
 import { Gtk } from "astal/gtk3";
 import { bind } from "astal";
-import {WIDTH, NotifMap} from "../../notifs/NotifMap";
+import { WIDTH, NotifMap } from "../../notifs/NotifMap";
 import AstalNotifd from "gi://AstalNotifd";
 
 export default function NotifCentre() {
@@ -54,6 +54,7 @@ export default function NotifCentre() {
         endWidget={
           <button
             className={"clear-button"}
+            cursor={"pointer"}
             heightRequest={24}
             widthRequest={24}
             halign={Gtk.Align.END}

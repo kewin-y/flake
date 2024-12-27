@@ -9,7 +9,11 @@ export default function Indicators() {
   const bluetooth = Bluetooth.get_default();
 
   return (
-    <button className="indicators" onClicked={() => togglePopupWindow("panel")}>
+    <button
+      className="indicators"
+      onClicked={() => togglePopupWindow("panel")}
+      cursor={"pointer"}
+    >
       <box spacing={8}>
         <icon icon={bind(speaker, "volumeIcon")} css={"font-size: 13px"} />
         <icon

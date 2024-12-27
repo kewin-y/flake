@@ -3,6 +3,7 @@ import { PopupWindow } from "../PopupWindow";
 import { Speaker } from "./components/Audio";
 import NetworkInfo from "./components/NetworkInfo";
 import BluetoothInfo from "./components/BluetoothInfo";
+import DoNotDisturb from "./components/DoNotDisturb";
 import NotifCentre from "./components/NotifCentre";
 import Media from "./components/Media";
 import Uptime from "./components/Uptime";
@@ -31,12 +32,17 @@ export default function Panel() {
         />
         <box spacing={12} className={"pb-lower"} vertical>
           <box spacing={12} homogeneous>
-            <BluetoothInfo />
-            <NetworkInfo />
+            <box spacing={12} vertical>
+              <BluetoothInfo />
+              <DoNotDisturb />
+            </box>
+            <box spacing={12} vertical>
+              <NetworkInfo />
+            </box>
           </box>
           <Speaker />
-          <NotifCentre />
           <Media />
+          <NotifCentre />
         </box>
       </box>
     </PopupWindow>

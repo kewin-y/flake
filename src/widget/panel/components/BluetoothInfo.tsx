@@ -2,6 +2,7 @@ import Bluetooth from "gi://AstalBluetooth";
 import { bind, Variable } from "astal";
 import { Gtk } from "astal/gtk3";
 import Pango from "gi://Pango";
+import Toggle from "./shared/Toggle";
 
 export default function BluetoothInfo() {
   const bluetooth = Bluetooth.get_default();
@@ -25,7 +26,7 @@ export default function BluetoothInfo() {
             );
           }
         }
-        return <label label={"Disconnected"} />;
+        return <label label={"On"} />;
       }
 
       return <label label={"Off"} />;
@@ -33,20 +34,13 @@ export default function BluetoothInfo() {
   );
 
   return (
-    <centerbox
-      vertical
-      className={bind(bluetooth, "is_powered").as((powered) =>
-        powered ? "info active" : "info",
-      )}
-      heightRequest={60}
-      startWidget={
-        <label
-          label={"Bluetooth"}
-          halign={Gtk.Align.START}
-          valign={Gtk.Align.START}
-        />
-      }
-      endWidget={
+    <Toggle
+      title="Bluetooth"
+      clicked={() => {
+        const adapter = bluetooth.get_adapter();
+        adapter?.set_powered(!adapter.get_powered());
+      }}
+      info={
         <box spacing={8} valign={Gtk.Align.END} halign={Gtk.Align.START}>
           <icon
             icon={bind(bluetooth, "is_powered").as((powered) =>
@@ -59,6 +53,9 @@ export default function BluetoothInfo() {
           {bluetoothLabel()}
         </box>
       }
+      className={bind(bluetooth, "is_powered").as((powered) =>
+        powered ? "info active" : "info",
+      )}
     />
   );
 }
