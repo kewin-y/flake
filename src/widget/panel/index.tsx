@@ -46,8 +46,8 @@ export default function Panel() {
         <box spacing={12} className={"pb-lower"} vertical>
           <Speaker />
           {Toggles}
-          <Media />
           <NotifCentre />
+          <Media />
         </box>
       </box>
     </PopupWindow>
