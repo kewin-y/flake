@@ -18,6 +18,7 @@
       pkgs.gtk-session-lock
       auth
       battery
+      bluetooth
       hyprland
       mpris
       network
@@ -28,7 +29,6 @@
     ];
   };
 
-  # Hmm ...
   home.file.".config/ags/scss/colors.scss".text = with config.lib.stylix.colors; ''
     $base00: #${base00};
     $base01: #${base01};
