@@ -45,8 +45,8 @@
   };
 
   wallpaper = ./wallpapers/wallhaven-wqy77r.jpg;
-  theme = "test";
-  themeVariant = "light";
+  theme = "rose-pine";
+  themeVariant = "dark";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

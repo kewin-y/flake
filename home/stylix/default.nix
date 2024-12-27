@@ -9,12 +9,11 @@
       default = "far";
       type = lib.types.enum [
         "far"
-        "material-darker"
-        "material"
         "oxocarbon"
         "paradise"
         "test"
         "decay"
+        "rose-pine"
         "rose-pine-dawn"
         "yoru"
         "solarized-light"
@@ -86,7 +85,7 @@
           if config.themeVariant == "dark"
           then "Papirus-Dark"
           else "Papirus-Light";
-        package = pkgs.papirus-icon-theme.override {color = "blue";};
+        package = pkgs.papirus-icon-theme.override {color = "black";};
       };
     };
 
