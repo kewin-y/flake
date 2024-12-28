@@ -35,16 +35,11 @@ function Player({ player }: { player: Mpris.Player | null }) {
           }
         />
       )}
-      <box
-        className={"mp-right"}
-        vertical
-        valign={Gtk.Align.CENTER}
-        spacing={12}
-      >
+      <box className={"mp-right"} valign={Gtk.Align.CENTER} spacing={12}>
         <box vertical>
           <label
             ellipsize={Pango.EllipsizeMode.END}
-            maxWidthChars={24}
+            maxWidthChars={12}
             halign={Gtk.Align.START}
             label={title}
             tooltipText={title}
@@ -52,7 +47,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
           />
           <label
             ellipsize={Pango.EllipsizeMode.END}
-            maxWidthChars={18}
+            maxWidthChars={12}
             hexpand
             halign={Gtk.Align.START}
             label={artist}
@@ -60,30 +55,33 @@ function Player({ player }: { player: Mpris.Player | null }) {
           />
         </box>
         {player && (
-          <box vertical spacing={8}>
-            <slider
-              hexpand
-              visible={bind(player, "length").as((length) => length > 0)}
-              onDragged={({ value }) =>
-                (player.position = value * player.length)
-              }
-              value={bind(player, "position").as((p) =>
-                player.length > 0 ? p / player.length : 0,
-              )}
-            />
-            <centerbox
-              className="actions"
-              centerWidget={
-                <box spacing={8}>
-                  <button
-                    onClicked={() => player.previous()}
-                    visible={bind(player, "canGoPrevious")}
-                  >
-                    <icon icon="media-skip-backward-symbolic" />
-                  </button>
-                  <button
-                    onClicked={() => player.play_pause()}
-                    visible={bind(player, "canControl")}
+          <box
+            vertical
+            spacing={8}
+            valign={Gtk.Align.CENTER}
+            className={"actions"}
+          >
+            {
+              <box spacing={8}>
+                <button
+                  onClicked={() => player.previous()}
+                  visible={bind(player, "canGoPrevious")}
+                >
+                  <icon icon="media-skip-backward-symbolic" />
+                </button>
+                <button
+                  onClicked={() => player.play_pause()}
+                  visible={bind(player, "canControl")}
+                  className={"pause-play"}
+                >
+                  <circularprogress
+                    className={"progress"}
+                    startAt={0.75}
+                    endAt={0.75}
+                    rounded
+                    value={bind(player, "position").as((p) =>
+                      player.length > 0 ? p / player.length : 0,
+                    )}
                   >
                     <icon
                       icon={bind(player, "playbackStatus").as((s) =>
@@ -92,16 +90,16 @@ function Player({ player }: { player: Mpris.Player | null }) {
                           : "media-playback-start-symbolic",
                       )}
                     />
-                  </button>
-                  <button
-                    onClicked={() => player.next()}
-                    visible={bind(player, "canGoNext")}
-                  >
-                    <icon icon="media-skip-forward-symbolic" />
-                  </button>
-                </box>
-              }
-            />
+                  </circularprogress>
+                </button>
+                <button
+                  onClicked={() => player.next()}
+                  visible={bind(player, "canGoNext")}
+                >
+                  <icon icon="media-skip-forward-symbolic" />
+                </button>
+              </box>
+            }
           </box>
         )}
       </box>

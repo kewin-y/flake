@@ -122,15 +122,28 @@ window#panel {
           }
 
           .actions {
+            margin-right: 1em;
+
             button {
               color: $base05;
               min-width: 18px;
               min-height: 18px;
-              transition: none;
               font-size: 14px;
+            }
 
-              &:hover {
-                font-size: 16px;
+            .pause-play {
+              min-width: 26px;
+              min-height: 26px;
+
+              .progress {
+                font-size: 2px;
+                color: $base0D;
+                background: $base03;
+
+                icon {
+                  font-size: 14px;
+                  color: $base05;
+                }
               }
             }
           }
