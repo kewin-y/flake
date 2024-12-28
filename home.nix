@@ -44,9 +44,9 @@
     };
   };
 
-  wallpaper = ./wallpapers/wallhaven-jx1qwp.jpg;
-  theme = "rose-pine";
-  themeVariant = "dark";
+  wallpaper = ./wallpapers/wallhaven-r7mqk7.jpg;
+  theme = "test";
+  themeVariant = "light";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;
