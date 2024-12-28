@@ -44,10 +44,10 @@ export default function Panel() {
           endWidget={<Uptime />}
         />
         <box spacing={12} className={"pb-lower"} vertical>
-          <Speaker />
           {Toggles}
-          <NotifCentre />
+          <Speaker />
           <Media />
+          <NotifCentre />
         </box>
       </box>
     </PopupWindow>

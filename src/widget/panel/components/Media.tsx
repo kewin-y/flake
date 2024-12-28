@@ -14,7 +14,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
     : "...";
 
   return (
-    <box className={"media-player"} hexpand>
+    <box className={"media-player"} hexpand heightRequest={60}>
       {player ? (
         <box
           className={"cover-art"}
