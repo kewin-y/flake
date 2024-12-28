@@ -66,6 +66,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
                 <button
                   onClicked={() => player.previous()}
                   visible={bind(player, "canGoPrevious")}
+                  cursor={"pointer"}
                 >
                   <icon icon="media-skip-backward-symbolic" />
                 </button>
@@ -73,6 +74,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
                   onClicked={() => player.play_pause()}
                   visible={bind(player, "canControl")}
                   className={"pause-play"}
+                  cursor={"pointer"}
                 >
                   <circularprogress
                     className={"progress"}
@@ -95,6 +97,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
                 <button
                   onClicked={() => player.next()}
                   visible={bind(player, "canGoNext")}
+                  cursor={"pointer"}
                 >
                   <icon icon="media-skip-forward-symbolic" />
                 </button>
