@@ -39,7 +39,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
         <box vertical>
           <label
             ellipsize={Pango.EllipsizeMode.END}
-            maxWidthChars={12}
+            maxWidthChars={18}
             halign={Gtk.Align.START}
             label={title}
             tooltipText={title}
@@ -47,7 +47,7 @@ function Player({ player }: { player: Mpris.Player | null }) {
           />
           <label
             ellipsize={Pango.EllipsizeMode.END}
-            maxWidthChars={12}
+            maxWidthChars={18}
             hexpand
             halign={Gtk.Align.START}
             label={artist}
