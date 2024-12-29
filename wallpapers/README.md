@@ -12,3 +12,4 @@
 - https://wallhaven.cc/w/n622g6
 - https://wallhaven.cc/w/jx1qwp
 - https://wallhaven.cc/w/r7mqk7
+- https://www.pixiv.net/en/artworks/118178097
