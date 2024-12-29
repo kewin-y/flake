@@ -52,8 +52,9 @@ window#panel {
       background: $base01;
 
       .qs-toggle {
-        @include color-button($base0D);
+        @include color-button($base0A);
       }
+
       .clear-button {
         @include color-button($base08);
       }

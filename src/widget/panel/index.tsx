@@ -54,7 +54,6 @@ export default function Panel() {
     </box>
   );
 
-
   return (
     <PopupWindow
       name="panel"
@@ -63,7 +62,11 @@ export default function Panel() {
       anchor={anchor}
       keymode={Astal.Keymode.ON_DEMAND}
     >
-      <stack shown={panelShown()} transitionType={Gtk.StackTransitionType.SLIDE_RIGHT}>
+      <stack
+        shown={panelShown()}
+        transitionType={Gtk.StackTransitionType.SLIDE_RIGHT}
+        transitionDuration={300}
+      >
         {QuickSettings}
         <NotifCentre />
       </stack>
