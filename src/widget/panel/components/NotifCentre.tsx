@@ -10,7 +10,7 @@ export default function NotifCentre() {
   const NotifScroll = (
     <scrollable
       name={"notif-scroll"}
-      vexpand
+      heightRequest={280}
       widthRequest={WIDTH}
       hscroll={Gtk.PolicyType.NEVER}
     >
