@@ -22,7 +22,7 @@
     alias ll='eza -lha --sort=name --group-directories-first'
     alias ld='eza -lhD '
     alias yz='yazi'
-    alias dev='nix develop --command mksh'
+    alias dev='nix develop -c tmux'
 
     HISTFILE=$HOME/.mksh_history
     HISTSIZE=5000
