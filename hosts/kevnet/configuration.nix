@@ -14,6 +14,8 @@
     };
   };
 
+  systemd.tpm2.enable = false;
+
   networking.hostName = "kevnet";
 
   hardware.ckb-next.enable = true;
