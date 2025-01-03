@@ -2,6 +2,7 @@
   imports = [
     ./labwc
     ./fuzzel
-    ./fnott
+    ./waybar
+    ./mako
   ];
 }
