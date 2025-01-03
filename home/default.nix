@@ -4,7 +4,6 @@
     ./firefox
     ./foot
     ./git
-    ./misc
     ./mksh
     ./nixvim
     ./spicetify
@@ -13,5 +12,6 @@
     ./yazi
     ./zathura
     ./wayland
+    ./xdg
   ];
 }
