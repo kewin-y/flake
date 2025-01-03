@@ -113,12 +113,6 @@
       enable = true;
       defaultEditor = true;
     };
-
-    # Sorry for using Hyprland
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    };
   };
 
   environment.shells = [pkgs.mksh];

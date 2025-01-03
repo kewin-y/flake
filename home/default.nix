@@ -4,7 +4,6 @@
     ./firefox
     ./foot
     ./git
-    ./hyprland
     ./misc
     ./mksh
     ./nixvim

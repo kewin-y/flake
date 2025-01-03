@@ -76,8 +76,8 @@
           package = pkgs.tamzen;
         };
         sansSerif = {
-          name = "tamzen";
-          package = pkgs.tamzen;
+          name = "Rubik";
+          package = pkgs.rubik;
         };
       };
     };

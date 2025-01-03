@@ -9,10 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
-
     nixvim-config.url = "git+https://codeberg.org/ykevin_u/nixvim.git";
 
     ags.url = "github:Aylur/ags";
@@ -56,7 +52,7 @@
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [stylix.homeManagerModules.stylix inputs.hyprland.homeManagerModules.default ./home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home.nix];
       };
     };
   };
