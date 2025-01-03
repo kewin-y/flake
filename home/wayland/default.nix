@@ -1,7 +1,7 @@
 {
   imports = [
-    ./tofi
-    ./fnott
     ./labwc
+    ./fuzzel
+    ./fnott
   ];
 }

@@ -39,9 +39,18 @@
       };
 
       userChrome = ''
+        * {
+          border-radius: 0 !important;
+        }
+
         .titlebar-close {
             display:none !important;
         }
+
+        .titlebar-spacer[type="pre-tabs"] {
+          display: none !important;
+        }
+
         #alltabs-button { display: none !important; }
       '';
 
