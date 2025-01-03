@@ -13,5 +13,6 @@
     ./tmux
     ./yazi
     ./zathura
+    ./wayland
   ];
 }
