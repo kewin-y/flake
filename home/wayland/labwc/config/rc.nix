@@ -1,5 +1,13 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   screenshot = import ../scripts/screenshot.nix pkgs;
+  lock = import ../scripts/waylock.nix {
+    inherit pkgs;
+    inherit config;
+  };
 in {
   home.file.".config/labwc/rc.xml".text = ''
     <?xml version="1.0"?>
@@ -40,6 +48,9 @@ in {
         </keybind>
         <keybind key="W-r">
           <action name="Reconfigure" />
+        </keybind>
+        <keybind key="C-W-l">
+          <action name="Execute" command="${lock}/bin/lock" />
         </keybind>
 
         <!-- Screenshot -->

@@ -106,7 +106,7 @@
     gvfs.enable = true;
   };
 
-  security.pam.services.astal-auth = {};
+  security.pam.services.waylock = {};
 
   programs = {
     neovim = {
