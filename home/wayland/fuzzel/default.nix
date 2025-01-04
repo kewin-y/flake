@@ -4,11 +4,12 @@
     settings = {
       main = {
         font = "tamzen:size=10";
-        horizontal-pad = 8;
-        vertical-pad = 8;
-        inner-pad = 8;
+        horizontal-pad = 18;
+        vertical-pad = 18;
+        inner-pad = 18;
         dpi-aware = "yes";
         icons-enabled = "no";
+        line-height = 20;
       };
       border = {
         radius = 0;
