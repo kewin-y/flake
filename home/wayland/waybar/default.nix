@@ -58,11 +58,8 @@
       }
     ];
     style = with config.lib.stylix.colors.withHashtag; ''
-      * :not(separator) {
+      *:not(separator) {
         all: unset;
-      }
-
-      * {
         font-family: tamzen, siji;
         font-size: 12px;
       }
@@ -70,6 +67,7 @@
       /* Main Bar */
       window#waybar {
         background: ${base00};
+        border-top: 1px solid ${base01};
         color: ${base05};
       }
 
@@ -91,7 +89,7 @@
 
       menu separator {
         background: ${base03};
-        margin: 0 0.8rem;
+        margin: 0.4rem 0.8rem;
       }
 
       menu menuitem {
