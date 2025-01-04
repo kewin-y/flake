@@ -40,18 +40,17 @@
         };
         "wireplumber" = {
           format = "VOL {volume}%";
-          format-muted = "VOL MUT {volume}%";
+          format-muted = "VOL * {volume}%";
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
-          format-icons = ["" ""];
         };
         "network" = {
           format = "{ifname}";
           format-wifi = "{essid}";
           format-ethernet = "Wired";
-          format-disconnected = "<span font='8'></span>";
+          format-disconnected = "Disconnected";
           tooltip-format = "{ifname} via {gwaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)";
-          tooltip-format-ethernet = "Wired Connected";
+          tooltip-format-ethernet = "Connected: Wired";
           tooltip-format-disconnected = "Disconnected";
           max-length = 50;
         };

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./ags
     ./firefox
     ./foot
     ./git
