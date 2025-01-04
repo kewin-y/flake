@@ -30,9 +30,9 @@
   };
 
 
-  wallpaper = ./wallpapers/leaving-breeze.jpg;
-  theme = "yoru";
-  themeVariant = "dark";
+  wallpaper = ./wallpapers/wallhaven-r7mqk7.jpg;
+  theme = "test";
+  themeVariant = "light";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

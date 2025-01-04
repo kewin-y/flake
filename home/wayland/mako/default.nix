@@ -4,6 +4,7 @@
     sort = "-time";
     layer = "overlay";
     backgroundColor = base00;
+    textColor = base05;
     width = 200;
     height = 300;
     padding = "12";
