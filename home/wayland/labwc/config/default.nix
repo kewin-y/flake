@@ -1,3 +1,3 @@
 {
-  imports = [./rc.nix ./themerc.nix];
+  imports = [./rc.nix ./themerc.nix ./menu.nix];
 }
