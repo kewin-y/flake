@@ -16,7 +16,7 @@
         modules-right = ["tray" "battery" "wireplumber" "network"];
         "clock" = {
           interval = 60;
-          format = "<span font='8'></span> {:%H:%M}";
+          format = "{:%H:%M}";
           max-length = 25;
         };
         "wlr/taskbar" = {
@@ -33,21 +33,20 @@
             warning = 30;
             critical = 15;
           };
-          format = "<span font='8' rise='1pt'>{icon}</span> {capacity}%";
-          format-charging = "<span font='8' rise='1pt'>{icon}</span> {capacity}%";
-          format-icons = ["" "" "" ""];
+          format = "BAT {capacity}%";
+          format-charging = "BAT C {capacity}%";
           max-length = 25;
         };
         "wireplumber" = {
-          format = "<span font='8' rise='1pt'>{icon}</span> {volume}%";
-          format-muted = "<span font='8' rise='1pt'></span> {volume}%";
+          format = "VOL {volume}%";
+          format-muted = "VOL MUT {volume}%";
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
           format-icons = ["" ""];
         };
         "network" = {
           format = "{ifname}";
-          format-wifi = "<span font='8'></span> {essid}";
-          format-ethernet = "<span font='8'></span> Wired";
+          format-wifi = "{essid}";
+          format-ethernet = "Wired";
           format-disconnected = "<span font='8'></span>";
           tooltip-format = "{ifname} via {gwaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)";
@@ -60,7 +59,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: tamzen, siji;
+        font-family: tamzen;
         font-size: 12px;
       }
 
@@ -85,11 +84,12 @@
 
       menu {
         background: ${base01};
+        padding: 0.8rem;
       }
 
       menu separator {
         background: ${base03};
-        margin: 0.4rem 0.8rem;
+        margin: 0.4rem 0;
       }
 
       menu menuitem {
@@ -124,11 +124,12 @@
       }
 
       #taskbar button:hover {
-        box-shadow: 0 0 0 1px ${base03};
+        background: ${base02};
       }
 
       #taskbar button.active {
-        box-shadow: 0 0 0 1px ${base0D};
+        background: ${base0D};
+        color: ${base01};
       }
     '';
   };
