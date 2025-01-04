@@ -34,8 +34,8 @@
     menu.border.color: ${base01}
     menu.items.bg.color: ${base01}
     menu.items.text.color: ${base05}
-    menu.items.active.bg.color: ${base0D}
-    menu.items.active.text.color: ${base01}
+    menu.items.active.bg.color: ${base02}
+    menu.items.active.text.color: ${base05}
     menu.items.padding.x: 10
     menu.items.padding.y: 10
     menu.separator.width: 1

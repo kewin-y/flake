@@ -15,6 +15,7 @@
         modules-center = ["wlr/taskbar"];
         modules-right = ["tray" "battery" "wireplumber" "network"];
         "clock" = {
+          tooltip = false;
           interval = 60;
           format = "{:%H:%M}";
           max-length = 25;
@@ -99,6 +100,15 @@
 
       menu menuitem:hover {
         background: ${base02};
+      }
+
+      tooltip {
+        background: ${base01};
+        color: ${base05};
+      }
+
+      tooltip label {
+        margin: 0.8rem;
       }
 
       #clock,
