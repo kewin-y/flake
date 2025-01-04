@@ -1,4 +1,6 @@
-{...}: {
+{pkgs, ...}: let
+  screenshot = import ../scripts/screenshot.nix pkgs;
+in {
   home.file.".config/labwc/rc.xml".text = ''
     <?xml version="1.0"?>
     <labwc_config>
@@ -29,7 +31,7 @@
         <keybind key="A-F4" />
         <keybind key="W-f">
           <action name="ToggleMaximize" />
-          </keybind>
+        </keybind>
         <keybind key="W-s">
           <action name="Iconify" />
         </keybind>
@@ -38,6 +40,14 @@
         </keybind>
         <keybind key="W-r">
           <action name="Reconfigure" />
+        </keybind>
+
+        <!-- Screenshot -->
+        <keybind key = "W-A-s">
+          <action name="Execute" command="${screenshot}/bin/screenshot f" />
+        </keybind>
+        <keybind key = "W-S-s">
+          <action name="Execute" command="${screenshot}/bin/screenshot s" />
         </keybind>
 
         <!-- Move to edge -->
