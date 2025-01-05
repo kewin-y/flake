@@ -61,7 +61,7 @@
       *:not(separator) {
         all: unset;
         font-family: Roboto Mono Nerd Font Propo;
-        font-size: 8pt;
+        font-size: 9pt;
       }
 
       /* Main Bar */
