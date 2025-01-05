@@ -85,7 +85,7 @@
 
       menu {
         background: ${base01};
-        padding: 0.8rem;
+        padding: 8px;
       }
 
       menu separator {
