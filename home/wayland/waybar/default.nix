@@ -67,7 +67,7 @@
       /* Main Bar */
       window#waybar {
         background: ${base00};
-        border-top: 1px solid ${base01};
+        border-top: 2px solid ${base01};
         color: ${base05};
       }
 
@@ -133,13 +133,9 @@
         margin-right: 0;
       }
 
-      #taskbar button:hover {
-        background: ${base02};
-      }
-
+      #taskbar button:hover,
       #taskbar button.active {
-        background: ${base0D};
-        color: ${base01};
+        background: ${base02};
       }
     '';
   };
