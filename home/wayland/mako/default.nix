@@ -13,12 +13,12 @@
     borderColor = base0D;
     markup = true;
     icons = true;
-    format = ''%s\n\n<span font='8'>%b</span>'';
+    format = ''%s\n\n%b'';
     actions = true;
     maxIconSize = 32;
     defaultTimeout = 0;
     ignoreTimeout = true;
-    font = "tamzen 10";
+    font = "Roboto Mono Nerd Font Propo 8";
     extraConfig = ''
       [urgency=low]
       border-color=${base0B}
@@ -30,7 +30,7 @@
       border-color=${base08}
 
       [actionable]
-      format=%s\n\n<span font='8'>%b</span>\n\n<span font='7'>M-O to view actions</span>
+      format=%s\n\n%b\n\nM-O to view actions
     '';
   };
 }

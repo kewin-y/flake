@@ -9,7 +9,7 @@
       {
         layer = "top";
         position = "bottom";
-        height = 30;
+        height = 36;
         spacing = 4;
         modules-left = ["clock"];
         modules-center = ["wlr/taskbar"];
@@ -60,8 +60,8 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: tamzen;
-        font-size: 12px;
+        font-family: Roboto Mono Nerd Font Propo;
+        font-size: 8pt;
       }
 
       /* Main Bar */

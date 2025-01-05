@@ -3,11 +3,10 @@
     enable = true;
     settings = {
       main = {
-        font = "tamzen:size=10";
+        font = "Roboto Mono Nerd Font Propo:size=10";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;
-        dpi-aware = "yes";
         icons-enabled = "no";
         line-height = 20;
       };

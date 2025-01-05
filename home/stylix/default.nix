@@ -80,8 +80,8 @@
           desktop = 10;
         };
         monospace = {
-          name = "tamzen";
-          package = pkgs.tamzen;
+          name = "Roboto Mono Nerd Font Propo";
+          package = pkgs.nerd-fonts.roboto-mono;
         };
         sansSerif = {
           name = "Rubik";
