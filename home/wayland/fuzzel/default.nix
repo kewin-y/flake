@@ -7,6 +7,7 @@
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;
+        dpi-aware = "no";
         icons-enabled = "no";
         line-height = 20;
       };
