@@ -30,8 +30,8 @@
   };
 
 
-  wallpaper = ./wallpapers/accordion.png;
-  theme = "far";
+  wallpaper = ./wallpapers/lavender.jpg;
+  theme = "material-palenight";
   themeVariant = "dark";
 
   programs.btop.enable = true;

@@ -60,7 +60,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: Roboto Mono Nerd Font Propo;
+        font-family: MapleMono NF;
         font-size: 9pt;
       }
 

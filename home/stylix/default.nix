@@ -17,6 +17,7 @@
         "rose-pine-dawn"
         "yoru"
         "solarized-light"
+        "material-palenight"
       ];
     };
 
@@ -80,8 +81,8 @@
           desktop = 10;
         };
         monospace = {
-          name = "Roboto Mono Nerd Font Propo";
-          package = pkgs.nerd-fonts.roboto-mono;
+          name = "MapleMono NF";
+          package = pkgs.maple-mono;
         };
         sansSerif = {
           name = "Rubik";
@@ -97,7 +98,7 @@
           if config.themeVariant == "dark"
           then "Papirus-Dark"
           else "Papirus-Light";
-        package = pkgs.papirus-icon-theme.override {color = "black";};
+        package = pkgs.papirus-icon-theme.override {color = "blue";};
       };
     };
 
