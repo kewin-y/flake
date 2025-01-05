@@ -11,8 +11,8 @@
     window.*.title.bg.color: ${base01}
     window.active.border.color: ${base01}
     window.inactive.border.color: ${base01}
-    window.button.width: 18
-    window.button.height: 18
+    window.button.width: 22
+    window.button.height: 22
 
     # OSD
     osd.bg.color: ${base00}

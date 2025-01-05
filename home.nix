@@ -30,9 +30,9 @@
   };
 
 
-  wallpaper = ./wallpapers/wallhaven-r7mqk7.jpg;
-  theme = "test";
-  themeVariant = "light";
+  wallpaper = ./wallpapers/accordion.png;
+  theme = "far";
+  themeVariant = "dark";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

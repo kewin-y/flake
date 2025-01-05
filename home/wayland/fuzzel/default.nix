@@ -10,6 +10,7 @@
         dpi-aware = "no";
         icons-enabled = "no";
         line-height = 20;
+        lines = 8;
       };
       border = {
         radius = 0;
@@ -22,7 +23,7 @@
         match = "${base0D}ff";
         prompt = "${base0D}ff";
         selection-match = "${base0D}ff";
-        selection = "${base01}ff";
+        selection = "${base02}ff";
         border = "${base01}ff";
       };
     };
