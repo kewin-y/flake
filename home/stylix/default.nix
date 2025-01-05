@@ -9,15 +9,11 @@
       default = "far";
       type = lib.types.enum [
         "far"
-        "oxocarbon"
+        "material-palenight"
         "paradise"
-        "test"
-        "decay"
         "rose-pine"
         "rose-pine-dawn"
-        "yoru"
-        "solarized-light"
-        "material-palenight"
+        "test"
       ];
     };
 
@@ -53,7 +49,6 @@
       };
 
       targets = {
-        hyprland.enable = false;
         neovim.enable = false;
         nixvim.enable = false;
         spicetify.enable = false;
