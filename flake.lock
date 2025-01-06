@@ -565,15 +565,15 @@
       "locked": {
         "lastModified": 1736105029,
         "narHash": "sha256-Q4GTBggo+cmWMcSbJKB3eXnGfv6vpAG+nV4cEDaUaQo=",
-        "ref": "refs/heads/master",
+        "owner": "kewin-y",
+        "repo": "nixvim-config",
         "rev": "ec694d4f933c6432ea9df4406726eda0e82a4bc2",
-        "revCount": 65,
-        "type": "git",
-        "url": "https://codeberg.org/ykevin_u/nixvim.git"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/ykevin_u/nixvim.git"
+        "owner": "kewin-y",
+        "repo": "nixvim-config",
+        "type": "github"
       }
     },
     "nuschtosSearch": {

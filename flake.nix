@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim-config.url = "git+https://codeberg.org/ykevin_u/nixvim.git";
+    nixvim-config.url = "github:kewin-y/nixvim-config";
 
     stylix.url = "github:danth/stylix";
 
