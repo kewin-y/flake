@@ -10,7 +10,7 @@
         layer = "top";
         position = "bottom";
         height = 36;
-        spacing = 4;
+        spacing = 8;
         modules-left = ["clock"];
         modules-center = ["wlr/taskbar"];
         modules-right = ["tray" "battery" "wireplumber" "network"];

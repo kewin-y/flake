@@ -30,9 +30,9 @@
   };
 
 
-  wallpaper = ./wallpapers/lavender.jpg;
-  theme = "material-palenight";
-  themeVariant = "dark";
+  wallpaper = ./wallpapers/wallhaven-6o9g8l.jpg;
+  theme = "test";
+  themeVariant = "light";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;
