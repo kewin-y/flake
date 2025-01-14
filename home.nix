@@ -30,8 +30,8 @@
   };
 
 
-  wallpaper = ./wallpapers/wallhaven-6o9g8l.jpg;
-  theme = "test";
+  wallpaper = ./wallpapers/nanmokaken.jpg;
+  theme = "rose-pine-dawn";
   themeVariant = "light";
 
   programs.btop.enable = true;
