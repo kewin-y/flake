@@ -30,7 +30,7 @@
   };
 
 
-  wallpaper = ./wallpapers/nanmokaken.jpg;
+  wallpaper = ./wallpapers/wallhaven-yjm31g.jpg;
   theme = "rose-pine-dawn";
   themeVariant = "light";
 
