@@ -64,27 +64,18 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
+      liberation_ttf
       dejavu_fonts
       rubik
-      siji
       maple-mono-NF
-      tamzen
       pkgs.nerd-fonts.roboto-mono
     ];
 
     fontconfig = {
       enable = true;
-      localConf = ''
-        <alias>
-          <family>monospace</family>
-          <prefer>
-            <family>Siji</family>
-          </prefer>
-        </alias>
-      '';
       defaultFonts = {
         sansSerif = [
-          "Rubik"
+          "DejaVu Sans"
           "Noto Sans CJK"
         ];
         serif = [
