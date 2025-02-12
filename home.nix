@@ -30,9 +30,9 @@
   };
 
 
-  wallpaper = ./wallpapers/wallhaven-yjm31g.jpg;
-  theme = "rose-pine-dawn";
-  themeVariant = "light";
+  wallpaper = ./wallpapers/wallhaven-rdr5gj.jpg;
+  theme = "paradise";
+  themeVariant = "dark";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

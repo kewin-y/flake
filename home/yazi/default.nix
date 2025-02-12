@@ -2,15 +2,9 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
-}: let
-  yazi-plugins = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "plugins";
-    rev = "a53d5440481f0f9a2160ded47d343bd22ffbc1fb";
-    hash = "sha256-I9u1d3l0AyNW/t1A7MAxfA6Wu1/L3XKUoWPZ9L85WTM=";
-  };
-in {
+}: {
   programs.yazi = {
     enable = true;
     settings = {
@@ -64,7 +58,7 @@ in {
     };
 
     plugins = {
-      full-border = "${yazi-plugins}/full-border.yazi";
+      full-border = "${inputs.yazi-plugins}/full-border.yazi";
     };
 
     initLua = ''
