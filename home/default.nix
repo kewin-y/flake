@@ -1,5 +1,6 @@
 {
   imports = [
+    ./chromium
     ./firefox
     ./foot
     ./git
