@@ -16,15 +16,10 @@ in {
         <action name="Execute"><command>foot</command></action>
       </item>
       <Separator />
-      <menu id="Internet" label="Internet">
+      <menu id="Media" label="Media">
         <item label="Firefox">
           <action name="Execute"><command>firefox --name firefox</command></action>
         </item>
-        <item label="Vesktop">
-          <action name="Execute"><command>vesktop</command></action>
-        </item>
-      </menu> <!-- Internet -->
-      <menu id="Multimedia" label="Multimedia">
         <item label="mpv Media Player">
           <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>
         </item>
@@ -34,7 +29,7 @@ in {
         <item label="Volume Control">
           <action name="Execute"><command>pavucontrol</command></action>
         </item>
-      </menu> <!-- Multimedia -->
+      </menu> <!-- Media -->
       <menu id="Office" label="Office">
         <item label="Obsidian">
           <action name="Execute"><command>obsidian</command></action>

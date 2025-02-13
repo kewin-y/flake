@@ -13,7 +13,6 @@
       mpv
       htop
       obsidian
-      vesktop
       pavucontrol
       obs-studio
       killall
