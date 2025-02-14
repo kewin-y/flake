@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "MapleMono NF:size=10";
+        font = "RobotoMono Nerd Font:size=10";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;

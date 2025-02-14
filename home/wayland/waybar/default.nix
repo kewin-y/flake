@@ -35,13 +35,15 @@
             warning = 30;
             critical = 15;
           };
-          format = "BAT {capacity}%";
-          format-charging = "BAT * {capacity}%";
+          format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
+          format = "{icon} {capacity}%";
+          format-charging = " {icon} {capacity}%";
           max-length = 25;
         };
         "wireplumber" = {
-          format = "VOL {volume}%";
-          format-muted = "VOL * {volume}%";
+          format-icons = ["" "" ""];
+          format = "{icon} {volume}%";
+          format-muted = " {volume}%";
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
         };
         "network" = {
@@ -60,7 +62,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: MapleMono NF;
+        font-family: RobotoMono Nerd Font Propo;
         font-size: 9pt;
       }
 

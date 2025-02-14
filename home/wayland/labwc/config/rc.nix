@@ -19,7 +19,7 @@ in {
           <showTitle>yes</showTitle>
         </titlebar>
         <cornerRadius>0</cornerRadius>
-        <font name="MapleMono NF" size="9" />
+        <font name="RobotoMono Nerd Font Propo" size="9" />
       </theme>
       <keyboard>
         <default />

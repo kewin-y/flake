@@ -76,8 +76,8 @@
           desktop = 10;
         };
         monospace = {
-          name = "MapleMono NF";
-          package = pkgs.maple-mono;
+          name = "RobotoMono Nerd Font Propo";
+          package = pkgs.nerd-fonts.roboto-mono;
         };
         sansSerif = {
           name = "Rubik";

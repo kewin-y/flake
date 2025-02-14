@@ -18,7 +18,7 @@
     maxIconSize = 32;
     defaultTimeout = 0;
     ignoreTimeout = true;
-    font = "MapleMono NF 9";
+    font = "RobotoMono Nerd Font Propo 9";
     extraConfig = ''
       [urgency=low]
       border-color=${base0B}
