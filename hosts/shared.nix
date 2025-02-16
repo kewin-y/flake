@@ -69,6 +69,7 @@
       rubik
       maple-mono-NF
       pkgs.nerd-fonts.roboto-mono
+      font-awesome
     ];
 
     fontconfig = {

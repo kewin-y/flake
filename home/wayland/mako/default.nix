@@ -18,7 +18,7 @@
     maxIconSize = 32;
     defaultTimeout = 0;
     ignoreTimeout = true;
-    font = "RobotoMono Nerd Font Propo 9";
+    font = "Rubik 9";
     extraConfig = ''
       [urgency=low]
       border-color=${base0B}

@@ -35,15 +35,15 @@
             warning = 30;
             critical = 15;
           };
-          format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
+          format-icons = [" " " " " " " " " "];
           format = "{icon} {capacity}%";
-          format-charging = " {icon} {capacity}%";
+          format-charging = "{icon} {capacity}%";
           max-length = 25;
         };
         "wireplumber" = {
-          format-icons = ["" "" ""];
+          format-icons = [" " " " " "];
           format = "{icon} {volume}%";
-          format-muted = " {volume}%";
+          format-muted = "  {volume}%";
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
         };
         "network" = {
@@ -62,7 +62,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: RobotoMono Nerd Font Propo;
+        font-family: "Rubik", "Font Awesome 6 Free";
         font-size: 9pt;
       }
 
