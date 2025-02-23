@@ -23,6 +23,7 @@
     alias ld='eza -lhD '
     alias yz='yazi'
     alias dev='nix develop -c tmux'
+    alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt'
 
     HISTFILE=$HOME/.mksh_history
     HISTSIZE=5000
