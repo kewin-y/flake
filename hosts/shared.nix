@@ -68,7 +68,7 @@
       liberation_ttf
       dejavu_fonts
       rubik
-      maple-mono-NF
+      maple-mono.NF
       pkgs.nerd-fonts.roboto-mono
       font-awesome
     ];

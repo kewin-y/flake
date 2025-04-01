@@ -6,7 +6,10 @@
   home = {
     username = "kevin";
     homeDirectory = "/home/kevin";
-    stateVersion = "23.11"; # Please read the comment before changing.
+
+    # NOTE: Do not change
+    stateVersion = "23.11";
+
     packages = with pkgs; [
       nemo-with-extensions
       swayimg
@@ -29,9 +32,9 @@
   };
 
 
-  wallpaper = ./wallpapers/wallhaven-rdr5gj.jpg;
-  theme = "paradise";
-  themeVariant = "dark";
+  wallpaper = ./wallpapers/wallhaven-4oem1l.jpg;
+  theme = "test";
+  themeVariant = "light";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;
