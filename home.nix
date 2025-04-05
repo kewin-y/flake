@@ -32,9 +32,9 @@
   };
 
 
-  wallpaper = ./wallpapers/wallhaven-4oem1l.jpg;
-  theme = "test";
-  themeVariant = "light";
+  wallpaper = ./wallpapers/slate.jpg;
+  theme = "everforest-dark-hard";
+  themeVariant = "dark";
 
   programs.btop.enable = true;
   programs.home-manager.enable = true;

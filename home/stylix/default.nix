@@ -14,6 +14,7 @@
         "rose-pine"
         "rose-pine-dawn"
         "test"
+        "everforest-dark-hard"
       ];
     };
 
