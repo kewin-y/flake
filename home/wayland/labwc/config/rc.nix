@@ -94,7 +94,7 @@ in {
           <action name="Execute" command="makoctl dismiss" />
         </keybind>
         <keybind key="W-o">
-          <action name="Execute" command="makoctl menu fuzzel --dmenu" />
+          <action name="Execute" command="makoctl menu -- fuzzel --dmenu" />
         </keybind>
 
         <!-- Brightness, Vol, etc. -->
