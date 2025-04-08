@@ -3,7 +3,7 @@ author: "Sainnhe Park (sainnhe@gmail.com)"
 
 base00: "2b3339" # Default Background
 base01: "323c41" # Lighter Background (Used for status bars, line number and folding marks)
-base02: "503946" # Selection Background
+base02: "4a5258" # Selection Background
 base03: "868d80" # Comments, Invisibles, Line Highlighting
 base04: "d3c6aa" # Dark Foreground (Used for status bars)
 base05: "d3c6aa" # Default Foreground, Caret, Delimiters, Operators
