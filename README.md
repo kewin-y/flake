@@ -7,4 +7,4 @@
 
 ## Notes
 
-- Old hyprland configs are on the other branch (I probably won't touch them again 😢
+- Old hyprland configs are on the other branch (I probably won't touch them again 😢)
