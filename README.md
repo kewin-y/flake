@@ -3,7 +3,7 @@
 ## Info
 
 - wm/compositor: labwc
-- editor: neovim (my nixvim flake)
+- editor: [neovim](https://github.com/kewin-y/nvim-kewin)
 
 ## Notes
 

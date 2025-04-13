@@ -5,7 +5,7 @@
     ./foot
     ./git
     ./mksh
-    ./nixvim
+    # ./nixvim
     ./spicetify
     ./stylix
     ./tmux

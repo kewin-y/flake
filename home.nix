@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./home
   ];
@@ -11,6 +15,7 @@
     stateVersion = "23.11";
 
     packages = with pkgs; [
+      inputs.nvim-config.packages.${pkgs.system}.default
       nemo-with-extensions
       swayimg
       mpv
@@ -30,7 +35,6 @@
     allowUnfree = true;
     allowUnfreePredicate = _: true;
   };
-
 
   wallpaper = ./wallpapers/slate.jpg;
   theme = "everforest-dark-hard";

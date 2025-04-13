@@ -9,7 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim-config.url = "github:kewin-y/nixvim-config";
+    # nixvim-config.url = "github:kewin-y/nixvim-config";
+    nvim-config.url = "github:kewin-y/nvim-kewin"; # AGH
 
     stylix.url = "github:danth/stylix";
 
