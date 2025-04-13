@@ -7,5 +7,4 @@
 
 ## Notes
 
-- I use labwc because it's more lightweight and less of a distraction.
-- I'll leave the Hyprland-related configs unmaintained for now. I'll find the motivation to maintain them ... Eventually.
+- Old hyprland configs are on the other branch (I probably won't touch them again 😢
