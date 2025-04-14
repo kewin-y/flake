@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
-    vim
+      inputs.nvim-config.packages.${pkgs.system}.default
+      openssh
     procps
     killall
     diffutils

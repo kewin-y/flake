@@ -44,6 +44,7 @@
 
   outputs = {
     nixpkgs,
+nixpkgs-other,
     home-manager,
     stylix,
     nix-on-droid,
@@ -76,8 +77,9 @@
 
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [./droid];
+extraSpecialArgs = { inherit inputs; };
         pkgs = import nixpkgs-other {
-            inherit system;
+system = "aarch64-linux";
             overlays = [
                 nix-on-droid.overlays.default
             ];
