@@ -7,6 +7,7 @@
       inputs.nvim-config.packages.${pkgs.system}.default
       openssh
     procps
+    ncurses
     killall
     diffutils
     findutils
@@ -23,6 +24,7 @@
     xz
     zip
     unzip
+    curl
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc
@@ -35,6 +37,9 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+
+  android-integration.termux-setup-storage.enable = true;
+
 
   # Set your time zone
   time.timeZone = "America/Toronto";
