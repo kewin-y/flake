@@ -40,6 +40,9 @@
 
   android-integration.termux-setup-storage.enable = true;
 
+android-integration.termux-reload-settings.enable=true;
+
+terminal.font = "${pkgs.nerdfonts.override {fonts = ["RobotoMono"];}}/share/fonts/truetype/NerdFonts/RobotoMonoNerdFontPropo-Regular.ttf";
 
   # Set your time zone
   time.timeZone = "America/Toronto";
