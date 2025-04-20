@@ -603,11 +603,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1744730459,
-        "narHash": "sha256-ksd+rdTFXLWoWgQIXOsEhdi6mOYApBtQLiw2ikc9qzU=",
+        "lastModified": 1745086570,
+        "narHash": "sha256-iwTVrBlr96tMJCkhvRMaWt2jUq7+YZztGmDGth5JhcE=",
         "owner": "kewin-y",
         "repo": "nvim-kewin",
-        "rev": "bcf7245088d18cb997893548c8cf31b0f6b7d4e8",
+        "rev": "1ee05c1a7bced347cd352a04f401c5b2d6aa2242",
         "type": "github"
       },
       "original": {
