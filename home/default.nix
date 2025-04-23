@@ -5,18 +5,7 @@
   ...
 }: {
   imports = [
-     ./chromium
-     ./firefox
-     ./foot
-     ./git
-     ./mksh
-     ./spicetify
-     ./stylix
-     ./tmux
-     ./yazi
-     ./zathura
-     ./wayland
-     ./xdg
+    ./modules
   ];
 
   home = {
@@ -47,7 +36,6 @@
     allowUnfree = true;
     allowUnfreePredicate = _: true;
   };
-
 
   wallpaper = ../wallpapers/slate.jpg;
   theme = "everforest-dark-hard";
