@@ -1,11 +1,10 @@
-{inputs, ...}: {
-  perSystem = { pkgs, ...}: {
+{...}: {
+  perSystem = {pkgs, ...}: {
     devShells.default = pkgs.mkShell {
-                packages = with pkgs; [
-            nixd
-            alejandra
-          ];
-
+      packages = with pkgs; [
+        nixd
+        alejandra
+      ];
     };
   };
 }

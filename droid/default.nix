@@ -1,11 +1,15 @@
-{ config, lib, pkgs, inputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
-      inputs.nvim-config.packages.${pkgs.system}.default
-      openssh
+    inputs.nvim-config.packages.${pkgs.system}.default
+    openssh
     procps
     ncurses
     killall
@@ -40,9 +44,9 @@
 
   android-integration.termux-setup-storage.enable = true;
 
-android-integration.termux-reload-settings.enable=true;
+  android-integration.termux-reload-settings.enable = true;
 
-terminal.font = "${pkgs.nerdfonts.override {fonts = ["RobotoMono"];}}/share/fonts/truetype/NerdFonts/RobotoMonoNerdFont-Regular.ttf";
+  terminal.font = "${pkgs.nerdfonts.override {fonts = ["RobotoMono"];}}/share/fonts/truetype/NerdFonts/RobotoMonoNerdFont-Regular.ttf";
 
   # Set your time zone
   time.timeZone = "America/Toronto";
