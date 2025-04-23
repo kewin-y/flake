@@ -4,6 +4,7 @@
   inputs = {
     # Unstable
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     # 24.05 (Need for nix-on-droid)
     nixpkgs-other.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -42,60 +43,22 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-nixpkgs-other,
-    home-manager,
-    stylix,
-    nix-on-droid,
-    hm-other,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations = {
-      kevnet = lib.nixosSystem {
-        modules = [
-          ./hosts/kevnet/configuration.nix
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.kevin = ./home;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-        specialArgs = {inherit inputs;};
-      };
-      keven = lib.nixosSystem {
-        modules = [
-          ./hosts/keven/configuration.nix
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.kevin = ./home;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-        specialArgs = {inherit inputs;};
-      };
-    };
-
-    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-        modules = [./droid];
-extraSpecialArgs = { inherit inputs; };
-        pkgs = import nixpkgs-other {
-system = "aarch64-linux";
-            overlays = [
-                nix-on-droid.overlays.default
-            ];
-        };
-        home-manager-path = hm-other.outPath;
-    };
-  };
+  outputs = { flake-parts, ... } @ inputs:
+        flake-parts.lib.mkFlake {inherit inputs;} {
+            systems = ["x86_64-linux" "aarch64-linux" ];
+          imports = [./flake/hosts.nix];
+          };
+ #  {
+ #    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+ #        modules = [./droid];
+ #        extraSpecialArgs = { inherit inputs; };
+ #        pkgs = import nixpkgs-other {
+ #        system = "aarch64-linux";
+ #            overlays = [
+ #                nix-on-droid.overlays.default
+ #            ];
+ #        };
+ #        home-manager-path = hm-other.outPath;
+ #    };
+ #  };
 }

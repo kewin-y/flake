@@ -8,8 +8,9 @@
     ./modules
   ];
 
-  programs.btop.enable = true;
   programs.home-manager.enable = true;
+
+  programs.btop.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -39,6 +40,7 @@
       TERMINAL = "foot";
     };
   };
+
   theme = {
     enableStylix = true;
     name = "everforest-dark-hard";
