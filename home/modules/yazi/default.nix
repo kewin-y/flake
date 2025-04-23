@@ -27,7 +27,6 @@
             desc = "Listen to Audio";
           }
         ];
-
         pdf = [
           {
             run = ''${pkgs.zathura}/bin/zathura "$1"''; # Hmm

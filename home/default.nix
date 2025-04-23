@@ -8,6 +8,14 @@
     ./modules
   ];
 
+  programs.btop.enable = true;
+  programs.home-manager.enable = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
+
   home = {
     username = "kevin";
     homeDirectory = "/home/kevin";
@@ -31,16 +39,11 @@
       TERMINAL = "foot";
     };
   };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = _: true;
+  theme = {
+    enableStylix = true;
+    name = "everforest-dark-hard";
+    polarity = "dark";
   };
 
   wallpaper = ../wallpapers/slate.jpg;
-  theme = "everforest-dark-hard";
-  themeVariant = "dark";
-
-  programs.btop.enable = true;
-  programs.home-manager.enable = true;
 }

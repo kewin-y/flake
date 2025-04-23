@@ -13,5 +13,7 @@
     ./xdg
     ./yazi
     ./zathura
+
+    ./extra
   ];
 }

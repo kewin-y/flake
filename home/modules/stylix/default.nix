@@ -3,45 +3,43 @@
   config,
   lib,
   ...
-}: {
+}:
+let cfg = config.theme; in
+{
   options = {
-    theme = lib.mkOption {
-      default = "far";
-      type = lib.types.enum [
-        "far"
-        "material-palenight"
-        "paradise"
-        "rose-pine"
-        "rose-pine-dawn"
-        "test"
-        "everforest-dark-hard"
-      ];
-    };
-
-    wallpaper = lib.mkOption {
-      default = ../../wallpapers/accordion.png;
-      type = lib.types.path;
-    };
-
-    # Or polarity
-    themeVariant = lib.mkOption {
-      default = "dark";
-      type = lib.types.enum [
-        "dark"
-        "light"
-      ];
+    theme = {
+      enableStylix = lib.mkEnableOption "Enable Stylix";
+      polarity = lib.mkOption {
+        default = "dark";
+        type = lib.types.enum [
+          "dark"
+          "light"
+        ];
+      };
+      name = lib.mkOption {
+        default = "far";
+        type = lib.types.enum [
+          "far"
+            "material-palenight"
+            "paradise"
+            "rose-pine"
+            "rose-pine-dawn"
+            "test"
+            "everforest-dark-hard"
+        ];
+      };
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enableStylix {
     stylix = {
       enable = true;
 
       # Placeholder (literally doesn't matter)
       image = config.wallpaper;
 
-      base16Scheme = ./themes/${config.theme}.yaml;
-      polarity = config.themeVariant;
+      base16Scheme = ./themes/${cfg.name}.yaml;
+      polarity = cfg.polarity;
 
       cursor = {
         name = "phinger-cursors-light";
