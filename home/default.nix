@@ -1,17 +1,57 @@
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-    ./chromium
-    ./firefox
-    ./foot
-    ./git
-    ./mksh
-    # ./nixvim
-    ./spicetify
-    ./stylix
-    ./tmux
-    ./yazi
-    ./zathura
-    ./wayland
-    ./xdg
+     ./chromium
+     ./firefox
+     ./foot
+     ./git
+     ./mksh
+     ./spicetify
+     ./stylix
+     ./tmux
+     ./yazi
+     ./zathura
+     ./wayland
+     ./xdg
   ];
+
+  home = {
+    username = "kevin";
+    homeDirectory = "/home/kevin";
+
+    # NOTE: Do not change
+    stateVersion = "23.11";
+
+    packages = with pkgs; [
+      inputs.nvim-config.packages.${pkgs.system}.default
+      nemo-with-extensions
+      swayimg
+      mpv
+      htop
+      obsidian
+      pavucontrol
+      obs-studio
+      killall
+    ];
+    sessionVariables = {
+      EDITOR = "nvim";
+      TERMINAL = "foot";
+    };
+  };
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
+
+  # From home/stylix
+  wallpaper = ./wallpapers/slate.jpg;
+  theme = "everforest-dark-hard";
+  themeVariant = "dark";
+
+  programs.btop.enable = true;
+  programs.home-manager.enable = true;
 }

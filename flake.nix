@@ -71,7 +71,7 @@ nixpkgs-other,
       kevin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
-        modules = [stylix.homeManagerModules.stylix ./home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home];
       };
     };
 
