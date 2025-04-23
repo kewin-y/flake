@@ -49,7 +49,7 @@
         size = 24;
       };
 
-      stylix.targets = {
+      targets = {
         neovim.enable = false;
         nixvim.enable = false;
         spicetify.enable = false;

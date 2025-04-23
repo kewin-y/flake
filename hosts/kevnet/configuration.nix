@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-  ../modules
     ./hardware-configuration.nix
     ../shared.nix
   ];

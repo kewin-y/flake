@@ -57,14 +57,11 @@ nixpkgs-other,
   in {
     nixosConfigurations = {
       kevnet = lib.nixosSystem {
-        system = system;
         modules = [
           ./hosts/kevnet/configuration.nix
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = false;
-            home-manager.useUserPackages = true;
             home-manager.users.kevin = ./home;
             home-manager.extraSpecialArgs = {
               inherit inputs;
@@ -73,20 +70,21 @@ nixpkgs-other,
         ];
         specialArgs = {inherit inputs;};
       };
-      # keven = lib.nixosSystem {
-      #   system = system;
-      #   modules = [./hosts/keven/configuration.nix];
-      #   specialArgs = {inherit inputs;};
-      # };
+      keven = lib.nixosSystem {
+        modules = [
+          ./hosts/keven/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.kevin = ./home;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
     };
-
-    # homeConfigurations = {
-    #   kevin = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     extraSpecialArgs = {inherit inputs;};
-    #     modules = [stylix.homeManagerModules.stylix ./home];
-    #   };
-    # };
 
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [./droid];
