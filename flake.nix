@@ -46,7 +46,7 @@
   outputs = { flake-parts, ... } @ inputs:
         flake-parts.lib.mkFlake {inherit inputs;} {
             systems = ["x86_64-linux" "aarch64-linux" ];
-          imports = [./flake/hosts.nix];
+          imports = [./flake/hosts.nix ./flake/devshell.nix];
           };
  #  {
  #    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
