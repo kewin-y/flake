@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, lib, ...}: {
   services.mako = with config.lib.stylix.colors.withHashtag; {
     enable = true;
     sort = "-time";

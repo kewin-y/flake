@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   inputs,
   ...
 }: {
@@ -47,8 +48,8 @@
     allowUnfreePredicate = _: true;
   };
 
-  # From home/stylix
-  wallpaper = ./wallpapers/slate.jpg;
+
+  wallpaper = ../wallpapers/slate.jpg;
   theme = "everforest-dark-hard";
   themeVariant = "dark";
 
