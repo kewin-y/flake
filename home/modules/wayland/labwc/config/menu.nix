@@ -4,7 +4,7 @@
   lib,
   ...
 }:
-lib.mkIf config.enableGui {
+lib.mkIf config.enableWm {
   home.file.".config/labwc/menu.xml".text = let
     lock = import ../scripts/waylock.nix {
       inherit pkgs;

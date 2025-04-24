@@ -22,10 +22,10 @@
     else "";
 in {
   options = {
-    enableTmux = lib.mkEnableOption "Enable Tmux";
+    term.tmux.enable = lib.mkEnableOption "Enable Tmux";
   };
 
-  config = lib.mkIf config.enableTmux {
+  config = lib.mkIf config.term.tmux.enable {
     programs.tmux = {
       enable = true;
       prefix = "C-s";

@@ -3,7 +3,7 @@
   config,
   lib,
   ...
-}: lib.mkIf config.enableGui {
+}: lib.mkIf config.enableWm {
   home.file.".config/labwc/autostart".text = ''
     swaybg -i ${config.wallpaper} -m fill >/dev/null 2>&1 &
     mako >/dev/null 2>&1 &

@@ -22,7 +22,7 @@
 
     colorScheme = "custom";
 
-    customColorScheme = with config.lib.stylix.colors; {
+    customColorScheme = lib.mkIf config.theme.stylix.enable (with config.lib.stylix.colors; {
       text = base05;
       subtext = base05;
       main = base00;
@@ -42,6 +42,6 @@
       notification-error = base08;
       equalizer = base0B;
       misc = base02;
-    };
+    });
   });
 }

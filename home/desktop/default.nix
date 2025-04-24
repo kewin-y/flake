@@ -1,11 +1,10 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }: {
   imports = [
-    ./modules
+    ../modules
   ];
 
   programs = {
@@ -44,19 +43,22 @@
     };
   };
 
-  theme.stylix  = {
+  theme.stylix = {
     enable = true;
     polarity = "dark";
     themeName = "everforest-dark-hard";
   };
 
-  files.yazi = {
-    enable = true;
-    enableOpeners = true;
+  term = {
+    yazi = {
+      enable = true;
+      enableOpeners = true;
+    };
+    tmux.enable = true;
   };
 
-  enableTmux = true;
   enableGui = true;
+  enableWm = true;
 
-  wallpaper = ../wallpapers/slate.jpg;
+  wallpaper = ../../wallpapers/slate.jpg;
 }

@@ -5,10 +5,10 @@
   inputs,
   ...
 }: let
-  cfg = config.files.yazi;
+  cfg = config.term.yazi;
 in {
   options = {
-    files = {
+    term = {
       yazi = {
         enable = lib.mkEnableOption "Enable Yazi";
         enableOpeners = lib.mkEnableOption "Enable Yazi openers";

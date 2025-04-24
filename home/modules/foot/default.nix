@@ -12,9 +12,9 @@ lib.mkIf config.enableGui {
         pad = "24x24";
       };
 
-      cursor = with config.lib.stylix.colors; {
+      cursor = lib.mkIf config.theme.stylix.enable (with config.lib.stylix.colors; {
         color = "${base00} ${base05}";
-      };
+      });
     };
   };
 }

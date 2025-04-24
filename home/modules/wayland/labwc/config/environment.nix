@@ -3,7 +3,7 @@
   config,
   ...
 }:
-lib.mkIf config.enableGui {
+lib.mkIf config.enableWm {
   home.file.".config/labwc/environment".text = ''
     XDG_CURRENT_DESKTOP=labwc
     MOZ_GTK_TITLEBAR_DECORATION=system

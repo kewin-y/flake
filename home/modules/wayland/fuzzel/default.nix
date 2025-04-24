@@ -3,7 +3,7 @@
   lib,
   ...
 }:
-lib.mkIf config.enableGui {
+lib.mkIf config.enableWm {
   programs.fuzzel = {
     enable = true;
     settings = {

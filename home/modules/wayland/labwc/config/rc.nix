@@ -3,7 +3,7 @@
   config,
   lib,
   ...
-}: lib.mkIf config.enableGui {
+}: lib.mkIf config.enableWm {
   home.file.".config/labwc/rc.xml".text = let
     screenshot = import ../scripts/screenshot.nix pkgs;
     lock = import ../scripts/waylock.nix {

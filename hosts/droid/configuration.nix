@@ -1,11 +1,8 @@
 {
-  config,
-  lib,
   pkgs,
   inputs,
   ...
 }: {
-  # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
     inputs.nvim-config.packages.${pkgs.system}.default
@@ -46,12 +43,15 @@
 
   android-integration.termux-reload-settings.enable = true;
 
-  terminal.font = "${pkgs.nerdfonts.override {fonts = ["RobotoMono"];}}/share/fonts/truetype/NerdFonts/RobotoMonoNerdFont-Regular.ttf";
+  terminal.font = let
+    fontPath = "/share/fonts/truetype/NerdFonts/RobotoMonoNerdFont-Regular.ttf";
+  in "${pkgs.nerdfonts.override {fonts = ["RobotoMono"];}}${fontPath}";
 
   # Set your time zone
   time.timeZone = "America/Toronto";
+
   home-manager = {
-    config = ./home.nix;
+    config = ../../home/droid;
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
   };
