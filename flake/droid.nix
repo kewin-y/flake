@@ -3,7 +3,7 @@
     inherit (inputs) nix-on-droid nixpkgs-other hm-other;
   in
     nix-on-droid.lib.nixOnDroidConfiguration {
-      modules = [../droid];
+      modules = [../hosts/droid/configuration.nix];
       extraSpecialArgs = {inherit inputs;};
       pkgs = import nixpkgs-other {
         system = "aarch64-linux";
