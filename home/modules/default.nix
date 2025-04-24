@@ -5,7 +5,7 @@
     ./git
     ./gui
     ./mksh
-#    ./spicetify
+    ./spicetify
     ./stylix
     ./tmux
     ./wayland

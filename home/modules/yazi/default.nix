@@ -67,15 +67,15 @@ in {
         };
       };
 
-#      plugins = {
-#        full-border = "${inputs.yazi-plugins}/full-border.yazi";
-#      };
-#
-      # initLua = ''
-      #   require("full-border"):setup {
-      #     type = ui.Border.PLAIN,
-      #   }
-      # '';
+      plugins = {
+        full-border = "${inputs.yazi-plugins}/full-border.yazi";
+      };
+
+      initLua = ''
+        require("full-border"):setup {
+          type = ui.Border.PLAIN,
+        }
+      '';
 
       theme = {
         icon = {

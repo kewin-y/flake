@@ -33,7 +33,7 @@ in {
     };
   };
 
-  config = lib.mkIf config.theme.stylix.enable {
+  config = lib.mkIf (lib.trace config.theme.stylix.enable config.theme.stylix.enable) {
     stylix = {
       enable = true;
 
@@ -80,7 +80,7 @@ in {
         };
         monospace = {
           name = "RobotoMono Nerd Font Propo";
-          # package = pkgs.nerd-fonts.roboto-mono;
+          package = pkgs.nerd-fonts.roboto-mono;
         };
         sansSerif = {
           name = "Rubik";
