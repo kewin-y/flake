@@ -1,4 +1,9 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}:
+lib.mkIf config.enableGui {
   programs.foot = {
     enable = true;
     settings = {

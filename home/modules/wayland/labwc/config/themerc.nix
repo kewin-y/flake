@@ -1,4 +1,10 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}:
+lib.mkIf config.enableGui
+{
   home.file.".config/labwc/themerc-override".text = with config.lib.stylix.colors.withHashtag; ''
     border.width: 2
 

@@ -8,9 +8,12 @@
     ./modules
   ];
 
-  programs.home-manager.enable = true;
-
-  programs.btop.enable = true;
+  programs = {
+    home-manager.enable = true;
+    btop.enable = true;
+    chromium.enable = true;
+    zathura.enable = true;
+  };
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -41,11 +44,19 @@
     };
   };
 
-  theme = {
-    enableStylix = true;
-    name = "everforest-dark-hard";
+  theme.stylix  = {
+    enable = true;
     polarity = "dark";
+    themeName = "everforest-dark-hard";
   };
+
+  files.yazi = {
+    enable = true;
+    enableOpeners = true;
+  };
+
+  enableTmux = true;
+  enableGui = true;
 
   wallpaper = ../wallpapers/slate.jpg;
 }

@@ -3,11 +3,12 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: {
   imports = [inputs.spicetify-nix.homeManagerModules.default];
 
-  programs.spicetify = let
+  programs.spicetify = lib.mkIf config.enableGui (let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
@@ -42,5 +43,5 @@
       equalizer = base0B;
       misc = base02;
     };
-  };
+  });
 }

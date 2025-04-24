@@ -3,42 +3,44 @@
   config,
   lib,
   ...
-}:
-let cfg = config.theme; in
-{
+}: let
+  cfg = config.theme.stylix;
+in {
   options = {
     theme = {
-      enableStylix = lib.mkEnableOption "Enable Stylix";
-      polarity = lib.mkOption {
-        default = "dark";
-        type = lib.types.enum [
-          "dark"
-          "light"
-        ];
-      };
-      name = lib.mkOption {
-        default = "far";
-        type = lib.types.enum [
-          "far"
+      stylix = {
+        enable = lib.mkEnableOption "Enable Stylix";
+        polarity = lib.mkOption {
+          default = "dark";
+          type = lib.types.enum [
+            "dark"
+            "light"
+          ];
+        };
+        themeName = lib.mkOption {
+          default = "far";
+          type = lib.types.enum [
+            "far"
             "material-palenight"
             "paradise"
             "rose-pine"
             "rose-pine-dawn"
             "test"
             "everforest-dark-hard"
-        ];
+          ];
+        };
       };
     };
   };
 
-  config = lib.mkIf cfg.enableStylix {
+  config = lib.mkIf cfg.enable {
     stylix = {
       enable = true;
 
       # Placeholder (literally doesn't matter)
       image = config.wallpaper;
 
-      base16Scheme = ./themes/${cfg.name}.yaml;
+      base16Scheme = ./themes/${cfg.themeName}.yaml;
       polarity = cfg.polarity;
 
       cursor = {

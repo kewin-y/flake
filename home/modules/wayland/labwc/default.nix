@@ -1,7 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [./config];
-  home.packages = with pkgs; [
+  home.packages = lib.mkIf config.enableGui (with pkgs; [
     labwc
     swaybg
-  ];
+  ]);
 }

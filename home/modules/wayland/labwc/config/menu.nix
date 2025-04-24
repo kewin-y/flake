@@ -1,14 +1,16 @@
 {
   pkgs,
   config,
+  lib,
   ...
-}: let
-  lock = import ../scripts/waylock.nix {
-    inherit pkgs;
-    inherit config;
-  };
-in {
-  home.file.".config/labwc/menu.xml".text = ''
+}:
+lib.mkIf config.enableGui {
+  home.file.".config/labwc/menu.xml".text = let
+    lock = import ../scripts/waylock.nix {
+      inherit pkgs;
+      inherit config;
+    };
+  in ''
     <?xml version="1.0" encoding="UTF-8"?>
     <openbox_menu>
     <menu id="root-menu" label="root-menu">

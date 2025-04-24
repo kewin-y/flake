@@ -1,8 +1,9 @@
 {
   config,
   pkgs,
+  lib,
   ...
-}: {
+}: lib.mkIf config.enableGui {
   programs.waybar = {
     enable = true;
     settings = [

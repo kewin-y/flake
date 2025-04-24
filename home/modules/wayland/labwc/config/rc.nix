@@ -1,15 +1,16 @@
 {
   pkgs,
   config,
+  lib,
   ...
-}: let
-  screenshot = import ../scripts/screenshot.nix pkgs;
-  lock = import ../scripts/waylock.nix {
-    inherit pkgs;
-    inherit config;
-  };
-in {
-  home.file.".config/labwc/rc.xml".text = ''
+}: lib.mkIf config.enableGui {
+  home.file.".config/labwc/rc.xml".text = let
+    screenshot = import ../scripts/screenshot.nix pkgs;
+    lock = import ../scripts/waylock.nix {
+      inherit pkgs;
+      inherit config;
+    };
+  in ''
     <?xml version="1.0"?>
     <labwc_config>
       <theme>

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./chromium
     ./firefox
     ./foot
     ./git
@@ -12,8 +11,6 @@
     ./wayland
     ./xdg
     ./yazi
-    ./zathura
-
     ./extra
   ];
 }

@@ -2,8 +2,10 @@
   inputs,
   pkgs,
   lib,
+  config,
   ...
-}: {
+}:
+lib.mkIf config.enableGui {
   programs.firefox = {
     enable = true;
     profiles.kevin = {
@@ -56,7 +58,7 @@
 
       search.force = true;
 
-      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         istilldontcareaboutcookies
         return-youtube-dislikes

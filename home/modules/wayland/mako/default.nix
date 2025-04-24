@@ -1,4 +1,9 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}:
+lib.mkIf config.enableGui {
   services.mako = with config.lib.stylix.colors.withHashtag; {
     enable = true;
     sort = "-time";
