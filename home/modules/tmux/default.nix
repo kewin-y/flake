@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{config, ...}: let
   colorCfg =
     if config.theme.stylix.enable
     then
@@ -21,39 +17,33 @@
       ''
     else "";
 in {
-  options = {
-    term.tmux.enable = lib.mkEnableOption "Enable Tmux";
-  };
+  programs.tmux = {
+    enable = true;
+    prefix = "C-s";
+    baseIndex = 1;
+    extraConfig = ''
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+      set -g default-terminal "tmux-256color"
+      set-option -sa terminal-overrides ",foot*:Tc"
+      set-option -g default-shell $SHELL
 
-  config = lib.mkIf config.term.tmux.enable {
-    programs.tmux = {
-      enable = true;
-      prefix = "C-s";
-      baseIndex = 1;
-      extraConfig = ''
-        set -g allow-passthrough on
-        set -ga update-environment TERM
-        set -ga update-environment TERM_PROGRAM
-        set -g default-terminal "tmux-256color"
-        set-option -sa terminal-overrides ",foot*:Tc"
-        set-option -g default-shell $SHELL
+      setw -g mode-keys vi
 
-        setw -g mode-keys vi
+      set-option -g renumber-windows on
 
-        set-option -g renumber-windows on
+      bind-key h select-pane -L
+      bind-key j select-pane -D
+      bind-key k select-pane -U
+      bind-key l select-pane -R
+      bind-key -r -T prefix C-k resize-pane -U
+      bind-key -r -T prefix C-j resize-pane -D
+      bind-key -r -T prefix C-h resize-pane -L
+      bind-key -r -T prefix C-l resize-pane -R
 
-        bind-key h select-pane -L
-        bind-key j select-pane -D
-        bind-key k select-pane -U
-        bind-key l select-pane -R
-        bind-key -r -T prefix C-k resize-pane -U
-        bind-key -r -T prefix C-j resize-pane -D
-        bind-key -r -T prefix C-h resize-pane -L
-        bind-key -r -T prefix C-l resize-pane -R
-
-        set-option -g status-position top
-        ${colorCfg}
-      '';
-    };
+      set-option -g status-position top
+      ${colorCfg}
+    '';
   };
 }

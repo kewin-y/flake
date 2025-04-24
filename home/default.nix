@@ -1,11 +1,10 @@
 {
   pkgs,
   inputs,
-  lib,
   ...
 }: {
   imports = [
-    ../modules
+    ./modules
   ];
 
   programs = {
@@ -50,16 +49,5 @@
     themeName = "everforest-dark-hard";
   };
 
-  term = {
-    yazi = {
-      enable = true;
-      enableOpeners = true;
-    };
-    tmux.enable = true;
-  };
-
-  enableGui = true;
-  enableWm = true;
-
-  wallpaper = ../../wallpapers/slate.jpg;
+  wallpaper = ../wallpapers/slate.jpg;
 }

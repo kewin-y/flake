@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [./config];
-  home.packages = lib.mkIf config.enableGui (with pkgs; [
+  home.packages = with pkgs; [
     labwc
     swaybg
-  ]);
+  ];
 }

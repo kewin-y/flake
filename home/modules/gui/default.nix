@@ -1,10 +1,8 @@
 {
   pkgs,
   config,
-  lib,
   ...
-}:
-lib.mkIf config.enableGui {
+}: {
   gtk = {
     enable = true;
     iconTheme = {

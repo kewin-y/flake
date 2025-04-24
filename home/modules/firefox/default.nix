@@ -1,11 +1,8 @@
 {
   inputs,
   pkgs,
-  lib,
-  config,
   ...
-}:
-lib.mkIf config.enableGui {
+}: {
   programs.firefox = {
     enable = true;
     profiles.kevin = {

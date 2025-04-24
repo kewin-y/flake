@@ -2,8 +2,7 @@
   config,
   lib,
   ...
-}:
-lib.mkIf config.enableWm {
+}: {
   programs.fuzzel = {
     enable = true;
     settings = {

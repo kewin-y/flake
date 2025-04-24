@@ -3,7 +3,7 @@
   pkgs,
   lib,
   ...
-}: lib.mkIf config.enableWm {
+}: {
   programs.waybar = {
     enable = true;
     settings = [

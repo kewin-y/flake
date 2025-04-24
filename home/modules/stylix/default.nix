@@ -33,7 +33,7 @@ in {
     };
   };
 
-  config = lib.mkIf (lib.trace config.theme.stylix.enable config.theme.stylix.enable) {
+  config = lib.mkIf config.theme.stylix.enable {
     stylix = {
       enable = true;
 

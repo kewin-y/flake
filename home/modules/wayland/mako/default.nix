@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}:
-lib.mkIf config.enableWm {
+{config, ...}: {
   services.mako = with config.lib.stylix.colors.withHashtag; {
     enable = true;
     sort = "-time";

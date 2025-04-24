@@ -10,7 +10,7 @@
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.kevin = ../home/desktop;
+            home-manager.users.kevin = ../home;
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };
