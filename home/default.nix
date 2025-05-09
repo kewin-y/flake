@@ -46,8 +46,8 @@
   theme.stylix = {
     enable = true;
     polarity = "dark";
-    themeName = "everforest-dark-hard";
+    themeName = "onedark";
   };
 
-  wallpaper = ../wallpapers/slate.jpg;
+  wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
 }

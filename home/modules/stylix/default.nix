@@ -20,13 +20,10 @@ in {
         themeName = lib.mkOption {
           default = "far";
           type = lib.types.enum [
-            "far"
-            "material-palenight"
-            "paradise"
-            "rose-pine"
-            "rose-pine-dawn"
-            "test"
             "everforest-dark-hard"
+            "far"
+            "onedark"
+            "test"
           ];
         };
       };

@@ -443,11 +443,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1745431300,
-        "narHash": "sha256-zdebMbimVABe5hQeGwOEHEr+hZJhE6xbTTndn+0+00I=",
+        "lastModified": 1746801742,
+        "narHash": "sha256-fLOiL57soH3S83LTT3QLyEfYzAMongASOJe47WkNdBQ=",
         "owner": "kewin-y",
         "repo": "nvim-kewin",
-        "rev": "4705af5f26be745f617854b70229b7f14944e9a4",
+        "rev": "2abf79af0a4aca0ff1b39a393dbf1f09c65abef7",
         "type": "github"
       },
       "original": {
