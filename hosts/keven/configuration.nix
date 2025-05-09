@@ -7,7 +7,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "keven";
+  networking = {
+    hostName = "keven";
+    networkmanager.wifi.powersave = false;
+  };
 
   hardware = {
     brillo.enable = true;
