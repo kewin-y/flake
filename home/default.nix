@@ -49,5 +49,5 @@
     themeName = "onedark";
   };
 
-  wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
+  wallpaper = ../wallpapers/leaving-breeze.jpg;
 }
