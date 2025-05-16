@@ -4,21 +4,21 @@
     settings = {
       sort = "-time";
       layer = "overlay";
-      backgroundColor = base00;
-      textColor = base05;
-      borderColor = base0D;
+      background-color = base00;
+      text-color = base05;
+      border-color = base0D;
       width = 200;
       height = 300;
       padding = "12";
-      borderSize = 2;
-      borderRadius = 0;
+      border-size = 2;
+      border-radius = 0;
       markup = true;
       icons = true;
       format = ''%s\n\n%b'';
       actions = true;
-      maxIconSize = 32;
-      defaultTimeout = 0;
-      ignoreTimeout = true;
+      max-icon-size = 32;
+      default-timeout = 0;
+      ignore-timeout = true;
       font = "Rubik 9";
     };
     criteria = {
@@ -32,7 +32,7 @@
         border-color = "${base08}";
       };
       "actionable" = {
-        format = "%s\n\n%b\n\nM-O to view actions";
+        format = ''%s\n\n%b\n\nM-O to view actions'';
       };
     };
   };
