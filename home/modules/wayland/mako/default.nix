@@ -20,8 +20,7 @@
       default-timeout = 0;
       ignore-timeout = true;
       font = "Rubik 9";
-    };
-    criteria = {
+
       "urgency=low" = {
         border-color = "${base0B}";
       };
