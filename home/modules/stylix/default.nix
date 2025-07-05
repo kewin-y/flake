@@ -24,6 +24,7 @@ in {
             "far"
             "onedark"
             "test"
+            "grayscale-dark"
           ];
         };
       };

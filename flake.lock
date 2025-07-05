@@ -408,11 +408,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1749423302,
-        "narHash": "sha256-p8uezOyoQwGjk9G97TWOBHBzQsF1ozh9Da02A+Gz5fc=",
+        "lastModified": 1751211373,
+        "narHash": "sha256-a8u+B8MH/DOLg213cd+kJgZRYfnj3n1BzpR+qntN+s0=",
         "owner": "kewin-y",
         "repo": "nvim-kewin",
-        "rev": "996f1de65e8ec955bf07768f209a10327e87dd54",
+        "rev": "b08b4f589f01b0a9096f3420c72f334a99fb7294",
         "type": "github"
       },
       "original": {

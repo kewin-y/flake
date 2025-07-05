@@ -46,8 +46,8 @@
   theme.stylix = {
     enable = true;
     polarity = "dark";
-    themeName = "onedark";
+    themeName = "grayscale-dark";
   };
 
-  wallpaper = ../wallpapers/leaving-breeze.jpg;
+  wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
 }
