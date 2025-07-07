@@ -9,7 +9,6 @@ in {
   options = {
     theme = {
       stylix = {
-        enable = lib.mkEnableOption "Enable Stylix";
         polarity = lib.mkOption {
           default = "dark";
           type = lib.types.enum [
@@ -31,12 +30,12 @@ in {
     };
   };
 
-  config = lib.mkIf config.theme.stylix.enable {
+  config = {
     stylix = {
       enable = true;
 
       # Placeholder (literally doesn't matter)
-      image = config.wallpaper;
+      image = ../../../wallpapers/accordion.png;
 
       base16Scheme = ./themes/${cfg.themeName}.yaml;
       polarity = cfg.polarity;
@@ -47,28 +46,6 @@ in {
         size = 24;
       };
 
-      targets = {
-        neovim.enable = false;
-        nixvim.enable = false;
-        spicetify.enable = false;
-        fzf.enable = false;
-        tmux.enable = false;
-
-        waybar.enable = false;
-        fuzzel.enable = false;
-        mako.enable = false;
-
-        firefox.profileNames = ["kevin"];
-
-        gtk.extraCss = with config.lib.stylix.colors; ''
-          @define-color accent_color #${base0D};
-          @define-color accent_bg_color #${base0D};
-
-          * {
-            border-radius: 0;
-          }
-        '';
-      };
 
       fonts = {
         sizes = {

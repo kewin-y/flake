@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hardware-configuration.nix
-    ../shared.nix
+    ../shared
   ];
 
   boot.loader.systemd-boot.enable = true;

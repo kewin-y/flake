@@ -3,6 +3,13 @@
   inputs,
   ...
 }: {
+  imports = [./stylix];
+
+  theme.stylix = {
+    polarity = "dark";
+    themeName = "grayscale-dark";
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager = {

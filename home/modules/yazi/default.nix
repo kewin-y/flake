@@ -75,7 +75,7 @@ in {
         exts = [];
         conds = [];
       };
-      manager = lib.mkIf config.theme.stylix.enable (with config.lib.stylix.colors.withHashtag; rec {
+      manager = with config.lib.stylix.colors.withHashtag; rec {
         hovered = lib.mkForce {
           fg = base05;
           bg = base01;
@@ -83,7 +83,7 @@ in {
         };
         preview_hovered = lib.mkForce hovered;
         border_style.fg = lib.mkForce base03;
-      });
+      };
       status = {
         sep_left = {
           open = "";
