@@ -6,6 +6,7 @@
     ./gui
     ./mksh
     ./spicetify
+    ./stylix
     ./tmux
     ./wayland
     ./xdg

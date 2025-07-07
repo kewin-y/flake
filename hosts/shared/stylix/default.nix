@@ -46,7 +46,6 @@ in {
         size = 24;
       };
 
-
       fonts = {
         sizes = {
           terminal = 10;
