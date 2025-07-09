@@ -35,7 +35,7 @@
       obsidian
       pavucontrol
       obs-studio
-      killall
+      rnote
     ];
     sessionVariables = {
       EDITOR = "nvim";

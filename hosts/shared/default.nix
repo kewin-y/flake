@@ -61,6 +61,7 @@
     nitch
     pfetch
     unzip
+    killall
   ];
 
   fonts = {
