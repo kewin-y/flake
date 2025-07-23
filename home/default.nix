@@ -36,6 +36,7 @@
       pavucontrol
       obs-studio
       rnote
+      typst
     ];
     sessionVariables = {
       EDITOR = "nvim";
