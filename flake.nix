@@ -2,7 +2,6 @@
   description = " ... ";
 
   inputs = {
-    # Unstable
     nixpkgs.url = "nixpkgs/nixos-unstable";
     stylix = {
       url = "github:danth/stylix";

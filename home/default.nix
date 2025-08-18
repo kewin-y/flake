@@ -10,7 +10,6 @@
   programs = {
     home-manager.enable = true;
     btop.enable = true;
-    chromium.enable = true;
     zathura.enable = true;
   };
 
