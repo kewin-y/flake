@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   ...
 }: {
   programs.foot = {
@@ -11,9 +10,7 @@
         pad = "24x24";
       };
 
-      cursor = with config.lib.stylix.colors; {
-        color = "${base00} ${base05}";
-      };
+      colors.cursor = with config.lib.stylix.colors; "${base00} ${base05}";
     };
   };
 }
