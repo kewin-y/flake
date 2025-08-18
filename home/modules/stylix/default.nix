@@ -1,7 +1,6 @@
 {config, ...}: {
   stylix.targets = {
     neovim.enable = false;
-    spicetify.enable = false;
     fzf.enable = false;
     tmux.enable = false;
 

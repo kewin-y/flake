@@ -58,7 +58,7 @@ in {
     };
 
     plugins = {
-      full-border = "${inputs.yazi-plugins}/full-border.yazi";
+      full-border = pkgs.yaziPlugins.full-border;
     };
 
     initLua = ''

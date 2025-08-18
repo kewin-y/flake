@@ -4,8 +4,14 @@
   inputs = {
     # Unstable
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nvim-config.url = "github:kewin-y/nvim-kewin";
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvim-config = {
+      url = "github:kewin-y/nvim-kewin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,17 +20,14 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    yazi-plugins = {
-      url = "github:yazi-rs/plugins";
-      flake = false;
-    };
   };
 
-  outputs = { nixpkgs, stylix, home-manager, ... } @ inputs: let
+  outputs = {
+    nixpkgs,
+    stylix,
+    home-manager,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     mkSystem = hname:
