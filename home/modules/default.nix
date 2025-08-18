@@ -10,6 +10,5 @@
     ./wayland
     ./xdg
     ./yazi
-    ./extra
   ];
 }

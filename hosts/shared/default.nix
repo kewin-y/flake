@@ -72,7 +72,6 @@
       liberation_ttf
       dejavu_fonts
       rubik
-      maple-mono.NF
       pkgs.nerd-fonts.roboto-mono
       font-awesome
     ];
@@ -104,16 +103,13 @@
   };
 
   security.pam.services.waylock = {};
-
-  programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-  };
-
   environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
+
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+  };
 
   services.openssh = {
     enable = true;

@@ -42,6 +42,4 @@
       TERMINAL = "foot";
     };
   };
-
-  wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
 }
