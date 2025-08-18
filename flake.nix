@@ -1,19 +1,9 @@
 {
   description = " ... ";
 
-  outputs = {flake-parts, ...} @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux"];
-      imports = [
-        ./flake/systems.nix
-        ./flake/devshell.nix
-      ];
-    };
-
   inputs = {
     # Unstable
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
     nvim-config.url = "github:kewin-y/nvim-kewin";
     stylix.url = "github:danth/stylix";
     home-manager = {
@@ -31,6 +21,40 @@
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
       flake = false;
+    };
+  };
+
+  outputs = { nixpkgs, stylix, home-manager, ... } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    mkSystem = hname:
+      nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/${hname}/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.kevin = ./home;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
+  in {
+    nixosConfigurations = {
+      keven = mkSystem "keven";
+      kevnet = mkSystem "kevnet";
+    };
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        alejandra
+        nixd
+      ];
+      shellHook = ''
+        export SHELL='${pkgs.mksh}/bin/mksh'
+      '';
     };
   };
 }
