@@ -37,10 +37,12 @@
     wireplumber.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["networkmanager" "wheel" "video" "docker"];
   };
 
   nixpkgs.config.allowUnfree = true;
