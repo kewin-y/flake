@@ -6,6 +6,6 @@
     };
   };
   config = {
-    wallpaper = ../wallpapers/fury.jpg;
+    wallpaper = ../wallpapers/wallhaven-rdr5gj.jpg;
   };
 }
