@@ -3,7 +3,7 @@
 
   theme.stylix = {
     polarity = "dark";
-    themeName = "oxocarbon";
+    themeName = "cyberdream";
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

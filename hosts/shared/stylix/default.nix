@@ -20,6 +20,7 @@ in {
           default = "oxocarbon";
           type = lib.types.enum [
             "oxocarbon"
+            "cyberdream"
           ];
         };
       };
