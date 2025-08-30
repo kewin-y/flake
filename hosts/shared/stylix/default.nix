@@ -17,13 +17,9 @@ in {
           ];
         };
         themeName = lib.mkOption {
-          default = "far";
+          default = "oxocarbon";
           type = lib.types.enum [
-            "everforest-dark-hard"
-            "far"
-            "onedark"
-            "test"
-            "grayscale-dark"
+            "oxocarbon"
           ];
         };
       };
