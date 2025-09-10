@@ -24,9 +24,6 @@
         <item label="mpv Media Player">
           <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>
         </item>
-        <item label="Spotify">
-          <action name="Execute"><command>spotify</command></action>
-        </item>
         <item label="Volume Control">
           <action name="Execute"><command>pavucontrol</command></action>
         </item>

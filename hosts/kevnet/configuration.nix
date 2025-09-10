@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../shared
@@ -22,4 +22,7 @@
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  environment.systemPackages =  [
+    pkgs.ntfs3g
+  ];
 }
