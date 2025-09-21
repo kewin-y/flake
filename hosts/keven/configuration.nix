@@ -7,9 +7,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  programs.nm-applet.enable = true;
+
   networking = {
     hostName = "keven";
-    networkmanager.wifi.powersave = false;
+    networkmanager.wifi.powersave = true;
   };
 
   hardware = {

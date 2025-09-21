@@ -6,6 +6,16 @@
     themeName = "cyberdream";
   };
 
+  services = {
+    syncthing = {
+      enable = true;
+      group = "users";
+      user = "kevin";
+      dataDir = "/home/kevin/Documents/ksync";    # Default folder for new synced folders
+      configDir = "/home/kevin/Documents/ksync/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager = {
@@ -42,7 +52,7 @@
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = ["networkmanager" "wheel" "video" "docker"];
+    extraGroups = ["networkmanager" "wheel" "video" "docker" "ksync"];
   };
 
   nixpkgs.config.allowUnfree = true;
