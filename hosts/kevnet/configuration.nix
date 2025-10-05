@@ -18,7 +18,12 @@
 
   networking.hostName = "kevnet";
 
-  hardware.ckb-next.enable = true;
+  hardware.ckb-next = {
+    enable = true;
+    package = pkgs.ckb-next.overrideAttrs (old: {
+      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DUSE_DBUS_MENU=0" ];
+    });
+  };
 
   system.stateVersion = "23.11"; # Did you read the comment?
 

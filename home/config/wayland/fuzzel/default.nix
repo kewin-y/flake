@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Rubik:size=10";
+        font = "RobotoMono Nerd Font Propo:size=9";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;

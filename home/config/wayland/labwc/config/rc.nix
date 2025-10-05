@@ -20,7 +20,7 @@
           <showTitle>yes</showTitle>
         </titlebar>
         <cornerRadius>0</cornerRadius>
-        <font name="Rubik" size="9" />
+        <font name="RobotoMono Nerd Font Propo" size="8" />
       </theme>
       <keyboard>
         <default />

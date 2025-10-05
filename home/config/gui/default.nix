@@ -6,7 +6,7 @@
     enable = true;
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override {color = "blue";};
+      package = pkgs.papirus-icon-theme;
     };
   };
   qt = {

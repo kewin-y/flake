@@ -19,7 +19,7 @@
       max-icon-size = 32;
       default-timeout = 0;
       ignore-timeout = true;
-      font = "Rubik 9";
+      font = "RobotoMono Nerd Font Propo 8";
 
       "urgency=low" = {
         border-color = "${base0B}";
