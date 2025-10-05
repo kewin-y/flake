@@ -1,3 +1,3 @@
 {
-  imports = [./programs];
+  imports = [./config ./programs];
 }

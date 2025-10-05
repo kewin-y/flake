@@ -6,16 +6,6 @@
     themeName = "cyberdream";
   };
 
-  services = {
-    syncthing = {
-      enable = true;
-      group = "users";
-      user = "kevin";
-      dataDir = "/home/kevin/Documents/ksync";    # Default folder for new synced folders
-      configDir = "/home/kevin/Documents/ksync/.config/syncthing";   # Folder for Syncthing's settings and keys
-    };
-  };
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager = {
@@ -36,24 +26,8 @@
   };
 
   hardware.graphics.enable = true;
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
 
   virtualisation.docker.enable = true;
-
-  users.users.kevin = {
-    isNormalUser = true;
-    description = "Kevin";
-    extraGroups = ["networkmanager" "wheel" "video" "docker" "ksync"];
-  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -61,57 +35,8 @@
     experimental-features = ["nix-command" "flakes"];
   };
 
-  environment.systemPackages = with pkgs; [
-    wget
-    curl
-    git
-    pamixer
-    libnotify
-    wl-clipboard
-    ripgrep
-    fastfetch
-    nitch
-    pfetch
-    unzip
-    killall
-  ];
-
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-      liberation_ttf
-      dejavu_fonts
-      rubik
-      pkgs.nerd-fonts.roboto-mono
-      font-awesome
-    ];
-
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        sansSerif = [
-          "DejaVu Sans"
-          "Noto Sans CJK"
-        ];
-        serif = [
-          "DejaVu Serif"
-          "Noto Serif CJK"
-        ];
-        monospace = [
-          "DejaVu Sans Mono"
-          "Noto Sans Mono CJK"
-        ];
-      };
-    };
-  };
-
-  programs.dconf.enable = true;
-
   services = {
     upower.enable = true;
-    gvfs.enable = true;
   };
 
   security.pam.services.waylock = {};
@@ -119,14 +44,6 @@
   users.defaultUserShell = pkgs.mksh;
 
   environment.sessionVariables = {
-    EDITOR = "nvim";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-  };
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = true;
-    };
   };
 }

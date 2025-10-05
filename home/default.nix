@@ -25,20 +25,7 @@
     # NOTE: Do not change
     stateVersion = "23.11";
 
-    packages = with pkgs; [
-      inputs.nvim-config.packages.${pkgs.system}.default
-      nemo-with-extensions
-      swayimg
-      mpv
-      htop
-      obsidian
-      pavucontrol
-      obs-studio
-      rnote
-      typst
-    ];
     sessionVariables = {
-      EDITOR = "nvim";
       TERMINAL = "foot";
     };
   };

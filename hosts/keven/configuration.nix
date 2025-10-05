@@ -21,7 +21,6 @@
       powerOnBoot = true;
     };
 
-    # firmware = [pkgs.linux-frimware];
     enableAllFirmware = true;
   };
 
