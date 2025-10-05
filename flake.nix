@@ -28,13 +28,17 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+
     pkgs = nixpkgs.legacyPackages.${system};
+
     myModules = builtins.attrValues (import ./modules);
+
     mkSystem = hname:
       nixpkgs.lib.nixosSystem {
         modules =
           [
             ./hosts/${hname}/configuration.nix
+            ./system/default.nix
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
