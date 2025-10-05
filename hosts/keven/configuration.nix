@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../shared
@@ -11,7 +11,7 @@
 
   networking = {
     hostName = "keven";
-    networkmanager.wifi.powersave = true;
+    networkmanager.wifi.powersave = false;
   };
 
   hardware = {
@@ -20,6 +20,9 @@
       enable = true;
       powerOnBoot = true;
     };
+
+    # firmware = [pkgs.linux-frimware];
+    enableAllFirmware = true;
   };
 
   services.blueman.enable = true;
