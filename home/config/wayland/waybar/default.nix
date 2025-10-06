@@ -38,7 +38,7 @@
           };
           format-icons = ["" "" "" "" ""];
           format = "{icon} {capacity}%";
-          format-charging = "{icon}{capacity}%";
+          format-charging = "{icon}  {capacity}%";
           max-length = 25;
         };
         "wireplumber" = {

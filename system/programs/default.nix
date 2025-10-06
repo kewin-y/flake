@@ -7,7 +7,18 @@
     ./git
     ./syncthing
     ./neovim
+    ./stylix
   ];
+
+  theme.stylix = {
+    polarity = "dark";
+    themeName = "cyberdream";
+  };
+
+  virtualisation.docker.enable = true;
+
+  environment.shells = [pkgs.mksh];
+  users.defaultUserShell = pkgs.mksh;
 
   environment.systemPackages = lib.attrValues {
     inherit

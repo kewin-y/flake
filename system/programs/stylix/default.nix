@@ -31,7 +31,7 @@ in {
     stylix = {
       enable = true;
 
-      # Placeholder (literally doesn't matter)
+      # config.wallpaper is defined in modules/wallpaper.nix
       image = config.wallpaper;
 
       base16Scheme = ./themes/${cfg.themeName}.yaml;

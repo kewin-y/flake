@@ -16,7 +16,6 @@ in {
     icons = null;
   };
 
-  # RAHHH
   home.file.".mkshrc".text = ''
     # vim: ft=sh
     alias  l='eza -lh'
