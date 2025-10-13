@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -21,6 +21,7 @@
     };
 
     enableAllFirmware = true;
+    firmware = [pkgs.linux-firmware];
   };
 
   services.blueman.enable = true;
