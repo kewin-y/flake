@@ -1,9 +1,11 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
+    ./docker
     ./git
     ./syncthing
     ./neovim
@@ -15,33 +17,33 @@
     themeName = "cyberdream";
   };
 
-  virtualisation.docker.enable = true;
-
   environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
 
-  environment.systemPackages = lib.attrValues {
-    inherit
-      (pkgs)
-      wget
-      curl
-      git
-      pamixer
-      libnotify
-      wl-clipboard
-      ripgrep
-      fastfetch
-      unzip
-      killall
-      nautilus
-      swayimg
-      mpv
-      htop
-      obsidian
-      pavucontrol
-      obs-studio
-      rnote
-      typst
-      ;
-  };
+  environment.systemPackages =
+    lib.attrValues {
+      inherit
+        (pkgs)
+        wget
+        curl
+        git
+        pamixer
+        libnotify
+        wl-clipboard
+        ripgrep
+        fastfetch
+        unzip
+        killall
+        nautilus
+        swayimg
+        mpv
+        htop
+        obsidian
+        pavucontrol
+        obs-studio
+        rnote
+        typst
+        ;
+    }
+    ++ [inputs.zen-browser.packages.${pkgs.system}.default];
 }
