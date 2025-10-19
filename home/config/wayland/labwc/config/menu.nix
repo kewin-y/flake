@@ -18,8 +18,8 @@
       </item>
       <Separator />
       <menu id="Media" label="Media">
-        <item label="Firefox">
-          <action name="Execute"><command>firefox --name firefox</command></action>
+        <item label="Zen">
+          <action name="Execute"><command>zen</command></action>
         </item>
         <item label="mpv Media Player">
           <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>

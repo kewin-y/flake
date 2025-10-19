@@ -30,7 +30,7 @@
           <action name="Execute" command="foot" />
         </keybind>
         <keybind key="C-W-f">
-          <action name="Execute" command="firefox" />
+          <action name="Execute" command="zen" />
         </keybind>
         <keybind key="W-Space">
           <action name="Execute" command="fuzzel" />

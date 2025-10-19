@@ -1,6 +1,5 @@
 {
   imports = [
-    ./firefox
     ./foot
     ./gui
     ./mksh
