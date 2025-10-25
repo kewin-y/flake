@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   imports = [
@@ -44,6 +43,5 @@
         rnote
         typst
         ;
-    }
-    ++ [inputs.zen-browser.packages.${pkgs.system}.default];
+    };
 }

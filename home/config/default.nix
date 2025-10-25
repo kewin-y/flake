@@ -8,5 +8,6 @@
     ./wayland
     ./xdg
     ./yazi
+    ./zen
   ];
 }
