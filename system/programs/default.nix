@@ -13,7 +13,7 @@
 
   theme.stylix = {
     polarity = "dark";
-    themeName = "cyberdream";
+    themeName = "vesper";
   };
 
   environment.shells = [pkgs.mksh];
