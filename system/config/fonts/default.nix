@@ -17,14 +17,17 @@
         sansSerif = [
           "DejaVu Sans"
           "Noto Sans CJK"
+          "Noto Color Emoji"
         ];
         serif = [
           "DejaVu Serif"
           "Noto Serif CJK"
+          "Noto Color Emoji"
         ];
         monospace = [
-          "DejaVu Sans Mono"
+          "RobotoMono Nerd Font Propo"
           "Noto Sans Mono CJK"
+          "Noto Color Emoji"
         ];
       };
     };

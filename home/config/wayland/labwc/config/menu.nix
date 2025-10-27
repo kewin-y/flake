@@ -14,7 +14,7 @@
     <openbox_menu>
     <menu id="root-menu" label="root-menu">
       <item label="Terminal">
-        <action name="Execute"><command>foot</command></action>
+        <action name="Execute"><command>ghostty</command></action>
       </item>
       <Separator />
       <menu id="Media" label="Media">

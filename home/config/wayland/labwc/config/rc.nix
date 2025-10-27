@@ -27,7 +27,7 @@
 
         <!-- Apps -->
         <keybind key="W-Return">
-          <action name="Execute" command="foot" />
+          <action name="Execute" command="ghostty" />
         </keybind>
         <keybind key="C-W-f">
           <action name="Execute" command="zen" />

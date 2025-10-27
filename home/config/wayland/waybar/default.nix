@@ -22,7 +22,7 @@
           max-length = 25;
         };
         "wlr/taskbar" = {
-          format = "{app_id}";
+          format = "{name}";
           on-click = "minimize-raise";
         };
         "tray" = {

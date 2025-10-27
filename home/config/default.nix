@@ -9,5 +9,6 @@
     ./xdg
     ./yazi
     ./zen
+    ./ghostty
   ];
 }
