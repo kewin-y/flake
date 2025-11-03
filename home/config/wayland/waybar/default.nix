@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
   programs.waybar = {
@@ -31,7 +30,7 @@
         "wireplumber" = {
           format-icons = ["" "" ""];
           format = "{icon}";
-          format-muted = "󰖁 ";
+          format-muted = "󰖁";
           tooltip-format = "{volume}% | {node_name}";
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
         };
