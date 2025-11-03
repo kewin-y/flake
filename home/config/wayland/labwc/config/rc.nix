@@ -19,8 +19,10 @@
           <layout>:iconify,max,close</layout>
           <showTitle>yes</showTitle>
         </titlebar>
+        <dropShadows>yes</dropShadows>
+        <dropShadowsOnTiled>yes</dropShadowsOnTiled>
         <cornerRadius>0</cornerRadius>
-        <font name="RobotoMono Nerd Font Propo" size="8" />
+        <font name="Iosevka NFP" size="9" />
       </theme>
       <keyboard>
         <default />
@@ -43,6 +45,9 @@
         </keybind>
         <keybind key="W-s">
           <action name="Iconify" />
+        </keybind>
+        <keybind key="W-d">
+          <action name="ToggleDecorations" />
         </keybind>
         <keybind key="W-w">
           <action name="Close" />

@@ -51,8 +51,8 @@ in {
           desktop = 10;
         };
         monospace = {
-          name = "RobotoMono Nerd Font Propo";
-          package = pkgs.nerd-fonts.roboto-mono;
+          name = "Iosevka NFP";
+          package = pkgs.nerd-fonts.iosevka;
         };
         sansSerif = {
           name = "Rubik";

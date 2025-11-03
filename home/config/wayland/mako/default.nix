@@ -10,7 +10,7 @@
       width = 200;
       height = 300;
       padding = "12";
-      border-size = 2;
+      border-size = 1;
       border-radius = 0;
       markup = true;
       icons = true;
@@ -19,7 +19,7 @@
       max-icon-size = 32;
       default-timeout = 0;
       ignore-timeout = true;
-      font = "RobotoMono Nerd Font Propo 8";
+      font = "Iosevka NFP 9";
 
       "urgency=low" = {
         border-color = "${base0B}";

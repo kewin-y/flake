@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       main = {
-        font = "RobotoMono Nerd Font Propo:size=9";
+        font = "Iosevka NFP:size=10";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;
@@ -18,7 +18,7 @@
       };
       border = {
         radius = 0;
-        width = 2;
+        width = 1;
       };
       colors = with config.lib.stylix.colors.withHashtag; {
         background = "${base00}ff";

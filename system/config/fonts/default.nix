@@ -8,7 +8,9 @@
       dejavu_fonts
       rubik
       pkgs.nerd-fonts.roboto-mono
+      pkgs.nerd-fonts.iosevka
       font-awesome
+      material-icons
     ];
 
     fontconfig = {
@@ -25,7 +27,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "RobotoMono Nerd Font Propo"
+          "Iosevka NFP"
           "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];

@@ -42,6 +42,7 @@
         obs-studio
         rnote
         typst
+        chromium
         ;
     };
 }

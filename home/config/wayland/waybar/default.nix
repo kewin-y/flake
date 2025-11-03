@@ -11,14 +11,13 @@
         layer = "top";
         position = "bottom";
         height = 36;
-        spacing = 8;
-        modules-left = ["clock"];
-        modules-center = ["wlr/taskbar"];
-        modules-right = ["tray" "battery" "wireplumber" "network"];
+        spacing = 5;
+        modules-left = ["wlr/taskbar"];
+        modules-right = ["tray" "wireplumber" "battery" "network" "clock"];
         "clock" = {
           tooltip = false;
           interval = 60;
-          format = "{:%H:%M}";
+          format = "{:%a %b %d %H:%M}";
           max-length = 25;
         };
         "wlr/taskbar" = {
@@ -29,6 +28,13 @@
           icon-size = 12;
           spacing = 8;
         };
+        "wireplumber" = {
+          format-icons = ["" "" ""];
+          format = "{icon}";
+          format-muted = "󰖁 ";
+          tooltip-format = "{volume}% | {node_name}";
+          on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
+        };
         "battery" = {
           # :(
           interval = 3;
@@ -36,24 +42,20 @@
             warning = 30;
             critical = 15;
           };
-          format-icons = ["" "" "" "" ""];
-          format = "{icon} {capacity}%";
-          format-charging = "{icon}  {capacity}%";
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂"];
+          format = "{icon}";
+          format-charging = "{icon} 󰉁";
+          tooltip-format = "{capacity}% | {timeTo}";
           max-length = 25;
         };
-        "wireplumber" = {
-          format-icons = ["" "" ""];
-          format = "{icon} {volume}%";
-          format-muted = " {volume}%";
-          on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
-        };
         "network" = {
+          format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
           format = "{ifname}";
-          format-wifi = "{essid}";
-          format-ethernet = "Wired";
-          format-disconnected = "Disconnected";
+          format-wifi = "{icon}";
+          format-ethernet = "";
+          format-disconnected = "󰤭";
           tooltip-format = "{ifname} via {gwaddr}";
-          tooltip-format-wifi = "{essid} ({signalStrength}%)";
+          tooltip-format-wifi = "{signalStrength}% | {essid}";
           tooltip-format-ethernet = "Connected: Wired";
           tooltip-format-disconnected = "Disconnected";
           max-length = 50;
@@ -63,14 +65,14 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: "RobotoMono Nerd Font Propo", "Font Awesome 6 Free";
-        font-size: 8pt;
+        font-family: "Iosevka NFP";
+        font-size: 9pt;
       }
 
       /* Main Bar */
       window#waybar {
         background: ${base00};
-        border-top: 2px solid ${base01};
+        border-top: 1px solid ${base03};
         color: ${base05};
       }
 
@@ -120,12 +122,11 @@
       #battery,
       #wireplumber,
       #network {
-        margin: 0.5rem;
+        margin: 0 0.5rem;
       }
 
       #taskbar button {
-        padding: 0 0.8rem;
-        margin: 0 0.4rem;
+        margin: 0 0.8rem;
       }
 
       #taskbar:first-child {
@@ -138,7 +139,7 @@
 
       #taskbar button:hover,
       #taskbar button.active {
-        background: ${base02};
+        font-weight: bold;
       }
     '';
   };
