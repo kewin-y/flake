@@ -43,6 +43,7 @@
         rnote
         typst
         chromium
+        zk
         ;
     };
 }
