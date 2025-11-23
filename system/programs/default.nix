@@ -19,31 +19,36 @@
   environment.shells = [pkgs.mksh];
   users.defaultUserShell = pkgs.mksh;
 
-  environment.systemPackages =
-    lib.attrValues {
-      inherit
-        (pkgs)
-        wget
-        curl
-        git
-        pamixer
-        libnotify
-        wl-clipboard
-        ripgrep
-        fastfetch
-        unzip
-        killall
-        nautilus
-        swayimg
-        mpv
-        htop
-        obsidian
-        pavucontrol
-        obs-studio
-        rnote
-        typst
-        chromium
-        zk
-        ;
-    };
+  home-manager.useGlobalPkgs = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
+
+  environment.systemPackages = lib.attrValues {
+    inherit
+      (pkgs)
+      wget
+      curl
+      git
+      pamixer
+      libnotify
+      wl-clipboard
+      ripgrep
+      fastfetch
+      unzip
+      killall
+      nautilus
+      swayimg
+      mpv
+      htop
+      pavucontrol
+      obs-studio
+      rnote
+      typst
+      chromium
+      zk
+      ;
+  };
 }

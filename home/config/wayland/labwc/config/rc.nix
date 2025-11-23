@@ -32,7 +32,7 @@
           <action name="Execute" command="ghostty" />
         </keybind>
         <keybind key="C-W-f">
-          <action name="Execute" command="zen" />
+          <action name="Execute" command="zen-beta" />
         </keybind>
         <keybind key="W-Space">
           <action name="Execute" command="fuzzel" />

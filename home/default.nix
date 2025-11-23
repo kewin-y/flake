@@ -14,10 +14,6 @@
     zathura.enable = true;
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = _: true;
-  };
 
   home = {
     username = "kevin";

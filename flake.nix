@@ -46,12 +46,12 @@
                 imports = [./home] ++ myModules;
               };
               home-manager.extraSpecialArgs = {
-                inherit inputs system sysVer;
+                inherit inputs sysVer;
               };
             }
           ]
           ++ myModules;
-        specialArgs = {inherit inputs system sysVer;};
+        specialArgs = {inherit inputs sysVer;};
       };
   in {
     nixosConfigurations = {

@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: {
   home.file.".config/labwc/menu.xml".text = let
@@ -19,7 +18,7 @@
       <Separator />
       <menu id="Media" label="Media">
         <item label="Zen">
-          <action name="Execute"><command>zen</command></action>
+          <action name="Execute"><command>zen-beta</command></action>
         </item>
         <item label="mpv Media Player">
           <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>

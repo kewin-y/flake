@@ -2,15 +2,14 @@
 {
   lib,
   inputs,
-  system,
   config,
   ...
 }: {
-  imports = [inputs.zen-browser.homeModules.twilight];
+  imports = [inputs.zen-browser.homeModules.beta];
 
   xdg.mimeApps = let
     value = let
-      zen-browser = inputs.zen-browser.packages.${system}.twilight;
+      zen-browser = config.programs.zen-browser.package;
     in
       zen-browser.meta.desktopFileName;
 
@@ -40,7 +39,9 @@
 
   programs.zen-browser = {
     enable = true;
-    profiles.kevin = {
+    profiles."kevin" = {
+      id = 0;
+      isDefault = true;
       userChrome = lib.mkAfter ''
         .urlbar-background {
           background-color: #${config.lib.stylix.colors.base01} !important;
@@ -48,6 +49,7 @@
       '';
       settings = {
         "zen.view.experimental-no-window-controls" = true;
+        "zen.welcome-screen.seen" = true;
       };
     };
     policies = {
