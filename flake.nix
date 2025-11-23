@@ -33,7 +33,7 @@
 
     myModules = builtins.attrValues (import ./modules);
 
-    mkSystem = hname:
+    mkSystem = hname: sysVer:
       nixpkgs.lib.nixosSystem {
         modules =
           [
@@ -46,17 +46,18 @@
                 imports = [./home] ++ myModules;
               };
               home-manager.extraSpecialArgs = {
-                inherit inputs system;
+                inherit inputs system sysVer;
               };
             }
           ]
           ++ myModules;
-        specialArgs = {inherit inputs system;};
+        specialArgs = {inherit inputs system sysVer;};
       };
   in {
     nixosConfigurations = {
-      keven = mkSystem "keven";
-      kevnet = mkSystem "kevnet";
+      keven = mkSystem "keven" "23.11";
+      kevnet = mkSystem "kevnet" "23.11";
+      rabbit = mkSystem "rabbit" "25.05";
     };
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [

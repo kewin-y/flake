@@ -65,7 +65,7 @@
       *:not(separator) {
         all: unset;
         font-family: "Iosevka NFP";
-        font-size: 9pt;
+        font-size: 10pt;
       }
 
       /* Main Bar */

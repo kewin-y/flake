@@ -19,7 +19,7 @@
       max-icon-size = 32;
       default-timeout = 0;
       ignore-timeout = true;
-      font = "Iosevka NFP 9";
+      font = "Iosevka NFP 10";
 
       "urgency=low" = {
         border-color = "${base0B}";

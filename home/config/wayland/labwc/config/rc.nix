@@ -22,7 +22,7 @@
         <dropShadows>yes</dropShadows>
         <dropShadowsOnTiled>yes</dropShadowsOnTiled>
         <cornerRadius>0</cornerRadius>
-        <font name="Iosevka NFP" size="9" />
+        <font name="Iosevka NFP" size="10" />
       </theme>
       <keyboard>
         <default />

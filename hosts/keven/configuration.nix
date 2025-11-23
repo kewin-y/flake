@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, sysVer, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -26,5 +26,5 @@
 
   services.blueman.enable = true;
 
-  system.stateVersion = "23.11"; # Did you read the comment? no
+  system.stateVersion = sysVer;
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, sysVer, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -26,7 +26,7 @@
     });
   };
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = sysVer;
 
   environment.systemPackages =  [
     pkgs.ntfs3g

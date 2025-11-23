@@ -46,9 +46,9 @@ in {
 
       fonts = {
         sizes = {
-          terminal = 10;
-          applications = 10;
-          desktop = 10;
+          terminal = 11;
+          applications = 11;
+          desktop = 11;
         };
         monospace = {
           name = "Iosevka NFP";

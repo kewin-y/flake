@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  sysVer,
   ...
 }: {
   imports = [
@@ -22,8 +23,7 @@
     username = "kevin";
     homeDirectory = "/home/kevin";
 
-    # NOTE: Do not change
-    stateVersion = "23.11";
+    stateVersion = sysVer;
 
     sessionVariables = {
       TERMINAL = "foot";

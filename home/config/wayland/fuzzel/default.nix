@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Iosevka NFP:size=10";
+        font = "Iosevka NFP:size=11";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;
