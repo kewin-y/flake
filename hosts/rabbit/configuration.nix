@@ -1,22 +1,22 @@
-{pkgs, sysVer, ...}: {
-	imports = [
-		./hardware-configuration.nix
-	];
+{sysVer, ...}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-	networking.hostName = "rabbit";
+  networking.hostName = "rabbit";
 
-	hardware = {
-		brillo.enable = true;
-		bluetooth = {
-			enable = true;
-			powerOnBoot = true;
-		};
-	};
+  hardware = {
+    brillo.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+  };
 
-	services.blueman.enable = true;
+  services.blueman.enable = true;
 
-	system.stateVersion = sysVer;
+  system.stateVersion = sysVer;
 }

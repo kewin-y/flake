@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: {
   home.file.".config/labwc/rc.xml".text = let

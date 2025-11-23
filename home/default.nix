@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  sysVer,
-  ...
-}: {
+{sysVer, ...}: {
   imports = [
     ./config
   ];
@@ -13,7 +8,6 @@
     btop.enable = true;
     zathura.enable = true;
   };
-
 
   home = {
     username = "kevin";

@@ -27,9 +27,7 @@
     home-manager,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
     myModules = builtins.attrValues (import ./modules);
 
@@ -59,10 +57,11 @@
       kevnet = mkSystem "kevnet" "23.11";
       rabbit = mkSystem "rabbit" "25.05";
     };
-    devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        alejandra
-        nixd
+
+    devShells.x86_64-linux.default = pkgs.mkShell {
+      packages = [
+        pkgs.alejandra
+        pkgs.nixd
       ];
       shellHook = ''
         export SHELL='${pkgs.mksh}/bin/mksh'

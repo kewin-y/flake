@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   ...
 }: {
   home.file.".config/labwc/themerc-override".text = with config.lib.stylix.colors.withHashtag; ''

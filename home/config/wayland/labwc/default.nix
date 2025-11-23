@@ -1,12 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [./config];
-  home.packages = with pkgs; [
-    labwc
-    swaybg
+  home.packages = [
+    pkgs.labwc
+    pkgs.swaybg
   ];
 }
