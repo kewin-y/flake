@@ -21,6 +21,7 @@ in {
           type = lib.types.enum [
             "oxocarbon"
             "vesper"
+            "solarized-light"
             "cyberdream"
           ];
         };

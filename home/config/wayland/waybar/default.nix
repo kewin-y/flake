@@ -71,7 +71,7 @@
       /* Main Bar */
       window#waybar {
         background: ${base00};
-        border-top: 1px solid ${base03};
+        border-top: 1px solid ${base01};
         color: ${base05};
       }
 

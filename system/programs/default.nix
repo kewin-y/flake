@@ -12,8 +12,8 @@
   ];
 
   theme.stylix = {
-    polarity = "dark";
-    themeName = "vesper";
+    polarity = "light";
+    themeName = "solarized-light";
   };
 
   environment.shells = [pkgs.mksh];
