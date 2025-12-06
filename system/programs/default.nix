@@ -12,8 +12,8 @@
   ];
 
   theme.stylix = {
-    polarity = "light";
-    themeName = "solarized-light";
+    polarity = "dark";
+    themeName = "cyberdream";
   };
 
   environment.shells = [pkgs.mksh];

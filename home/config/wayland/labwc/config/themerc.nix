@@ -12,8 +12,8 @@
     window.*.button.*.image.color: ${base05}
     window.*.label.text.color: ${base05}
     window.*.title.bg.color: ${base01}
-    window.active.border.color: ${base03}
-    window.inactive.border.color: ${base03}
+    window.active.border.color: ${base01}
+    window.inactive.border.color: ${base01}
     window.button.width: 22
     window.button.height: 22
     window.active.shadow.size: 12

@@ -7,6 +7,7 @@
     home-manager.enable = true;
     btop.enable = true;
     zathura.enable = true;
+    vesktop.enable = true;
   };
 
   home = {
