@@ -19,10 +19,7 @@ in {
         themeName = lib.mkOption {
           default = "oxocarbon";
           type = lib.types.enum [
-            "oxocarbon"
-            "vesper"
-            "solarized-light"
-            "cyberdream"
+            "decaf"
           ];
         };
       };

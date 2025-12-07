@@ -3,7 +3,7 @@
   ...
 }: {
   home.file.".config/labwc/themerc-override".text = with config.lib.stylix.colors.withHashtag; ''
-    border.width: 1
+    border.width: 2
 
     # Window
     window.titlebar.padding.width: 7
@@ -23,7 +23,7 @@
     osd.bg.color: ${base00}
     osd.border.color: ${base01}
     osd.label.text.color: ${base05}
-    osd.border.width: 1
+    osd.border.width: 2
     osd.window-switcher.padding: 7
     osd.window-switcher.item.padding.x: 7
     osd.window-switcher.item.padding.y: 7
