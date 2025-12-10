@@ -4,5 +4,6 @@
     ./fuzzel
     ./waybar
     ./mako
+    ./swaylock
   ];
 }

@@ -1,14 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home.file.".config/labwc/rc.xml".text = let
     screenshot = import ../scripts/screenshot.nix pkgs;
-    lock = import ../scripts/waylock.nix {
-      inherit pkgs;
-      inherit config;
-    };
   in ''
     <?xml version="1.0"?>
     <labwc_config>
@@ -55,7 +47,7 @@
           <action name="Reconfigure" />
         </keybind>
         <keybind key="C-W-l">
-          <action name="Execute" command="${lock}/bin/lock" />
+          <action name="Execute" command="swaylock" />
         </keybind>
 
         <!-- Screenshot -->

@@ -1,14 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
-  home.file.".config/labwc/menu.xml".text = let
-    lock = import ../scripts/waylock.nix {
-      inherit pkgs;
-      inherit config;
-    };
-  in ''
+{...}: {
+  home.file.".config/labwc/menu.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
     <openbox_menu>
     <menu id="root-menu" label="root-menu">
@@ -52,7 +43,7 @@
           <action name="Execute"><command>systemctl -i poweroff</command></action>
         </item>
         <item label="Lock">
-          <action name="Execute"><command>${lock}/bin/lock</command></action>
+          <action name="Execute"><command>swaylock</command></action>
         </item>
         <item label="Suspend">
           <action name="Execute"><command>systemctl -i suspend</command></action>
