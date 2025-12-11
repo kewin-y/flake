@@ -53,8 +53,8 @@ in {
           package = pkgs.nerd-fonts.iosevka;
         };
         sansSerif = {
-          name = "Rubik";
-          package = pkgs.rubik;
+          name = "Inter";
+          package = pkgs.inter;
         };
       };
     };

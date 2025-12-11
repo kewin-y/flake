@@ -7,6 +7,7 @@
       liberation_ttf
       dejavu_fonts
       rubik
+      inter
       pkgs.nerd-fonts.roboto-mono
       pkgs.nerd-fonts.iosevka
       font-awesome
@@ -17,7 +18,7 @@
       enable = true;
       defaultFonts = {
         sansSerif = [
-          "DejaVu Sans"
+          "Inter"
           "Noto Sans CJK"
           "Noto Color Emoji"
         ];
