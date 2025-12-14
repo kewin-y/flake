@@ -49,8 +49,8 @@ in {
           desktop = 12;
         };
         monospace = {
-          name = "Iosevka NFP";
-          package = pkgs.nerd-fonts.iosevka;
+          name = "Liga SFMono Nerd Font";
+          package = pkgs.sf-mono-liga-bin;
         };
         sansSerif = {
           name = "Inter";

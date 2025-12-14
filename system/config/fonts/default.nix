@@ -1,4 +1,22 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation {
+        pname = "sf-mono-liga-bin";
+        version = "dev";
+        src = inputs.sf-mono-liga-src;
+        dontConfigure = true;
+        installPhase = ''
+          mkdir -p $out/share/fonts/opentype
+          cp -R $src/*.otf $out/share/fonts/opentype/
+        '';
+      };
+    })
+  ];
   fonts = {
     packages = with pkgs; [
       noto-fonts-cjk-sans
@@ -12,6 +30,7 @@
       pkgs.nerd-fonts.iosevka
       font-awesome
       material-icons
+      sf-mono-liga-bin
     ];
 
     fontconfig = {
@@ -28,7 +47,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "Iosevka NFP"
+          "Liga SFMono Nerd Font"
           "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];

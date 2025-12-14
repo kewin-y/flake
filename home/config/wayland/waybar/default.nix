@@ -64,7 +64,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: "Iosevka NFP";
+        font-family: "Liga SFMono Nerd Font";
         font-size: 10pt;
       }
 

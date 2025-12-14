@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Iosevka NFP:size=12";
+        font = "Liga SFMono Nerd Font:size=12";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;
