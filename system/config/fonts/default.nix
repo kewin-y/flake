@@ -1,36 +1,13 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation {
-        pname = "sf-mono-liga-bin";
-        version = "dev";
-        src = inputs.sf-mono-liga-src;
-        dontConfigure = true;
-        installPhase = ''
-          mkdir -p $out/share/fonts/opentype
-          cp -R $src/*.otf $out/share/fonts/opentype/
-        '';
-      };
-    })
-  ];
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
+      inter
+      pkgs.nerd-fonts.fira-code
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       liberation_ttf
       dejavu_fonts
-      rubik
-      inter
-      pkgs.nerd-fonts.roboto-mono
-      pkgs.nerd-fonts.iosevka
-      font-awesome
-      material-icons
-      sf-mono-liga-bin
     ];
 
     fontconfig = {
@@ -47,7 +24,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "Liga SFMono Nerd Font"
+          "FiraCode Nerd Font Propo"
           "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];

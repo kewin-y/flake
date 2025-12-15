@@ -19,7 +19,7 @@
       max-icon-size = 32;
       default-timeout = 0;
       ignore-timeout = true;
-      font = "Liga SFMono Nerd Font 12";
+      font = "FiraCode Nerd Font Propo 12";
 
       "urgency=low" = {
         border-color = "${base0B}";

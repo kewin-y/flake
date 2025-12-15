@@ -13,7 +13,7 @@
         <dropShadows>yes</dropShadows>
         <dropShadowsOnTiled>yes</dropShadowsOnTiled>
         <cornerRadius>0</cornerRadius>
-        <font name="Liga SFMono Nerd Font" size="10" />
+        <font name="FiraCode Nerd Font Propo" size="10" />
       </theme>
       <keyboard>
         <default />

@@ -17,7 +17,7 @@ in {
           ];
         };
         themeName = lib.mkOption {
-          default = "oxocarbon";
+          default = "decaf";
           type = lib.types.enum [
             "decaf"
           ];
@@ -49,8 +49,8 @@ in {
           desktop = 12;
         };
         monospace = {
-          name = "Liga SFMono Nerd Font";
-          package = pkgs.sf-mono-liga-bin;
+          name = "FiraCode Nerd Font Propo";
+          package = pkgs.nerd-fonts.fira-code;
         };
         sansSerif = {
           name = "Inter";

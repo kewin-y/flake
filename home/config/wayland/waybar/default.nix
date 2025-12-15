@@ -35,7 +35,6 @@
           on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
         };
         "battery" = {
-          # :(
           interval = 3;
           states = {
             warning = 30;
@@ -64,7 +63,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: "Liga SFMono Nerd Font";
+        font-family: "FiraCode Nerd Font Propo";
         font-size: 10pt;
       }
 
