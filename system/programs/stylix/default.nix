@@ -49,8 +49,8 @@ in {
           desktop = 12;
         };
         monospace = {
-          name = "FiraCode Nerd Font Propo";
-          package = pkgs.nerd-fonts.fira-code;
+          name = "Commit Mono Nerd Font Propo";
+          package = pkgs.nerd-fonts.commit-mono;
         };
         sansSerif = {
           name = "Inter";

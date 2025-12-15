@@ -2,7 +2,7 @@
   fonts = {
     packages = with pkgs; [
       inter
-      pkgs.nerd-fonts.fira-code
+      pkgs.nerd-fonts.commit-mono
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
@@ -24,7 +24,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "FiraCode Nerd Font Propo"
+          "Commit Mono Nerd Font Propo"
           "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];

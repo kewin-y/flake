@@ -11,19 +11,16 @@ in {
   ];
 
   programs.fzf.enable = true;
-  programs.eza = {
-    enable = true;
-    icons = null;
-  };
 
   home.file.".mkshrc".text = ''
     # vim: ft=sh
-    alias  l='eza -lh'
-    alias ls='eza -1'
-    alias ll='eza -lha --sort=name --group-directories-first'
-    alias ld='eza -lhD '
+    alias  l='ls -lh --color=auto'
+    alias ls='ls -1 --color=auto'
+    alias ll='ls -lha --sort=name --group-directories-first --color=auto'
+    alias ld='ls -d */ --color=auto'
     alias yz='yazi'
     alias dev='nix develop -c tmux'
+
     alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt'
 
     HISTFILE=$HOME/.mksh_history
