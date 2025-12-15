@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Commit Mono Nerd Font Propo:size=12";
+        font = "JetBrains Mono Nerd Font Propo:size=12";
         horizontal-pad = 18;
         vertical-pad = 18;
         inner-pad = 18;

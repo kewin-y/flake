@@ -49,8 +49,8 @@ in {
           desktop = 12;
         };
         monospace = {
-          name = "Commit Mono Nerd Font Propo";
-          package = pkgs.nerd-fonts.commit-mono;
+          name = "JetBrains Mono Nerd Font Propo";
+          package = pkgs.nerd-fonts.jetbrains-mono;
         };
         sansSerif = {
           name = "Inter";
