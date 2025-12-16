@@ -13,7 +13,7 @@
 
   theme.stylix = {
     polarity = "dark";
-    themeName = "decaf";
+    themeName = "flexoki";
   };
 
   environment.shells = [pkgs.mksh];

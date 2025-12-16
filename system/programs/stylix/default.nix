@@ -17,9 +17,10 @@ in {
           ];
         };
         themeName = lib.mkOption {
-          default = "decaf";
+          default = "flexoki";
           type = lib.types.enum [
             "decaf"
+            "flexoki"
           ];
         };
       };
