@@ -1,3 +1,5 @@
 {
-  wallpaper = import ./wallpaper.nix;
+  imports = [
+    ./wallpaper.nix
+  ];
 }

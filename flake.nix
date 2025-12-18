@@ -29,26 +29,23 @@
   } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-    myModules = builtins.attrValues (import ./modules);
-
     mkSystem = hname: sysVer:
       nixpkgs.lib.nixosSystem {
-        modules =
-          [
-            ./hosts/${hname}/configuration.nix
-            ./system/default.nix
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.users.kevin = {
-                imports = [./home] ++ myModules;
-              };
-              home-manager.extraSpecialArgs = {
-                inherit inputs sysVer;
-              };
-            }
-          ]
-          ++ myModules;
+        modules = [
+          ./modules
+          ./hosts/${hname}/configuration.nix
+          ./system/default.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.kevin = {
+              imports = [./home ./modules];
+            };
+            home-manager.extraSpecialArgs = {
+              inherit inputs sysVer;
+            };
+          }
+        ];
         specialArgs = {inherit inputs sysVer;};
       };
   in {
