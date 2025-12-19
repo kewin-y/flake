@@ -10,6 +10,7 @@
         "fakenews"
         "gambling"
         "porn"
+        "social"
       ];
     };
   };
