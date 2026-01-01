@@ -15,10 +15,6 @@
 
   hardware = {
     brillo.enable = true;
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
 
     enableAllFirmware = true;
     firmware = [pkgs.linux-firmware];

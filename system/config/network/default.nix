@@ -1,4 +1,8 @@
 {
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
   networking = {
     networkmanager = {
       enable = true;

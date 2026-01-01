@@ -10,10 +10,10 @@
 
   hardware = {
     brillo.enable = true;
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
+    # bluetooth = {
+    #   enable = true;
+    #   powerOnBoot = true;
+    # };
   };
 
   services.blueman.enable = true;
