@@ -20,7 +20,7 @@
 
         <!-- Apps -->
         <keybind key="W-Return">
-          <action name="Execute" command="ghostty" />
+          <action name="Execute" command="foot" />
         </keybind>
         <keybind key="C-W-f">
           <action name="Execute" command="zen-beta" />

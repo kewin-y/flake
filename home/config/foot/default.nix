@@ -9,7 +9,6 @@
       main = {
         box-drawings-uses-font-glyphs = "no";
         pad = "24x24";
-        font = lib.mkForce "monospace:size=10,NotoColorEmoji:size=9.5";
       };
 
       tweak = {
