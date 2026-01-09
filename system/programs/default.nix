@@ -49,6 +49,8 @@
       typst
       chromium
       zk
+      zoom-us
+      vesktop
       ;
   };
 }
