@@ -19,7 +19,7 @@
       max-icon-size = 32;
       default-timeout = 0;
       ignore-timeout = true;
-      font = "JetBrains Mono Nerd Font Propo 12";
+      font = "monospace 12";
 
       "urgency=low" = {
         border-color = "${base0B}";

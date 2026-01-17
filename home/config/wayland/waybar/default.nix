@@ -63,7 +63,7 @@
     style = with config.lib.stylix.colors.withHashtag; ''
       *:not(separator) {
         all: unset;
-        font-family: "JetBrains Mono Nerd Font Propo";
+        font-family: "monospace";
         font-size: 10pt;
       }
 
