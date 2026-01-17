@@ -51,6 +51,7 @@
       zk
       zoom-us
       vesktop
+      obsidian
       ;
   };
 }
