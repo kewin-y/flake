@@ -28,6 +28,8 @@
       0.0.0.0 mangakatana.com
       0.0.0.0 mangadex.org
       0.0.0.0 mangabuddy.com
+      0.0.0.0 youtube.com
+      0.0.0.0 www.youtube.com
     '';
   };
 }
