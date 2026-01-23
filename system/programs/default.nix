@@ -52,6 +52,11 @@
       zoom-us
       vesktop
       obsidian
+      nodejs
+      pnpm
+      prettierd
+      typescript-language-server
+      tailwindcss-language-server
       ;
   };
 }
