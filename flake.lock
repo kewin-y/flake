@@ -262,11 +262,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769210604,
-        "narHash": "sha256-P97MxWfOQiaqYVZOOvS7ZaxXPpjFz5YLPrTZtyrqH4g=",
+        "lastModified": 1769957440,
+        "narHash": "sha256-kcI5x+BF7VzXC2s2wFJaxOYOqYhtvYb8vAIO3IApOmc=",
         "owner": "kewin-y",
         "repo": "nvim-kewin",
-        "rev": "babeeaeeb61f22de394f121ac2dfe8c513297fae",
+        "rev": "48e1ba9f1ddf97b9283ab61f7988e7216beb3671",
         "type": "github"
       },
       "original": {
