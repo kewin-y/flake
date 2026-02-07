@@ -17,8 +17,8 @@
     };
 
     extraHosts = ''
-      0.0.0.0 open.spotify.com
-      0.0.0.0 spotify.com
+      # 0.0.0.0 open.spotify.com
+      # 0.0.0.0 spotify.com
       0.0.0.0 soundcloud.com
       0.0.0.0 youtube.com
       0.0.0.0 www.youtube.com
