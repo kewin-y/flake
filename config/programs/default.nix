@@ -52,7 +52,6 @@
             zk
             zoom-us
             vesktop
-            obsidian
             nodejs
             pnpm
             prettierd
