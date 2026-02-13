@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, globals, ...}: {
     imports = [
         ./audio.nix
         ./fonts.nix
@@ -26,7 +26,7 @@
 
     networking.networkmanager.enable = true;
 
-    users.users.kevin = {
+    users.users.${globals.user} = {
         isNormalUser = true;
         description = "Kevin";
         extraGroups = ["networkmanager" "wheel" "video" "docker" "ksync"];

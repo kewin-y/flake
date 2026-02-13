@@ -2,7 +2,6 @@
   imports = [
     ./foot
     ./gui
-    ./mksh
     ./stylix
     ./tmux
     ./wayland
