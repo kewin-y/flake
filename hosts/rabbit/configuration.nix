@@ -1,18 +1,15 @@
 {sysVer, ...}: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+    imports = [
+        ./hardware-configuration.nix
+    ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    networking.hostName = "rabbit";
 
-  networking.hostName = "rabbit";
+    kevin = {
+        laptop.enable = true;
+        networkBlocking.enable = true;
+        bootloader = "systemd-boot";
+    };
 
-  hardware = {
-    brillo.enable = true;
-  };
-
-  services.blueman.enable = true;
-
-  system.stateVersion = sysVer;
+    system.stateVersion = sysVer;
 }

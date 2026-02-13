@@ -36,10 +36,12 @@
                     ./hosts/${hname}/configuration.nix
                     ./config/default.nix
                     stylix.nixosModules.stylix
+
+                    # Holy shit I hate home manager
                     home-manager.nixosModules.home-manager
                     {
                         home-manager.users.kevin = {
-                            imports = [./home ./modules];
+                            imports = [./home];
                         };
                         home-manager.extraSpecialArgs = {
                             inherit inputs sysVer;
@@ -50,7 +52,6 @@
             };
     in {
         nixosConfigurations = {
-            keven = mkSystem "keven" "23.11";
             kevnet = mkSystem "kevnet" "23.11";
             rabbit = mkSystem "rabbit" "25.05";
         };

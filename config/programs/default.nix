@@ -8,6 +8,7 @@
         ./git.nix
         ./syncthing.nix
         ./neovim.nix
+        ./ssh.nix
         ./stylix
         ./wrapped
     ];
