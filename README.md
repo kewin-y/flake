@@ -1,3 +1,7 @@
 # My NixOS Config
 
 Pretty standard NixOS/Home Manager configurations. I've tried to keep them as simple as possible.
+
+## Todo-list:
+
+- [ ] Move packages from `environment.systemPackages` to user-specific packages
