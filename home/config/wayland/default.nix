@@ -1,9 +1,9 @@
 {...}: {
-  imports = [
-    ./labwc
-    ./fuzzel
-    ./waybar
-    ./mako
-    ./swaylock
-  ];
+    imports = [
+        # ./labwc
+        ./fuzzel
+        # ./waybar
+        ./mako
+        ./swaylock
+    ];
 }

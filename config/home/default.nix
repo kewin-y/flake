@@ -1,7 +1,6 @@
 {globals, ...}: {
     imports = [
         ./mksh.nix
-
         ./labwc
     ];
 
