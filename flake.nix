@@ -45,16 +45,16 @@
                     hjem.nixosModules.default
                     stylix.nixosModules.stylix
 
-                    # Holy shit I hate home manager
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.users.kevin = {
-                            imports = [./home];
-                        };
-                        home-manager.extraSpecialArgs = {
-                            inherit inputs sysVer;
-                        };
-                    }
+                    # # Holy shit I hate home manager
+                    # home-manager.nixosModules.home-manager
+                    # {
+                    #     home-manager.users.kevin = {
+                    #         imports = [./home];
+                    #     };
+                    #     home-manager.extraSpecialArgs = {
+                    #         inherit inputs sysVer;
+                    #     };
+                    # }
                 ];
                 specialArgs = {inherit inputs sysVer globals;};
             };

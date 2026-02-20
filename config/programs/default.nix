@@ -21,7 +21,7 @@
     environment.shells = [pkgs.mksh];
     users.defaultUserShell = pkgs.mksh;
 
-    home-manager.useGlobalPkgs = true;
+    # home-manager.useGlobalPkgs = true;
 
     nixpkgs.config = {
         allowUnfree = true;

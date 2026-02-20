@@ -1,12 +1,12 @@
 pkgs:
-pkgs.writeText "config.json" (builtins.toJSON {
+pkgs.writeText "config.jsonc" (builtins.toJSON {
     layer = "top";
     position = "bottom";
     height = 36;
     spacing = 5;
     modules-left = ["wlr/taskbar"];
     modules-right = ["tray" "wireplumber" "battery" "network" "clock"];
-    "clock" = {
+    clock = {
         tooltip = false;
         interval = 60;
         format = "{:%a %b %d %H:%M}";
@@ -16,30 +16,30 @@ pkgs.writeText "config.json" (builtins.toJSON {
         format = "{name}";
         on-click = "minimize-raise";
     };
-    "tray" = {
+    tray = {
         icon-size = 12;
         spacing = 8;
     };
-    "wireplumber" = {
+    wireplumber = {
         format-icons = ["" "" ""];
         format = "{icon}";
         format-muted = "󰖁";
         tooltip-format = "{volume}% | {node_name}";
         on-click = "${pkgs.pamixer}/bin/pamixer --toggle-mute";
     };
-    "battery" = {
+    battery = {
         interval = 3;
         states = {
             warning = 30;
             critical = 15;
         };
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂"];
+        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         format = "{icon}";
         format-charging = "{icon} 󰉁";
         tooltip-format = "{capacity}% | {timeTo}";
         max-length = 25;
     };
-    "network" = {
+    network = {
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         format = "{ifname}";
         format-wifi = "{icon}";

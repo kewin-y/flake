@@ -11,9 +11,9 @@ in
             pkgs.waybar
         ];
 
-        buildInputs = [pkgs.makeWrapper];
+        nativeBuildInputs = [pkgs.makeWrapper];
 
         postBuild = ''
-            wrapProgram $out/bin/waybar --add-flags "-s ${style} -c ${config}"
+            wrapProgram $out/bin/waybar --add-flags "-c ${config} -s ${style}"
         '';
     }
