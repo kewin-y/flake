@@ -1,9 +1,10 @@
 {pkgs, ...}: {
     xdg.portal = {
-    config.common.default = "gtk";
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
+        config.common.default = "*";
+        enable = true;
+        extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            pkgs.xdg-desktop-portal-gnome
+        ];
+    };
 }

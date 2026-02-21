@@ -1,40 +1,58 @@
 {
     pkgs,
-    config,
     lib,
     globals,
     ...
 }: {
     qt = {
         enable = true;
-        style = "adwaita-dark";
-        platformTheme = "gnome";
+        style = "gtk2";
+        platformTheme = "gtk2";
     };
+    environment.systemPackages = [
+        pkgs.kdePackages.breeze-gtk
+        pkgs.kdePackages.breeze-icons
+        pkgs.quintom-cursor-theme
+    ];
     programs.dconf = {
         enable = true;
-
         profiles.user.databases = [
             {
                 lockAll = false;
-                settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+                settings."org/gnome/desktop/interface" = {
+                    color-scheme = lib.gvariant.mkString "prefer-dark";
+                    gtk-theme = lib.gvariant.mkString "Breeze-Dark";
+                    icon-theme = lib.gvariant.mkString "breeze-dark";
+                    cursor-theme = lib.gvariant.mkString "Quintom_Ink";
+                    cursor-size = lib.gvariant.mkInt32 24;
+                };
             }
         ];
     };
-    environment = {
-        systemPackages = [
-            pkgs.flat-remix-gtk
-            pkgs.flat-remix-icon-theme
-            pkgs.quintom-cursor-theme
-        ];
-        etc = let
-            text = ''
-                [Settings]
-                gtk-icon-theme-name=breeze-dark
-                gtk-theme-name=BreezeDark
-            '';
-        in {
-            "gtk-3.0/settings.ini" = {inherit text;};
-            "gtk-4.0/settings.ini" = {inherit text;};
-        };
+    hjem.users.${globals.user}.files = {
+        ".config/gtk-4.0/settings.ini".text = ''
+            [Settings]
+            gtk-cursor-theme-name=Quintom_Ink
+            gtk-cursor-theme-size=24
+            gtk-font-name=Sans 12
+            gtk-icon-theme-name=breeze-dark
+            gtk-theme-name=BreezeDark
+            gtk-application-prefer-dark-theme=1
+        '';
+        ".config/gtk-3.0/settings.ini".text = ''
+            [Settings]
+            gtk-cursor-theme-name=Quintom_Ink
+            gtk-cursor-theme-size=24
+            gtk-font-name=Sans 12
+            gtk-icon-theme-name=breeze-dark
+            gtk-theme-name=BreezeDark
+        '';
+        ".config/gtk-2.0/gtkrc".text = ''
+            gtk-cursor-theme-name = "Quintom_Ink"
+            gtk-cursor-theme-size = 24
+            gtk-font-name = "Sans 12"
+            gtk-icon-theme-name="breeze-dark"
+            gtk-theme-name="BreezeDark"
+        '';
     };
 }

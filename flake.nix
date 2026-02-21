@@ -3,10 +3,6 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-unstable";
-        stylix = {
-            url = "github:danth/stylix";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         nvim-config = {
             url = "github:kewin-y/nvim-kewin";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +23,6 @@
 
     outputs = {
         nixpkgs,
-        stylix,
         home-manager,
         hjem,
         ...
@@ -45,7 +40,6 @@
                     ./hosts/${hname}/configuration.nix
                     ./config/default.nix
                     hjem.nixosModules.default
-                    stylix.nixosModules.stylix
 
                     # # Holy shit I hate home manager
                     # home-manager.nixosModules.home-manager
