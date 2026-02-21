@@ -13,6 +13,7 @@
         foot = pkgs.callPackage ./foot {inherit base16Scheme;};
         swaylock = pkgs.callPackage ./swaylock {inherit base16SchemeNoHashtag;};
         waybar = pkgs.callPackage ./waybar {inherit base16Scheme;};
+        mako = pkgs.callPackage ./mako {inherit base16Scheme;};
     };
 in {
     environment.systemPackages = builtins.attrValues packages;
@@ -24,6 +25,16 @@ in {
         after = ["niri.service"];
         serviceConfig = {
             ExecStart = "${packages.waybar}/bin/waybar";
+            Restart = "on-failure";
+        };
+    };
+
+    systemd.user.services.mako = {
+        description = "Mako";
+        wantedBy = ["niri.service"];
+        after = ["niri.service"];
+        serviceConfig = {
+            ExecStart = "${packages.mako}/bin/mako";
             Restart = "on-failure";
         };
     };

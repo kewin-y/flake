@@ -7,10 +7,6 @@
             url = "github:kewin-y/nvim-kewin";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         hjem = {
             url = "github:feel-co/hjem";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +19,6 @@
 
     outputs = {
         nixpkgs,
-        home-manager,
         hjem,
         ...
     } @ inputs: let
@@ -40,17 +35,6 @@
                     ./hosts/${hname}/configuration.nix
                     ./config/default.nix
                     hjem.nixosModules.default
-
-                    # # Holy shit I hate home manager
-                    # home-manager.nixosModules.home-manager
-                    # {
-                    #     home-manager.users.kevin = {
-                    #         imports = [./home];
-                    #     };
-                    #     home-manager.extraSpecialArgs = {
-                    #         inherit inputs sysVer;
-                    #     };
-                    # }
                 ];
                 specialArgs = {inherit inputs sysVer globals;};
             };
