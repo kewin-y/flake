@@ -1,0 +1,35 @@
+{
+    pkgs,
+    base16Scheme,
+}: let
+    toIni = pkgs.formats.ini {};
+    settings = {
+        main = {
+            font = "monospace:size=12";
+            horizontal-pad = 18;
+            vertical-pad = 18;
+            inner-pad = 18;
+            dpi-aware = "no";
+            icons-enabled = "no";
+            line-height = 20;
+            lines = 8;
+        };
+        border = {
+            radius = 0;
+            width = 1;
+        };
+        colors = with base16Scheme; {
+            background = "${base00}ff";
+            text = "${base05}ff";
+            selection-text = "${base05}ff";
+            match = "${base0D}ff";
+            prompt = "${base0D}ff";
+            input = "${base05}ff";
+            placeholder = "${base03}ff";
+            selection-match = "${base0D}ff";
+            selection = "${base02}ff";
+            border = "${base01}ff";
+        };
+    };
+in
+    pkgs.writeText "fuzzel.ini" (toIni settings)
