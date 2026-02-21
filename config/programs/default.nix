@@ -15,8 +15,6 @@
     environment.shells = [pkgs.mksh];
     users.defaultUserShell = pkgs.mksh;
 
-    # home-manager.useGlobalPkgs = true;
-
     nixpkgs.config = {
         allowUnfree = true;
         allowUnfreePredicate = _: true;
@@ -52,8 +50,6 @@
             prettierd
             typescript-language-server
             tailwindcss-language-server
-            niri
-            uwsm
             zathura
             imv
             ;

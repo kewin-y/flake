@@ -1,6 +1,7 @@
 {
     pkgs,
     base16Scheme,
+    ...
 }: let
     style = import ./style.nix {inherit pkgs base16Scheme;};
     config = import ./config.nix pkgs;

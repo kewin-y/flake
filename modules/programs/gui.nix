@@ -6,8 +6,8 @@
 }: {
     qt = {
         enable = true;
-        style = "gtk2";
-        platformTheme = "gtk2";
+        style = "breeze";
+        platformTheme = "gnome";
     };
     environment.systemPackages = [
         pkgs.kdePackages.breeze-gtk
@@ -34,7 +34,6 @@
             [Settings]
             gtk-cursor-theme-name=Quintom_Ink
             gtk-cursor-theme-size=24
-            gtk-font-name=Sans 12
             gtk-icon-theme-name=breeze-dark
             gtk-theme-name=BreezeDark
             gtk-application-prefer-dark-theme=1
@@ -43,14 +42,12 @@
             [Settings]
             gtk-cursor-theme-name=Quintom_Ink
             gtk-cursor-theme-size=24
-            gtk-font-name=Sans 12
             gtk-icon-theme-name=breeze-dark
             gtk-theme-name=BreezeDark
         '';
         ".config/gtk-2.0/gtkrc".text = ''
             gtk-cursor-theme-name = "Quintom_Ink"
             gtk-cursor-theme-size = 24
-            gtk-font-name = "Sans 12"
             gtk-icon-theme-name="breeze-dark"
             gtk-theme-name="BreezeDark"
         '';

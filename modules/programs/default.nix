@@ -1,3 +1,3 @@
 {...}: {
-    imports = [./gui.nix];
+    imports = [./gui.nix ./niri];
 }
