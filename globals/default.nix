@@ -3,11 +3,11 @@
     pkgs,
 }: let
     inherit (pkgs) lib;
-    inherit (builtins) attrNames readDir elem concatStringsSep;
+    inherit (builtins) attrNames readDir elem;
 
     availableThemes = attrNames (readDir ./themes);
     themeExists = elem "${theme}.nix" availableThemes;
-    themeError = "Theme '${theme}' not found. Available: ${concatStringsSep ", " availableThemes}";
+    themeError = "Theme '${theme}' not found";
 in
     assert themeExists || throw themeError; rec {
         base16Scheme = import ./themes/${theme}.nix;

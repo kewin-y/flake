@@ -1,3 +1,5 @@
+# Don't use formats.toml:
+# See: https://github.com/NixOS/nixpkgs/issues/387673
 pkgs:
 pkgs.writeTextDir "yazi/yazi.toml" ''
     [[open.rules]]

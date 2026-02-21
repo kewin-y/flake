@@ -8,12 +8,14 @@
     base16SchemeNoHashtag = globals.base16SchemeNoHashtag;
 
     packages = {
+        tmux = pkgs.callPackage ./tmux.nix {inherit base16Scheme;};
         obsidian = pkgs.callPackage ./obsidian.nix {};
         yazi = pkgs.callPackage ./yazi {};
-        foot = pkgs.callPackage ./foot {inherit base16Scheme;};
+        foot = pkgs.callPackage ./foot {inherit base16SchemeNoHashtag;};
         swaylock = pkgs.callPackage ./swaylock {inherit base16SchemeNoHashtag;};
         waybar = pkgs.callPackage ./waybar {inherit base16Scheme;};
         mako = pkgs.callPackage ./mako {inherit base16Scheme;};
+        fuzzel = pkgs.callPackage ./fuzzel {inherit base16Scheme;};
     };
 in {
     environment.systemPackages = builtins.attrValues packages;

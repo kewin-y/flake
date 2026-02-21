@@ -1,8 +1,8 @@
 {
     pkgs,
-    base16Scheme,
+    base16SchemeNoHashtag,
 }: let
-    config = import ./config.nix {inherit pkgs base16Scheme;};
+    config = import ./config.nix {inherit pkgs base16SchemeNoHashtag;};
 in
     pkgs.symlinkJoin {
         name = "foot-wrapped";

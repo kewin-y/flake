@@ -1,9 +1,9 @@
+# https://github.com/tinted-theming/tinted-terminal/blob/main/templates/foot-base16.mustache
 {
     pkgs,
-    base16Scheme,
+    base16SchemeNoHashtag,
 }:
-#  TODO: Actually use the base16 scheme
-with base16Scheme;
+with base16SchemeNoHashtag;
     pkgs.writeText "foot.ini" ''
         [colors]
         alpha=1.000000
@@ -20,27 +20,28 @@ with base16Scheme;
         grapheme-width-method=double-width
 
         [colors]
-        foreground=cecdc3
-        background=100f0f
-        regular0=100f0f # black
-        regular1=d14d41 # red
-        regular2=879a39 # green
-        regular3=d0a215 # yellow
-        regular4=4385be # blue
-        regular5=8b7ec8 # magenta
-        regular6=3aa99f # cyan
-        regular7=cecdc3 # white
-        bright0=575653 # bright black
-        bright1=d14d41 # bright red
-        bright2=879a39 # bright green
-        bright3=d0a215 # bright yellow
-        bright4=4385be # bright blue
-        bright5=8b7ec8 # bright magenta
-        bright6=3aa99f # bright cyan
-        bright7=fffcf0 # bright white
-        16=da702c
-        17=ce5d97
-        18=1c1b1a
-        19=282726
-        20=878580
+        foreground=${base05}
+        background=${base00}
+        regular0=${base00} # black
+        regular1=${base08} # red
+        regular2=${base0B} # green
+        regular3=${base0A} # yellow
+        regular4=${base0D} # blue
+        regular5=${base0E} # magenta
+        regular6=${base0C} # cyan
+        regular7=${base05} # white
+        bright0=${base03} # bright black
+        bright1=${base08} # bright red
+        bright2=${base0B} # bright green
+        bright3=${base0A} # bright yellow
+        bright4=${base0D} # bright blue
+        bright5=${base0E} # bright magenta
+        bright6=${base0C} # bright cyan
+        bright7=${base07} # bright white
+        16=${base09}
+        17=${base0F}
+        18=${base01}
+        19=${base02}
+        20=${base04}
+        21=${base06}
     ''

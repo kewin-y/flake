@@ -2,7 +2,7 @@
     pkgs,
     base16Scheme,
 }: let
-    toIni = pkgs.formats.ini {};
+    inherit (pkgs.lib.generators) toINI;
     settings = {
         main = {
             font = "monospace:size=12";
@@ -32,4 +32,4 @@
         };
     };
 in
-    pkgs.writeText "fuzzel.ini" (toIni settings)
+    pkgs.writeText "fuzzel.ini" (toINI {} settings)
