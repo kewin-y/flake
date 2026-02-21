@@ -4,17 +4,21 @@ pkgs.writeText "config.jsonc" (builtins.toJSON {
     position = "bottom";
     height = 36;
     spacing = 5;
-    modules-left = ["wlr/taskbar"];
+    modules-left = ["niri/workspaces"];
+    modules-center = ["niri/window"];
     modules-right = ["tray" "wireplumber" "battery" "network" "clock"];
+    "niri/workspaces" = {
+        format = "{index}";
+    };
+    "niri/window" = {
+        format = "{title}";
+        max-length = 50;
+    };
     clock = {
         tooltip = false;
         interval = 60;
         format = "{:%a %b %d %H:%M}";
         max-length = 25;
-    };
-    "wlr/taskbar" = {
-        format = "{name}";
-        on-click = "minimize-raise";
     };
     tray = {
         icon-size = 12;
@@ -33,7 +37,7 @@ pkgs.writeText "config.jsonc" (builtins.toJSON {
             warning = 30;
             critical = 15;
         };
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂"];
         format = "{icon}";
         format-charging = "{icon} 󰉁";
         tooltip-format = "{capacity}% | {timeTo}";

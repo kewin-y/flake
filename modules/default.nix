@@ -1,6 +1,6 @@
 {
     imports = [
-        ./wallpaper.nix
         ./system
+        ./programs
     ];
 }

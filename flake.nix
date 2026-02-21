@@ -66,6 +66,16 @@
             rabbit = mkSystem "rabbit" "25.05";
         };
 
+        packages.x86_64-linux.debug-swaylock = import ./config/programs/wrapped/swaylock {
+            inherit pkgs;
+            base16SchemeNoHashtag = globals.base16SchemeNoHashtag;
+        };
+
+        packages.x86_64-linux.debug-waybar = import ./config/programs/wrapped/waybar {
+            inherit pkgs;
+            base16Scheme= globals.base16Scheme;
+        };
+
         devShells.x86_64-linux.default = pkgs.mkShell {
             packages = [
                 pkgs.alejandra

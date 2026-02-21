@@ -9,14 +9,14 @@
         ./syncthing.nix
         ./neovim.nix
         ./ssh.nix
-        ./stylix
+        # ./stylix
         ./wrapped
     ];
 
-    theme.stylix = {
-        polarity = "dark";
-        themeName = "flexoki";
-    };
+    # theme.stylix = {
+    #     polarity = "dark";
+    #     themeName = "flexoki";
+    # };
 
     environment.shells = [pkgs.mksh];
     users.defaultUserShell = pkgs.mksh;
@@ -58,6 +58,10 @@
             prettierd
             typescript-language-server
             tailwindcss-language-server
+            niri
+            uwsm
+            zathura
+            imv
             ;
     };
 }

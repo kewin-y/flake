@@ -3,5 +3,6 @@
         ./network-blocking.nix
         ./bootloader.nix
         ./laptop.nix
+        ./xdg.nix
     ];
 }

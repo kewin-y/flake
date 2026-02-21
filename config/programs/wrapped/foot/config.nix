@@ -2,6 +2,7 @@
     pkgs,
     base16Scheme,
 }:
+#  TODO: Actually use the base16 scheme
 with base16Scheme;
     pkgs.writeText "foot.ini" ''
         [colors]
