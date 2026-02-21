@@ -34,7 +34,9 @@
     } @ inputs: let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-        globals = import ./globals {theme = "flexoki";};
+        theme = "flexoki";
+
+        globals = import ./globals {inherit theme pkgs;};
 
         mkSystem = hname: sysVer:
             nixpkgs.lib.nixosSystem {
@@ -62,6 +64,11 @@
         nixosConfigurations = {
             kevnet = mkSystem "kevnet" "23.11";
             rabbit = mkSystem "rabbit" "25.05";
+        };
+
+        packages.x86_64-linux.debug-swaylock = import ./config/programs/wrapped/swaylock {
+            inherit pkgs;
+            base16SchemeNoHashtag = globals.base16SchemeNoHashtag;
         };
 
         devShells.x86_64-linux.default = pkgs.mkShell {
