@@ -21,6 +21,9 @@
     };
 
     hjem.users.${globals.user}.files = {
-        ".config/niri/config.kdl".source = ./config.kdl;
+        ".config/niri/config.kdl".source = import ./config.kdl.nix {
+            inherit pkgs;
+            base16Scheme = globals.base16Scheme;
+        };
     };
 }
