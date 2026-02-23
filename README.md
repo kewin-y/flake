@@ -1,7 +1,6 @@
 # My NixOS Config
 
-Pretty standard NixOS/Home Manager configurations. I've tried to keep them as simple as possible.
+## Acknowledgements
 
-## Todo-list:
-
-- [ ] Move packages from `environment.systemPackages` to user-specific packages
+- [Sioodmy](https://github.com/sioodmy/dotfiles)
+  - Borrowed/stole the use of `pkgs.symlinkJoin` them. Also learned a lot of nix-related information from stalking their repository.

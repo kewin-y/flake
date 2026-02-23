@@ -27,17 +27,8 @@ with base16Scheme;
             // Omitting settings disables them, or leaves them at their default values.
             // All commented-out settings here are examples, not defaults.
             touchpad {
-                // off
                 tap
-                // dwt
-                // dwtp
-                // drag false
-                // drag-lock
-                natural-scroll
-                // accel-speed 0.2
-                // accel-profile "flat"
-                // scroll-method "two-finger"
-                // disabled-on-external-mouse
+                // natural-scroll
             }
 
             mouse {
