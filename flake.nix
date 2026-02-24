@@ -30,7 +30,6 @@
                 modules = [
                     ./modules
                     ./hosts/${hname}/configuration.nix
-                    ./config/default.nix
                     hjem.nixosModules.default
                 ];
                 specialArgs = {inherit inputs globals wrapped;};
