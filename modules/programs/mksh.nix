@@ -9,6 +9,9 @@
         pkgs.fzf
     ];
 
+    environment.shells = [pkgs.mksh];
+    users.defaultUserShell = pkgs.mksh;
+
     hjem.users.${globals.user}.files = {
         ".mkshrc".text = let
             fzfOpts = with globals.base16Scheme; ''

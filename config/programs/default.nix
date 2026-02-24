@@ -12,14 +12,6 @@
         ./ssh.nix
     ];
 
-    environment.shells = [pkgs.mksh];
-    users.defaultUserShell = pkgs.mksh;
-
-    nixpkgs.config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-    };
-
     environment.systemPackages =
         lib.attrValues wrapped
         ++ lib.attrValues {

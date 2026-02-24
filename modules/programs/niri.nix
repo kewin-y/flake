@@ -202,58 +202,37 @@
                 Mod+Period { expel-window-from-column; }
 
                 Mod+R { switch-preset-column-width; }
-                // Cycling through the presets in reverse order is also possible.
-                // Mod+R { switch-preset-column-width-back; }
                 Mod+Shift+R { switch-preset-window-height; }
                 Mod+Ctrl+R { reset-window-height; }
                 Mod+F { maximize-column; }
                 Mod+Shift+F { fullscreen-window; }
 
-                // Expand the focused column to space not taken up by other fully visible columns.
-                // Makes the column "fill the rest of the space".
                 Mod+Ctrl+G { expand-column-to-available-width; }
 
                 Mod+C { center-column; }
 
-                // Center all fully visible columns on screen.
                 Mod+Ctrl+C { center-visible-columns; }
 
                 Mod+Minus { set-column-width "-10%"; }
                 Mod+Equal { set-column-width "+10%"; }
 
-                // Finer height adjustments when in column with other windows.
                 Mod+Shift+Minus { set-window-height "-10%"; }
                 Mod+Shift+Equal { set-window-height "+10%"; }
 
-                // Move the focused window between the floating and the tiling layout.
                 Mod+V       { toggle-window-floating; }
                 Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-                // Toggle tabbed column display mode.
-                // Windows in this column will appear as vertical tabs,
-                // rather than stacked on top of each other.
                 Mod+Q { toggle-column-tabbed-display; }
 
                 Print { screenshot; }
                 Ctrl+Print { screenshot-screen; }
                 Alt+Print { screenshot-window; }
 
-                // Applications such as remote-desktop clients and software KVM switches may
-                // request that niri stops processing the keyboard shortcuts defined here
-                // so they may, for example, forward the key presses as-is to a remote machine.
-                // It's a good idea to bind an escape hatch to toggle the inhibitor,
-                // so a buggy application can't hold your session hostage.
-                //
-                // The allow-inhibiting=false property can be applied to other binds as well,
-                // which ensures niri always processes them, even when an inhibitor is active.
                 Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-                // The quit action will show a confirmation dialog to avoid accidental exits.
                 Mod+Shift+E { quit; }
                 Ctrl+Alt+Delete { quit; }
 
-                // Powers off the monitors. To turn them back on, do any input like
-                // moving the mouse or pressing any other key.
                 Mod+Shift+P { power-off-monitors; }
             }
 
@@ -261,6 +240,15 @@
 in {
     # Let the module configure the portals (for now)
     programs.niri.enable = true;
+
+    security.pam.services.swaylock = {};
+
+    services.xserver = {
+        xkb = {
+            layout = "us";
+            variant = "";
+        };
+    };
 
     systemd.user.services.swaybg = {
         description = "Swaybg";
@@ -285,6 +273,7 @@ in {
             Restart = "on-failure";
         };
     };
+
     systemd.user.services.mako = {
         description = "Mako";
         wantedBy = ["niri.service"];
