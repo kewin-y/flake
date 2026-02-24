@@ -16,7 +16,7 @@
         };
         border = {
             radius = 0;
-            width = 1;
+            width = 2;
         };
         colors = with base16Scheme; {
             background = "${base00}ff";

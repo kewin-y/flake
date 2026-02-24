@@ -11,10 +11,6 @@
             url = "github:feel-co/hjem";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        zen-browser = {
-            url = "github:0xc000022070/zen-browser-flake";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
     };
 
     outputs = {
@@ -27,8 +23,9 @@
         theme = "flexoki";
 
         globals = import ./globals {inherit theme pkgs;};
+        wrapped = import ./wrapped {inherit pkgs globals;};
 
-        mkSystem = hname: sysVer:
+        mkSystem = hname:
             nixpkgs.lib.nixosSystem {
                 modules = [
                     ./modules
@@ -36,23 +33,15 @@
                     ./config/default.nix
                     hjem.nixosModules.default
                 ];
-                specialArgs = {inherit inputs sysVer globals;};
+                specialArgs = {inherit inputs globals wrapped;};
             };
     in {
         nixosConfigurations = {
-            kevnet = mkSystem "kevnet" "23.11";
-            rabbit = mkSystem "rabbit" "25.05";
+            kevnet = mkSystem "kevnet";
+            rabbit = mkSystem "rabbit";
         };
 
-        packages.x86_64-linux.debug-swaylock = import ./config/programs/wrapped/swaylock {
-            inherit pkgs;
-            base16SchemeNoHashtag = globals.base16SchemeNoHashtag;
-        };
-
-        packages.x86_64-linux.debug-waybar = import ./config/programs/wrapped/waybar {
-            inherit pkgs;
-            base16Scheme= globals.base16Scheme;
-        };
+        packages.x86_64-linux = wrapped // {default = pkgs.writeText "Kevin" "Hi Kevin";};
 
         devShells.x86_64-linux.default = pkgs.mkShell {
             packages = [

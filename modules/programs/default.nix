@@ -1,3 +1,9 @@
 {...}: {
-    imports = [./gui.nix ./niri ./mksh.nix ./hjem.nix];
+    imports = [
+        ./gui.nix
+        ./niri.nix
+        ./mksh.nix
+        ./hjem.nix
+        ./obsidian.nix
+    ];
 }

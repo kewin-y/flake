@@ -1,4 +1,4 @@
-{sysVer, ...}: {
+{...}: {
     imports = [
         ./hardware-configuration.nix
     ];
@@ -10,5 +10,6 @@
         bootloader = "grub";
     };
     systemd.tpm2.enable = false;
-    system.stateVersion = sysVer;
+
+    system.stateVersion = "23.11";
 }
