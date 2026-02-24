@@ -1,34 +1,15 @@
-{pkgs, sysVer, ...}: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+{...}: {
+    imports = [
+        ./hardware-configuration.nix
+    ];
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      useOSProber = true;
+    networking.hostName = "kevnet";
+    kevin = {
+        laptop.enable = false;
+        network.blocking.enable = true;
+        bootloader = "grub";
     };
-  };
+    systemd.tpm2.enable = false;
 
-  systemd.tpm2.enable = false;
-
-  networking.hostName = "kevnet";
-
-  hardware.ckb-next = {
-    enable = true;
-
-    # Temporary Fix
-    package = pkgs.ckb-next.overrideAttrs (old: {
-      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DUSE_DBUS_MENU=0" ];
-    });
-  };
-
-  system.stateVersion = sysVer;
-
-  environment.systemPackages =  [
-    pkgs.ntfs3g
-  ];
+    system.stateVersion = "23.11";
 }

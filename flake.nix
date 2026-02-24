@@ -3,57 +3,44 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-unstable";
-        stylix = {
-            url = "github:danth/stylix";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         nvim-config = {
             url = "github:kewin-y/nvim-kewin";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        zen-browser = {
-            url = "github:0xc000022070/zen-browser-flake";
+        hjem = {
+            url = "github:feel-co/hjem";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
     outputs = {
         nixpkgs,
-        stylix,
-        home-manager,
+        hjem,
         ...
     } @ inputs: let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-        mkSystem = hname: sysVer:
+        theme = "flexoki";
+
+        globals = import ./globals {inherit theme pkgs;};
+        wrapped = import ./wrapped {inherit pkgs globals;};
+
+        mkSystem = hname:
             nixpkgs.lib.nixosSystem {
                 modules = [
                     ./modules
                     ./hosts/${hname}/configuration.nix
-                    ./config/default.nix
-                    stylix.nixosModules.stylix
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.users.kevin = {
-                            imports = [./home ./modules];
-                        };
-                        home-manager.extraSpecialArgs = {
-                            inherit inputs sysVer;
-                        };
-                    }
+                    hjem.nixosModules.default
                 ];
-                specialArgs = {inherit inputs sysVer;};
+                specialArgs = {inherit inputs globals wrapped;};
             };
     in {
         nixosConfigurations = {
-            keven = mkSystem "keven" "23.11";
-            kevnet = mkSystem "kevnet" "23.11";
-            rabbit = mkSystem "rabbit" "25.05";
+            kevnet = mkSystem "kevnet";
+            rabbit = mkSystem "rabbit";
         };
+
+        packages.x86_64-linux = wrapped // {default = pkgs.writeText "Kevin" "Hi Kevin";};
 
         devShells.x86_64-linux.default = pkgs.mkShell {
             packages = [
