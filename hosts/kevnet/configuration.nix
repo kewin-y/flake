@@ -6,7 +6,7 @@
     networking.hostName = "kevnet";
     kevin = {
         laptop.enable = false;
-        network.blocking.enable = true;
+        network.blocking.enable = false;
         bootloader = "grub";
     };
     systemd.tpm2.enable = false;
