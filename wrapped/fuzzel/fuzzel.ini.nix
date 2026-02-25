@@ -15,7 +15,7 @@
             lines = 8;
         };
         border = {
-            radius = 0;
+            radius = 8;
             width = 2;
         };
         colors = with base16Scheme; {
