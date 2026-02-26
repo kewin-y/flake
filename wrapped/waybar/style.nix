@@ -7,22 +7,26 @@ with base16Scheme;
         *:not(separator) {
           all: unset;
           font-family: "monospace";
-          font-size: 10pt;
+          font-size: 11pt;
         }
+
         window#waybar {
           background: ${base00};
           border-top: 2px solid ${base01};
           color: ${base05};
         }
+
         window#waybar.hidden {
           opacity: 0.2;
         }
+
         .modules-left {
-          margin-left: 0.5rem;
+          margin-left: 1em;
         }
         .modules-right {
-          margin-right: 0.5rem;
+          margin-right: 1em;
         }
+
         menu {
           background: ${base01};
           padding: 8px;
@@ -45,15 +49,11 @@ with base16Scheme;
         tooltip label {
           margin: 0.8rem;
         }
-        #clock,
-        #workspaces,
-        #window,
-        #tray,
-        #battery,
-        #wireplumber,
-        #network {
+
+        #tray menu {
           margin: 0 0.5rem;
         }
+
         #workspaces button {
           margin: 0 0.2rem;
           color: ${base04};

@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770650814,
-        "narHash": "sha256-4M9fBVycw0AWJgglVqBQZ1t51ORWWUEsTF3nML3bO9U=",
+        "lastModified": 1772076277,
+        "narHash": "sha256-tMjXM22xw2ipvyuualZ042stmYdz1tKe//994CBIoQ8=",
         "owner": "kewin-y",
         "repo": "nvim-kewin",
-        "rev": "f8b18e5438596cc4f539854cf02ed7103e2d905c",
+        "rev": "93d5c61969ed41698914981ba42211d387d0990c",
         "type": "github"
       },
       "original": {
@@ -116,7 +116,8 @@
       "inputs": {
         "hjem": "hjem",
         "nixpkgs": "nixpkgs",
-        "nvim-config": "nvim-config"
+        "nvim-config": "nvim-config",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
@@ -176,6 +177,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771735013,
+        "narHash": "sha256-QAh0iw/AgjcaNvBE5OIZstxVxagLVK0RAuH7EhIL/N8=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "32b69f03007507fc012be9203efdd414f4bc0d66",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

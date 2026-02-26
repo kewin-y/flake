@@ -12,8 +12,8 @@ with base16Scheme;
         width=200
         height=300
         padding=12
-        border-size=1
-        border-radius=8
+        border-size=2
+        border-radius=0
         markup=true
         icons=true
         format=%s\n\n%b
@@ -21,13 +21,13 @@ with base16Scheme;
         max-icon-size=32
         default-timeout=0
         ignore-timeout=true
-        font=monospace 12
+        font=monospace 11
 
         [urgency=low]
         border-color=${base0B}
 
         [urgency=normal]
-        border-color=${base01}
+        border-color=${base0D}
 
         [urgency=high]
         border-color=${base08}

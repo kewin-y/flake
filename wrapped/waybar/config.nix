@@ -3,7 +3,7 @@ pkgs.writeText "config.jsonc" (builtins.toJSON {
     layer = "top";
     position = "bottom";
     height = 36;
-    spacing = 5;
+    spacing = 22;
     modules-left = ["niri/workspaces"];
     modules-center = ["niri/window"];
     modules-right = ["tray" "wireplumber" "battery" "network" "clock"];
@@ -22,7 +22,7 @@ pkgs.writeText "config.jsonc" (builtins.toJSON {
     };
     tray = {
         icon-size = 12;
-        spacing = 8;
+        spacing = 22;
     };
     wireplumber = {
         format-icons = ["" "" ""];

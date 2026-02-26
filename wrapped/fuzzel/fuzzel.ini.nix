@@ -5,7 +5,7 @@
     inherit (pkgs.lib.generators) toINI;
     settings = {
         main = {
-            font = "monospace:size=12";
+            font = "monospace:size=11.5";
             horizontal-pad = 18;
             vertical-pad = 18;
             inner-pad = 18;
@@ -15,7 +15,7 @@
             lines = 8;
         };
         border = {
-            radius = 8;
+            radius = 0;
             width = 2;
         };
         colors = with base16Scheme; {
@@ -28,7 +28,7 @@
             placeholder = "${base03}ff";
             selection-match = "${base0D}ff";
             selection = "${base02}ff";
-            border = "${base01}ff";
+            border = "${base0D}ff";
         };
     };
 in

@@ -2,6 +2,7 @@
     pkgs,
     lib,
     wrapped,
+    inputs,
     ...
 }: {
     imports = [
@@ -16,6 +17,8 @@
         ./ssh.nix
         ./syncthing.nix
     ];
+
+    programs.nix-ld.enable = true;
 
     environment.systemPackages =
         lib.attrValues {
@@ -50,7 +53,9 @@
                 tailwindcss-language-server
                 zathura
                 imv
+                bun
                 ;
         }
+        ++ [inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default]
         ++ lib.attrValues wrapped;
 }

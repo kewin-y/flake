@@ -11,6 +11,10 @@
             url = "github:feel-co/hjem";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        zen-browser = {
+            url = "github:youwen5/zen-browser-flake";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {
@@ -20,7 +24,7 @@
     } @ inputs: let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-        theme = "flexoki";
+        theme = "flexoki-light";
 
         globals = import ./globals {inherit theme pkgs;};
         wrapped = import ./wrapped {inherit pkgs globals;};
