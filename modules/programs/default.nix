@@ -16,6 +16,7 @@
         ./neovim.nix
         ./ssh.nix
         ./syncthing.nix
+        ./xdg.nix
     ];
 
     programs.nix-ld.enable = true;
