@@ -18,7 +18,7 @@
             }
 
             cursor {
-                xcursor-theme "Quintom_Ink"
+                xcursor-theme "Quintom_Snow"
                 xcursor-size 24
             }
 
