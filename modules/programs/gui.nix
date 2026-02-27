@@ -6,8 +6,6 @@
 }: {
     qt = {
         enable = true;
-        # If you want Qt apps to mimic GTK, keep "gnome".
-        # If you want Qt apps to look like adw-gtk3, change to "kde" or remove this line.
         platformTheme = "gnome";
         style = "adwaita";
     };
@@ -19,7 +17,6 @@
         pkgs.quintom-cursor-theme
     ];
 
-    # Force GTK to use the theme
     environment.sessionVariables.GTK_THEME = "adw-gtk3";
 
     programs.dconf = {
@@ -53,7 +50,6 @@
             gtk-icon-theme-name=breeze
             gtk-theme-name=adw-gtk3
         '';
-        # Fixed syntax and theme name here
         ".config/gtk-2.0/gtkrc".text = ''
             gtk-cursor-theme-name = "Quintom_Snow"
             gtk-cursor-theme-size = 24
