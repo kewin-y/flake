@@ -2,17 +2,13 @@ pkgs:
 pkgs.writeText "config.jsonc" (builtins.toJSON {
     layer = "top";
     position = "bottom";
-    height = 36;
+    height = 42;
     spacing = 22;
-    modules-left = ["niri/workspaces"];
-    modules-center = ["niri/window"];
-    modules-right = ["tray" "wireplumber" "battery" "network" "clock"];
+    modules-left = ["clock"];
+    modules-center = ["niri/workspaces"];
+    modules-right = ["tray" "wireplumber" "network" "battery" ];
     "niri/workspaces" = {
         format = "{index}";
-    };
-    "niri/window" = {
-        format = "{title}";
-        max-length = 50;
     };
     clock = {
         tooltip = false;
@@ -22,7 +18,7 @@ pkgs.writeText "config.jsonc" (builtins.toJSON {
     };
     tray = {
         icon-size = 12;
-        spacing = 22;
+        spacing = 16;
     };
     wireplumber = {
         format-icons = ["" "" ""];

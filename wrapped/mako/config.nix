@@ -9,11 +9,11 @@ with base16Scheme;
         background-color=${base00}
         text-color=${base05}
         border-color=${base0D}
-        width=200
+        width=350
         height=300
         padding=12
         border-size=2
-        border-radius=0
+        border-radius=16
         markup=true
         icons=true
         format=%s\n\n%b

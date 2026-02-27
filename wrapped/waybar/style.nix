@@ -6,13 +6,14 @@ with base16Scheme;
     pkgs.writeText "style.css" ''
         *:not(separator) {
           all: unset;
-          font-family: "monospace";
-          font-size: 11pt;
+          font-family: monospace;
+          font-size: 1em;
         }
 
         window#waybar {
+          font-size: 1em;
           background: ${base00};
-          border-top: 2px solid ${base01};
+          border-top: 0.18em solid ${base01};
           color: ${base05};
         }
 
@@ -21,54 +22,73 @@ with base16Scheme;
         }
 
         .modules-left {
-          margin-left: 1em;
+          margin-left: 1.5em;
         }
+
         .modules-right {
-          margin-right: 1em;
+          margin-right: 1.5em;
         }
 
         menu {
           background: ${base01};
-          padding: 8px;
+          padding: 0.7em;
+          border-radius: 0.8em;
         }
+
         menu separator {
           background: ${base03};
-          margin: 0.4rem 0;
+          margin: 0.35em 0;
         }
+
         menu menuitem {
           color: ${base05};
-          padding: 0.8rem;
+          padding: 0.6em 0.8em;
+          border-radius: 0.6em;
         }
+
         menu menuitem:hover {
           background: ${base02};
         }
+
         tooltip {
-          background: ${base01};
-          color: ${base05};
-        }
-        tooltip label {
-          margin: 0.8rem;
+          background: transparent;
+          border-radius: 0.6em;
+          box-shadow: none;
         }
 
-        #tray menu {
-          margin: 0 0.5rem;
+        tooltip box {
+          background: ${base01};
+          border-radius: 0.6em;
+          padding: 0.8em 1em;
+        }
+
+        tooltip label {
+          background: transparent;
+          color: ${base05};
+        }
+
+        #tray {
+          background: ${base01};
+          margin: 0.5em 0;
+          padding: 0 0.5em;
+          border-radius: 0.4em;
         }
 
         #workspaces button {
-          margin: 0 0.2rem;
+          margin: 0 0.25em;
           color: ${base04};
         }
+
         #workspaces button.active {
           color: ${base05};
-          font-weight: bold;
+          font-weight: 600;
         }
+
         #workspaces button.urgent {
           color: ${base08};
         }
+
         #workspaces button:hover {
           color: ${base06};
-        }
-        #window {
-          color: ${base05};
         }
     ''
