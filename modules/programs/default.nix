@@ -43,7 +43,6 @@
                 obs-studio
                 rnote
                 typst
-                chromium
                 zk
                 zoom-us
                 vesktop
