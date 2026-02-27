@@ -18,7 +18,7 @@
             }
 
             cursor {
-                xcursor-theme "Quintom_Snow"
+                xcursor-theme "${config.kevin.gui.cursor-theme}"
                 xcursor-size 24
             }
 
