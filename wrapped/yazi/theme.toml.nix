@@ -1,0 +1,26 @@
+# Don't use formats.toml:
+# See: https://github.com/NixOS/nixpkgs/issues/387673
+pkgs:
+# Credits: https://codeberg.org/oceanicc/petrichor
+
+pkgs.writeTextDir "yazi/theme.toml" ''
+    [mgr]
+    border_symbol = " "
+
+    [indicator]
+    padding = { open = "█", close = "█" }
+
+    [mode]
+    normal_main = { fg = "black", bg = "blue", bold = true }
+    normal_alt = { fg = "blue", bg = "black" }
+
+    select_main = { fg = "black", bg = "green", bold = true }
+    select_alt = { fg = "green", bg = "black" }
+
+    unset_main = { fg = "black", bg = "yellow", bold = true }
+    unset_alt = { fg = "yellow", bg = "black" }
+
+    [status]
+    sep_left = { open = "", close = "" }
+    sep_right = { open = "", close = "" }
+''

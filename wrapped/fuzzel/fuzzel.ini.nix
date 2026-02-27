@@ -5,7 +5,7 @@
     inherit (pkgs.lib.generators) toINI;
     settings = {
         main = {
-            font = "monospace:size=11.5";
+            font = "monospace:size=12";
             horizontal-pad = 18;
             vertical-pad = 18;
             inner-pad = 18;

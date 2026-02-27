@@ -3,6 +3,7 @@
         name = "yazi-config";
         paths = [
             (import ./yazi.toml.nix pkgs)
+            (import ./theme.toml.nix pkgs)
         ];
     };
 in

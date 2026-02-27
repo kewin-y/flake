@@ -16,12 +16,12 @@ with base16Scheme;
         border-radius=16
         markup=true
         icons=true
-        format=%s\n\n%b
+        format=<b>%s</b>\n%b
         actions=true
         max-icon-size=32
         default-timeout=0
         ignore-timeout=true
-        font=monospace 11
+        font=monospace
 
         [urgency=low]
         border-color=${base0B}
@@ -33,5 +33,5 @@ with base16Scheme;
         border-color=${base08}
 
         [actionable=true]
-        format=%s\n\n%b\n\nM-O to view actions
+        format=<b>%s</b>\n%b\n\nM-A to view actions
     ''

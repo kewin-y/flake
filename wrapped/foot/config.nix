@@ -12,7 +12,7 @@ with base16SchemeNoHashtag;
         [main]
         box-drawings-uses-font-glyphs=no
         dpi-aware=no
-        font=monospace:size=11.5
+        font=monospace:size=12
         pad=24x24
 
         [tweak]
