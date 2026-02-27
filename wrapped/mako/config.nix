@@ -8,12 +8,12 @@ with base16Scheme;
         layer=overlay
         background-color=${base00}
         text-color=${base05}
-        border-color=${base0D}
-        width=350
+        border-color=${base04}
+        width=300
         height=300
         padding=12
         border-size=2
-        border-radius=16
+        border-radius=12
         markup=true
         icons=true
         format=<b>%s</b>\n%b
@@ -21,13 +21,13 @@ with base16Scheme;
         max-icon-size=32
         default-timeout=0
         ignore-timeout=true
-        font=monospace
+        font=monospace 11
 
         [urgency=low]
         border-color=${base0B}
 
         [urgency=normal]
-        border-color=${base0D}
+        border-color=${base04}
 
         [urgency=high]
         border-color=${base08}

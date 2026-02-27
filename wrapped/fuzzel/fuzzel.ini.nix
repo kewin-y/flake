@@ -15,7 +15,7 @@
             lines = 8;
         };
         border = {
-            radius = 16;
+            radius = 12;
             width = 2;
         };
         colors = with base16Scheme; {
@@ -28,7 +28,7 @@
             placeholder = "${base03}ff";
             selection-match = "${base0D}ff";
             selection = "${base02}ff";
-            border = "${base0D}ff";
+            border = "${base04}ff";
         };
     };
 in

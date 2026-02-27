@@ -39,7 +39,7 @@
 
                     inactive-color "${base01}"
 
-                    active-color "${base0D}"
+                    active-color "${base04}"
                 }
 
                 focus-ring {

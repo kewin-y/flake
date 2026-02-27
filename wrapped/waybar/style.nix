@@ -7,11 +7,10 @@ with base16Scheme;
         *:not(separator) {
           all: unset;
           font-family: monospace;
-          font-size: 1em;
         }
 
         window#waybar {
-          font-size: 1em;
+          font-size: 11pt;
           background: ${base00};
           border-top: 0.18em solid ${base01};
           color: ${base05};
