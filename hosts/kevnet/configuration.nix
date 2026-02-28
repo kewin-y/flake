@@ -6,7 +6,13 @@
     networking.hostName = "kevnet";
     kevin = {
         laptop.enable = false;
-        network.blocking.enable = true;
+        network.blocking = {
+            enable = true;
+            extraHosts = [
+                "youtube.com"
+                    "www.youtube.com"
+            ];
+        };
         bootloader = "grub";
     };
     systemd.tpm2.enable = false;
