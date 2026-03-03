@@ -17,6 +17,7 @@
         ./ssh.nix
         ./syncthing.nix
         ./xdg.nix
+        ./zen.nix
     ];
 
     programs.nix-ld.enable = true;
@@ -54,8 +55,9 @@
                 zathura
                 imv
                 bun
+                libreoffice
+                opencode
                 ;
         }
-        ++ [inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default]
         ++ lib.attrValues wrapped;
 }

@@ -11,10 +11,6 @@
                 keyboard {
                     numlock
                 }
-
-                touchpad {
-                    tap
-                }
             }
 
             cursor {
@@ -39,7 +35,7 @@
 
                     inactive-color "${base01}"
 
-                    active-color "${base04}"
+                    active-color "${base01}"
                 }
 
                 focus-ring {
