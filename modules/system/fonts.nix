@@ -3,6 +3,7 @@
     packages = with pkgs; [
       inter
       pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.lilex
       pkgs.nerd-fonts.iosevka
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -25,7 +26,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "Iosevka Nerd Font Propo"
+          "Lilex Nerd Font Propo"
           "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];
