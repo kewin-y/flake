@@ -51,9 +51,6 @@
                 pkgs.alejandra
                 pkgs.nixd
             ];
-            shellHook = ''
-                export SHELL='${pkgs.mksh}/bin/mksh'
-            '';
         };
     };
 }
