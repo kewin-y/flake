@@ -80,7 +80,6 @@ with base16Scheme;
 
         #workspaces button.active {
           color: ${base05};
-          font-weight: 600;
         }
 
         #workspaces button.urgent {

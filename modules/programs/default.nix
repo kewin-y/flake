@@ -8,7 +8,6 @@
     imports = [
         ./gui.nix
         ./niri.nix
-        ./mksh.nix
         ./hjem.nix
         ./obsidian.nix
         ./docker.nix
@@ -17,6 +16,7 @@
         ./ssh.nix
         ./syncthing.nix
         ./xdg.nix
+        ./zsh.nix
         ./zen.nix
     ];
 
