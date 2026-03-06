@@ -55,6 +55,7 @@
 
             # Enable vi mode
             bindkey -v
+            bindkey '^y' autosuggest-accept
         '';
     };
 }
