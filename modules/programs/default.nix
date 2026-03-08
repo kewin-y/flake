@@ -18,7 +18,6 @@
         ./xdg.nix
         ./zsh.nix
         ./zen.nix
-        ./ly.nix
     ];
 
     programs.nix-ld.enable = true;

@@ -41,23 +41,17 @@ in {
             style = "adwaita";
         };
 
-        environment.systemPackages = [
-            pkgs.adw-gtk3
-            pkgs.kdePackages.breeze-icons
-            pkgs.quintom-cursor-theme
-        ];
-
-        environment.sessionVariables = {
-            GTK_THEME = gtkTheme;
-        };
-
         programs.dconf.enable = true;
 
         programs.dconf.profiles.user.databases = [
             {
                 lockAll = false;
                 settings."org/gnome/desktop/interface" = {
-                    color-scheme = lib.gvariant.mkString ( if color-theme == "dark" then "prefer-dark" else "default" );
+                    color-scheme = lib.gvariant.mkString (
+                        if color-theme == "dark"
+                        then "prefer-dark"
+                        else "default"
+                    );
                     gtk-theme = lib.gvariant.mkString gtkTheme;
                     icon-theme = lib.gvariant.mkString icon-theme;
                     cursor-theme = lib.gvariant.mkString cursor-theme;
@@ -66,29 +60,36 @@ in {
             }
         ];
 
-        hjem.users.${globals.user}.files = {
-            ".config/gtk-4.0/settings.ini".text = ''
-                [Settings]
-                gtk-theme-name=${gtkTheme}
-                gtk-icon-theme-name=${icon-theme}
-                gtk-cursor-theme-name=${cursor-theme}
-                gtk-cursor-theme-size=24
-            '';
+        environment = {
+            systemPackages = [
+                pkgs.adw-gtk3
+                pkgs.kdePackages.breeze-icons
+                pkgs.quintom-cursor-theme
+            ];
+            etc = {
+                "gtk-4.0/settings.ini".text = ''
+                    [Settings]
+                    gtk-theme-name=${gtkTheme}
+                    gtk-icon-theme-name=${icon-theme}
+                    gtk-cursor-theme-name=${cursor-theme}
+                    gtk-cursor-theme-size=24
+                '';
 
-            ".config/gtk-3.0/settings.ini".text = ''
-                [Settings]
-                gtk-theme-name=${gtkTheme}
-                gtk-icon-theme-name=${icon-theme}
-                gtk-cursor-theme-name=${cursor-theme}
-                gtk-cursor-theme-size=24
-            '';
+                "gtk-3.0/settings.ini".text = ''
+                    [Settings]
+                    gtk-theme-name=${gtkTheme}
+                    gtk-icon-theme-name=${icon-theme}
+                    gtk-cursor-theme-name=${cursor-theme}
+                    gtk-cursor-theme-size=24
+                '';
 
-            ".config/gtk-2.0/gtkrc".text = ''
-                gtk-theme-name = "${gtkTheme}"
-                gtk-icon-theme-name = "${icon-theme}"
-                gtk-cursor-theme-name = "${cursor-theme}"
-                gtk-cursor-theme-size = 24
-            '';
+                "gtk-2.0/gtkrc".text = ''
+                    gtk-theme-name = "${gtkTheme}"
+                    gtk-icon-theme-name = "${icon-theme}"
+                    gtk-cursor-theme-name = "${cursor-theme}"
+                    gtk-cursor-theme-size = 24
+                '';
+            };
         };
     };
 }
