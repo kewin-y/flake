@@ -12,7 +12,6 @@
         ./obsidian.nix
         ./docker.nix
         ./git.nix
-        ./neovim.nix
         ./ssh.nix
         ./syncthing.nix
         ./xdg.nix
@@ -21,6 +20,10 @@
     ];
 
     programs.nix-ld.enable = true;
+
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
 
     environment.systemPackages =
         lib.attrValues {

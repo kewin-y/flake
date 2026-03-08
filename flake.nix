@@ -3,10 +3,6 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-unstable";
-        nvim-config = {
-            url = "github:kewin-y/nvim-kewin";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         hjem = {
             url = "github:feel-co/hjem";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +20,7 @@
     } @ inputs: let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-        theme = "flexoki-dark";
+        theme = "espresso";
 
         globals = import ./globals {inherit theme pkgs;};
         wrapped = import ./wrapped {inherit pkgs globals;};

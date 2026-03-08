@@ -1,23 +1,5 @@
 {
   "nodes": {
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib"
-      },
-      "locked": {
-        "lastModified": 1769996383,
-        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "hjem": {
       "inputs": {
         "nix-darwin": "nix-darwin",
@@ -76,47 +58,10 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-lib": {
-      "locked": {
-        "lastModified": 1769909678,
-        "narHash": "sha256-cBEymOf4/o3FD5AZnzC3J9hLbiZ+QDT/KDuyHXVJOpM=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "72716169fe93074c333e8d0173151350670b824c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nvim-config": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772652632,
-        "narHash": "sha256-UHbB8GdXTTw3EdbWfYCIn+xiwvQYaKyqBSt031b5gcU=",
-        "owner": "kewin-y",
-        "repo": "nvim-kewin",
-        "rev": "c9377b7a0fc5697c41b7efb7d40b8ca32147a971",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kewin-y",
-        "repo": "nvim-kewin",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "hjem": "hjem",
         "nixpkgs": "nixpkgs",
-        "nvim-config": "nvim-config",
         "zen-browser": "zen-browser"
       }
     },

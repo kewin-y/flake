@@ -22,13 +22,13 @@
             background = "${base00}ff";
             text = "${base05}ff";
             selection-text = "${base05}ff";
-            match = "${base0D}ff";
-            prompt = "${base0D}ff";
+            match = "${base05}ff";
+            prompt = "${base05}ff";
             input = "${base05}ff";
             placeholder = "${base03}ff";
-            selection-match = "${base0D}ff";
+            selection-match = "${base05}ff";
             selection = "${base02}ff";
-            border = "${base04}ff";
+            border = "${base05}ff";
         };
     };
 in

@@ -20,7 +20,7 @@ in {
     options.kevin.gui = {
         icon-theme = lib.mkOption {
             type = lib.types.str;
-            default = "breeze-dark";
+            default = "Tela-dark";
         };
 
         cursor-theme = lib.mkOption {
@@ -63,8 +63,10 @@ in {
         environment = {
             systemPackages = [
                 pkgs.adw-gtk3
+                pkgs.morewaita-icon-theme
                 pkgs.kdePackages.breeze-icons
                 pkgs.quintom-cursor-theme
+                pkgs.tela-icon-theme
             ];
             etc = {
                 "gtk-4.0/settings.ini".text = ''
