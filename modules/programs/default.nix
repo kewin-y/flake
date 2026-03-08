@@ -21,7 +21,7 @@
 
     programs.nix-ld.enable = true;
 
-    sessionVariables = {
+    environment.sessionVariables = {
       EDITOR = "nvim";
     };
 
