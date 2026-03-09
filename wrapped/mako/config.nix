@@ -12,7 +12,7 @@ with base16Scheme;
         width=300
         height=300
         padding=12
-        border-size=2
+        border-size=1
         border-radius=8
         markup=true
         icons=true
@@ -27,7 +27,7 @@ with base16Scheme;
         border-color=${base0B}
 
         [urgency=normal]
-        border-color=${base04}
+        border-color=${base03}
 
         [urgency=high]
         border-color=${base08}

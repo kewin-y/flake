@@ -16,7 +16,7 @@
         };
         border = {
             radius = 12;
-            width = 2;
+            width = 1;
         };
         colors = with base16Scheme; {
             background = "${base00}ff";
@@ -28,7 +28,7 @@
             placeholder = "${base03}ff";
             selection-match = "${base05}ff";
             selection = "${base02}ff";
-            border = "${base05}ff";
+            border = "${base03}ff";
         };
     };
 in
