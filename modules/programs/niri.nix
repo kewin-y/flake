@@ -31,11 +31,7 @@
 
                 default-column-width { proportion 0.5; }
                 border {
-                    width 2
-
-                    inactive-color "${base01}"
-
-                    active-color "${base01}"
+                    off
                 }
 
                 focus-ring {
@@ -52,7 +48,7 @@
             }
 
             window-rule {
-                geometry-corner-radius 16
+                geometry-corner-radius 5
                 clip-to-geometry true
             }
 
@@ -220,16 +216,14 @@
 
                 Mod+Q { toggle-column-tabbed-display; }
 
-                Print { screenshot; }
-                Ctrl+Print { screenshot-screen; }
-                Alt+Print { screenshot-window; }
+                Mod+P { screenshot show-pointer=false; }
+                Mod+Shift+P { screenshot-screen show-pointer=false; }
+                Mod+Ctrl+P { screenshot-window; }
 
                 Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
                 Mod+Shift+E { quit; }
                 Ctrl+Alt+Delete { quit; }
-
-                Mod+Shift+P { power-off-monitors; }
             }
 
         '';

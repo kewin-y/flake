@@ -31,7 +31,7 @@ with base16Scheme;
         menu {
           background: ${base01};
           padding: 0.7em;
-          border-radius: 0.8em;
+          border-radius: 0.4em;
         }
 
         menu separator {
@@ -42,7 +42,7 @@ with base16Scheme;
         menu menuitem {
           color: ${base05};
           padding: 0.6em 0.8em;
-          border-radius: 0.6em;
+          border-radius: 0.3em;
         }
 
         menu menuitem:hover {
@@ -51,13 +51,13 @@ with base16Scheme;
 
         tooltip {
           background: transparent;
-          border-radius: 0.6em;
+          border-radius: 0.3em;
           box-shadow: none;
         }
 
         tooltip box {
           background: ${base01};
-          border-radius: 0.6em;
+          border-radius: 0.3em;
           padding: 0.8em 1em;
         }
 
@@ -70,7 +70,7 @@ with base16Scheme;
           background: ${base01};
           margin: 0.5em 0;
           padding: 0 0.5em;
-          border-radius: 0.4em;
+          border-radius: 0.3em;
         }
 
         #workspaces button {

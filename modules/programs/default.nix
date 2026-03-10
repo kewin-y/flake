@@ -21,6 +21,8 @@
 
     programs.nix-ld.enable = true;
 
+    # Needed for Nautilus Trash
+    services.gvfs.enable = true;
     environment.sessionVariables = {
       EDITOR = "nvim";
     };
