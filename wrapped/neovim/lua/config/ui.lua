@@ -34,6 +34,9 @@ local function hi_link(group, link)
     vim.cmd(cmd)
 end
 
+hi("@lsp.mod.deprecated", { fg = colors.base0F, bg = nil })
+hi("Delimiter", { fg = colors.base04, bg = nil })
+
 hi("WinSeparator", { fg = colors.base02 })
 hi("NormalFloat", { fg = colors.base5, bg = colors.base00 })
 hi("FloatBorder", { fg = colors.base05, bg = colors.base00 })
