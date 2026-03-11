@@ -14,8 +14,7 @@
         waybar = pkgs.callPackage ./waybar {inherit base16Scheme;};
         mako = pkgs.callPackage ./mako {inherit base16Scheme;};
         fuzzel = pkgs.callPackage ./fuzzel {inherit base16Scheme;};
-        neovim = pkgs.callPackage ./neovim {inherit base16Scheme;};
+        neovim = pkgs.callPackage ./neovim {};
     };
 in
     wrapped
-

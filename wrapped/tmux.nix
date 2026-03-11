@@ -29,9 +29,17 @@
 
             set-option -g status-position top
 
-            set-option -g status-style "fg=${base05},bg=${base01}"
-            set-window-option -g window-status-style "fg=${base05},bg=default"
-            set-window-option -g window-status-current-style "fg=${base0D},bg=default"
+            set-option -g status-style "fg=${base04},bg=${base01}"
+
+            set-window-option -g window-status-style "fg=${base04},bg=default"
+            set-window-option -g window-status-current-style "fg=${base05},bg=default"
+
+            set-window-option -g window-status-format "#I:#W "
+            set-window-option -g window-status-current-format "#I:#W "
+
+            set-option -g status-left " "
+            set-option -g status-right " %a %b %d %H:%M [#S] "
+
             set-option -g pane-border-style "fg=${base01}"
             set-option -g pane-active-border-style "fg=${base02}"
             set-option -g message-style "fg=${base06},bg=${base01}"

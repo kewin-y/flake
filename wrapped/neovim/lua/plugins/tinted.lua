@@ -4,7 +4,7 @@ return {
         priority = 1000,
         lazy = false,
         opts = {
-            -- your config overrides
+            default_scheme = "base16-flexoki-dark",
         },
     },
 }
