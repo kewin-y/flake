@@ -94,7 +94,7 @@ return {
 
     config = function()
         require("zk").setup({
-            picker = "fzf_lua",
+            picker = "minipick",
             lsp = {
                 config = {
                     name = "zk",
