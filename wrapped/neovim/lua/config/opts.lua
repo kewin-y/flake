@@ -1,3 +1,5 @@
+vim.o.smartcase = true
+vim.o.ignorecase = true
 vim.opt.fillchars = { eob = " " }
 vim.opt.termguicolors = true
 vim.opt.shiftwidth = 4
