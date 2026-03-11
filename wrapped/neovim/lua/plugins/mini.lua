@@ -1,15 +1,23 @@
 return {
     {
-        "nvim-mini/mini.base16",
-        event = "VeryLazy",
-        lazy = true,
-        version = false,
-    },
-    {
         "nvim-mini/mini.hipatterns",
-        event = "VeryLazy",
-        lazy = true,
+        lazy = false,
         version = false,
+        opts = function()
+            local hi = require("mini.hipatterns")
+            return {
+                highlighters = {
+                    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+                    fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+                    hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+                    todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+                    note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+                    -- Highlight hex color strings (`#rrggbb`) using that color
+                    hex_color = hi.gen_highlighter.hex_color(),
+                },
+            }
+        end,
     },
     {
         "echasnovski/mini.pick",
@@ -40,8 +48,7 @@ return {
             mappings = {
                 -- See the breakdown below regarding Ctrl-Q
                 mark_all = "<C-q>",
-                choose_marked = "<C-CR>"
-
+                choose_marked = "<C-CR>",
             },
         },
     },

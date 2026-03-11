@@ -1,8 +1,6 @@
 local colors = _G.theme
 
-require("mini.base16").setup({
-    palette = colors,
-})
+require("base16-colorscheme").setup(colors)
 
 local hipatterns = require("mini.hipatterns")
 hipatterns.setup({
@@ -34,9 +32,6 @@ local function hi_link(group, link)
     vim.cmd(cmd)
 end
 
-hi("@lsp.mod.deprecated", { fg = colors.base0F, bg = nil })
-hi("Delimiter", { fg = colors.base04, bg = nil })
-
 hi("WinSeparator", { fg = colors.base02 })
 hi("NormalFloat", { fg = colors.base05, bg = colors.base00 })
 hi("FloatBorder", { fg = colors.base05, bg = colors.base00 })
@@ -46,16 +41,16 @@ hi("LineNrBelow", { fg = colors.base03 })
 hi("SignColumn", { fg = colors.base03 })
 hi("StatusLine", { fg = colors.base04, bg = colors.base01 })
 
-hi("DiagnosticFloatingError", { fg = colors.base08, bg = colors.base00 })
-hi("DiagnosticFloatingHint", { fg = colors.base0A, bg = colors.base00 })
-hi("DiagnosticFloatingInfo", { fg = colors.base0C, bg = colors.base00 })
-hi("DiagnosticFloatingOk", { fg = colors.base0B, bg = colors.base00 })
-hi("DiagnosticFloatingWarn", { fg = colors.base0E, bg = colors.base00 })
-hi("DiagnosticSignError", { fg = colors.base08, bg = colors.base00 })
-hi("DiagnosticSignHint", { fg = colors.base0A, bg = colors.base00 })
-hi("DiagnosticSignInfo", { fg = colors.base0C, bg = colors.base00 })
-hi("DiagnosticSignOk", { fg = colors.base0B, bg = colors.base00 })
-hi("DiagnosticSignWarn", { fg = colors.base0E, bg = colors.base00 })
+hi("DiagnosticFloatingError", { fg = colors.base08, bg = nil })
+hi("DiagnosticFloatingHint", { fg = colors.base0A, bg = nil })
+hi("DiagnosticFloatingInfo", { fg = colors.base0C, bg = nil })
+hi("DiagnosticFloatingOk", { fg = colors.base0B, bg = nil })
+hi("DiagnosticFloatingWarn", { fg = colors.base0E, bg = nil })
+hi("DiagnosticSignError", { fg = colors.base08, bg = nil })
+hi("DiagnosticSignHint", { fg = colors.base0A, bg = nil })
+hi("DiagnosticSignInfo", { fg = colors.base0C, bg = nil })
+hi("DiagnosticSignOk", { fg = colors.base0B, bg = nil })
+hi("DiagnosticSignWarn", { fg = colors.base0E, bg = nil })
 
 hi("BlinkCmpMenu", { fg = colors.base05, bg = colors.base00 })
 hi("BlinkCmpMenuBorder", { fg = colors.base05, bg = colors.base00 })
@@ -86,7 +81,7 @@ hi_link("BlinkCmpKindText", "Statement")
 hi_link("BlinkCmpKindTypeParameter", "Type")
 hi_link("BlinkCmpKindUnit", "Special")
 hi_link("BlinkCmpKindValue", "Identifier")
-hi_link("BlinkCmpKindVariable", "Delimiter")
+hi_link("BlinkCmpKindVariable", "Variable")
 
 hi("MiniPickNormal", { fg = colors.base05, bg = colors.base00 })
 hi("MiniPickCursor", { fg = "NONE", bg = colors.base01 })
@@ -100,3 +95,4 @@ hi_link("MiniPickBorderText", "FloatBorder")
 hi("MiniPickPrompt", { fg = colors.base05, bg = colors.base00 })
 hi("MiniPickPromptPrefix", { fg = colors.base05, bg = colors.base00 })
 hi("MiniPickPromptCaret", { fg = colors.base05, bg = colors.base00 })
+
