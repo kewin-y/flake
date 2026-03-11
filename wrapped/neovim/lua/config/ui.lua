@@ -38,7 +38,7 @@ hi("@lsp.mod.deprecated", { fg = colors.base0F, bg = nil })
 hi("Delimiter", { fg = colors.base04, bg = nil })
 
 hi("WinSeparator", { fg = colors.base02 })
-hi("NormalFloat", { fg = colors.base5, bg = colors.base00 })
+hi("NormalFloat", { fg = colors.base05, bg = colors.base00 })
 hi("FloatBorder", { fg = colors.base05, bg = colors.base00 })
 hi("LineNr", { fg = colors.base03 })
 hi("LineNrAbove", { fg = colors.base03 })
@@ -87,3 +87,16 @@ hi_link("BlinkCmpKindTypeParameter", "Type")
 hi_link("BlinkCmpKindUnit", "Special")
 hi_link("BlinkCmpKindValue", "Identifier")
 hi_link("BlinkCmpKindVariable", "Delimiter")
+
+hi("MiniPickNormal", { fg = colors.base05, bg = colors.base00 })
+hi("MiniPickCursor", { fg = "NONE", bg = colors.base01 })
+
+hi("MiniPickMatchRanges", { fg = colors.base0D, bg = "NONE" })
+hi("MiniPickMatchCurrent", { fg = colors.base0D, bg = colors.base01 })
+
+hi_link("MiniPickBorder", "FloatBorder")
+hi_link("MiniPickBorderText", "FloatBorder")
+
+hi("MiniPickPrompt", { fg = colors.base05, bg = colors.base00 })
+hi("MiniPickPromptPrefix", { fg = colors.base05, bg = colors.base00 })
+hi("MiniPickPromptCaret", { fg = colors.base05, bg = colors.base00 })
