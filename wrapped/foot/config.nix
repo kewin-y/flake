@@ -5,9 +5,6 @@
 }:
 with base16SchemeNoHashtag;
     pkgs.writeText "foot.ini" ''
-        [colors]
-        alpha=1.000000
-        cursor=100f0f cecdc3
 
         [main]
         box-drawings-uses-font-glyphs=no
@@ -19,6 +16,8 @@ with base16SchemeNoHashtag;
         grapheme-width-method=double-width
 
         [colors-dark]
+        alpha=1.000000
+        cursor=${base00} ${base05}
         foreground=${base05}
         background=${base00}
         regular0=${base00} # black
