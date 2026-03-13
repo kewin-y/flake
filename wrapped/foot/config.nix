@@ -18,7 +18,7 @@ with base16SchemeNoHashtag;
         [tweak]
         grapheme-width-method=double-width
 
-        [colors]
+        [colors-dark]
         foreground=${base05}
         background=${base00}
         regular0=${base00} # black

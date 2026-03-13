@@ -21,10 +21,15 @@
 
     programs.nix-ld.enable = true;
 
+    nix.settings = {
+        substituters = ["https://codex-cli.cachix.org"];
+        trusted-public-keys = ["codex-cli.cachix.org-1:YOUR_PUBLIC_KEY_HERE"];
+    };
+
     # Needed for Nautilus Trash
     services.gvfs.enable = true;
     environment.sessionVariables = {
-      EDITOR = "nvim";
+        EDITOR = "nvim";
     };
 
     environment.systemPackages =
@@ -64,5 +69,5 @@
                 opencode
                 ;
         }
-        ++ lib.attrValues wrapped;
+        ++ lib.attrValues wrapped ++ [inputs.codex-cli-nix.packages.${pkgs.system}.default];
 }

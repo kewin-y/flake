@@ -11,6 +11,7 @@
             url = "github:youwen5/zen-browser-flake";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        codex-cli-nix.url = "github:sadjow/codex-cli-nix";
     };
 
     outputs = {
