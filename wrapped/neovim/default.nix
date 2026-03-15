@@ -22,6 +22,10 @@
         pkgs.stylua
         pkgs.alejandra
         pkgs.nixd
+
+        pkgs.ruff
+        pkgs.basedpyright
+
     ];
 in
     pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
