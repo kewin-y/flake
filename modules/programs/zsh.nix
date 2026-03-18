@@ -30,7 +30,6 @@
             ll = "ls -lha --sort=name --group-directories-first --color=auto";
             ld = "ls -d */ --color=auto";
             yz = "yazi";
-            dev = "nix develop -c tmux";
             vg = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt";
         };
         interactiveShellInit = let

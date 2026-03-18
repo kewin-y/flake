@@ -23,3 +23,4 @@ vim.opt.conceallevel = 1
 vim.opt.winborder = "single"
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.relativenumber = true
+vim.opt.autoread = true

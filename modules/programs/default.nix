@@ -2,7 +2,6 @@
   pkgs,
   lib,
   wrapped,
-  inputs,
   ...
 }: {
   imports = [
@@ -17,15 +16,12 @@
     ./xdg.nix
     ./zsh.nix
     ./zen.nix
+    ./development.nix
   ];
 
-  programs.nix-ld.enable = true;
 
   # Needed for Nautilus Trash
   services.gvfs.enable = true;
-  environment.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   environment.systemPackages =
     lib.attrValues {
@@ -48,20 +44,14 @@
         pavucontrol
         obs-studio
         rnote
-        typst
         zk
         zoom-us
         vesktop
-        nodejs
         pnpm
-        prettierd
-        typescript-language-server
-        tailwindcss-language-server
         zathura
         imv
-        bun
         libreoffice
-        opencode
+        tree
         ;
     }
     ++ lib.attrValues wrapped;

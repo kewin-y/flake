@@ -215,9 +215,9 @@
 
             Mod+Q { toggle-column-tabbed-display; }
 
-            Mod+P { screenshot show-pointer=false; }
-            Mod+Shift+P { screenshot-screen show-pointer=false; }
-            Mod+Ctrl+P { screenshot-window; }
+            Mod+Shift+S { screenshot show-pointer=false; }
+            Mod+Alt+S { screenshot-screen show-pointer=false; }
+            Mod+Ctrl+S { screenshot-window; }
 
             Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
