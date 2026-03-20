@@ -1,17 +1,17 @@
 {...}: {
-    imports = [
-        ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-    networking.hostName = "rabbit";
+  networking.hostName = "rabbit";
 
-    kevin = {
-        laptop.enable = true;
-        network.blocking = {
-            enable = false;
-        };
-        bootloader = "systemd-boot";
+  kevin = {
+    laptop.enable = true;
+    network.blocking = {
+      enable = true;
     };
+    bootloader = "systemd-boot";
+  };
 
-    system.stateVersion = "25.05";
+  system.stateVersion = "25.05";
 }
