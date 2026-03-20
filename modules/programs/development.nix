@@ -18,7 +18,7 @@
       nodejs
       pnpm
       prettierd
-      # typescript-language-server
+      typescript-language-server
       typescript-go
       tailwindcss-language-server
       bun
@@ -26,6 +26,8 @@
       valgrind-light
       clang-tools
       cmake
+      code-cursor
+      vscode
       ;
   };
 }

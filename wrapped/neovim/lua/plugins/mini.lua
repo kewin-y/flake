@@ -46,7 +46,6 @@ return {
                 },
             },
             mappings = {
-                -- See the breakdown below regarding Ctrl-Q
                 mark_all = "<C-q>",
                 choose_marked = "<C-CR>",
             },
