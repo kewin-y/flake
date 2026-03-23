@@ -7,57 +7,31 @@ if palette ~= nil then
 end
 
 local modes = {
-  ["n"] = "NORMAL",
-  ["no"] = "NORMAL",
-  ["v"] = "VISUAL",
-  ["V"] = "VISUAL LINE",
-  ["\22"] = "VISUAL BLOCK",
-  ["s"] = "SELECT",
-  ["S"] = "SELECT LINE",
-  ["\19"] = "SELECT BLOCK",
-  ["i"] = "INSERT",
-  ["ic"] = "INSERT",
-  ["R"] = "REPLACE",
-  ["Rv"] = "VISUAL REPLACE",
-  ["c"] = "COMMAND",
-  ["cv"] = "VIM EX",
-  ["ce"] = "EX",
-  ["r"] = "PROMPT",
-  ["rm"] = "MOAR",
-  ["r?"] = "CONFIRM",
-  ["!"] = "SHELL",
-  ["t"] = "TERMINAL",
+  ["n"] = "normal",
+  ["no"] = "normal",
+  ["v"] = "visual",
+  ["V"] = "visual line",
+  ["\22"] = "visual block",
+  ["s"] = "select",
+  ["S"] = "select line",
+  ["\19"] = "select block",
+  ["i"] = "insert",
+  ["ic"] = "insert",
+  ["R"] = "replace",
+  ["Rv"] = "visual replace",
+  ["c"] = "command",
+  ["cv"] = "vim ex",
+  ["ce"] = "ex",
+  ["r"] = "prompt",
+  ["rm"] = "moar",
+  ["r?"] = "confirm",
+  ["!"] = "shell",
+  ["t"] = "terminal",
 }
 
 local function mode()
   local current_mode = vim.api.nvim_get_mode().mode
-  return string.format("%s", modes[current_mode] or "UNKNOWN"):upper()
-end
-
-local function update_mode_colors()
-  local current_mode = vim.api.nvim_get_mode().mode
-  local mode_color = "%#StatusLineAccent#"
-
-  if current_mode == "n" then
-    mode_color = "%#StatusLineAccent#"
-  elseif current_mode == "i" or current_mode == "ic" then
-    mode_color = "%#StatusLineInsertAccent#"
-  elseif
-    current_mode == "v"
-    or current_mode == "V"
-    or current_mode == "\22"
-    or current_mode == ""
-  then
-    mode_color = "%#StatusLineVisualAccent#"
-  elseif current_mode == "R" then
-    mode_color = "%#StatusLineReplaceAccent#"
-  elseif current_mode == "c" then
-    mode_color = "%#StatusLineCmdLineAccent#"
-  elseif current_mode == "t" then
-    mode_color = "%#StatusLineTerminalAccent#"
-  end
-
-  return mode_color
+  return string.format("%s", modes[current_mode] or "unknown"):lower()
 end
 
 local function filename()
@@ -110,7 +84,7 @@ local function lineinfo()
 end
 
 local function filetype()
-  return string.format("%s", vim.bo.filetype)
+  return string.format("%s", vim.bo.filetype):lower()
 end
 
 _G.StatusLine = {}

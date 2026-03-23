@@ -9,8 +9,8 @@
     network.blocking = {
       enable = false;
     };
-    systemd.tpm2.enable = false;
-
-    system.stateVersion = "23.11";
   };
+
+  systemd.tpm2.enable = false;
+  system.stateVersion = "23.11";
 }
