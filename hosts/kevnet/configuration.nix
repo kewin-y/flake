@@ -9,6 +9,7 @@
     network.blocking = {
       enable = false;
     };
+    bootloader = "grub";
   };
 
   systemd.tpm2.enable = false;
