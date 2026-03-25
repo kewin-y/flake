@@ -4,7 +4,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      default_scheme = "base16-flexoki-dark",
+      default_scheme = "base16-atelier-estuary-light",
       highlights = {
         overrides = function(palette)
           local base03_darker = { darken = palette.base03, amount = 0.4 }
@@ -19,6 +19,7 @@ return {
             PmenuSel = { bg = "darkest_grey" },
             MiniPickMatchCurrent = { bg = "darkest_grey" },
             MiniPickMatchMarked = { bg = "dark_grey" },
+            StatusLine = { fg = palette.base04, bg = palette.base01 },
 
             -- https://github.com/nvim-mini/mini.base16/blob/main/lua/mini/base16.lua
             -- I moved away from mini.base16 as tinted-nvim provides better syntax highlighting
