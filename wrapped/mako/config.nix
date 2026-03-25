@@ -16,7 +16,7 @@ with base16Scheme;
     border-radius=5
     markup=true
     icons=true
-    format=<b>%s</b>\n%b
+    format=<b>%s</b>\n\n%b
     actions=true
     max-icon-size=32
     default-timeout=0
@@ -33,5 +33,5 @@ with base16Scheme;
     border-color=${base08}
 
     [actionable=true]
-    format=<b>%s</b>\n%b\n\nM-A to view actions
+    format=<b>%s</b>\n\n%b\n\nM-A to view actions
   ''

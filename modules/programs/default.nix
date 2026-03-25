@@ -49,9 +49,11 @@
         vesktop
         pnpm
         zathura
+        inkscape
         imv
         libreoffice
         tree
+        chromium
         ;
     }
     ++ lib.attrValues wrapped;
