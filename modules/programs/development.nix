@@ -9,7 +9,7 @@
     EDITOR = "nvim";
   };
 
-  # For stuff I'm too make a devshell for every time
+  # For stuff I'm too lazy to make a devshell for every time
   # Coding agents need LSPs so I'll keep these here
   environment.systemPackages = lib.attrValues {
     inherit
