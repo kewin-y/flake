@@ -27,7 +27,7 @@
       bind-key -r -T prefix C-h resize-pane -L
       bind-key -r -T prefix C-l resize-pane -R
 
-      set-option -g status-position top
+      set-option -g status-position bottom
 
       set-option -g status-style "fg=${base04},bg=${base01}"
 

@@ -20,7 +20,7 @@
   } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-    theme = "atelier-estuary-light";
+    theme = "flexoki-light";
 
     globals = import ./globals {inherit theme pkgs;};
     wrapped = import ./wrapped {inherit pkgs globals;};
