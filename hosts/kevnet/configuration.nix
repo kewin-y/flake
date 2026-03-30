@@ -7,7 +7,7 @@
   kevin = {
     laptop.enable = false;
     network.blocking = {
-      enable = false;
+      enable = true;
     };
     bootloader = "grub";
   };
