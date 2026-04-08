@@ -17,6 +17,7 @@
       set-option -sa terminal-overrides ",foot*:Tc"
       setw -g mode-keys vi
       set-option -g renumber-windows on
+      set -s set-clipboard on
 
       bind-key h select-pane -L
       bind-key j select-pane -D
