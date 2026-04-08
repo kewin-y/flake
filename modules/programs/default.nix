@@ -17,6 +17,7 @@
     ./zsh.nix
     ./zen.nix
     ./development.nix
+    ./cliphist.nix
   ];
 
 
@@ -32,7 +33,6 @@
         git
         pamixer
         libnotify
-        wl-clipboard
         ripgrep
         fastfetch
         unzip

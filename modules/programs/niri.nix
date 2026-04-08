@@ -47,24 +47,23 @@
     }
 
     window-rule {
-        geometry-corner-radius 5
-        clip-to-geometry true
+      geometry-corner-radius 5
+      clip-to-geometry true
     }
 
     prefer-no-csd
 
     environment {
-        XDG_CURRENT_DESKTOP "niri"
-        XDG_SESSION_DESKTOP "niri"
-        GTK_USE_PORTAL "1"
+      XDG_CURRENT_DESKTOP "niri"
+      XDG_SESSION_DESKTOP "niri"
+      GTK_USE_PORTAL "1"
     }
 
     screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-    // Disable the hot corners.
     gestures {
-        hot-corners {
-            off
-        }
+      hot-corners {
+          off
+      }
     }
 
     hotkey-overlay {
@@ -76,7 +75,7 @@
 
         Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
         Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-        Mod+Ctrl+F hotkey-overlay-title="Open Browser: Chromium" { spawn "zen"; }
+        Mod+Ctrl+F hotkey-overlay-title="Open Browser: Zen" { spawn "zen"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
         Mod+A hotkey-overlay-title="View notification actions" { spawn-sh "makoctl menu -- fuzzel --dmenu"; }
         Mod+D hotkey-overlay-title="Dismiss notification" { spawn-sh "makoctl dismiss"; }
@@ -224,7 +223,6 @@
         Mod+Shift+E { quit; }
         Ctrl+Alt+Delete { quit; }
     }
-
   '';
 in {
   # Let the module configure the portals (for now)
