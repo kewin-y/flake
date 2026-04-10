@@ -20,7 +20,7 @@ in {
   options.kevin.gui = {
     icon-theme = lib.mkOption {
       type = lib.types.str;
-      default = "Tela-light";
+      default = "Tela-dark";
     };
 
     cursor-theme = lib.mkOption {
@@ -30,7 +30,7 @@ in {
 
     color-theme = lib.mkOption {
       type = lib.types.enum ["dark" "light"];
-      default = "light";
+      default = "dark";
     };
   };
 
