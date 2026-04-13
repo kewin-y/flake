@@ -4,7 +4,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      default_scheme = "base16-vesper",
+      default_scheme = "base16-flexoki-dark",
       highlights = {
         overrides = function(palette)
           local base03_darker = { darken = palette.base03, amount = 0.4 }
