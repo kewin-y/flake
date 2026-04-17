@@ -29,9 +29,9 @@
 in
   pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
     luaRcContent = ''
+      _G.config_dir = "${./.}"
       vim.opt.rtp:prepend("${./.}")
       local config_path = "${./.}/lua"
-      package.path = config_path .. "/?.lua;" .. config_path .. "/?/init.lua;" .. package.path
       dofile("${./.}/init.lua")
     '';
 
