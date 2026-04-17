@@ -8,9 +8,13 @@
     pkgs.fzf
   ];
 
-  # Set Zsh as the default shell system-wide
   environment.shells = [pkgs.zsh];
   users.defaultUserShell = pkgs.zsh;
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -44,16 +48,6 @@
       '';
     in ''
       ${fzfOpts}
-
-      function cdd() {
-        local dir=$(fd -H -t d -a | fzf)
-
-        if [[ -n "$dir" ]]; then
-          cd "$dir"
-        fi
-      }
-
-      # Enable vi mode
       bindkey -v
       bindkey '^y' autosuggest-accept
     '';

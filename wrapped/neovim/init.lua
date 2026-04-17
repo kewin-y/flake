@@ -203,7 +203,7 @@ vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = t
 
 -- zk
 require("zk").setup({
-  picker = "minipick",
+  picker = "fzf_lua",
   lsp = {
     config = {
       name = "zk",
@@ -218,8 +218,7 @@ require("zk").setup({
 
 local zk_group = vim.api.nvim_create_augroup("ZK", {})
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.md" },
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
   group = zk_group,
   callback = function(_)
     local cwd = vim.fn.getcwd()
