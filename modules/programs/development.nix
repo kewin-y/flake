@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   programs.nix-ld.enable = true;
@@ -11,23 +12,27 @@
 
   # For stuff I'm too lazy to make a devshell for every time
   # Coding agents need LSPs so I'll keep these here
-  environment.systemPackages = lib.attrValues {
-    inherit
-      (pkgs)
-      typst
-      nodejs
-      pnpm
-      prettierd
-      typescript-language-server
-      typescript-go
-      tailwindcss-language-server
-      bun
-      valgrind-light
-      clang-tools
-      cmake
-      code-cursor
-      vscode
-      opencode
-      ;
-  };
+  environment.systemPackages =
+    lib.attrValues {
+      inherit
+        (pkgs)
+        typst
+        nodejs
+        pnpm
+        prettierd
+        typescript-language-server
+        typescript-go
+        tailwindcss-language-server
+        bun
+        valgrind-light
+        clang-tools
+        cmake
+        code-cursor
+        vscode
+        opencode
+        ;
+    }
+    ++ [
+      inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 }
