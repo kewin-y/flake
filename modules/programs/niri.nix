@@ -30,13 +30,14 @@
 
         default-column-width { proportion 0.5; }
         border {
-            off
-        }
-
-        focus-ring {
             on
             width 2
             active-color "${globals.base16Scheme.base03}"
+            inactive-color "${globals.base16Scheme.base01}"
+        }
+
+        focus-ring {
+            off
         }
 
         shadow {
@@ -244,8 +245,13 @@ in {
     after = ["niri.service"];
     wantedBy = ["niri.service"];
 
-    serviceConfig = {
-      ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.kevin.wallpaper} -m fill";
+    serviceConfig = let
+      ExecStart =
+        if config.kevin.wallpaper != null
+        then "${pkgs.swaybg}/bin/swaybg -i ${config.kevin.wallpaper} -m fill"
+        else "${pkgs.swaybg}/bin/swaybg -c ${globals.base16Scheme.base00}";
+    in {
+      inherit ExecStart;
       Restart = "on-failure";
     };
   };

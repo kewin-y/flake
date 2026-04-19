@@ -1,8 +1,8 @@
 {lib, ...}: {
-    options.kevin = {
-        wallpaper = lib.mkOption {
-            default = ../wallpapers/sebastian-svenson-vaC0w7XBSXw-unsplash.jpg;
-            type = lib.types.path;
-        };
+  options.kevin = {
+    wallpaper = lib.mkOption {
+      default = null;
+      type = lib.types.nullOr lib.types.path;
     };
+  };
 }
