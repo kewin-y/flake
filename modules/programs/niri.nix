@@ -34,7 +34,9 @@
         }
 
         focus-ring {
-            off
+            on
+            width 2
+            active-color "${globals.base16Scheme.base03}"
         }
 
         shadow {
