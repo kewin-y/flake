@@ -28,7 +28,6 @@ vim.opt.whichwrap:append("<>[]hl")
 vim.opt.relativenumber = true
 vim.opt.autoread = true
 
-vim.o.completeopt = "fuzzy,menuone,noselect" -- add 'popup' for docs (sometimes)
 vim.o.pumheight = 7
 vim.o.smartcase = true
 vim.o.ignorecase = true
@@ -44,8 +43,9 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/zk-org/zk-nvim" },
+  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
-  { src = "https://github.com/L3MON4D3/LuaSnip" },
+  { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
 })
 
 -- mini
@@ -86,19 +86,14 @@ for _, server in pairs(servers) do
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("KevinLsp", {}),
+  group = vim.api.nvim_create_augroup("Lsp", {}),
 
-  callback = function(ev)
+  callback = function(_)
     local lsp = vim.lsp.buf
 
     vim.keymap.set("n", "grd", lsp.definition, { desc = "Goto Definition" })
     vim.keymap.set("n", "gre", lsp.declaration, { desc = "Goto Declaration" })
     vim.keymap.set("n", "gws", lsp.workspace_symbol, { desc = "Workspace Symbol" })
-
-    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-    if client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
   end,
 })
 
@@ -249,28 +244,62 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
 })
 
--- snippets
 require("luasnip").setup({ enable_autosnippets = true })
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load()
 require("luasnip.loaders.from_lua").load({ paths = config_dir .. "/snippets/" })
+require("blink.cmp").setup({
+  keymap = {
+    preset = "default",
+    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+    ["<C-e>"] = { "hide", "fallback" },
+    ["<C-l>"] = { "accept", "fallback" },
 
-local ls = require("luasnip")
+    ["<C-j>"] = { "snippet_forward", "fallback" },
+    ["<C-k>"] = { "snippet_backward", "fallback" },
 
-vim.keymap.set({ "i" }, "<C-l>", function()
-  ls.expand()
-end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  ls.jump(1)
-end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  ls.jump(-1)
-end, { silent = true })
+    ["<Up>"] = { "select_prev", "fallback" },
+    ["<Down>"] = { "select_next", "fallback" },
+    ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+    ["<C-n>"] = { "select_next", "fallback_to_mappings" },
 
-vim.keymap.set({ "i", "s" }, "<C-e>", function()
-  if ls.choice_active() then
-    ls.change_choice(1)
-  end
-end, { silent = true })
+    ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+    ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+    ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
+  },
+
+  snippets = { preset = "luasnip" },
+
+  appearance = {
+    nerd_font_variant = "normal",
+  },
+
+  completion = {
+    documentation = {
+      auto_show = false,
+      window = {
+        scrollbar = false,
+      },
+    },
+    menu = {
+      scrollbar = false,
+      auto_show = true,
+      draw = {
+        treesitter = { "lsp" },
+        padding = { 0, 1 },
+        columns = {
+          { "kind_icon", "kind" },
+          { "label", "label_description", gap = 1 },
+        },
+      },
+    },
+  },
+
+  sources = {
+    default = { "lsp", "path", "snippets", "buffer" },
+  },
+  fuzzy = { implementation = "lua" },
+})
 
 -- keymaps
 local m = vim.keymap.set
