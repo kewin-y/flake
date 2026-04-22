@@ -57,31 +57,10 @@
         "type": "indirect"
       }
     },
-    "opencode": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1776457603,
-        "narHash": "sha256-02Rgj/Vf4iqUW/uM8wFLVLKTbMlIw1HsQMvYiV4FRwg=",
-        "owner": "anomalyco",
-        "repo": "opencode",
-        "rev": "54435325b6adf292d720885622f1282eaed98c92",
-        "type": "github"
-      },
-      "original": {
-        "owner": "anomalyco",
-        "repo": "opencode",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "hjem": "hjem",
         "nixpkgs": "nixpkgs",
-        "opencode": "opencode",
         "zen-browser": "zen-browser"
       }
     },
