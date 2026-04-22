@@ -256,13 +256,13 @@ require("luasnip.loaders.from_lua").load({ paths = config_dir .. "/snippets/" })
 
 local ls = require("luasnip")
 
-vim.keymap.set({ "i" }, "<C-CR>", function()
+vim.keymap.set({ "i" }, "<C-l>", function()
   ls.expand()
 end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<C-u>", function()
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
   ls.jump(1)
 end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<C-i>", function()
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
   ls.jump(-1)
 end, { silent = true })
 
@@ -275,10 +275,6 @@ end, { silent = true })
 -- keymaps
 local m = vim.keymap.set
 
-m("i", "<C-h>", "<Left>", { desc = "move left" })
-m("i", "<C-l>", "<Right>", { desc = "move right" })
-m("i", "<C-j>", "<Down>", { desc = "move down" })
-m("i", "<C-k>", "<Up>", { desc = "move up" })
 m("n", "<Esc>", "<cmd>noh<CR>", { silent = true })
 m({ "n", "v" }, "k", [[v:count || mode(1)[0:1] == "no" ? "k" : "gk"]], { expr = true })
 m({ "n", "v" }, "j", [[v:count || mode(1)[0:1] == "no" ? "j" : "gj"]], { expr = true })
