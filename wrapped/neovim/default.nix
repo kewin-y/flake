@@ -24,7 +24,7 @@
     pkgs.nixd
 
     pkgs.ruff
-    pkgs.basedpyright
+    pkgs.ty
   ];
 in
   pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {

@@ -9,6 +9,7 @@
     laptop.enable = true;
     network.blocking = {
       enable = false;
+      extraHosts = ["reddit.com" "www.reddit.com"];
     };
     bootloader = "systemd-boot";
   };

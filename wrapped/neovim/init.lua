@@ -76,7 +76,7 @@ local servers = {
   "tinymist",
   "tsgo",
   "rust_analyzer",
-  "basedpyright",
+  "ty",
   "tailwindcss",
   "hls",
 }
@@ -125,7 +125,7 @@ conform.setup({
     typescriptreact = { "prettierd" },
     javascriptreact = { "prettierd" },
     rust = { "rustfmt" },
-    python = { "ruff" },
+    python = { "ruff_format" },
     haskell = { "ormolu" },
   },
   default_format_opts = {

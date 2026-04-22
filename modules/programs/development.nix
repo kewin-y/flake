@@ -30,6 +30,9 @@
         code-cursor
         vscode
         opencode
+
+        ty
+        ruff
         ;
     }
     ++ [
