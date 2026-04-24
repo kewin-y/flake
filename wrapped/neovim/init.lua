@@ -268,8 +268,6 @@ require("blink.cmp").setup({
     ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
   },
 
-  snippets = { preset = "luasnip" },
-
   appearance = {
     nerd_font_variant = "normal",
   },
@@ -297,10 +295,8 @@ require("blink.cmp").setup({
 
   sources = {
     providers = {
-      snippets = {
-        score_offset = 100,
-      },
-      lsp = { score_offset = 0 },
+      snippets = { score_offset = 90 },
+      lsp = { score_offset = 85 },
       path = { score_offset = -10 },
       buffer = { score_offset = -20 },
     },
