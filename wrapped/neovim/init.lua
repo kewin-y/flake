@@ -272,6 +272,10 @@ require("blink.cmp").setup({
     nerd_font_variant = "normal",
   },
 
+  snippets = {
+    preset = "luasnip",
+  },
+
   completion = {
     documentation = {
       auto_show = false,
