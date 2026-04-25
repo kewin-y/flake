@@ -46,6 +46,7 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
+  { src = "https://github.com/chomosuke/typst-preview.nvim" },
 })
 
 -- mini
@@ -211,36 +212,70 @@ require("zk").setup({
   },
 })
 
+local function find_obsidian_root(start)
+  local dir = vim.fs.dirname(start)
+
+  while dir do
+    if vim.fn.isdirectory(dir .. "/.obsidian") == 1 then
+      return dir
+    end
+
+    local parent = vim.fs.dirname(dir)
+    if parent == dir then
+      break
+    end
+    dir = parent
+  end
+end
+
+-- Helper: Open current file in Obsidian
+local function open_in_obsidian()
+  local file = vim.fn.expand("%:p")
+  local root = find_obsidian_root(file)
+
+  if not root then
+    vim.notify("Not inside an Obsidian vault", vim.log.levels.WARN)
+    return
+  end
+
+  local vault = vim.fn.fnamemodify(root, ":t")
+  local rel = file:sub(#root + 2):gsub(" ", "%%20")
+  local url = string.format("obsidian://open?vault=%s&file=%s", vault, rel)
+
+  vim.cmd("silent write")
+  vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+end
+
 local zk_group = vim.api.nvim_create_augroup("ZK", {})
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
   group = zk_group,
-  callback = function(_)
-    local cwd = vim.fn.getcwd()
-
-    if vim.fn.isdirectory(cwd .. "/.zk") ~= 1 then
+  callback = function()
+    if vim.fn.isdirectory(vim.fn.getcwd() .. "/.zk") ~= 1 then
       return
     end
 
-    local function new_note()
-      require("zk").new({ title = vim.fn.input("Title: ") })
-    end
+    local zk = require("zk")
 
-    local function open_note()
-      require("zk").notes({ sort = { "modified" }, match = { vim.fn.input("Search: ") } })
-    end
+    vim.keymap.set("n", "<leader>on", function()
+      zk.new({ title = vim.fn.input("Title: ") })
+    end, { desc = "New ZK note" })
 
-    vim.keymap.set("n", "<leader>on", new_note, { desc = "New ZK note" })
     vim.keymap.set(
       "n",
       "<leader>oo",
       "<Cmd>ZkNotes { sort = { 'modified' } }<CR>",
       { desc = "Open ZK notes" }
     )
+
+    vim.keymap.set("n", "<leader>of", function()
+      zk.notes({ match = { vim.fn.input("Search: ") } })
+    end, { desc = "Search ZK notes" })
+
     vim.keymap.set("n", "<leader>ot", "<Cmd>ZkTags<CR>", { desc = "ZK tags" })
-    vim.keymap.set("n", "<leader>of", open_note, { desc = "Search ZK notes" })
     vim.keymap.set("v", "<leader>of", ":'<,'>ZkMatch<CR>", { desc = "Match selection" })
     vim.keymap.set("n", "<leader>ob", "<Cmd>ZkBacklinks<CR>", { desc = "ZK backlinks" })
+    vim.keymap.set("n", "<leader>op", open_in_obsidian, { desc = "Open in Obsidian" })
   end,
 })
 
@@ -308,6 +343,29 @@ require("blink.cmp").setup({
   fuzzy = { implementation = "lua" },
 })
 
+-- Typst Preview
+
+-- Hack for Nix
+local function get_exec(name)
+  if vim.fn.executable(name) == 1 then
+    local p = vim.fn.exepath(name)
+    if p ~= "" then
+      return p
+    end
+  end
+  return nil
+end
+
+local tinymist_exec = get_exec("tinymist")
+local websocat_exec = get_exec("websocat")
+
+require("typst-preview").setup({
+  dependencies_bin = {
+    ["tinymist"] = tinymist_exec,
+    ["websocat"] = websocat_exec,
+  },
+})
+
 -- keymaps
 local m = vim.keymap.set
 
@@ -325,6 +383,11 @@ m("n", "<leader>tt", "<Cmd>tabnew<CR>")
 m("n", "<leader>tw", "<Cmd>tabclose<CR>")
 m("n", "<A-l>", "<Cmd>tabnext<CR>")
 m("n", "<A-h>", "<Cmd>tabprevious<CR>")
+
+-- Current time
+m("i", "<C-t>", function()
+  return os.date("%Y%m%d%H%M%S")
+end, { expr = true })
 
 -- autocmds
 local format_group = vim.api.nvim_create_augroup("Format", {})
