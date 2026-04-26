@@ -27,24 +27,21 @@ vim.opt.pumborder = "rounded"
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.relativenumber = true
 vim.opt.autoread = true
-
 vim.o.pumheight = 7
 vim.o.smartcase = true
 vim.o.ignorecase = true
+vim.opt.completeopt = { "menuone", "noselect", "fuzzy" }
 
 vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/nvim-mini/mini.hipatterns" },
   { src = "https://github.com/stevearc/oil.nvim" },
-  { src = "https://github.com/folke/lazydev.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/stevearc/conform.nvim" },
   { src = "https://github.com/tinted-theming/tinted-nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/zk-org/zk-nvim" },
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
-  { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
 })
@@ -66,7 +63,6 @@ require("mini.icons").setup()
 
 -- oil
 require("oil").setup()
-vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
 
 -- lsp
 local servers = {
@@ -89,19 +85,18 @@ end
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("Lsp", {}),
 
-  callback = function(_)
+  callback = function(ev)
     local lsp = vim.lsp.buf
 
     vim.keymap.set("n", "grd", lsp.definition, { desc = "Goto Definition" })
     vim.keymap.set("n", "gre", lsp.declaration, { desc = "Goto Declaration" })
     vim.keymap.set("n", "gws", lsp.workspace_symbol, { desc = "Workspace Symbol" })
-  end,
-})
 
-require("lazydev").setup({
-  library = {
-    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-  },
+    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+    if client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, ev.buf)
+    end
+  end,
 })
 
 -- conform
@@ -190,13 +185,6 @@ require("fzf-lua").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { silent = true })
-vim.keymap.set("n", "<leader>bi", "<cmd>FzfLua<CR>", { silent = true })
-vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = true })
-
 -- zk
 require("zk").setup({
   picker = "fzf_lua",
@@ -228,7 +216,6 @@ local function find_obsidian_root(start)
   end
 end
 
--- Helper: Open current file in Obsidian
 local function open_in_obsidian()
   local file = vim.fn.expand("%:p")
   local root = find_obsidian_root(file)
@@ -279,73 +266,14 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
 })
 
-require("luasnip").setup({ enable_autosnippets = true })
-require("luasnip.loaders.from_vscode").load()
+-- Luasnp
+
+local ls = require("luasnip")
+ls.setup({ enable_autosnippets = true })
 require("luasnip.loaders.from_lua").load({ paths = config_dir .. "/snippets/" })
-require("blink.cmp").setup({
-  keymap = {
-    preset = "default",
-    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-    ["<C-e>"] = { "hide", "fallback" },
-    ["<C-l>"] = { "accept", "fallback" },
-
-    ["<C-j>"] = { "snippet_forward", "fallback" },
-    ["<C-k>"] = { "snippet_backward", "fallback" },
-
-    ["<Up>"] = { "select_prev", "fallback" },
-    ["<Down>"] = { "select_next", "fallback" },
-    ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
-    ["<C-n>"] = { "select_next", "fallback_to_mappings" },
-
-    ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-    ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
-    ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
-  },
-
-  appearance = {
-    nerd_font_variant = "normal",
-  },
-
-  snippets = {
-    preset = "luasnip",
-  },
-
-  completion = {
-    documentation = {
-      auto_show = false,
-      window = {
-        scrollbar = false,
-      },
-    },
-    menu = {
-      scrollbar = false,
-      auto_show = true,
-      draw = {
-        treesitter = { "lsp" },
-        padding = { 0, 1 },
-        columns = {
-          { "kind_icon", "kind" },
-          { "label", "label_description", gap = 1 },
-        },
-      },
-    },
-  },
-
-  sources = {
-    providers = {
-      snippets = { score_offset = 90 },
-      lsp = { score_offset = 85 },
-      path = { score_offset = -10 },
-      buffer = { score_offset = -20 },
-    },
-  },
-  fuzzy = { implementation = "lua" },
-})
 
 -- Typst Preview
 
--- Hack for Nix
 local function get_exec(name)
   if vim.fn.executable(name) == 1 then
     local p = vim.fn.exepath(name)
@@ -367,35 +295,59 @@ require("typst-preview").setup({
 })
 
 -- keymaps
-local m = vim.keymap.set
+local function feedkeys(keys)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), "n", true)
+end
 
-m("n", "<Esc>", "<cmd>noh<CR>", { silent = true })
-m({ "n", "v" }, "k", [[v:count || mode(1)[0:1] == "no" ? "k" : "gk"]], { expr = true })
-m({ "n", "v" }, "j", [[v:count || mode(1)[0:1] == "no" ? "j" : "gj"]], { expr = true })
-m({ "n", "v" }, "<leader>y", [["+y]])
-m("n", "<leader>Y", [["+Y]])
-m("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
-m("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
-m("n", "J", "mzJ`z")
-m("v", "<", "<gv")
-m("v", ">", ">gv")
-m("n", "<leader>tt", "<Cmd>tabnew<CR>")
-m("n", "<leader>tw", "<Cmd>tabclose<CR>")
-m("n", "<A-l>", "<Cmd>tabnext<CR>")
-m("n", "<A-h>", "<Cmd>tabprevious<CR>")
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bi", "<cmd>FzfLua<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = true })
+
+vim.keymap.set({ "i" }, "<C-l>", function()
+  ls.expand()
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+  if vim.snippet.active({ direction = 1 }) then
+    vim.snippet.jump(1)
+  elseif ls.locally_jumpable(1) then
+    ls.jump(1)
+  else
+    feedkeys("<C-j>")
+  end
+end)
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  if vim.snippet.active({ direction = -1 }) then
+    vim.snippet.jump(-1)
+  elseif ls.locally_jumpable(-1) then
+    ls.jump(-1)
+  else
+    feedkeys("<C-k>")
+  end
+end)
+vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
+vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "k", [[v:count || mode(1)[0:1] == "no" ? "k" : "gk"]], { expr = true })
+vim.keymap.set({ "n", "v" }, "j", [[v:count || mode(1)[0:1] == "no" ? "j" : "gj"]], { expr = true })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<leader>tt", "<Cmd>tabnew<CR>")
+vim.keymap.set("n", "<leader>tw", "<Cmd>tabclose<CR>")
+vim.keymap.set("n", "<A-l>", "<Cmd>tabnext<CR>")
+vim.keymap.set("n", "<A-h>", "<Cmd>tabprevious<CR>")
 
 -- autocmds
 local format_group = vim.api.nvim_create_augroup("Format", {})
 local spell_group = vim.api.nvim_create_augroup("Spell", {})
-local ft_group = vim.api.nvim_create_augroup("Filetype", {})
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*" },
-  group = ft_group,
-  callback = function(_)
-    vim.cmd("filetype detect")
-  end,
-})
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
