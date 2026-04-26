@@ -384,11 +384,6 @@ m("n", "<leader>tw", "<Cmd>tabclose<CR>")
 m("n", "<A-l>", "<Cmd>tabnext<CR>")
 m("n", "<A-h>", "<Cmd>tabprevious<CR>")
 
--- Current time
-m("i", "<C-t>", function()
-  return os.date("%Y%m%d%H%M%S")
-end, { expr = true })
-
 -- autocmds
 local format_group = vim.api.nvim_create_augroup("Format", {})
 local spell_group = vim.api.nvim_create_augroup("Spell", {})
