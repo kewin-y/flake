@@ -63,6 +63,7 @@ require("mini.icons").setup()
 
 -- oil
 require("oil").setup()
+vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
 
 -- lsp
 local servers = {
@@ -125,12 +126,11 @@ conform.setup({
   formatters = {},
 })
 
-local function format()
+vim.keymap.set("n", "<leader>fm", function()
   conform.format({ async = true })
-end
+end, { desc = "Format buffer using conform" })
 
-vim.keymap.set("n", "<leader>fm", format, { desc = "Format buffer using conform" })
-
+-- tinted
 require("tinted-nvim").setup({
   default_scheme = "base16-flexoki-dark",
   highlights = {
@@ -184,6 +184,13 @@ require("fzf-lua").setup({
     backdrop = "FloatBorder",
   },
 })
+
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bi", "<cmd>FzfLua<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = true })
 
 -- zk
 require("zk").setup({
@@ -266,13 +273,41 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
   end,
 })
 
--- Luasnp
+-- luasnip
 
 local ls = require("luasnip")
 ls.setup({ enable_autosnippets = true })
 require("luasnip.loaders.from_lua").load({ paths = config_dir .. "/snippets/" })
 
--- Typst Preview
+local function feedkeys(keys)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), "n", true)
+end
+
+vim.keymap.set({ "i" }, "<C-l>", function()
+  ls.expand()
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+  if vim.snippet.active({ direction = 1 }) then
+    vim.snippet.jump(1)
+  elseif ls.locally_jumpable(1) then
+    ls.jump(1)
+  else
+    feedkeys("<C-j>")
+  end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  if vim.snippet.active({ direction = -1 }) then
+    vim.snippet.jump(-1)
+  elseif ls.locally_jumpable(-1) then
+    ls.jump(-1)
+  else
+    feedkeys("<C-k>")
+  end
+end, { silent = true })
+
+-- typst preview
 
 local function get_exec(name)
   if vim.fn.executable(name) == 1 then
@@ -295,41 +330,8 @@ require("typst-preview").setup({
 })
 
 -- keymaps
-local function feedkeys(keys)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), "n", true)
-end
 
-vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { noremap = true, silent = true })
-
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { silent = true })
-vim.keymap.set("n", "<leader>bi", "<cmd>FzfLua<CR>", { silent = true })
-vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = true })
-
-vim.keymap.set({ "i" }, "<C-l>", function()
-  ls.expand()
-end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  if vim.snippet.active({ direction = 1 }) then
-    vim.snippet.jump(1)
-  elseif ls.locally_jumpable(1) then
-    ls.jump(1)
-  else
-    feedkeys("<C-j>")
-  end
-end)
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  if vim.snippet.active({ direction = -1 }) then
-    vim.snippet.jump(-1)
-  elseif ls.locally_jumpable(-1) then
-    ls.jump(-1)
-  else
-    feedkeys("<C-k>")
-  end
-end)
-vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
+vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "k", [[v:count || mode(1)[0:1] == "no" ? "k" : "gk"]], { expr = true })
 vim.keymap.set({ "n", "v" }, "j", [[v:count || mode(1)[0:1] == "no" ? "j" : "gj"]], { expr = true })
