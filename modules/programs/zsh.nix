@@ -49,7 +49,7 @@
     in ''
       ${fzfOpts}
       bindkey -v
-      bindkey '^y' autosuggest-accept
+      bindkey '^l' autosuggest-accept
     '';
   };
 }
