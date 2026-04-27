@@ -38,8 +38,8 @@
       set-window-option -g window-status-format "#I:#W "
       set-window-option -g window-status-current-format "#I:#W "
 
-      set-option -g status-left " "
-      set-option -g status-right " %a %b %d %H:%M [#S] "
+      set-option -g status-left ""
+      set-option -g status-right "%a %b %d %H:%M [#S]"
 
       set-option -g pane-border-style "fg=${base01}"
       set-option -g pane-active-border-style "fg=${base02}"
