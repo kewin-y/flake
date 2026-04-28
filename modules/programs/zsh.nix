@@ -26,7 +26,7 @@
       "HIST_IGNORE_SPACE"
     ];
 
-    promptInit = "PROMPT='%F{blue}%~ %F{green}$ %f'";
+    promptInit = "PROMPT='%~ $ '";
 
     shellAliases = {
       l = "ls -lh --color=auto";
@@ -37,13 +37,15 @@
       vg = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt";
       clh = "cliphist-fzf-sixel";
     };
-    interactiveShellInit = let
-      fzfOpts = with globals.base16Scheme; ''
+    interactiveShellInit = with globals.base16Scheme; let
+      accent = base0E;
+
+      fzfOpts = ''
         export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-          --color=fg:${base04},bg:${base00},hl:${base0D}
-          --color=fg+:${base06},bg+:${base01},hl+:${base0D}
-          --color=info:${base0D},prompt:${base0D},pointer:${base0C}
-          --color=marker:${base0C},spinner:${base0C},header:${base0D}
+          --color=fg:${base04},bg:${base00},hl:${accent}
+          --color=fg+:${base05},bg+:${base01},hl+:${accent}
+          --color=info:${accent},prompt:${accent},pointer:${accent}
+          --color=marker:${accent},spinner:${accent},header:${accent}
         '
       '';
     in ''

@@ -22,11 +22,12 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 400
 vim.opt.undofile = true
 vim.opt.conceallevel = 1
-vim.opt.winborder = "rounded"
-vim.opt.pumborder = "rounded"
+vim.opt.winborder = "single"
+vim.opt.pumborder = "single"
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.relativenumber = true
 vim.opt.autoread = true
+vim.opt.laststatus = 3
 vim.o.pumheight = 7
 vim.o.smartcase = true
 vim.o.ignorecase = true
@@ -38,12 +39,12 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/stevearc/conform.nvim" },
-  { src = "https://github.com/tinted-theming/tinted-nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/zk-org/zk-nvim" },
+  { src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
-  { src = "https://github.com/chomosuke/typst-preview.nvim" },
+  { src = "https://github.com/silentium-theme/silentium.nvim" },
 })
 
 -- mini
@@ -77,6 +78,7 @@ local servers = {
   "ty",
   "tailwindcss",
   "hls",
+  "marksman",
 }
 
 for _, server in pairs(servers) do
@@ -130,29 +132,6 @@ vim.keymap.set("n", "<leader>fm", function()
   conform.format({ async = true })
 end, { desc = "Format buffer using conform" })
 
--- tinted
-require("tinted-nvim").setup({
-  default_scheme = "base16-flexoki-dark",
-  highlights = {
-    overrides = function(palette)
-      local base03_darker = { darken = palette.base03, amount = 0.4 }
-      return {
-        LineNr = { fg = "foreground" },
-        LineNrAbove = { fg = base03_darker },
-        LineNrBelow = { fg = base03_darker },
-        NonText = { fg = base03_darker },
-        EndOfBuffer = { fg = base03_darker },
-        SignColumn = { fg = base03_darker },
-        WinSeparator = { fg = "darkest_grey" },
-        PmenuSel = { bg = "darkest_grey" },
-        MiniPickMatchCurrent = { bg = "darkest_grey" },
-        MiniPickMatchMarked = { bg = "dark_grey" },
-        StatusLine = { fg = palette.base04, bg = palette.base01 },
-      }
-    end,
-  },
-})
-
 -- treesitter
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
@@ -192,89 +171,72 @@ vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bi", "<cmd>FzfLua<CR>", { silent = true })
 vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua lsp_references<CR>", { silent = true })
 
--- zk
-require("zk").setup({
-  picker = "fzf_lua",
-  lsp = {
-    config = {
-      name = "zk",
-      cmd = { "zk", "lsp" },
-      filetypes = { "markdown" },
+-- obsidian
+require("obsidian").setup({
+  legacy_commands = false,
+  workspaces = {
+    {
+      name = "notes",
+      path = "~/Documents/ksync/notes",
     },
-    auto_attach = {
-      enabled = true,
-    },
+  },
+  templates = {
+    folder = "templates",
+    date_format = "%Y-%m-%d",
+    time_format = "%H:%M:%S",
+  },
+  picker = {
+    name = "fzf-lua",
+  },
+  note_id_func = function(title)
+    local charset = "abcdefghijklmnopqrstuvwxyz0123456789"
+    local prefix = ""
+    for _ = 1, 4 do
+      local rand = math.random(1, #charset)
+      prefix = prefix .. string.sub(charset, rand, rand)
+    end
+    if title ~= nil then
+      return prefix .. "_" .. title
+    else
+      return prefix
+    end
+  end,
+  frontmatter = {
+    enabled = false,
+  },
+  callbacks = {
+    enter_note = function(_)
+      vim.keymap.set(
+        "n",
+        "<leader>ob",
+        "<Cmd>Obsidian backlinks<CR>",
+        { buffer = true, desc = "Obsidian backlinks" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>ot",
+        "<Cmd>Obsidian tags<CR>",
+        { buffer = true, desc = "Obsidian backlinks" }
+      )
+    end,
   },
 })
 
-local function find_obsidian_root(start)
-  local dir = vim.fs.dirname(start)
-
-  while dir do
-    if vim.fn.isdirectory(dir .. "/.obsidian") == 1 then
-      return dir
-    end
-
-    local parent = vim.fs.dirname(dir)
-    if parent == dir then
-      break
-    end
-    dir = parent
-  end
-end
-
-local function open_in_obsidian()
-  local file = vim.fn.expand("%:p")
-  local root = find_obsidian_root(file)
-
-  if not root then
-    vim.notify("Not inside an Obsidian vault", vim.log.levels.WARN)
-    return
-  end
-
-  local vault = vim.fn.fnamemodify(root, ":t")
-  local rel = file:sub(#root + 2):gsub(" ", "%%20")
-  local url = string.format("obsidian://open?vault=%s&file=%s", vault, rel)
-
-  vim.cmd("silent write")
-  vim.fn.jobstart({ "xdg-open", url }, { detach = true })
-end
-
-local zk_group = vim.api.nvim_create_augroup("ZK", {})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  group = zk_group,
-  callback = function()
-    if vim.fn.isdirectory(vim.fn.getcwd() .. "/.zk") ~= 1 then
-      return
-    end
-
-    local zk = require("zk")
-
-    vim.keymap.set("n", "<leader>on", function()
-      zk.new({ title = vim.fn.input("Title: ") })
-    end, { desc = "New ZK note" })
-
-    vim.keymap.set(
-      "n",
-      "<leader>oo",
-      "<Cmd>ZkNotes { sort = { 'modified' } }<CR>",
-      { desc = "Open ZK notes" }
-    )
-
-    vim.keymap.set("n", "<leader>of", function()
-      zk.notes({ match = { vim.fn.input("Search: ") } })
-    end, { desc = "Search ZK notes" })
-
-    vim.keymap.set("n", "<leader>ot", "<Cmd>ZkTags<CR>", { desc = "ZK tags" })
-    vim.keymap.set("v", "<leader>of", ":'<,'>ZkMatch<CR>", { desc = "Match selection" })
-    vim.keymap.set("n", "<leader>ob", "<Cmd>ZkBacklinks<CR>", { desc = "ZK backlinks" })
-    vim.keymap.set("n", "<leader>op", open_in_obsidian, { desc = "Open in Obsidian" })
-  end,
-})
+vim.keymap.set(
+  "n",
+  "<leader>on",
+  "<Cmd>Obsidian new_from_template<CR>",
+  { desc = "New Obsidian note" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>oo",
+  "<Cmd>Obsidian quick_switch<CR>",
+  { desc = "Open Obsidian notes" }
+)
+vim.keymap.set("n", "<leader>op", "<Cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
 
 -- luasnip
-
 local ls = require("luasnip")
 ls.setup({ enable_autosnippets = true })
 require("luasnip.loaders.from_lua").load({ paths = config_dir .. "/snippets/" })
@@ -307,30 +269,7 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
   end
 end, { silent = true })
 
--- typst preview
-
-local function get_exec(name)
-  if vim.fn.executable(name) == 1 then
-    local p = vim.fn.exepath(name)
-    if p ~= "" then
-      return p
-    end
-  end
-  return nil
-end
-
-local tinymist_exec = get_exec("tinymist")
-local websocat_exec = get_exec("websocat")
-
-require("typst-preview").setup({
-  dependencies_bin = {
-    ["tinymist"] = tinymist_exec,
-    ["websocat"] = websocat_exec,
-  },
-})
-
 -- keymaps
-
 vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "k", [[v:count || mode(1)[0:1] == "no" ? "k" : "gk"]], { expr = true })
@@ -370,3 +309,14 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 require("vim._core.ui2").enable()
+
+local silentium = require("silentium")
+silentium.setup({ accent = silentium.accents.violet })
+vim.cmd.colorscheme("silentium")
+
+-- Mandatory
+vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })

@@ -8,15 +8,10 @@
     pkgs.fzf
     pkgs.ripgrep
 
-    # needed for blink
-    pkgs.curl
-    pkgs.git
-
     # for my notes
     pkgs.prettierd
     pkgs.typstyle
-    pkgs.tinymist
-    pkgs.websocat
+    pkgs.marksman
 
     pkgs.lua-language-server
     pkgs.stylua

@@ -24,7 +24,7 @@
   } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-    theme = "flexoki-dark";
+    theme = "silentium";
 
     globals = import ./globals {inherit theme pkgs;};
     wrapped = import ./wrapped {inherit pkgs globals;};
