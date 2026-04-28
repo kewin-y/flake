@@ -41,7 +41,6 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
-  { src = "https://github.com/zk-org/zk-nvim" },
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
   { src = "https://github.com/silentium-theme/silentium.nvim" },

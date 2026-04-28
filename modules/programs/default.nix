@@ -44,7 +44,6 @@
         pavucontrol
         obs-studio
         rnote
-        zk
         zoom-us
         vesktop
         pnpm
