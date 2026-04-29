@@ -1,5 +1,6 @@
 {globals, ...}: {
-    hjem.users.${globals.user} = {
-        user = globals.homeDirectory;
-    };
+  # TODO: globals variable is stupid for this, use a module
+  hjem.users.${globals.user} = {
+    user = globals.homeDirectory;
+  };
 }

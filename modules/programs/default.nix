@@ -28,23 +28,23 @@
     lib.attrValues {
       inherit
         (pkgs)
+        htop
+        btop
         wget
         curl
         git
-        pamixer
         libnotify
+        pamixer
         ripgrep
         fastfetch
         unzip
         killall
         nautilus
         swayimg
-        mpv
-        htop
+        # mpv
         pavucontrol
         obs-studio
         rnote
-        zoom-us
         vesktop
         pnpm
         zathura

@@ -32,6 +32,7 @@
         opencode
         ty
         ruff
+        nh
         ;
     }
     ++ [inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default];
