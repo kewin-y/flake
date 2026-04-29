@@ -240,7 +240,7 @@ vim.keymap.set(
   { desc = "Open Obsidian notes" }
 )
 vim.keymap.set("n", "<leader>op", "<Cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
-vim.keymap.set("n", "<leader>od", "<Cmd>Obsidian today<CR>", { desc = "Obisidan daily note" })
+vim.keymap.set("n", "<leader>od", "<Cmd>Obsidian today<CR>", { desc = "Open Obsidian daily note" })
 
 -- luasnip
 local ls = require("luasnip")
@@ -322,7 +322,7 @@ vim.cmd.colorscheme("silentium")
 
 -- Mandatory
 vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
-vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.cyan })
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
