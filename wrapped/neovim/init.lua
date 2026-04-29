@@ -187,6 +187,12 @@ require("obsidian").setup({
   picker = {
     name = "fzf-lua",
   },
+  daily_notes = {
+    enabled = true,
+    folder = "daily",
+    template = "daily.md",
+    date_format = "YYYY-MM-DD",
+  },
   note_id_func = function(title)
     local charset = "abcdefghijklmnopqrstuvwxyz0123456789"
     local prefix = ""
@@ -234,6 +240,7 @@ vim.keymap.set(
   { desc = "Open Obsidian notes" }
 )
 vim.keymap.set("n", "<leader>op", "<Cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
+vim.keymap.set("n", "<leader>od", "<Cmd>Obsidian today<CR>", { desc = "Obisidan daily note" })
 
 -- luasnip
 local ls = require("luasnip")
@@ -310,12 +317,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 require("vim._core.ui2").enable()
 
 local silentium = require("silentium")
-silentium.setup({ accent = silentium.accents.violet })
+silentium.setup({ accent = silentium.accents.cyan })
 vim.cmd.colorscheme("silentium")
 
 -- Mandatory
 vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
-vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.cyan })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })

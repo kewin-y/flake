@@ -38,7 +38,7 @@
       clh = "cliphist-fzf-sixel";
     };
     interactiveShellInit = with globals.base16Scheme; let
-      accent = base0E;
+      accent = base0C;
 
       fzfOpts = ''
         export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
