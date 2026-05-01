@@ -8,7 +8,7 @@
   kevin = {
     laptop.enable = true;
     network.blocking = {
-      enable = true;
+      enable = false;
     };
     bootloader = "systemd-boot";
   };
