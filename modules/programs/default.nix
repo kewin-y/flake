@@ -41,7 +41,7 @@
         killall
         nautilus
         swayimg
-        # mpv
+        mpv
         pavucontrol
         obs-studio
         rnote
