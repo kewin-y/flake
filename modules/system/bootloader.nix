@@ -6,17 +6,17 @@
   options.kevin = {
     bootloader = lib.mkOption {
       default = "systemd-boot";
-      type = lib.types.enum ["grub" "systemd-boot"];
+      type = lib.types.enum ["grub" "systemd-boot" "lanzaboote"];
     };
   };
   config = let
     cfg = config.kevin.bootloader;
   in {
-    boot.loader = lib.mkMerge [
-      {efi.canTouchEfiVariables = true;}
+    boot = lib.mkMerge [
+      {loader.efi.canTouchEfiVariables = true;}
 
       (lib.mkIf (cfg == "grub") {
-        grub = {
+        loader.grub = {
           enable = true;
           devices = ["nodev"];
           efiSupport = true;
@@ -25,7 +25,18 @@
       })
 
       (lib.mkIf (cfg == "systemd-boot") {
-        systemd-boot.enable = true;
+        loader.systemd-boot = {
+          enable = true;
+          configurationLimit = 5;
+        };
+      })
+
+      (lib.mkIf (cfg == "lanzaboote") {
+        loader.systemd-boot.enable = lib.mkForce false;
+        lanzaboote = {
+          enable = true;
+          pkiBundle = "/var/lib/sbctl";
+        };
       })
     ];
   };

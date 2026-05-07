@@ -15,11 +15,18 @@
       url = "github:sadjow/codex-cli-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # This is here so I can play games with KLAC
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     hjem,
+    lanzaboote,
     ...
   } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -34,6 +41,7 @@
         modules = [
           ./modules
           ./hosts/${hname}/configuration.nix
+          lanzaboote.nixosModules.lanzaboote
           hjem.nixosModules.default
         ];
         specialArgs = {inherit inputs globals wrapped;};

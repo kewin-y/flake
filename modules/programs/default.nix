@@ -53,6 +53,7 @@
         libreoffice
         tree
         chromium
+        sbctl
         ;
     }
     ++ lib.attrValues wrapped;

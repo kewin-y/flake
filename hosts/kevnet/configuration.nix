@@ -9,7 +9,7 @@
     network.blocking = {
       enable = true;
     };
-    bootloader = "grub";
+    bootloader = "lanzaboote";
   };
 
   systemd.tpm2.enable = false;
