@@ -16,6 +16,7 @@
       set-option -g default-shell "${pkgs.zsh}/bin/zsh"
       set-option -sa terminal-overrides ",foot*:Tc"
       setw -g mode-keys vi
+      set -g extended-keys on
       set-option -g renumber-windows on
       set -s set-clipboard on
 
