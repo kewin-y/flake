@@ -32,6 +32,8 @@
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
     lib = pkgs.lib;
 
+    recursivelyImport = import ./recursivelyImport.nix {inherit lib;};
+
     base = import ./base.nix;
 
     theme = import ./theme.nix {
@@ -41,15 +43,17 @@
 
     wrapped = import ./wrapped {inherit pkgs theme;};
 
-
     mkSystem = hname:
       nixpkgs.lib.nixosSystem {
-        modules = [
-          ./modules
-          ./hosts/${hname}/configuration.nix
-          lanzaboote.nixosModules.lanzaboote
-          hjem.nixosModules.default
-        ];
+        modules =
+          recursivelyImport [
+            ./modules
+          ]
+          ++ [
+            ./hosts/${hname}/configuration.nix
+            lanzaboote.nixosModules.lanzaboote
+            hjem.nixosModules.default
+          ];
         specialArgs = {inherit inputs base theme wrapped;};
       };
   in {
