@@ -1,11 +1,11 @@
-{...}: {
+{base, ...}: {
   programs = {
     git = {
       enable = true;
       config = {
         user = {
-          name = "Kevin";
-          email = "jekevin964@gmail.com";
+          name = base.user;
+          email = base.email;
         };
         init = {
           defaultBranch = "main";

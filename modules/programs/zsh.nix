@@ -1,6 +1,6 @@
 {
   pkgs,
-  globals,
+  theme,
   ...
 }: {
   environment.systemPackages = [
@@ -37,7 +37,7 @@
       vg = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt";
       clh = "cliphist-fzf-sixel";
     };
-    interactiveShellInit = with globals.base16Scheme; let
+    interactiveShellInit = with theme.hashtag; let
       accent = base0C;
 
       fzfOpts = ''

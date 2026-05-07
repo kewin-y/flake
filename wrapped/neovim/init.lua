@@ -176,7 +176,7 @@ require("obsidian").setup({
   workspaces = {
     {
       name = "notes",
-      path = "~/Documents/ksync/notes",
+      path = "~/Documents/sync/notes",
     },
   },
   templates = {

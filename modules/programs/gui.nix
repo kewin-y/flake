@@ -1,6 +1,5 @@
 {
   pkgs,
-  globals,
   lib,
   config,
   ...

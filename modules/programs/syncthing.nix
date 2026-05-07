@@ -1,11 +1,12 @@
-{globals, ...}: {
+{base, ...}: let
+  syncthingDirectory = "/home/${base.user}/Documents/sync";
+in {
   services = {
     syncthing = {
       enable = true;
-      group = "users";
       user = "kevin";
-      dataDir = "${globals.homeDirectory}/Documents/ksync";    # Default folder for new synced folders
-      configDir = "${globals.homeDirectory}/Documents/ksync/.config/syncthing";   # Folder for Syncthing's settings and keys
+      dataDir = syncthingDirectory; # Default folder for new synced folders
+      configDir = "${syncthingDirectory}/.config/syncthing"; # Folder for Syncthing's settings and keys
     };
   };
 }

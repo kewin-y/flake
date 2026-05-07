@@ -1,8 +1,9 @@
 {
-  globals,
   config,
   pkgs,
   wrapped,
+  theme,
+  base,
   ...
 }: let
   niriConf = pkgs.writeText "config.kdl" ''
@@ -32,8 +33,8 @@
         border {
             on
             width 2
-            active-color "${globals.base16Scheme.base03}"
-            inactive-color "${globals.base16Scheme.base01}"
+            active-color "${theme.hashtag.base03}"
+            inactive-color "${theme.hashtag.base01}"
         }
 
         focus-ring {
@@ -228,7 +229,7 @@
     }
   '';
 in {
-  # Let the module configure the portals (for now)
+  # Let the module configure the portals
   programs.niri.enable = true;
 
   security.pam.services.swaylock = {};
@@ -249,7 +250,7 @@ in {
       ExecStart =
         if config.kevin.wallpaper != null
         then "${pkgs.swaybg}/bin/swaybg -i ${config.kevin.wallpaper} -m fill"
-        else "${pkgs.swaybg}/bin/swaybg -c ${globals.base16Scheme.base00}";
+        else "${pkgs.swaybg}/bin/swaybg -c ${theme.hashtag.base00}";
     in {
       inherit ExecStart;
       Restart = "on-failure";
@@ -281,7 +282,7 @@ in {
     pkgs.xwayland-satellite
   ];
 
-  hjem.users.${globals.user}.files = {
+  hjem.users.${base.user}.files = {
     ".config/niri/config.kdl".source = niriConf;
   };
 }

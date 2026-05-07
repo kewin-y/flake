@@ -1,30 +1,28 @@
 {
-    pkgs,
-    globals,
-    ...
+  pkgs,
+  base,
+  ...
 }: {
-    imports = [
-        ./nix.nix
-        ./network.nix
-        ./bootloader.nix
-        ./laptop.nix
-        ./wayland.nix
-        ./fonts.nix
-        ./audio.nix
-    ];
+  imports = [
+    ./nix.nix
+    ./network.nix
+    ./bootloader.nix
+    ./laptop.nix
+    ./wayland.nix
+    ./fonts.nix
+    ./audio.nix
+  ];
 
-    hardware.graphics.enable = true;
+  hardware.graphics.enable = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    time.timeZone = "America/Toronto";
+  time.timeZone = "America/Toronto";
+  i18n.defaultLocale = "en_CA.UTF-8";
 
-    i18n.defaultLocale = "en_CA.UTF-8";
-
-    users.users.${globals.user} = {
-        isNormalUser = true;
-        description = "Kevin";
-        extraGroups = ["networkmanager" "wheel" "video" "docker" "ksync"];
-    };
-
+  users.users.${base.user} = {
+    isNormalUser = true;
+    description = "Kevin";
+    extraGroups = ["networkmanager" "wheel" "video" "docker" "syncthing"];
+  };
 }

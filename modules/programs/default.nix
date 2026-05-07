@@ -8,7 +8,6 @@
     ./gui.nix
     ./niri.nix
     ./hjem.nix
-    ./obsidian.nix
     ./docker.nix
     ./git.nix
     ./ssh.nix
@@ -19,7 +18,6 @@
     ./development.nix
     ./cliphist.nix
   ];
-
 
   # Needed for Nautilus Trash
   services.gvfs.enable = true;
@@ -53,7 +51,7 @@
         libreoffice
         tree
         chromium
-        sbctl
+        obsidian
         ;
     }
     ++ lib.attrValues wrapped;

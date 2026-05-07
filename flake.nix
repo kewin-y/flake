@@ -1,5 +1,5 @@
 {
-  description = " ... ";
+  description = "🆒🆒🆒🆒";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -30,11 +30,17 @@
     ...
   } @ inputs: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    lib = pkgs.lib;
 
-    theme = "silentium";
+    base = import ./base.nix;
 
-    globals = import ./globals {inherit theme pkgs;};
-    wrapped = import ./wrapped {inherit pkgs globals;};
+    theme = import ./theme.nix {
+      themeName = "silentium";
+      inherit lib;
+    };
+
+    wrapped = import ./wrapped {inherit pkgs theme;};
+
 
     mkSystem = hname:
       nixpkgs.lib.nixosSystem {
@@ -44,7 +50,7 @@
           lanzaboote.nixosModules.lanzaboote
           hjem.nixosModules.default
         ];
-        specialArgs = {inherit inputs globals wrapped;};
+        specialArgs = {inherit inputs base theme wrapped;};
       };
   in {
     nixosConfigurations = {

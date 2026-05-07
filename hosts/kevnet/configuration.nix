@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -11,6 +11,10 @@
     };
     bootloader = "lanzaboote";
   };
+
+  environment.systemPackages = [
+    pkgs.sbctl
+  ];
 
   systemd.tpm2.enable = false;
   boot.initrd.systemd.tpm2.enable = false;
