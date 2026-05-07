@@ -25,8 +25,6 @@
       valgrind-light
       clang-tools
       cmake
-      code-cursor
-      vscode
       ty
       ruff
       nh
