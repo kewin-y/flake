@@ -24,6 +24,7 @@
   extensions = [
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "youtube-recommended-videos" "myallychou@gmail.com")
+    (extension "leechblock-ng" "leechblockng@proginosko.com")
   ];
 in {
   environment.systemPackages = [
