@@ -32,6 +32,8 @@
         tree
         chromium
         obsidian
+
+        keepassxc
         ;
     }
     ++ lib.attrValues wrapped;

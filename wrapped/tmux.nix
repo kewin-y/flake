@@ -17,6 +17,7 @@
       set-option -sa terminal-overrides ",foot*:Tc"
       setw -g mode-keys vi
       set -g extended-keys on
+      set -g extended-keys-format csi-u
       set-option -g renumber-windows on
       set -s set-clipboard on
 
@@ -28,28 +29,29 @@
       bind-key -r -T prefix C-j resize-pane -D
       bind-key -r -T prefix C-h resize-pane -L
       bind-key -r -T prefix C-l resize-pane -R
+      bind g display-popup -w 80% -h 80% -E "lazygit"
 
       set-option -g status-position bottom
 
-      set-option -g status-style "fg=${base04},bg=${base01}"
+      # set-option -g status-style "fg=${base04},bg=${base01}"
 
-      set-window-option -g window-status-style "fg=${base04},bg=default"
-      set-window-option -g window-status-current-style "fg=${base05},bg=default"
+      # set-window-option -g window-status-style "fg=${base04},bg=default"
+      # set-window-option -g window-status-current-style "fg=${base05},bg=default"
 
-      set-window-option -g window-status-format "#I:#W "
-      set-window-option -g window-status-current-format "#I:#W "
+      # set-window-option -g window-status-format "#I:#W "
+      # set-window-option -g window-status-current-format "#I:#W "
 
-      set-option -g status-left ""
-      set-option -g status-right "%a %b %d %H:%M [#S]"
+      # set-option -g status-left ""
+      # set-option -g status-right "%a %b %d %H:%M [#S]"
 
-      set-option -g pane-border-style "fg=${base01}"
-      set-option -g pane-active-border-style "fg=${base02}"
-      set-option -g message-style "fg=${base06},bg=${base01}"
-      set-option -g display-panes-active-colour "${base0B}"
-      set-option -g display-panes-colour "${base0D}"
-      set-window-option -g clock-mode-colour "${base0B}"
-      set-window-option -g mode-style "fg=${base05},bg=${base02}"
-      set-window-option -g window-status-bell-style "fg=${base01},bg=${base08}"
+      # set-option -g pane-border-style "fg=${base01}"
+      # set-option -g pane-active-border-style "fg=${base02}"
+      # set-option -g message-style "fg=${base06},bg=${base01}"
+      # set-option -g display-panes-active-colour "${base0B}"
+      # set-option -g display-panes-colour "${base0D}"
+      # set-window-option -g clock-mode-colour "${base0B}"
+      # set-window-option -g mode-style "fg=${base05},bg=${base02}"
+      # set-window-option -g window-status-bell-style "fg=${base01},bg=${base08}"
     '';
 in
   pkgs.symlinkJoin {
