@@ -33,25 +33,7 @@
 
       set-option -g status-position bottom
 
-      # set-option -g status-style "fg=${base04},bg=${base01}"
-
-      # set-window-option -g window-status-style "fg=${base04},bg=default"
-      # set-window-option -g window-status-current-style "fg=${base05},bg=default"
-
-      # set-window-option -g window-status-format "#I:#W "
-      # set-window-option -g window-status-current-format "#I:#W "
-
-      # set-option -g status-left ""
-      # set-option -g status-right "%a %b %d %H:%M [#S]"
-
-      # set-option -g pane-border-style "fg=${base01}"
-      # set-option -g pane-active-border-style "fg=${base02}"
-      # set-option -g message-style "fg=${base06},bg=${base01}"
-      # set-option -g display-panes-active-colour "${base0B}"
-      # set-option -g display-panes-colour "${base0D}"
-      # set-window-option -g clock-mode-colour "${base0B}"
-      # set-window-option -g mode-style "fg=${base05},bg=${base02}"
-      # set-window-option -g window-status-bell-style "fg=${base01},bg=${base08}"
+      set-option -g status-style "fg=${base05},bg=${base01}"
     '';
 in
   pkgs.symlinkJoin {
