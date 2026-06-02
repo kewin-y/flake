@@ -1,5 +1,5 @@
 {base, ...}: {
   hjem.users.${base.user} = {
-    user = "/home/${base.user}";
+    directory = "/home/${base.user}";
   };
 }
