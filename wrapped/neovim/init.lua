@@ -77,7 +77,6 @@ local servers = {
   "ty",
   "tailwindcss",
   "hls",
-  "marksman",
 }
 
 for _, server in pairs(servers) do

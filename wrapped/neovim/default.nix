@@ -11,7 +11,6 @@
     # for my notes
     pkgs.prettierd
     pkgs.typstyle
-    pkgs.marksman
 
     pkgs.lua-language-server
     pkgs.stylua
