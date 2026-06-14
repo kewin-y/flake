@@ -29,10 +29,26 @@
               "social"
             ];
           };
-          extraHosts = lib.pipe cfg.blocking.extraHosts [
-            (map (host: "0.0.0.0 " + host))
-            (lib.concatStringsSep "\n")
-          ];
+          extraHosts = let
+            allHosts =
+              [
+                # Anything that makes me unproductive
+                "mangakatana.com"
+                "mangadex.org"
+
+                # I hate music
+                "open.spotify.com"
+                "soundcloud.com"
+                "rateyourmusic.com"
+                "aoty.org"
+                "albumoftheyear.org"
+              ]
+              ++ cfg.blocking.extraHosts;
+          in
+            lib.pipe allHosts [
+              (map (host: "0.0.0.0 " + host))
+              (lib.concatStringsSep "\n")
+            ];
         };
       })
     ];
