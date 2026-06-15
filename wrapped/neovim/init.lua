@@ -250,7 +250,7 @@ local function feedkeys(keys)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), "n", true)
 end
 
-vim.keymap.set({ "i" }, "<C-l>", function()
+vim.keymap.set({ "i" }, "<C-b>", function()
   ls.expand()
 end, { silent = true })
 
@@ -290,6 +290,10 @@ vim.keymap.set("n", "<leader>tt", "<Cmd>tabnew<CR>")
 vim.keymap.set("n", "<leader>tw", "<Cmd>tabclose<CR>")
 vim.keymap.set("n", "<A-l>", "<Cmd>tabnext<CR>")
 vim.keymap.set("n", "<A-h>", "<Cmd>tabprevious<CR>")
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- autocmds
 local format_group = vim.api.nvim_create_augroup("Format", {})
