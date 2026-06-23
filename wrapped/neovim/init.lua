@@ -44,6 +44,7 @@ vim.pack.add({
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
   { src = "https://github.com/silentium-theme/silentium.nvim" },
+  { src = "https://github.com/chomosuke/typst-preview.nvim" },
 })
 
 -- mini
@@ -273,6 +274,26 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
     feedkeys("<C-k>")
   end
 end, { silent = true })
+
+local function get_exec(name)
+  if vim.fn.executable(name) == 1 then
+    local p = vim.fn.exepath(name)
+    if p ~= "" then
+      return p
+    end
+  end
+  return nil
+end
+
+local tinymist_exec = get_exec("tinymist")
+local websocat_exec = get_exec("websocat")
+
+require("typst-preview").setup({
+  dependencies_bin = {
+    ["tinymist"] = tinymist_exec,
+    ["websocat"] = websocat_exec,
+  },
+})
 
 -- keymaps
 vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = true, silent = true })

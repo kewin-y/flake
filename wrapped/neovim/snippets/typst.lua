@@ -1,0 +1,36 @@
+---@diagnostic disable: undefined-global
+
+return {
+  s("init", {
+    t({
+      '#import "@preview/ctheorems:1.1.3": *',
+      "#show: thmrules",
+      "",
+      "#set page(width: 16cm, margin: 1.5cm)",
+      '#set heading(numbering: "1.1.")',
+      "",
+      '#let theorem = thmbox("theorem", "Theorem", fill: rgb("#eaf7fb"))',
+      "#let corollary = thmplain(",
+      '  "corollary",',
+      '  "Corollary",',
+      '  base: "theorem",',
+      "  titlefmt: strong,",
+      ")",
+      '#let definition = thmbox("definition", "Definition", inset: (',
+      "  x: 1.2em,",
+      "  y: 1em,",
+      "))",
+      '#let example = thmplain("example", "Example").with(numbering: none)',
+      '#let proof = thmproof("proof", "Proof")',
+      "#let with-inset(body) = block(",
+      "  inset: (x: 1.2em, y: 1em),",
+      "  width: 100%,",
+      ")[#body]",
+      "",
+      "#outline()",
+      "#pagebreak()",
+      "",
+    }),
+    i(0),
+  }),
+}

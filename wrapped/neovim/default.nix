@@ -12,6 +12,9 @@
     pkgs.prettierd
     pkgs.typstyle
 
+    #typst 
+    pkgs.websocat
+
     pkgs.lua-language-server
     pkgs.stylua
     pkgs.alejandra

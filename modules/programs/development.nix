@@ -34,6 +34,8 @@
       rust-analyzer
       rustc
       rustfmt
+      tinymist
+      typstyle
       ;
   };
 }
