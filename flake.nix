@@ -12,9 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # This is here so I can play games with KLAC
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

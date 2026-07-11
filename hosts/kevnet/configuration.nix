@@ -7,7 +7,7 @@
   kevin = {
     laptop.enable = false;
     network.blocking = {
-      enable = true;
+      enable = false;
     };
     bootloader = "lanzaboote";
   };
