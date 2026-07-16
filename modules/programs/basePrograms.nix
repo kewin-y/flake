@@ -4,6 +4,9 @@
   wrapped,
   ...
 }: {
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-40.10.5"
+  ];
   environment.systemPackages =
     lib.attrValues {
       inherit
@@ -32,7 +35,6 @@
         tree
         chromium
         obsidian
-
         keepassxc
         ;
     }
