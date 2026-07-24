@@ -28,7 +28,7 @@
         obs-studio
         rnote
         vesktop
-        zathura
+        sioyek
         inkscape
         imv
         libreoffice
