@@ -61,6 +61,7 @@ in {
         pi-coding-agent
         codex
         t3code
+        opencode
         ;
       arduinoIDE = arduinoIDE;
     }
