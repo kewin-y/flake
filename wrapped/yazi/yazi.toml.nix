@@ -28,7 +28,7 @@ pkgs.writeTextDir "yazi/yazi.toml" ''
 
     [[opener.pdf]]
     desc = "View PDF"
-    run = "zathura \"$1\""
+    run = "sioyek \"$1\""
 
     [[opener.video]]
     desc = "Watch Video"
