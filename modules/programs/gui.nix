@@ -36,8 +36,8 @@ in {
   config = {
     qt = {
       enable = true;
-      platformTheme = "gnome";
-      style = "adwaita";
+      platformTheme = null;
+      style = "breeze";
     };
 
     programs.dconf.enable = true;

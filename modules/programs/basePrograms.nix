@@ -37,6 +37,10 @@
         obsidian
         keepassxc
         ;
+      inherit
+        (pkgs.kdePackages)
+        kdenlive
+        ;
     }
     ++ lib.attrValues wrapped;
 }
