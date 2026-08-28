@@ -45,6 +45,7 @@ vim.pack.add({
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
   { src = "https://github.com/silentium-theme/silentium.nvim" },
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
+  { src = "https://github.com/neogitorg/neogit" },
 })
 
 -- mini
@@ -275,6 +276,8 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
   end
 end, { silent = true })
 
+-- Typst preview
+
 local function get_exec(name)
   if vim.fn.executable(name) == 1 then
     local p = vim.fn.exepath(name)
@@ -294,6 +297,9 @@ require("typst-preview").setup({
     ["websocat"] = websocat_exec,
   },
 })
+
+-- neogit
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
 
 -- keymaps
 vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = true, silent = true })
