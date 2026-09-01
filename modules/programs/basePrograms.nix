@@ -36,6 +36,7 @@
         chromium
         obsidian
         keepassxc
+        steam-run
         ;
       inherit
         (pkgs.kdePackages)
