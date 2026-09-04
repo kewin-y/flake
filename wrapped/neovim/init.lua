@@ -46,6 +46,7 @@ vim.pack.add({
   { src = "https://github.com/silentium-theme/silentium.nvim" },
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/neogitorg/neogit" },
+  { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
 })
 
 -- mini
