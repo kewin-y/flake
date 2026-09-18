@@ -75,7 +75,7 @@ local servers = {
   "nixd",
   "astro",
   "tinymist",
-  "tsgo",
+  "tsc",
   "rust_analyzer",
   "ty",
   "tailwindcss",

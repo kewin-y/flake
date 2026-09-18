@@ -36,6 +36,7 @@
       yz = "yazi";
       vg = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt";
       clh = "cliphist-fzf-sixel";
+      uvj = "uv run --with jupyter jupyter lab";
     };
     interactiveShellInit = with theme.hashtag; let
       accent = base0C;

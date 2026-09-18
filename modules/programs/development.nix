@@ -39,14 +39,12 @@ in {
         pnpm
         prettierd
         typescript-language-server
-        typescript-go
+        typescript
         tailwindcss-language-server
         bun
         valgrind-light
         clang-tools
         cmake
-        ty
-        ruff
         nh
         cargo
         clippy
@@ -57,6 +55,10 @@ in {
         typstyle
         picocom
         psmisc
+        gh
+
+        ty
+        ruff
 
         pi-coding-agent
         codex
