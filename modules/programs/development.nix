@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: let
   arduinoIDE = pkgs.symlinkJoin {
@@ -14,22 +15,17 @@
 in {
   programs.nix-ld.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   environment.sessionVariables = {
     EDITOR = "nvim";
   };
 
   environment.systemPackages = let
-    pythonPackages = ps:
-      with ps; [
-        jupyter
-        notebook
-        ipykernel
-        numpy
-        pandas
-        matplotlib
-        torch
-      ];
-    pythonEnv = pkgs.python3.withPackages pythonPackages;
   in
     lib.attrValues {
       inherit
@@ -56,10 +52,8 @@ in {
         picocom
         psmisc
         gh
-
         ty
         ruff
-
         pi-coding-agent
         codex
         t3code
@@ -68,6 +62,6 @@ in {
       arduinoIDE = arduinoIDE;
     }
     ++ [
-      pythonEnv
+      inputs.omp.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }

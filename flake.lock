@@ -111,6 +111,40 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "omp": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1789786257,
+        "narHash": "sha256-M3ghvKaonISu87fHZcUblzryJi5OmEq5a1iGG57WzQw=",
+        "owner": "yuxqiu",
+        "repo": "omp-nix",
+        "rev": "c1edca12e880f623670edfc080d91ee764c452fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yuxqiu",
+        "repo": "omp-nix",
+        "type": "github"
+      }
+    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -139,6 +173,7 @@
         "hjem": "hjem",
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs",
+        "omp": "omp",
         "zen-browser": "zen-browser"
       }
     },
