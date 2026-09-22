@@ -36,7 +36,7 @@
     base = import ./base.nix;
 
     theme = import ./theme.nix {
-      themeName = "silentium";
+      themeName = "koda-dark";
       inherit lib;
     };
 

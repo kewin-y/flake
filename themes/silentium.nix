@@ -1,3 +1,4 @@
+# See https://github.com/silentium-theme/silentium.nvim/blob/main/LICENSE
 {
   scheme = "silentium";
   author = "https://github.com/silentium-theme/silentium.nvim";
