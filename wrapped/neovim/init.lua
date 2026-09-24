@@ -349,12 +349,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 require("vim._core.ui2").enable()
 
 local silentium = require("silentium")
-silentium.setup({ accent = silentium.accents.cyan })
+silentium.setup({ accent = silentium.accents.lime })
 vim.cmd.colorscheme("silentium")
 
 -- Mandatory
 vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
-vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
+-- vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
