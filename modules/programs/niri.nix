@@ -51,7 +51,7 @@
     }
 
     window-rule {
-      geometry-corner-radius 5
+      geometry-corner-radius 0
       clip-to-geometry true
     }
 
