@@ -50,6 +50,7 @@
         obsidian
         keepassxc
         steam-run
+        dpkg
         ;
       inherit
         (pkgs.kdePackages)
