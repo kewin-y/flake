@@ -29,7 +29,7 @@
       bind-key -r -T prefix C-j resize-pane -D
       bind-key -r -T prefix C-h resize-pane -L
       bind-key -r -T prefix C-l resize-pane -R
-      bind g display-popup -w 80% -h 80% -E "lazygit"
+      # bind g display-popup -w 80% -h 80% -E "lazygit"
 
       set-option -g status-position bottom
 
