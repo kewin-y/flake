@@ -47,7 +47,7 @@ vim.pack.add({
   { src = "https://github.com/neogitorg/neogit" },
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
   -- { src = "https://github.com/silentium-theme/silentium.nvim" },
-  { src = "https://github.com/nyoom-engineering/oxocarbon.nvim" },
+  { src = "https://github.com/EdenEast/nightfox.nvim" }
 })
 
 -- mini
@@ -301,6 +301,8 @@ require("typst-preview").setup({
 })
 
 -- neogit
+vim.cmd.packadd("oxocarbon.nvim")
+vim.cmd.colorscheme("oxocarbon")
 require("neogit").setup({})
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
 
@@ -348,16 +350,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 require("vim._core.ui2").enable()
+vim.cmd("colorscheme carbonfox")
 
-vim.opt.background = "dark" -- set this to dark or light
-vim.cmd.colorscheme("oxocarbon")
 
 -- local silentium = require("silentium")
 -- silentium.setup({ accent = silentium.accents.lime })
 -- vim.cmd.colorscheme("silentium")
 
 -- Mandatory
-vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
