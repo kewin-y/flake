@@ -43,10 +43,11 @@ vim.pack.add({
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", version = vim.version.range("*") },
   { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("^2") },
-  { src = "https://github.com/silentium-theme/silentium.nvim" },
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/neogitorg/neogit" },
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
+  -- { src = "https://github.com/silentium-theme/silentium.nvim" },
+  { src = "https://github.com/nyoom-engineering/oxocarbon.nvim" },
 })
 
 -- mini
@@ -348,13 +349,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 
 require("vim._core.ui2").enable()
 
-local silentium = require("silentium")
-silentium.setup({ accent = silentium.accents.lime })
-vim.cmd.colorscheme("silentium")
+vim.opt.background = "dark" -- set this to dark or light
+vim.cmd.colorscheme("oxocarbon")
+
+-- local silentium = require("silentium")
+-- silentium.setup({ accent = silentium.accents.lime })
+-- vim.cmd.colorscheme("silentium")
 
 -- Mandatory
 vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
--- vim.api.nvim_set_hl(0, "WinSeparator", { fg = silentium.colors.dark_gray })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
