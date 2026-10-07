@@ -51,6 +51,7 @@
         keepassxc
         steam-run
         dpkg
+        melonds
         ;
       inherit
         (pkgs.kdePackages)

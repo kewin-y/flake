@@ -25,6 +25,7 @@
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "youtube-recommended-videos" "myallychou@gmail.com")
     (extension "leechblock-ng" "leechblockng@proginosko.com")
+    (extension "sponsorblock" "sponsorBlocker@ajay.app")
   ];
 in {
   environment.systemPackages = [
