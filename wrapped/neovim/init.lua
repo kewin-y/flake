@@ -22,8 +22,8 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 400
 vim.opt.undofile = true
 vim.opt.conceallevel = 1
-vim.opt.winborder = "single"
-vim.opt.pumborder = "single"
+vim.opt.winborder = "solid"
+vim.opt.pumborder = "solid"
 vim.opt.whichwrap:append("<>[]hl")
 vim.opt.relativenumber = true
 vim.opt.autoread = true
@@ -46,9 +46,13 @@ vim.pack.add({
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/neogitorg/neogit" },
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
-  -- { src = "https://github.com/silentium-theme/silentium.nvim" },
-  { src = "https://github.com/EdenEast/nightfox.nvim" }
+  { src = "https://github.com/nyoom-engineering/oxocarbon.nvim" },
 })
+
+vim.cmd.colorscheme("oxocarbon")
+
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Pmenu" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Pmenu" })
 
 -- mini
 local hi = require("mini.hipatterns")
@@ -301,8 +305,6 @@ require("typst-preview").setup({
 })
 
 -- neogit
-vim.cmd.packadd("oxocarbon.nvim")
-vim.cmd.colorscheme("oxocarbon")
 require("neogit").setup({})
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
 
@@ -350,12 +352,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 require("vim._core.ui2").enable()
-vim.cmd("colorscheme carbonfox")
-
+-- vim.cmd("colorscheme carbonfox")
 
 -- local silentium = require("silentium")
--- silentium.setup({ accent = silentium.accents.lime })
--- vim.cmd.colorscheme("silentium")
+-- silentium.setup({ accent = silentium.accents.})
 
 -- Mandatory
 -- vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
