@@ -33,7 +33,6 @@
         chromium
         obsidian
         keepassxc
-        steam-run
         dpkg
         melonds
         ;
@@ -42,5 +41,17 @@
         kdenlive
         ;
     }
-    ++ lib.attrValues wrapped;
+    ++ lib.attrValues wrapped
+    ++ [
+      ((pkgs.steam.override {
+        extraPkgs = pkgs:
+          with pkgs; [
+            nspr
+            nss
+            at-spi2-atk
+            gtk3
+            libxcomposite
+          ];
+      }).run-free)
+    ];
 }
