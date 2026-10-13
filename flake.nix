@@ -20,6 +20,11 @@
     };
 
     omp.url = "github:yuxqiu/omp-nix";
+
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
