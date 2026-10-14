@@ -24,7 +24,7 @@
         pavucontrol
         obs-studio
         rnote
-        vesktop
+        webcord
         sioyek
         inkscape
         imv
