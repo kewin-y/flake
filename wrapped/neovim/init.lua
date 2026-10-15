@@ -159,14 +159,11 @@ require("fzf-lua").setup({
     file_icons = "mini",
   },
   winopts = {
-    border = "single",
+    border = "solid",
     preview = {
-      border = "single",
-      scrollbar = false,
+      border = "solid",
+      scrollbar = true,
     },
-  },
-  hls = {
-    backdrop = "FloatBorder",
   },
 })
 
@@ -328,6 +325,9 @@ vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right" })
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up" })
+vim.keymap.set("n", "<leader>fn", function()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end, { noremap = true, silent = true })
 
 -- autocmds
 local format_group = vim.api.nvim_create_augroup("Format", {})
@@ -352,13 +352,3 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 require("vim._core.ui2").enable()
--- vim.cmd("colorscheme carbonfox")
-
--- local silentium = require("silentium")
--- silentium.setup({ accent = silentium.accents.})
-
--- Mandatory
--- vim.api.nvim_set_hl(0, "StatusLine", { link = "StatusLineNC" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
--- vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
