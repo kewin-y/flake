@@ -159,7 +159,7 @@ require("fzf-lua").setup({
     file_icons = "mini",
   },
   winopts = {
-    border = "solid",
+    border = "single",
     preview = {
       border = "solid",
       scrollbar = true,
