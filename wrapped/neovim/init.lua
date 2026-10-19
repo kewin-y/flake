@@ -46,13 +46,15 @@ vim.pack.add({
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/neogitorg/neogit" },
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
-  { src = "https://github.com/nyoom-engineering/oxocarbon.nvim" },
+  { src = "https://github.com/zenbones-theme/zenbones.nvim" },
 })
 
-vim.cmd.colorscheme("oxocarbon")
-
+vim.opt.background = "dark"
+vim.g.zenbones_compat = true
+vim.cmd.colorscheme("zenbones")
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Pmenu" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Pmenu" })
+
 
 -- mini
 local hi = require("mini.hipatterns")

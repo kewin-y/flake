@@ -41,7 +41,7 @@
     base = import ./base.nix;
 
     theme = import ./theme.nix {
-      themeName = "oxocarbon";
+      themeName = "zenbones";
       inherit lib;
     };
 
