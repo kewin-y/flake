@@ -4,7 +4,7 @@
   scheme = "zenbones";
   author = "mcchrish (https://github.com/zenbones-theme/zenbones.nvim)";
   base00 = "#1c1917";
-  base01 = "#25211f";
+  base01 = "#352F2D";
   base02 = "#403833";
   base03 = "#4a433f";
   base04 = "#6e6763";
