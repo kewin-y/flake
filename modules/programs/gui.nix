@@ -1,7 +1,14 @@
+# 🥹🥹🥹🥹🥹🥹🥹🥹
+# I have 1 million things to say to the people who designed these "specs", theming guidelines, adwaita or whatever
+# None of them are good
+# So much SHENANIGANS to get DARK MODE and the docs SUCK POOP BUTT
+# 🥹🥹🥹🥹🥹🥹🥹🥹🥹🥹🥹
+# I can't help but generate all of this code using LLM. FUCK YOU.
 {
   pkgs,
   lib,
   config,
+  base,
   ...
 }: let
   inherit
@@ -15,11 +22,26 @@
     if color-theme == "dark"
     then "adw-gtk3-dark"
     else "adw-gtk3";
+
+  qtStyle =
+    if color-theme == "dark"
+    then "adwaita-dark"
+    else "adwaita";
+
+  qtSettings = ''
+    [Appearance]
+    style=${qtStyle}
+    icon_theme=${icon-theme}
+    custom_palette=false
+  '';
 in {
   options.kevin.gui = {
     icon-theme = lib.mkOption {
       type = lib.types.str;
-      default = "Tela-dark";
+      default =
+        if color-theme == "dark"
+        then "Tela-dark"
+        else "Tela";
     };
 
     cursor-theme = lib.mkOption {
@@ -30,14 +52,17 @@ in {
     color-theme = lib.mkOption {
       type = lib.types.enum ["dark" "light"];
       default = "dark";
+      description = ''
+        Make a guess
+      '';
     };
   };
 
   config = {
     qt = {
       enable = true;
-      platformTheme = null;
-      style = "breeze";
+      platformTheme = "qt5ct";
+      style = qtStyle;
     };
 
     programs.dconf.enable = true;
@@ -46,10 +71,11 @@ in {
       {
         lockAll = false;
         settings."org/gnome/desktop/interface" = {
+          # 🥹🥹🥹🥹🥹🥹
           color-scheme = lib.gvariant.mkString (
             if color-theme == "dark"
             then "prefer-dark"
-            else "default"
+            else "prefer-light"
           );
           gtk-theme = lib.gvariant.mkString gtkTheme;
           icon-theme = lib.gvariant.mkString icon-theme;
@@ -58,6 +84,17 @@ in {
         };
       }
     ];
+
+    hjem.users.${base.user}.files = {
+      ".config/qt5ct/qt5ct.conf".text = qtSettings;
+      ".config/qt6ct/qt6ct.conf".text = qtSettings;
+
+      ".gtkrc-2.0".text = ''
+        gtk-icon-theme-name = "${icon-theme}"
+        gtk-cursor-theme-name = "${cursor-theme}"
+        gtk-cursor-theme-size = 24
+      '';
+    };
 
     environment = {
       systemPackages = [
@@ -68,27 +105,21 @@ in {
         pkgs.tela-icon-theme
       ];
       etc = {
-        "gtk-4.0/settings.ini".text = ''
+        "xdg/gtk-4.0/settings.ini".text = ''
           [Settings]
-          gtk-theme-name=${gtkTheme}
+          # This is so stupid 🥹🥹🥹🥹🥹🥹🥹
+          gtk-application-prefer-dark-theme=${if color-theme == "dark" then "true" else "false"}
           gtk-icon-theme-name=${icon-theme}
           gtk-cursor-theme-name=${cursor-theme}
           gtk-cursor-theme-size=24
         '';
 
-        "gtk-3.0/settings.ini".text = ''
+        "xdg/gtk-3.0/settings.ini".text = ''
           [Settings]
           gtk-theme-name=${gtkTheme}
           gtk-icon-theme-name=${icon-theme}
           gtk-cursor-theme-name=${cursor-theme}
           gtk-cursor-theme-size=24
-        '';
-
-        "gtk-2.0/gtkrc".text = ''
-          gtk-theme-name = "${gtkTheme}"
-          gtk-icon-theme-name = "${icon-theme}"
-          gtk-cursor-theme-name = "${cursor-theme}"
-          gtk-cursor-theme-size = 24
         '';
       };
     };
