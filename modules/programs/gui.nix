@@ -33,6 +33,10 @@
     style=${qtStyle}
     icon_theme=${icon-theme}
     custom_palette=false
+
+    [Fonts]
+    general="Sans Serif,10,-1,5,50,0,0,0,0,0"
+    fixed="Monospace,12,-1,5,50,0,0,0,0,0"
   '';
 in {
   options.kevin.gui = {
@@ -78,6 +82,8 @@ in {
             else "prefer-light"
           );
           gtk-theme = lib.gvariant.mkString gtkTheme;
+          # Keep portal consumers aligned with the GTK settings.ini font.
+          font-name = lib.gvariant.mkString "sans-serif 10";
           icon-theme = lib.gvariant.mkString icon-theme;
           cursor-theme = lib.gvariant.mkString cursor-theme;
           cursor-size = lib.gvariant.mkInt32 24;
@@ -93,6 +99,7 @@ in {
         gtk-icon-theme-name = "${icon-theme}"
         gtk-cursor-theme-name = "${cursor-theme}"
         gtk-cursor-theme-size = 24
+          gtk-font-name = "sans-serif 10"
       '';
     };
 
@@ -112,6 +119,7 @@ in {
           gtk-icon-theme-name=${icon-theme}
           gtk-cursor-theme-name=${cursor-theme}
           gtk-cursor-theme-size=24
+          gtk-font-name = sans-serif 10
         '';
 
         "xdg/gtk-3.0/settings.ini".text = ''
@@ -120,6 +128,7 @@ in {
           gtk-icon-theme-name=${icon-theme}
           gtk-cursor-theme-name=${cursor-theme}
           gtk-cursor-theme-size=24
+          gtk-font-name = sans-serif 10
         '';
       };
     };
