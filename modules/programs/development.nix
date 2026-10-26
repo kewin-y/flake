@@ -4,14 +4,6 @@
   inputs,
   ...
 }: let
-  arduinoIDE = pkgs.symlinkJoin {
-    name = "arduino-ide-x11";
-    paths = [pkgs.arduino-ide];
-    nativeBuildInputs = [pkgs.makeWrapper];
-    postBuild = ''
-      wrapProgram $out/bin/arduino-ide --set ELECTRON_OZONE_PLATFORM_HINT x11
-    '';
-  };
 in {
   programs.nix-ld.enable = true;
 
@@ -54,12 +46,11 @@ in {
         gh
         ty
         ruff
-        pi-coding-agent
+
         codex
         t3code
         opencode
         ;
-      arduinoIDE = arduinoIDE;
     }
     ++ [
       inputs.omp.packages.${pkgs.stdenv.hostPlatform.system}.default
