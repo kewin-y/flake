@@ -47,6 +47,7 @@ vim.pack.add({
   { src = "https://github.com/neogitorg/neogit" },
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
   { src = "https://github.com/zenbones-theme/zenbones.nvim" },
+  { src = "https://github.com/lopi-py/luau-lsp.nvim" },
 })
 
 vim.opt.background = "dark"
@@ -54,7 +55,6 @@ vim.g.zenbones_compat = true
 vim.cmd.colorscheme("zenbones")
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Pmenu" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Pmenu" })
-
 
 -- mini
 local hi = require("mini.hipatterns")
@@ -87,6 +87,7 @@ local servers = {
   "ty",
   "tailwindcss",
   "hls",
+  "luau_lsp",
 }
 
 for _, server in pairs(servers) do
@@ -116,6 +117,7 @@ local conform = require("conform")
 conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    luau = { "stylua" },
     markdown = { "prettierd" },
     astro = { "prettierd" },
     c = { "clang-format" },
@@ -247,6 +249,18 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>op", "<Cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
 vim.keymap.set("n", "<leader>od", "<Cmd>Obsidian today<CR>", { desc = "Open Obsidian daily note" })
+
+-- luau lsp
+require("luau-lsp").setup({
+  sourcemap = {
+    enabled = true,
+    autogenerate = true, -- automatic generation when the server is initialized
+    rojo_path = "rojo",
+    rojo_project_file = "default.project.json",
+    include_non_scripts = true,
+    sourcemap_file = "sourcemap.json",
+  },
+})
 
 -- luasnip
 local ls = require("luasnip")

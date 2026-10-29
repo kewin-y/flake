@@ -36,14 +36,17 @@ in {
         nh
         cargo
         clippy
+
         rust-analyzer
         rustc
         rustfmt
+
         tinymist
         typstyle
         picocom
         psmisc
         gh
+
         ty
         ruff
 

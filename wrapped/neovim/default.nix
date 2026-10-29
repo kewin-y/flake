@@ -12,7 +12,7 @@
     pkgs.prettierd
     pkgs.typstyle
 
-    #typst 
+    #typst
     pkgs.websocat
 
     pkgs.lua-language-server
