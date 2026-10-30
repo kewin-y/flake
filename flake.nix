@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +23,11 @@
 
     rokit = {
       url = "github:morzsk/rokit-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    openresearch = {
+      url = "github:kewin-y/OpenResearch-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

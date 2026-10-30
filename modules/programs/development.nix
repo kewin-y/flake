@@ -18,8 +18,11 @@ in {
   };
 
   environment.systemPackages = let
+    openresearch = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system}.openresearch;
+    orx = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system}.orx;
   in
     lib.attrValues {
+      inherit openresearch orx;
       inherit
         (pkgs)
         typst
@@ -36,20 +39,16 @@ in {
         nh
         cargo
         clippy
-
         rust-analyzer
         rustc
         rustfmt
-
         tinymist
         typstyle
         picocom
         psmisc
         gh
-
         ty
         ruff
-
         codex
         t3code
         opencode
