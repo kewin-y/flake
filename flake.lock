@@ -80,11 +80,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1793250848,
-        "narHash": "sha256-bCAuksG9u1KZlb9sairkIgqrKp/s9zc2Vdn9ys6SFg0=",
+        "lastModified": 1793895218,
+        "narHash": "sha256-Ca0He88cg3qSX7MVTcwbgw74RuwmcA+ZwzVjqX72JAs=",
         "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
-        "rev": "86742b6e69c1f5647843653dab56100941cb1b9d",
+        "rev": "ef91010a4fcc551b5cb24f52608dc8d45c527d9d",
         "type": "github"
       },
       "original": {
@@ -139,11 +139,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1793110635,
-        "narHash": "sha256-yXRSdZdZZqccEL+j11lc1gFG1f7V5j8N7oPBTHwf7n4=",
-        "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
+        "lastModified": 1793876309,
+        "narHash": "sha256-Q62pssAT9r01POiSyXW0IPXBWhntiKqMhzlsp3bsl5I=",
+        "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1103272.31ecbaca1bde/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1108983.f9a75f41be3a/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -153,11 +153,11 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1793147889,
-        "narHash": "sha256-+//qXhkXCKTFoVCHAYhoEP1ZnPSx/b4IHdLI1ZMz3UU=",
+        "lastModified": 1793671242,
+        "narHash": "sha256-FXXhGUZDRvPAdKFx/eF4E/WG3BnzvkCW2V/Qzs4KBoA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "36173dbc6ff2b383c4d03b002fd1ea58e2e4dbcd",
+        "rev": "4ad2eda5f89410d94c57449a70d08935d9bbb4f6",
         "type": "github"
       },
       "original": {
@@ -203,11 +203,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1793333055,
-        "narHash": "sha256-sSZEKuprqJgdfb7dcHBfIvae+1KWDxVQQcC4D9gHPC0=",
+        "lastModified": 1794025163,
+        "narHash": "sha256-viiHFIYsMjT+6IdO513b+kT4+7j/3Kvx0uqPqSARtyM=",
         "owner": "yuxqiu",
         "repo": "omp-nix",
-        "rev": "d5e180bc5fdb122fb9cc9fcccec78da549e92085",
+        "rev": "18beb6a75f18280a08179a4c4ad2f08f78bb1d53",
         "type": "github"
       },
       "original": {
@@ -223,11 +223,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793401594,
-        "narHash": "sha256-LsjuDdUpUp4vLdDephGQEjuR/mRby4H7GrYlMBl8st8=",
+        "lastModified": 1794057751,
+        "narHash": "sha256-dSGEvEAmdZ4m9ClAig5EamF6N2C/LZt7KeryP0cjHEw=",
         "owner": "kewin-y",
         "repo": "OpenResearch-flake",
-        "rev": "c73f141bbc136bc33c0395d0b82f88b7c3f0f916",
+        "rev": "c7855991d2dd35c99c2f49b3d54ee9019e7e78c0",
         "type": "github"
       },
       "original": {

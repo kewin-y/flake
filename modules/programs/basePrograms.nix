@@ -35,6 +35,7 @@
         keepassxc
         dpkg
         melonds
+        anki
         ;
       inherit
         (pkgs.kdePackages)

@@ -33,15 +33,7 @@ in {
         typescript
         tailwindcss-language-server
         bun
-        valgrind-light
-        clang-tools
-        cmake
         nh
-        cargo
-        clippy
-        rust-analyzer
-        rustc
-        rustfmt
         tinymist
         typstyle
         picocom
@@ -49,7 +41,10 @@ in {
         gh
         ty
         ruff
+
+        # GUYS I'M SORRY
         codex
+        claude-code
         t3code
         opencode
         ;
