@@ -1,5 +1,5 @@
 {
-  description = "🆒🆒🆒🆒";
+  description = "🆒 system configuration";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -14,15 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    omp.url = "github:yuxqiu/omp-nix";
-
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    rokit = {
-      url = "github:morzsk/rokit-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -18,8 +18,9 @@ in {
   };
 
   environment.systemPackages = let
-    openresearch = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system}.openresearch;
-    orx = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system}.orx;
+    or-pkgs = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system};
+    openresearch = or-pkgs.openresearch;
+    orx = or-pkgs.orx;
   in
     lib.attrValues {
       inherit openresearch orx;
@@ -41,7 +42,6 @@ in {
         gh
         ty
         ruff
-
         # GUYS I'M SORRY
         codex
         claude-code
@@ -49,8 +49,5 @@ in {
         opencode
         pi-coding-agent
         ;
-    }
-    ++ [
-      inputs.omp.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
+    };
 }
