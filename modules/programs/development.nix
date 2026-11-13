@@ -47,6 +47,7 @@ in {
         claude-code
         t3code
         opencode
+        pi-coding-agent
         ;
     }
     ++ [

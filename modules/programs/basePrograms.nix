@@ -33,9 +33,12 @@
         chromium
         obsidian
         keepassxc
-        dpkg
         melonds
         anki
+
+# whatever
+        dpkg
+        desktop-file-utils
         ;
       inherit
         (pkgs.kdePackages)
