@@ -9,12 +9,18 @@
       bind C-s send-prefix
 
       set -g base-index 1
+
       set -g allow-passthrough on
+      set -g allow-passthrough on
+      set -g focus-events on
+      set -s extended-keys on
+      set -as terminal-features 'xterm*:extkeys'
+      set-option -sa terminal-overrides ",foot*:Tc"
+
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
       set -g default-terminal "tmux-256color"
       set-option -g default-shell "${pkgs.zsh}/bin/zsh"
-      set-option -sa terminal-overrides ",foot*:Tc"
       setw -g mode-keys vi
       set -g extended-keys on
       set -g extended-keys-format csi-u
