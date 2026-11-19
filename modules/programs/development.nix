@@ -5,7 +5,8 @@
   ...
 }: let
 in {
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
+  # nix-ld is managed in python.nix
 
   programs.direnv = {
     enable = true;
@@ -21,6 +22,14 @@ in {
     or-pkgs = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system};
     openresearch = or-pkgs.openresearch;
     orx = or-pkgs.orx;
+
+    pythonPackages = pythonPkgs: lib.attrValues {
+      inherit
+        (pythonPkgs)
+        fastapi
+        ;
+    };
+    pythonEnv = pkgs.python3.withPackages pythonPackages;
   in
     lib.attrValues {
       inherit openresearch orx;
@@ -49,5 +58,6 @@ in {
         opencode
         pi-coding-agent
         ;
-    };
+    }
+    ++ [pythonEnv];
 }
