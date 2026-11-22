@@ -72,7 +72,13 @@ hi.setup({
 require("mini.icons").setup()
 
 -- oil
-require("oil").setup()
+require("oil").setup({
+  columns = {
+    "size",
+    "mtime",
+  },
+})
+
 vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
 
 -- lsp

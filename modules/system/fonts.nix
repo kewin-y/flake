@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   fonts = {
     packages = [
-      pkgs.maple-mono.NF
-      pkgs.maple-mono.CN
-      pkgs.nerd-fonts.lilex
       pkgs.inter
+      pkgs.nerd-fonts.lilex
       pkgs.noto-fonts-cjk-sans
       pkgs.noto-fonts-cjk-serif
       pkgs.noto-fonts-color-emoji
@@ -26,8 +24,8 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "Maple Mono NF"
-          "Maple Mono CN"
+          "Lilex Nerd Font Propo"
+          "Noto Sans Mono CJK"
           "Noto Color Emoji"
         ];
       };
