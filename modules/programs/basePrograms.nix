@@ -33,6 +33,7 @@
         # whatever
         dpkg
         desktop-file-utils
+        libnotify
         ;
       inherit
         (pkgs.kdePackages)

@@ -1,15 +1,15 @@
 {pkgs, ...}: {
   fonts = {
-    packages = with pkgs; [
-      inter
-      pkgs.nerd-fonts.jetbrains-mono
+    packages = [
+      pkgs.maple-mono.NF
+      pkgs.maple-mono.CN
       pkgs.nerd-fonts.lilex
-      pkgs.nerd-fonts.iosevka
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-      liberation_ttf
-      dejavu_fonts
+      pkgs.inter
+      pkgs.noto-fonts-cjk-sans
+      pkgs.noto-fonts-cjk-serif
+      pkgs.noto-fonts-color-emoji
+      pkgs.liberation_ttf
+      pkgs.dejavu_fonts
     ];
 
     fontconfig = {
@@ -26,8 +26,8 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "Lilex Nerd Font Propo"
-          "Noto Sans Mono CJK"
+          "Maple Mono NF"
+          "Maple Mono CN"
           "Noto Color Emoji"
         ];
       };

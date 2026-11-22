@@ -32,6 +32,6 @@ with base16SchemeNoHashtag;
     separator-color=00000000
     font=monospace
     font-size=16
-    indicator-radius=75
+    indicator-radius=50
     indicator-thickness=10
   ''
