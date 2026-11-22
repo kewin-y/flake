@@ -1,19 +1,19 @@
 {
-    pkgs,
-    base16SchemeNoHashtag,
+  pkgs,
+  base16SchemeNoHashtag,
 }: let
-    config = import ./config.nix {inherit pkgs base16SchemeNoHashtag;};
+  config = import ./config.nix {inherit pkgs base16SchemeNoHashtag;};
 in
-    pkgs.symlinkJoin {
-        name = "foot-wrapped";
+  pkgs.symlinkJoin {
+    name = "foot-wrapped";
 
-        paths = [
-            pkgs.foot
-        ];
+    paths = [
+      pkgs.foot
+    ];
 
-        nativeBuildInputs = [pkgs.makeWrapper];
+    nativeBuildInputs = [pkgs.makeWrapper];
 
-        postBuild = ''
-            wrapProgram $out/bin/foot --add-flags "-c ${config}"
-        '';
-    }
+    postBuild = ''
+      wrapProgram $out/bin/foot --add-flags "-c ${config}"
+    '';
+  }

@@ -1,21 +1,21 @@
 {pkgs}: let
-    yaziConfig = pkgs.symlinkJoin {
-        name = "yazi-config";
-        paths = [
-            (import ./yazi.toml.nix pkgs)
-            (import ./theme.toml.nix pkgs)
-        ];
-    };
+  yaziConfig = pkgs.symlinkJoin {
+    name = "yazi-config";
+    paths = [
+      (import ./yazi.toml.nix pkgs)
+      (import ./theme.toml.nix pkgs)
+    ];
+  };
 in
-    pkgs.symlinkJoin {
-        name = "yazi-wrapped";
-        paths = [
-            pkgs.yazi
-        ];
+  pkgs.symlinkJoin {
+    name = "yazi-wrapped";
+    paths = [
+      pkgs.yazi
+    ];
 
-        nativeBuildInputs = [pkgs.makeWrapper];
+    nativeBuildInputs = [pkgs.makeWrapper];
 
-        postBuild = ''
-            wrapProgram $out/bin/yazi --set YAZI_CONFIG_HOME ${yaziConfig}/yazi
-        '';
-    }
+    postBuild = ''
+      wrapProgram $out/bin/yazi --set YAZI_CONFIG_HOME ${yaziConfig}/yazi
+    '';
+  }

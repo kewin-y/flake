@@ -8,26 +8,20 @@
     lib.attrValues {
       inherit
         (pkgs)
-        htop
-        btop
         wget
         curl
-        git
-        libnotify
-        pamixer
-        ripgrep
-        fastfetch
+        htop
+        btop
         unzip
         killall
+        pavucontrol
+        fastfetch
         swayimg
         mpv
-        pavucontrol
         obs-studio
-        rnote
         webcord
         sioyek
         inkscape
-        imv
         libreoffice
         tree
         chromium
@@ -35,8 +29,8 @@
         keepassxc
         melonds
         anki
-
-# whatever
+        ripgrep
+        # whatever
         dpkg
         desktop-file-utils
         ;
