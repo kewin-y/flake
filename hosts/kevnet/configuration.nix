@@ -10,6 +10,7 @@
       enable = true;
     };
     bootloader = "lanzaboote";
+    gui.color-theme = "light";
   };
 
   environment.systemPackages = [
@@ -18,5 +19,7 @@
 
   systemd.tpm2.enable = false;
   boot.initrd.systemd.tpm2.enable = false;
+
+  # Don't change
   system.stateVersion = "23.11";
 }

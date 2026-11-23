@@ -12,8 +12,8 @@ with base16Scheme;
     width=300
     height=300
     padding=12
-    border-size=1
-    border-radius=5
+    border-size=2
+    border-radius=2
     markup=true
     icons=true
     format=<b>%s</b>\n\n%b

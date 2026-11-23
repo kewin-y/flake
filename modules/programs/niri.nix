@@ -51,7 +51,7 @@
     }
 
     window-rule {
-      geometry-corner-radius 5
+      geometry-corner-radius 2
       clip-to-geometry true
     }
 
@@ -84,9 +84,9 @@
         Mod+A hotkey-overlay-title="View notification actions" { spawn-sh "makoctl menu -- fuzzel --dmenu"; }
         Mod+D hotkey-overlay-title="Dismiss notification" { spawn-sh "makoctl dismiss"; }
 
-        XF86AudioLowerVolume { spawn "pamixer" "-d" "5"; }
-        XF86AudioRaiseVolume { spawn "pamixer" "-i" "5"; }
-        XF86AudioMute { spawn "pamixer" "--toggle-mute"; }
+        XF86AudioLowerVolume { spawn "${pkgs.pamixer}/bin/pamixer" "-d" "5"; }
+        XF86AudioRaiseVolume { spawn "${pkgs.pamixer}/bin/pamixer" "-i" "5"; }
+        XF86AudioMute { spawn "${pkgs.pamixer}/bin/pamixer" "--toggle-mute"; }
         XF86MonBrightnessUp { spawn "brillo" "-q" "-A" "10"; }
         XF86MonBrightnessDown { spawn "brillo" "-q" "-U" "10"; }
 
@@ -233,6 +233,7 @@ in {
   programs.niri.enable = true;
 
   security.pam.services.swaylock = {};
+  security.pam.services.waylock = {};
 
   services.xserver = {
     xkb = {

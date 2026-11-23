@@ -39,7 +39,7 @@
     base = import ./base.nix;
 
     theme = import ./theme.nix {
-      themeName = "zenbones";
+      themeName = "zenwritten-light";
       inherit lib;
     };
 

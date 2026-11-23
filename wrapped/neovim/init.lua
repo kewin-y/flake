@@ -48,11 +48,11 @@ vim.pack.add({
   { src = "https://github.com/dlyongemallo/diffview-plus.nvim" },
   { src = "https://github.com/zenbones-theme/zenbones.nvim" },
   { src = "https://github.com/lopi-py/luau-lsp.nvim" },
+  { src = "https://github.com/rktjmp/lush.nvim" },
 })
 
-vim.opt.background = "dark"
-vim.g.zenbones_compat = true
-vim.cmd.colorscheme("zenbones")
+vim.opt.background = "light"
+vim.cmd.colorscheme("zenwritten")
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Pmenu" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Pmenu" })
 
@@ -72,7 +72,13 @@ hi.setup({
 require("mini.icons").setup()
 
 -- oil
-require("oil").setup()
+require("oil").setup({
+  columns = {
+    "size",
+    "mtime",
+  },
+})
+
 vim.keymap.set("n", "<leader>w", "<CMD>Oil<CR>")
 
 -- lsp
