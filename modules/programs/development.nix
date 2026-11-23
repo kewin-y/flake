@@ -23,12 +23,13 @@ in {
     openresearch = or-pkgs.openresearch;
     orx = or-pkgs.orx;
 
-    pythonPackages = pythonPkgs: lib.attrValues {
-      inherit
-        (pythonPkgs)
-        fastapi
-        ;
-    };
+    pythonPackages = pythonPkgs:
+      lib.attrValues {
+        inherit
+          (pythonPkgs)
+          fastapi
+          ;
+      };
     pythonEnv = pkgs.python3.withPackages pythonPackages;
   in
     lib.attrValues {
@@ -57,6 +58,7 @@ in {
         t3code
         opencode
         pi-coding-agent
+        vscode
         ;
     }
     ++ [pythonEnv];
