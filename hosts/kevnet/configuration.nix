@@ -10,6 +10,7 @@
       enable = true;
     };
     bootloader = "lanzaboote";
+    gui.color-theme = "light";
   };
 
   environment.systemPackages = [

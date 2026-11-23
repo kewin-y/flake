@@ -10,6 +10,7 @@
     network.blocking = {
       enable = false;
     };
+    gui.color-theme = "light";
     bootloader = "systemd-boot";
   };
 
