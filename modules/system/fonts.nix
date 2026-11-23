@@ -25,7 +25,7 @@
         ];
         monospace = [
           "Lilex Nerd Font Propo"
-          "Noto Sans Mono CJK"
+          "Noto Sans Mono CJK SC"
           "Noto Color Emoji"
         ];
       };
