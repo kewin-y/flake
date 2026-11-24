@@ -32,6 +32,7 @@
         ripgrep
         # whatever
         dpkg
+        wdisplays
         desktop-file-utils
         libnotify
         ;
