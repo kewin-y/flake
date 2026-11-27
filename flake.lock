@@ -132,26 +132,6 @@
         "type": "indirect"
       }
     },
-    "openresearch": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794497991,
-        "narHash": "sha256-fJGKu5kLEtrs1VGp+k0eOzbfW24bFCWjw2vcUD5Y/V0=",
-        "owner": "kewin-y",
-        "repo": "OpenResearch-flake",
-        "rev": "fc56962ab232baec917793b140ee3754b70f4216",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kewin-y",
-        "repo": "OpenResearch-flake",
-        "type": "github"
-      }
-    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -180,8 +160,7 @@
         "helium": "helium",
         "hjem": "hjem",
         "lanzaboote": "lanzaboote",
-        "nixpkgs": "nixpkgs",
-        "openresearch": "openresearch"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {

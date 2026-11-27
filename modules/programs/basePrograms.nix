@@ -30,6 +30,7 @@
         melonds
         anki
         ripgrep
+        pinta
         # whatever
         dpkg
         wdisplays

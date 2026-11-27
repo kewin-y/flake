@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: let
 in {
@@ -19,10 +18,6 @@ in {
   };
 
   environment.systemPackages = let
-    or-pkgs = inputs.openresearch.packages.${pkgs.stdenv.hostPlatform.system};
-    openresearch = or-pkgs.openresearch;
-    orx = or-pkgs.orx;
-
     pythonPackages = pythonPkgs:
       lib.attrValues {
         inherit
@@ -33,7 +28,6 @@ in {
     pythonEnv = pkgs.python3.withPackages pythonPackages;
   in
     lib.attrValues {
-      inherit openresearch orx;
       inherit
         (pkgs)
         typst
